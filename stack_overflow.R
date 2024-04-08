@@ -93,7 +93,8 @@ get_raw_so_data <- function(){
 
   questions_content <- get_questions(c("apache-arrow", "r")) %>%
     bind_rows(get_questions(c("apache-arrow", "python"))) %>%
-    bind_rows(get_questions(c("pyarrow")))
+    bind_rows(get_questions(c("pyarrow"))) %>%
+    distinct()
 
   # reformat date columns
   questions <- questions_content$items %>%
