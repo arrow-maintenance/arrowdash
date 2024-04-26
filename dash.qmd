@@ -1,0 +1,25 @@
+--- 
+title: "Arrow Maintainer Dashboard"
+author: "Alenka Frim and Nic Crane"
+format: 
+  dashboard:
+    logo: images/arrow-logo_horizontal_black-txt_transparent-bg.png
+    nav-buttons: 
+      - github
+      - href: https://github.com/thisisnic/arrowdash/
+---
+
+## Row {height=70%}
+
+```{python}
+```
+
+## Row {.tabset}
+
+```{python}
+#| title: Chart 2
+```
+
+```{python}
+#| title: Chart 3
+```
