@@ -9,6 +9,14 @@ format:
       - href: https://github.com/thisisnic/arrowdash/
 ---
 
+<!-- 
+
+Needs Quarto 1.4 installed to run
+Seek inspiration from https://quarto.org/docs/dashboards/examples/
+
+
+-->
+
 ## Row {height=70%}
 
 ```{python}
