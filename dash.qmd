@@ -17,16 +17,25 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 
 -->
 
-## Row {height=70%}
+## Row {height=50%}
+
+This is the top bit where we put some summary stuff!
 
 ```{python}
 ```
 
 ## Row {.tabset}
 
-```{python}
+Here's a tab!
+
+```{r}
 #| title: Chart 2
+gt::gt(cars)
 ```
+
+I don't know what goes here
+
+Here's something else entirely
 
 ```{python}
 #| title: Chart 3
