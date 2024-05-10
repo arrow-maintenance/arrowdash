@@ -24,16 +24,10 @@ from datetime import (date, datetime, timedelta)
 import cmd, os
 import requests
 
-if "GITHUB_API_TOKEN" in os.environ:
-    token = os.environ.get('GITHUB_API_TOKEN')
-else:
-    token = cmd.prompt('GITHUB_API_TOKEN is not set, please enter '
-                       'your GitHub personal access token here:')
-
-
+GH_API_TOKEN = os.environ['GH_API_TOKEN']
 HTTP_HEADERS = {
     "Accept": "application/vnd.github.v3+json",
-    "Authorization": f"token {token}",
+    "Authorization": f"token {GH_API_TOKEN}",
 }
 
 
