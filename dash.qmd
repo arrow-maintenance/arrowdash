@@ -1,0 +1,370 @@
+--- 
+title: "Arrow Maintainer Dashboard"
+author: "Alenka Frim and Nic Crane"
+format: 
+  dashboard:
+    logo: images/arrow-logo_horizontal_black-txt_transparent-bg.png
+    nav-buttons: 
+      - github
+      - href: https://github.com/thisisnic/arrowdash/
+---
+
+<!-- 
+
+Needs Quarto 1.4 installed to run
+Seek inspiration from https://quarto.org/docs/dashboards/examples/
+
+
+-->
+
+# Summary
+
+## Row
+
+```{python}
+#| content: valuebox
+#| title: "Issues since last release"
+dict(
+  icon = "envelope",
+  color = "light",
+  value = "12"
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Open issues"
+dict(
+  icon = "envelope-open",
+  color = "light",
+  value = "53"
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Unanswered questions"
+# icons must be from https://icons.getbootstrap.com/
+dict(
+  icon = "question-circle",
+  color = "light",
+  value = "2"
+)
+```
+
+## Row
+
+```{r}
+#| title: Contributors
+library(ggplot2)
+x <- seq(1.0, 16.0, by = 1)
+
+# Create the values for column y with gradual increase and dips
+y <- seq(1000, 2000, length.out = length(x)) + c(0, 50, -30, 20, -10, 40, -20, 30, -15, 25, -10, 20, -85, 15, -8, 10)
+
+# Create the dataframe
+df <- data.frame(x = x, y = round(y))
+
+df |>
+  ggplot(aes(x = x, y = y)) +
+  geom_line(linewidth = 2, color = "#0e263560") +
+  geom_point(size = 3, color = "#0e2635") +
+  geom_point(size = 6, color = "#0e2635", shape = "circle open") +
+  labs(x = "Release", y = "Contributors") + 
+  theme_minimal()
+```
+
+```{r}
+#| title: Commit Count
+# Create some sample data
+set.seed(123) # for reproducibility
+data <- data.frame(
+  username = paste0("user", 1:15),
+  commit_count = sample(50:80, 15, replace = TRUE)
+)
+
+data <- data[order(data$commit_count), ]
+
+# Create the bar plot
+ggplot(data, aes(x = factor(username, levels = username), y = commit_count)) +
+  geom_bar(stat = "identity", fill = "#0e2635", width = 0.5) +
+  labs(x = "Username", y = "Commit Count") +
+  theme_minimal()
+
+```
+
+# Code
+
+## {.toolbar}
+
+```{r}
+library(shiny)
+selectInput('x', 'Language', c("Python", "R")) 
+```
+
+## Row
+
+### Column {width=50%}
+
+```{r}
+#| title: Issues
+# Load the gt package for table formatting
+library(gt)
+
+# Create a vector of realistic issue titles for bugs and feature requests for Arrow
+issues <- c(
+  "[Python] Segmentation fault when using Arrow with certain file formats",
+  "[R] Memory leak in Arrow's C++ library",
+  "[Python] Incorrect results when performing certain operations with Arrow arrays",
+  "[R] Error when reading certain types of Parquet files",
+  "[Python] Feature request: Support for additional data types (e.g., decimal)",
+  "[R] Performance degradation observed when working with large datasets",
+  "[Python] Compatibility issue with specific versions of Python",
+  "[R] Bug: Incorrect handling of null values in Arrow arrays",
+  "[Python] Feature request: Improved documentation for Arrow's C++ API",
+  "[R] Inconsistency in behavior across different platforms",
+  "[Python] Error when writing Arrow files with certain schema",
+  "[R] Feature request: Integration with popular machine learning frameworks",
+  "[Python] Issue with serialization and deserialization of Arrow tables",
+  "[R] Feature request: Support for encryption of Arrow data",
+  "[Python] Problem with handling of timestamps in certain time zones",
+  "[R] Bug: Arrow's memory management leads to excessive memory consumption",
+  "[Python] Feature request: Native support for GPU-accelerated operations",
+  "[R] Issue with handling of large metadata in Arrow files",
+  "[Python] Bug: Incorrect results when using Arrow in multithreaded environments",
+  "[R] Feature request: Enhanced support for Windows platform"
+)
+
+# Sample random issues from the vector
+set.seed(123)  # for reproducibility
+issues <- sample(issues, 20, replace = TRUE)
+
+# Create dates ranging from today to 2 weeks ago
+dates <- seq(Sys.Date(), Sys.Date() - 19, by = "-1 day")
+
+# Create the data frame
+df <- data.frame(
+  date = dates,
+  subject = issues
+)
+
+df |> 
+  gt() |> 
+  tab_source_note(
+    source_note = md(paste("Retrieved from the [Arrow Issues Tracker](https://github.com/apache/arrow/issues) at", format(lubridate::now(), "%Y/%m/%d %H:%M %Z")))
+  )
+
+```
+
+### Column {width=50%}
+
+```{r}
+#| title: Pull Requests
+# Load the gt package for table formatting
+library(gt)
+
+# Create a vector of realistic titles for pull requests related to Apache Arrow
+pull_requests <- c(
+  "[Python] Implement support for JSON serialization in Arrow",
+  "[R] Resolve memory leak issue in Arrow's C++ library",
+  "[Python] Add support for Arrow integration with TensorFlow",
+  "[Python] Update README with examples for using Arrow in Python",
+  "[R] Fix compatibility issue with latest version of Parquet format",
+  "[Python] Implement support for distributed computing with Arrow",
+  "[R] Resolve issue with Arrow's handling of nested data structures",
+  "[Python] Introduce support for encryption of Arrow data",
+  "[R] Fix segfault occurring when working with certain types of Arrow arrays",
+  "[Python] Improve API documentation for Arrow's C++ library",
+  "[R] Implement GPU-accelerated operations for Arrow",
+  "[Python] Resolve issue with Arrow's handling of timestamp data types",
+  "[R] Add support for Apache Spark integration with Arrow",
+  "[Python] Fix performance degradation in Arrow's memory management",
+  "[R] Introduce support for compression of Arrow data",
+  "[Python] Resolve compatibility issue with specific versions of Python",
+  "[R] Update installation instructions for Arrow on Windows",
+  "[Python] Implement support for efficient serialization of Arrow tables",
+  "[R] Fix issue with Arrow's handling of null values in certain operations",
+  "[Python] Introduce support for schema evolution in Arrow"
+)
+
+# Sample random pull request titles from the vector
+set.seed(123)  # for reproducibility
+pull_requests <- sample(pull_requests, 20, replace = TRUE)
+
+# Create dates ranging from today to 2 weeks ago
+dates <- seq(Sys.Date(), Sys.Date() - 19, by = "-1 day")
+
+# Create the data frame
+df <- data.frame(
+  date = dates,
+  subject = pull_requests
+)
+
+df |> 
+  gt() |> 
+  tab_source_note(
+    source_note = md(paste("Retrieved from [GitHub](https://github.com/apache/arrow/pulls) at", format(lubridate::now(), "%Y/%m/%d %H:%M %Z")))
+  )
+
+
+```
+
+# Questions
+
+## {.toolbar}
+
+```{r}
+library(shiny)
+selectInput('x', 'Language', c("Python", "R")) 
+```
+
+## Row
+
+### Column {width=30%}
+```{r}
+#| title: Mailing List
+library(gt)
+
+# Create dates ranging from today to 2 weeks ago
+dates <- seq(Sys.Date(), Sys.Date() - 19, by = "-1 day")
+
+# Create a vector of made-up issues people are having with "arrow"
+issues <- c(
+  "Question about Arrow installation on Windows",
+  "Trouble using Arrow with R 4.0.0",
+  "Need clarification on Arrow documentation",
+  "Performance issue when working with large datasets",
+  "Error when trying to read Parquet file with Arrow",
+  "Compatibility of Arrow with Python 3.10",
+  "Question about Arrow's integration with Apache Spark",
+  "Memory usage spikes when using Arrow with Pandas",
+  "Issue with Arrow's timestamp handling",
+  "Request for feature: additional data type support",
+  "Problem with Arrow's C++ API",
+  "Help needed with Arrow serialization in Java",
+  "Question about Arrow's support for nested data structures",
+  "Trouble building Arrow from source on macOS",
+  "Suggestion for improving Arrow's documentation",
+  "Integration issue with Arrow and Dask",
+  "Error when using Arrow with TensorFlow",
+  "Inquiry about Arrow's roadmap",
+  "Confusion about Arrow's memory management",
+  "Best practices for using Arrow in production environments"
+)
+
+# Sample random issues from the vector
+set.seed(123)  # for reproducibility
+issues <- sample(issues, 20, replace = TRUE)
+
+# Create the data frame
+df <- data.frame(
+  date = dates,
+  subject = issues
+)
+
+df |> 
+  gt() |> 
+  tab_source_note(
+    source_note = md(paste("Retrieved from the [Arrow User Mailing List](https://api.geonet.org.nz/) at", format(lubridate::now(), "%Y/%m/%d %H:%M %Z")))
+  )
+```
+
+### Column {width=30%}
+
+```{r}
+#| title: Stack Overflow
+library(gt)
+
+# Create dates ranging from today to 2 weeks ago
+dates <- seq(Sys.Date(), Sys.Date() - 19, by = "-1 day")
+
+# Create a vector of made-up issues people are having with "arrow"
+issues <- c(
+  "How to read Parquet files using Apache Arrow in Python?",
+  "Arrow: TypeError: Expected bytes, got 'str' with python pyarrow",
+  "How to install Apache Arrow on Windows?",
+  "Arrow: ValueError: unknown raw arrow array type",
+  "Apache Arrow: How to handle missing data (NaNs) in arrays?",
+  "Arrow: How to convert Arrow table to Pandas DataFrame?",
+  "Arrow: How to filter rows based on a condition?",
+  "How to serialize and deserialize Arrow arrays in Java?",
+  "Arrow: How to handle large datasets efficiently?",
+  "Apache Arrow: How to work with nested data structures?",
+  "Arrow: How to extract metadata from Arrow files?",
+  "Arrow: How to sort arrays in-place?",
+  "Apache Arrow: How to efficiently concatenate arrays?",
+  "Arrow: How to handle timestamp data types?",
+  "Apache Arrow: How to convert Arrow table to JSON?",
+  "Arrow: How to integrate with Apache Spark?",
+  "Apache Arrow: How to handle memory management?",
+  "Arrow: How to convert Arrow array to numpy array?",
+  "Apache Arrow: How to deal with schema evolution?",
+  "Arrow: How to read CSV files into Arrow?"
+)
+
+# Sample random issues from the vector
+set.seed(123)  # for reproducibility
+issues <- sample(issues, 20, replace = TRUE)
+
+# Create the data frame
+df <- data.frame(
+  date = dates,
+  subject = issues
+)
+
+df |> 
+  gt() |> 
+  tab_source_note(
+    source_note = md(paste("Retrieved from the [Stack Overflow API](https://api.geonet.org.nz/) at", format(lubridate::now(), "%Y/%m/%d %H:%M %Z")))
+  )
+```
+
+### Column {width=30%}
+
+```{r}
+#| title: GitHub
+library(gt)
+
+# Create dates ranging from today to 2 weeks ago
+dates <- seq(Sys.Date(), Sys.Date() - 19, by = "-1 day")
+
+# Create a vector of made-up issues people are having with "arrow"
+issues <- c(
+  "Installation error",
+  "Function not working",
+  "Compatibility issue with Python 3.9",
+  "Incorrect output",
+  "Memory leak",
+  "Slow performance",
+  "Documentation unclear",
+  "Syntax error",
+  "Segfault on Windows",
+  "NaNs not handled correctly",
+  "Error message misleading",
+  "Unexpected behavior",
+  "Crash on macOS Big Sur",
+  "TypeError in method",
+  "Package dependencies not resolved",
+  "Missing data",
+  "Index out of bounds",
+  "AttributeError",
+  "File not found",
+  "UnicodeDecodeError"
+)
+
+# Sample random issues from the vector
+set.seed(123)  # for reproducibility
+issues <- sample(issues, 20, replace = TRUE)
+
+# Create the data frame
+df <- data.frame(
+  date = dates,
+  subject = issues
+)
+
+df |> 
+  gt() |> 
+  tab_source_note(
+    source_note = md(paste("Retrieved from the [GitHub API](https://api.geonet.org.nz/) at", format(lubridate::now(), "%Y/%m/%d %H:%M %Z")))
+  )
+```
