@@ -143,3 +143,40 @@ def issues_by_labels(data, status, component):
             grouped_issues["Usage"].append(issue)
 
     return grouped_issues
+
+
+def extract_bugs(data):
+    # get all bugs
+    bugs = []
+    for i in data:
+        for label in i["labels"]:
+            if label["name"] == "Type: bug":
+                bugs.append(i)
+                break
+
+    # get triage status
+    triage_status = {
+        "triaged": {"blocker": [], "critical": [], "other": []},
+        "untriaged": [],
+    }
+    for bug in bugs:
+        assigned = False
+        # bug["created_at"] = parse_gh_date(bug["created_at"])
+        bug["created_at"] = bug["created_at"]
+        for label in bug["labels"]:
+            if label["name"].startswith("Priority: Blocker"):
+                triage_status["triaged"]["blocker"].append(bug)
+                assigned = True
+                break
+            elif label["name"].startswith("Priority: Critical"):
+                triage_status["triaged"]["critical"].append(bug)
+                assigned = True
+                break
+            elif label["name"].startswith("Priority"):
+                triage_status["triaged"]["other"].append(bug)
+                assigned = True
+                break
+        if assigned == False:
+            triage_status["untriaged"].append(bug)
+
+    return triage_status
