@@ -236,7 +236,7 @@ show(r_prs_new_open)
 ### Column {width=50%}
 
 ```{python}
-#| title: Bar chart of open issues by week
+#| title: Open issues by week
 alt.Chart(r_issues_sum).mark_bar(cornerRadius=10).encode(
     x=alt.X("created_at:N").axis(labelAngle=-45).title("Week"),
     y=alt.Y("labels:Q").title("Number of issues")
