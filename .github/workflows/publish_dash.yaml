@@ -56,4 +56,4 @@ jobs:
           path: dash.qmd
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
-
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
