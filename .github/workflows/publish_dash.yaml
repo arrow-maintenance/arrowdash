@@ -1,0 +1,16 @@
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+- name: Publish HTML book
+    uses: quarto-dev/quarto-actions/publish@v2
+  with:
+    target: gh-pages
+    render: false
+
+- name: Publish Dashbard
+    uses: quarto-dev/quarto-actions/publish@v2
+  with:
+    target: gh-pages
