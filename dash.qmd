@@ -100,17 +100,17 @@ dict(
 
 ```{python}
 #| title: List of issues not yet closed
-from itables import show
-from itables import options
-options.buttons = ['copy', 'excel', 'pdf']
-show(p_issues_open)
+# from itables import show
+# from itables import options
+# options.buttons = ['copy', 'excel', 'pdf']
+# show(p_issues_open)
 ```
 
 ### Column {width=50%}
 
 ```{python}
 #| title: List of Pull Requests not yet merged
-show(p_prs_open)
+# show(p_prs_open)
 ```
 
 ## Row
@@ -119,14 +119,14 @@ show(p_prs_open)
 
 ```{python}
 #| title: List of open issues by new contributors
-show(p_issues_new_open)
+# show(p_issues_new_open)
 ```
 
 ### Column {width=50%}
 
 ```{python}
 #| title: List of open Pull Requests by new contributors
-show(p_prs_new_open)
+# show(p_prs_new_open)
 ```
 
 ## Row
@@ -205,14 +205,14 @@ dict(
 
 ```{python}
 #| title: List of issues not yet closed
-show(r_issues_open)
+# show(r_issues_open)
 ```
 
 ### Column {width=50%}
 
 ```{python}
 #| title: List of Pull Requests not yet merged
-show(r_prs_open)
+# show(r_prs_open)
 ```
 
 ## Row
@@ -221,14 +221,14 @@ show(r_prs_open)
 
 ```{python}
 #| title: List of open issues by new contributors
-show(r_issues_new_open)
+# show(r_issues_new_open)
 ```
 
 ### Column {width=50%}
 
 ```{python}
 #| title: List of open Pull Requests by new contributors
-show(r_prs_new_open)
+# show(r_prs_new_open)
 ```
 
 ## Row
