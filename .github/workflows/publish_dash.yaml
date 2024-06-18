@@ -54,4 +54,6 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
         with:
           path: dash.qmd
+        env:
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
 
