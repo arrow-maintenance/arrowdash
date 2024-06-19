@@ -7,7 +7,6 @@ format:
     nav-buttons: 
       - github
       - href: https://github.com/thisisnic/arrowdash/
-jupyter: python3
 ---
 
 <!-- 
@@ -17,6 +16,13 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 
 -->
 
+```{r}
+#| label: update
+#| include: false
+update_time <- format(Sys.time(), "%a %b %d %X %Y %z")
+```
+
+Last updated: `{r} update_time`
 ```{python}
 #| label: main methods
 #| include: false
