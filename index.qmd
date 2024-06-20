@@ -17,8 +17,11 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 -->
 
 ```{r}
-#| label: update
+#| label: r_setup
 #| include: false
+library(reticulate)
+library(DT)
+reticulate::use_virtualenv('r-arrow-dash')
 update_time <- format(Sys.time(), "%a %b %d %X %Y %z")
 ```
 
@@ -104,35 +107,42 @@ dict(
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of issues not yet closed
-# from itables import show
-# from itables import options
-# options.buttons = ['copy', 'excel', 'pdf']
-# show(p_issues_open)
+DT::datatable(escape=FALSE,py$p_issues_open)
 ```
+
+```{r}
+#| title: List of issues not yet closed
+#| label: py_issues_open
+DT::datatable(escape = FALSE, py$p_issues_open)
+```
+
 
 ### Column {width=50%}
 
-```{python}
+```{r}
+#| label: p_prs_open
 #| title: List of Pull Requests not yet merged
-# show(p_prs_open)
+DT::datatable(escape=FALSE,py$p_prs_open)
 ```
 
 ## Row
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of open issues by new contributors
-# show(p_issues_new_open)
+#| label: p_issues_new
+DT::datatable(escape=FALSE,py$p_issues_new_open)
 ```
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of open Pull Requests by new contributors
-# show(p_prs_new_open)
+#| label: py_prs_new
+DT::datatable(escape=FALSE,py$p_prs_new_open)
 ```
 
 ## Row
@@ -209,32 +219,32 @@ dict(
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of issues not yet closed
-# show(r_issues_open)
+DT::datatable(escape=FALSE,py$r_issues_open)
 ```
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of Pull Requests not yet merged
-# show(r_prs_open)
+DT::datatable(escape=FALSE,py$r_prs_open)
 ```
 
 ## Row
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of open issues by new contributors
-# show(r_issues_new_open)
+DT::datatable(escape=FALSE,py$r_issues_new_open)
 ```
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of open Pull Requests by new contributors
-# show(r_prs_new_open)
+DT::datatable(escape=FALSE,py$r_prs_new_open)
 ```
 
 ## Row
