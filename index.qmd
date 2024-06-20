@@ -21,8 +21,24 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 #| include: false
 library(reticulate)
 library(DT)
-reticulate::use_virtualenv('r-arrow-dash')
+
+if(Sys.getenv("GITHUB_ACTIONS") == ""){
+  use_virtualenv("r-arrow-dash")
+}
+
 update_time <- format(Sys.time(), "%a %b %d %X %Y %z")
+
+dt_show_buttons <- function(x){
+  DT::datatable(
+    x,
+    escape = FALSE,
+    extensions = 'Buttons',
+    options = list(
+      dom = 'Bfrtip',
+      buttons = c('copy', 'csv', 'excel')
+    )
+  )
+}
 ```
 
 Last updated: `{r} update_time`
@@ -109,13 +125,13 @@ dict(
 
 ```{r}
 #| title: List of issues not yet closed
-DT::datatable(escape=FALSE,py$p_issues_open)
+dt_show_buttons(py$p_issues_open)
 ```
 
 ```{r}
 #| title: List of issues not yet closed
 #| label: py_issues_open
-DT::datatable(escape = FALSE, py$p_issues_open)
+dt_show_buttons(py$p_issues_open)
 ```
 
 
@@ -124,7 +140,7 @@ DT::datatable(escape = FALSE, py$p_issues_open)
 ```{r}
 #| label: p_prs_open
 #| title: List of Pull Requests not yet merged
-DT::datatable(escape=FALSE,py$p_prs_open)
+dt_show_buttons(py$p_prs_open)
 ```
 
 ## Row
@@ -134,7 +150,7 @@ DT::datatable(escape=FALSE,py$p_prs_open)
 ```{r}
 #| title: List of open issues by new contributors
 #| label: p_issues_new
-DT::datatable(escape=FALSE,py$p_issues_new_open)
+dt_show_buttons(py$p_issues_new_open)
 ```
 
 ### Column {width=50%}
@@ -142,7 +158,7 @@ DT::datatable(escape=FALSE,py$p_issues_new_open)
 ```{r}
 #| title: List of open Pull Requests by new contributors
 #| label: py_prs_new
-DT::datatable(escape=FALSE,py$p_prs_new_open)
+dt_show_buttons(py$p_prs_new_open)
 ```
 
 ## Row
@@ -221,14 +237,14 @@ dict(
 
 ```{r}
 #| title: List of issues not yet closed
-DT::datatable(escape=FALSE,py$r_issues_open)
+dt_show_buttons(py$r_issues_open)
 ```
 
 ### Column {width=50%}
 
 ```{r}
 #| title: List of Pull Requests not yet merged
-DT::datatable(escape=FALSE,py$r_prs_open)
+dt_show_buttons(py$r_prs_open)
 ```
 
 ## Row
@@ -237,14 +253,14 @@ DT::datatable(escape=FALSE,py$r_prs_open)
 
 ```{r}
 #| title: List of open issues by new contributors
-DT::datatable(escape=FALSE,py$r_issues_new_open)
+dt_show_buttons(py$r_issues_new_open)
 ```
 
 ### Column {width=50%}
 
 ```{r}
 #| title: List of open Pull Requests by new contributors
-DT::datatable(escape=FALSE,py$r_prs_new_open)
+dt_show_buttons(py$r_prs_new_open)
 ```
 
 ## Row
