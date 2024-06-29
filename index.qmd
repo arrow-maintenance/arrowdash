@@ -6,7 +6,6 @@ format:
     nav-buttons: 
       - github
       - href: https://github.com/thisisnic/arrowdash/
-    scrolling: true
 ---
 
 <!-- 

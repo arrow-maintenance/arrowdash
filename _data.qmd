@@ -21,7 +21,7 @@ issues_sum = gha.get_summary(issues)
 prs_sum = gha.get_summary(prs)
 ```
 
-## Row
+## Row  {height="20%"}
 
 ```{python}
 #| content: valuebox
@@ -63,33 +63,20 @@ dict(
 )
 ```
 
-## Row {.tabset}
+## Column {.tabset}
 
+### Issues
+
+#### Row 
 ```{r}
-#| title: Open issues by new contributors
+#| title: New contributors
 dt_show_buttons(py$issues_new_open)
 ```
 
 ```{r}
-#| title: PRs by new contributors
-dt_show_buttons(py$prs_new_open)
-```
-
-## Row {.tabset}
-
-```{r}
-#| title: Open issues
+#| title: All open issues
 dt_show_buttons(py$issues_open)
 ```
-
-```{r}
-#| title: Open PRs
-dt_show_buttons(py$prs_open)
-
-```
-
-
-## Row {.tabset}
 
 ```{python}
 #| title: Open issues by week
@@ -101,8 +88,23 @@ alt.Chart(issues_sum).mark_bar(cornerRadius=10).encode(
 )
 ```
 
+### PRs
+
+#### Row 
+
+```{r}
+#| title: New contributors
+dt_show_buttons(py$prs_new_open)
+```
+
+```{r}
+#| title: All open PRs
+dt_show_buttons(py$prs_open)
+```
+
+
 ```{python}
-#| title: Open prs by week
+#| title: Open PRs by week
 alt.Chart(prs_sum).mark_bar(cornerRadius=10).encode(
     x=alt.X("created_at:N").axis(labelAngle=-45).title("Week"),
     y=alt.Y("labels:Q").title("Number of prs")
