@@ -1,0 +1,121 @@
+
+```{python}
+#| include: false
+#| warning: false
+issues, prs = gha.get_all(data, lang)
+
+issues_open = gha.get_open(issues)
+
+prs_open = gha.get_open(prs)
+
+issues_new_open = gha.get_new_contributors_open(issues)
+
+prs_new_open = gha.get_new_contributors_open(prs)
+
+issues_sum = gha.get_summary(issues)
+prs_sum = gha.get_summary(prs)
+```
+
+## Row
+
+```{python}
+#| content: valuebox
+#| title: "All issues"
+dict(
+  icon = "envelope",
+  color = "light",
+  value = len(issues)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Open Issues"
+dict(
+  icon = "envelope-open",
+  color = "light",
+  value = len(issues_open)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "All Pull Requests"
+dict(
+  icon = "code-square",
+  color = "light",
+  value = len(prs_open)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Stack Overflow Questions"
+dict(
+  icon = "question-circle",
+  color = "light",
+  value = "2"
+)
+```
+
+## Row
+
+### Column {width=50%}
+
+```{r}
+#| title: List of issues not yet closed
+dt_show_buttons(py$issues_open)
+```
+
+```{r}
+#| title: List of issues not yet closed
+dt_show_buttons(py$issues_open)
+```
+
+
+### Column {width=50%}
+
+```{r}
+#| title: List of Pull Requests not yet merged
+dt_show_buttons(py$prs_open)
+```
+
+## Row
+
+### Column {width=50%}
+
+```{r}
+#| title: List of open issues by new contributors
+dt_show_buttons(py$issues_new_open)
+```
+
+### Column {width=50%}
+
+```{r}
+#| title: List of open Pull Requests by new contributors
+dt_show_buttons(py$prs_new_open)
+```
+
+## Row
+
+### Column {width=50%}
+
+```{python}
+#| title: Open issues by week
+import altair as alt
+
+alt.Chart(issues_sum).mark_bar(cornerRadius=10).encode(
+    x=alt.X("created_at:N").axis(labelAngle=-45).title("Week"),
+    y=alt.Y("labels:Q").title("Number of issues")
+)
+```
+
+### Column {width=50%}
+
+```{python}
+#| title: Open prs by week
+alt.Chart(prs_sum).mark_bar(cornerRadius=10).encode(
+    x=alt.X("created_at:N").axis(labelAngle=-45).title("Week"),
+    y=alt.Y("labels:Q").title("Number of prs")
+)
+```
