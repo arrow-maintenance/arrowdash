@@ -1,12 +1,12 @@
 --- 
 title: "Arrow Maintainer Dashboard"
-author: "Alenka Frim and Nic Crane"
 format: 
   dashboard:
     logo: ./images/arrow-logo.png
     nav-buttons: 
       - github
       - href: https://github.com/thisisnic/arrowdash/
+    scrolling: true
 ---
 
 <!-- 
@@ -36,9 +36,11 @@ dt_show_buttons <- function(x){
     extensions = 'Buttons',
     options = list(
       dom = 'Bfrtip',
-      buttons = c('copy', 'csv', 'excel')
+      buttons = c('copy', 'csv', 'excel'),
+      pageLength = 10
     )
-  )
+  ) %>%
+    formatDate("created_at", method = "toUTCString")
 }
 ```
 ```{python}
@@ -49,10 +51,6 @@ import github_data.data as gd
 data = gd.get_data()
 import github_data.methods as gha
 ```
-
-Last updated: `{r} update_time`
-
-Issues, issues not yet closed (open issues) and pull requests created in the last 3 months. TODO: Questions?
 
 # PyArrow
 ```{python}

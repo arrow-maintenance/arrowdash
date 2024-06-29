@@ -1,3 +1,8 @@
+## Row {height="1%"}
+
+Last updated: `{r} update_time`
+
+<!-- Issues, issues not yet closed (open issues) and pull requests created in the last 3 months. TODO: Questions? -->
 
 ```{python}
 #| include: false
@@ -58,47 +63,33 @@ dict(
 )
 ```
 
-## Row
-
-### Column {width=50%}
+## Row {.tabset}
 
 ```{r}
-#| title: List of issues not yet closed
-dt_show_buttons(py$issues_open)
-```
-
-```{r}
-#| title: List of issues not yet closed
-dt_show_buttons(py$issues_open)
-```
-
-
-### Column {width=50%}
-
-```{r}
-#| title: List of Pull Requests not yet merged
-dt_show_buttons(py$prs_open)
-```
-
-## Row
-
-### Column {width=50%}
-
-```{r}
-#| title: List of open issues by new contributors
+#| title: Open issues by new contributors
 dt_show_buttons(py$issues_new_open)
 ```
 
-### Column {width=50%}
-
 ```{r}
-#| title: List of open Pull Requests by new contributors
+#| title: PRs by new contributors
 dt_show_buttons(py$prs_new_open)
 ```
 
-## Row
+## Row {.tabset}
 
-### Column {width=50%}
+```{r}
+#| title: Open issues
+dt_show_buttons(py$issues_open)
+```
+
+```{r}
+#| title: Open PRs
+dt_show_buttons(py$prs_open)
+
+```
+
+
+## Row {.tabset}
 
 ```{python}
 #| title: Open issues by week
@@ -109,8 +100,6 @@ alt.Chart(issues_sum).mark_bar(cornerRadius=10).encode(
     y=alt.Y("labels:Q").title("Number of issues")
 )
 ```
-
-### Column {width=50%}
 
 ```{python}
 #| title: Open prs by week
