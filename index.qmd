@@ -7,7 +7,6 @@ format:
     nav-buttons: 
       - github
       - href: https://github.com/thisisnic/arrowdash/
-jupyter: python3
 ---
 
 <!-- 
@@ -17,6 +16,32 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 
 -->
 
+```{r}
+#| label: r_setup
+#| include: false
+library(reticulate)
+library(DT)
+
+if(Sys.getenv("GITHUB_ACTIONS") == ""){
+  use_virtualenv("r-arrow-dash")
+}
+
+update_time <- format(Sys.time(), "%a %b %d %X %Y %z")
+
+dt_show_buttons <- function(x){
+  DT::datatable(
+    x,
+    escape = FALSE,
+    extensions = 'Buttons',
+    options = list(
+      dom = 'Bfrtip',
+      buttons = c('copy', 'csv', 'excel')
+    )
+  )
+}
+```
+
+Last updated: `{r} update_time`
 ```{python}
 #| label: main methods
 #| include: false
@@ -98,35 +123,42 @@ dict(
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of issues not yet closed
-from itables import show
-from itables import options
-options.buttons = ['copy', 'excel', 'pdf']
-show(p_issues_open)
+dt_show_buttons(py$p_issues_open)
 ```
+
+```{r}
+#| title: List of issues not yet closed
+#| label: py_issues_open
+dt_show_buttons(py$p_issues_open)
+```
+
 
 ### Column {width=50%}
 
-```{python}
+```{r}
+#| label: p_prs_open
 #| title: List of Pull Requests not yet merged
-show(p_prs_open)
+dt_show_buttons(py$p_prs_open)
 ```
 
 ## Row
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of open issues by new contributors
-show(p_issues_new_open)
+#| label: p_issues_new
+dt_show_buttons(py$p_issues_new_open)
 ```
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of open Pull Requests by new contributors
-show(p_prs_new_open)
+#| label: py_prs_new
+dt_show_buttons(py$p_prs_new_open)
 ```
 
 ## Row
@@ -203,32 +235,32 @@ dict(
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of issues not yet closed
-show(r_issues_open)
+dt_show_buttons(py$r_issues_open)
 ```
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of Pull Requests not yet merged
-show(r_prs_open)
+dt_show_buttons(py$r_prs_open)
 ```
 
 ## Row
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of open issues by new contributors
-show(r_issues_new_open)
+dt_show_buttons(py$r_issues_new_open)
 ```
 
 ### Column {width=50%}
 
-```{python}
+```{r}
 #| title: List of open Pull Requests by new contributors
-show(r_prs_new_open)
+dt_show_buttons(py$r_prs_new_open)
 ```
 
 ## Row

@@ -1,0 +1,13 @@
+Package: arrowdash
+Version: 0.0.0.9000
+Imports:
+  DT,
+  dplyr,
+  ggplot2,
+  knitr,
+  purrr,
+  reticulate,
+  rmarkdown,
+  stringr,
+  tibble,
+  tidyr
