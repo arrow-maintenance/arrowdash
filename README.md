@@ -10,7 +10,7 @@ For local development both Python and R need to be installed.
 In an active R session first install `remotes` package:
 
 ```r
-install.packages("remote")
+install.packages("remotes")
 ```
 
 and from the project root directory (`/arrowdash`) install R
