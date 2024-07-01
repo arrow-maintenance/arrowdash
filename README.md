@@ -6,7 +6,6 @@ important metrics for tracking project sustainability.
 ## Virtual environment
 
 For local development both Python and R need to be installed.
-
 In an active R session first install `remotes` package:
 
 ```r
@@ -20,7 +19,7 @@ dependencies:
 remotes::install_deps()
 ```
 
-and create Python virtual environment with ``reticulate``:
+then create Python virtual environment with ``reticulate``:
 
 ```r
 library(reticulate)
