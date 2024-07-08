@@ -33,12 +33,12 @@ HTTP_HEADERS = {
 
 def get_data():
     """
-    Get issues and PRs created in last three months with the GitHub API call.
+    Get issues and PRs updated in last three months with the GitHub API call.
 
     Returns
     -------
     data : list
-        list of issues and PRs created in the last 3 months
+        list of issues and PRs updated in the last 3 months
     """
     data = []
 
@@ -50,6 +50,7 @@ def get_data():
         resp = requests.get(
             "https://api.github.com/repos/apache/arrow/issues",
             params={
+                "state": "all",
                 "since": last_3_months,
                 "per_page": 100,
                 "page": page_number,
