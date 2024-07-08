@@ -33,7 +33,7 @@ dt_show_buttons <- function(x){
 
   display_data <- x %>%
     mutate(new_contributor = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR")) %>%
-    select(created_at, url_title, new_contributor)
+    select(created_at, url_title, html_url, new_contributor)
 
   selected_rows <- which(display_data$new_contributor == TRUE)
   DT::datatable(

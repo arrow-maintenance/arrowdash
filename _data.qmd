@@ -10,12 +10,7 @@ Last updated: `{r} update_time`
 issues, prs = gha.get_all(data, lang)
 
 issues_open = gha.get_open(issues)
-
 prs_open = gha.get_open(prs)
-
-issues_new_open = gha.get_new_contributors_open(issues)
-
-prs_new_open = gha.get_new_contributors_open(prs)
 
 issues_sum = gha.get_summary(issues)
 prs_sum = gha.get_summary(prs)
@@ -70,7 +65,7 @@ dict(
 #### Row 
 ```{r}
 #| title: New contributors
-dt_show_buttons(py$issues)
+dt_show_buttons(py$issues_open)
 ```
 
 
@@ -90,7 +85,7 @@ alt.Chart(issues_sum).mark_bar(cornerRadius=10).encode(
 
 ```{r}
 #| title: All open PRs
-dt_show_buttons(py$prs)
+dt_show_buttons(py$prs_open)
 ```
 
 
