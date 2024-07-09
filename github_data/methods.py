@@ -94,7 +94,7 @@ def get_open(df):
     Select issues or pull requests that are still opened from
     the data frame of all issues or pull requests. Only
     relevant information for creating a list of open issues and
-    prs is kept (date and title with url)
+    prs is kept (date, title with url, html url and author_association)
 
     Parameters
     ----------
@@ -109,36 +109,8 @@ def get_open(df):
     df["url_title"] = (
         '<a target="_blank" href="' + df["html_url"] + '">' + df["title"] + "</a>"
     )
-    return df[df.state == "open"][["created_at", "url_title"]]
-
-
-def get_new_contributors_open(df):
-    """
-    Select issues or pull requests that are still open and are created
-    by a new contributor. Only relevant information for creating a list of
-    open issues and prs is kept (date and title with url)
-
-    Parameters
-    ----------
-    df : pa.DataFrame
-        Pandas data frame with all issues or pull requests.
-
-    Returns
-    -------
-    issues : pd.DataFrame
-        Pandas data frame with only issues or prs still opened and created by
-        a new contributor.
-    """
-    df["url_title"] = (
-        '<a target="_blank" href="' + df["html_url"] + '">' + df["title"] + "</a>"
-    )
-    return df[
-        (
-            (df.author_association == "FIRST_TIME_CONTRIBUTOR")
-            | (df.author_association == "NONE")
-        )
-        & (df.state == "open")
-    ][["created_at", "url_title"]]
+    return df[df.state == "open"][["created_at", "url_title",
+                                   "html_url", "author_association"]]
 
 
 def get_summary(df):
