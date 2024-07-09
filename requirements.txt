@@ -17,5 +17,6 @@ requests==2.32.3
 rpds-py==0.18.1
 six==1.16.0
 toolz==0.12.1
+typing_extensions==4.12.2
 tzdata==2024.1
 urllib3==2.2.2
