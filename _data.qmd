@@ -70,13 +70,9 @@ dict(
 #### Row 
 ```{r}
 #| title: New contributors
-dt_show_buttons(py$issues_new_open)
+dt_show_buttons(py$issues)
 ```
 
-```{r}
-#| title: All open issues
-dt_show_buttons(py$issues_open)
-```
 
 ```{python}
 #| title: Open issues by week
@@ -93,13 +89,8 @@ alt.Chart(issues_sum).mark_bar(cornerRadius=10).encode(
 #### Row 
 
 ```{r}
-#| title: New contributors
-dt_show_buttons(py$prs_new_open)
-```
-
-```{r}
 #| title: All open PRs
-dt_show_buttons(py$prs_open)
+dt_show_buttons(py$prs)
 ```
 
 

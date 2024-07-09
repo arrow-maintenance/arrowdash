@@ -2,6 +2,7 @@
 title: "Arrow Maintainer Dashboard"
 format: 
   dashboard:
+    theme: flatly
     logo: ./images/arrow-logo.png
     nav-buttons: 
       - github
@@ -20,6 +21,7 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 #| include: false
 library(reticulate)
 library(DT)
+library(dplyr)
 
 if(Sys.getenv("GITHUB_ACTIONS") == ""){
   use_virtualenv("r-arrow-dash")
@@ -28,9 +30,14 @@ if(Sys.getenv("GITHUB_ACTIONS") == ""){
 update_time <- format(Sys.time(), "%a %b %d %X %Y %z")
 
 dt_show_buttons <- function(x){
-  
+
+  display_data <- x %>%
+    mutate(new_contributor = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR")) %>%
+    select(created_at, url_title, new_contributor)
+
+  selected_rows <- which(display_data$new_contributor == TRUE)
   DT::datatable(
-    x,
+    select(display_data, -new_contributor),
     escape = FALSE,
     extensions = 'Buttons',
     options = list(
@@ -39,7 +46,8 @@ dt_show_buttons <- function(x){
       pageLength = 10
     )
   ) %>%
-    formatDate("created_at", method = "toUTCString")
+    formatDate("created_at", method = "toUTCString") %>%
+    formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, 'lightblue'))
 }
 ```
 ```{python}
