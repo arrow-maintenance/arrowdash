@@ -60,4 +60,4 @@ jobs:
           path: index.qmd
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
-          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+          GH_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
