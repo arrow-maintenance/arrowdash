@@ -22,6 +22,7 @@
 
 from datetime import datetime, timedelta
 import pandas as pd
+import plotly.express as px
 
 
 def parse_gh_date(date):
@@ -115,8 +116,8 @@ def get_open(df):
 
 def get_summary(df):
     """
-    Count the number of issues or pull requests by week selected from the data
-    frame with issues or pull requests. Count only issues or pull requests
+    Count the number of issues or pull requests by creation date selected from
+    the data frame with issues or pull requests. Count only issues or pull requests
     created in last 3 months.
 
     Parameters
@@ -126,12 +127,13 @@ def get_summary(df):
 
     Returns
     -------
-    issues : pd.DataFrame
-        Pandas data frame with number of issues or prs created in last 3 months
-        grouped by week.
+    fig : px.histogram
+        Plotly histogram with number of issues or prs created in last 3 months
     """
     last_3_months = datetime.today() - timedelta(days=90)
     df["created_at"] = df["created_at"].apply(lambda x: parse_gh_date(x))
-    df = df[["created_at", "labels"]][df.created_at > last_3_months].groupby([pd.Grouper(key="created_at", freq="1W")]).count().reset_index()
-    df["created_at"] = pd.to_datetime(df["created_at"], unit="D")
-    return df
+    fig = px.histogram(df[df.created_at > last_3_months],
+                       x = "created_at",
+                       color = "author_association")
+
+    return fig

@@ -10,6 +10,7 @@ MarkupSafe==2.1.5
 numpy==2.0.0
 packaging==24.1
 pandas==2.2.2
+plotly
 python-dateutil==2.9.0.post0
 pytz==2024.1
 referencing==0.35.1
