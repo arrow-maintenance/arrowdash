@@ -1,0 +1,79 @@
+--- 
+title: "Arrow Maintainer Dashboard"
+format: 
+  dashboard:
+    theme: flatly
+    logo: ./images/arrow-logo.png
+    nav-buttons: 
+      - github
+      - href: https://github.com/thisisnic/arrowdash/
+---
+
+<!-- 
+
+Needs Quarto 1.4 installed to run
+Seek inspiration from https://quarto.org/docs/dashboards/examples/
+
+-->
+
+```{r}
+#| label: r_setup
+#| include: false
+library(reticulate)
+library(DT)
+library(dplyr)
+
+if(Sys.getenv("GITHUB_ACTIONS") == ""){
+  use_virtualenv("r-arrow-dash")
+}
+
+update_time <- format(Sys.time(), "%a %b %d %X %Y %z")
+
+dt_show_buttons <- function(x){
+
+  display_data <- x %>%
+    mutate(new_contributor = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR")) %>%
+    select(created_at, url_title, html_url, new_contributor)
+
+  selected_rows <- which(display_data$new_contributor == TRUE)
+  DT::datatable(
+    select(display_data, -new_contributor),
+    escape = FALSE,
+    extensions = 'Buttons',
+    options = list(
+      dom = 'Bfrtip',
+      buttons = c('copy', 'csv', 'excel'),
+      pageLength = 10
+    )
+  ) %>%
+    formatDate("created_at", method = "toUTCString") %>%
+    formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, 'lightblue'))
+}
+```
+```{python}
+#| label: py_setup
+#| include: false
+#| warning: false
+import github_data.data as gd
+data = gd.get_data()
+import github_data.methods as gha
+```
+
+# PyArrow
+```{python}
+#| label: py
+#| warning: false
+lang =  "Python"
+```
+
+{{< include _data.qmd >}}
+
+# R
+
+```{python}
+#| label: r
+#| warning: false
+lang =  "R"
+```
+
+{{< include _data.qmd >}}

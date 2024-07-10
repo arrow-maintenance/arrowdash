@@ -1,0 +1,152 @@
+---
+title: "Apache Arrow R Questions on Stack Overflow"
+format:
+  html:
+    page-layout: full
+---
+
+```{r}
+#| label: load-packages-and-code
+#| include: false
+library(httr)
+library(dplyr)
+library(lubridate)
+library(tidyr)
+library(DT)
+library(rlang)
+```
+
+```{r}
+#| label: functions
+#| include: false
+#| warning: false
+
+get_raw_so_data <- function(){
+
+  questions_content <- get_data(
+    api_name = "questions",
+    url = "https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&tagged=apache-arrow%3Br&site=stackoverflow&filter=!-nt6H9OZ4WW*msaSa)YvngdWhKQ).R9VfXkayFbhnB61(g5UUJbH7f"
+  )
+
+  # get raw data
+  questions <- questions_content$items %>%
+    mutate(last_activity = as_datetime(last_activity_date)) %>%
+    # ignore tags as joins get weird in Arrow as it's a list col
+    select(-last_activity_date, -tags) %>%
+    mutate(retrieved = now())
+
+  # retrieve comments
+  comments <- get_so_comments(questions$question_id)
+
+  # get counts of comments
+  reply_counts <- comments %>%
+    select(question_id = post_id) %>%
+    group_by(question_id) %>%
+    summarise(comments = n())
+
+  answers <- get_so_answers(questions$question_id)
+  answer_counts <- answers %>%
+    select(question_id) %>%
+    group_by(question_id) %>%
+    summarise(answers = n())
+
+  answer_accepted <- answers %>%
+    filter(is_accepted) %>%
+    select(question_id, is_accepted)
+
+  # add in raw data, reply counts, and whether an answer has been accepted
+  left_join(questions, reply_counts, by = "question_id") %>%
+    left_join(answer_counts, by = "question_id") %>%
+    left_join(answer_accepted, by = "question_id") %>%
+    replace_na(list(is_accepted = FALSE, comments = 0, answers = 0))
+}
+
+#' Given a vector of question IDs, pull the comments
+#'
+#' @param question_ids Vector of question IDs
+get_so_comments <- function(question_ids){
+
+  comments_content <- get_data(
+    api_name = "comments",
+    url = paste0(
+      "https://api.stackexchange.com/2.3/questions/",
+      paste(question_ids, collapse = ";"),
+      "/comments?order=desc&sort=creation&site=stackoverflow&filter=!-).qJXDT0Z5I"
+    )
+  )
+
+  if (nrow(comments_content$items) == 0) {
+    return(NULL)
+  }
+  # here's the table of comments! we can count them
+  comments_content$items %>%
+    tidyr::unnest(owner) %>%
+    select(display_name, account_id, score, post_id, comment_id, creation_date)
+
+}
+
+get_data <- function(api_name, url){
+  # message("retrieving ", api_name, " data from Stack Exchange API")
+
+  api_data <- httr::GET(url)
+
+  # if (api_data$status_code == 200) {
+  #   message(api_name, " data successfully retrieved")
+  # } else {
+  #   warning("status code ", api_data$status_code, " when querying", api_name, "API")
+  # }
+
+  out <- content(api_data, as = "text") %>%
+    jsonlite::fromJSON()
+
+  # message(nrow(out$items) %||% 0, " items retrieved")
+
+  out
+
+}
+
+get_so_answers <- function(question_ids){
+
+  answers_content <- get_data(
+    api_name = "answers",
+    url = paste0(
+      "https://api.stackexchange.com/2.3/questions/",
+      paste(question_ids, collapse = ";"),
+      "/answers?order=desc&sort=activity&site=stackoverflow&filter=!9Rgp29w2U"
+    )
+  )
+
+  # here's the table of comments! we can count them
+  answers_content$items %>%
+    tidyr::unnest(owner) %>%
+    select(display_name, account_id, score, is_accepted, question_id, creation_date)
+}
+
+```
+
+# Stack Overflow
+
+```{r}
+#| label: retrieve-data
+#| echo: false
+so_data <- get_raw_so_data()
+last_date_retrieved <- so_data %>% slice(1) %>% pull(retrieved)
+```
+
+
+Stack Overflow questions tagged both with 'apache-arrow' and 'r'.  Data last updated: `r format(last_date_retrieved, "%A %e %B %Y at %T %Z")`.
+
+```{r}
+#| label: create-dt
+#| echo: false
+DT::datatable(
+  escape = FALSE,
+  so_data %>%
+        mutate(issue = paste0("<a href='",link,"' target='_blank'>", title , "</a>")) %>%
+        select(issue, last_activity, comments, answers, accepted_answer = is_accepted) %>%
+        collect() %>%
+        mutate(days_since_last_activity = round(as.numeric(as.duration(interval(last_activity, now())), "days"))) %>%
+        select(-last_activity)  
+)
+
+```

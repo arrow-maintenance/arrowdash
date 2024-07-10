@@ -1,0 +1,98 @@
+## Row {height="1%"}
+
+Last updated: `{r} update_time`
+
+<!-- Issues, issues not yet closed (open issues) and pull requests created in the last 3 months. TODO: Questions? -->
+
+```{python}
+#| include: false
+#| warning: false
+issues, prs = gha.get_all(data, lang)
+
+issues_open = gha.get_open(issues)
+prs_open = gha.get_open(prs)
+
+issues_sum = gha.get_summary(issues)
+prs_sum = gha.get_summary(prs)
+```
+
+## Row  {height="20%"}
+
+```{python}
+#| content: valuebox
+#| title: "All issues"
+dict(
+  icon = "envelope",
+  color = "light",
+  value = len(issues)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Open Issues"
+dict(
+  icon = "envelope-open",
+  color = "light",
+  value = len(issues_open)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "All Pull Requests"
+dict(
+  icon = "code-square",
+  color = "light",
+  value = len(prs_open)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Stack Overflow Questions"
+dict(
+  icon = "question-circle",
+  color = "light",
+  value = "2"
+)
+```
+
+## Column {.tabset}
+
+### Issues
+
+#### Row 
+```{r}
+#| title: New contributors
+dt_show_buttons(py$issues_open)
+```
+
+
+```{python}
+#| title: Open issues by week
+import altair as alt
+
+alt.Chart(issues_sum).mark_bar(cornerRadius=10).encode(
+    x=alt.X("created_at:N").axis(labelAngle=-45).title("Week"),
+    y=alt.Y("labels:Q").title("Number of issues")
+)
+```
+
+### PRs
+
+#### Row 
+
+```{r}
+#| title: All open PRs
+dt_show_buttons(py$prs_open)
+```
+
+
+```{python}
+#| title: Open PRs by week
+alt.Chart(prs_sum).mark_bar(cornerRadius=10).encode(
+    x=alt.X("created_at:N").axis(labelAngle=-45).title("Week"),
+    y=alt.Y("labels:Q").title("Number of prs")
+)
+```
