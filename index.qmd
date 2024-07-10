@@ -6,7 +6,7 @@ format:
     logo: ./images/arrow-logo.png
     nav-buttons: 
       - github
-      - href: https://github.com/thisisnic/arrowdash/
+      - href: https://github.com/os-maintenance/arrowdash
 ---
 
 <!-- 
