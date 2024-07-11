@@ -21,11 +21,11 @@ fig_prs = gha.get_summary(prs)
 #| warning: false
 vector_tags = c("apache-arrow", py$lang)
 if(py$lang == "Python"){
-    append(vector_tags, "pyarrow")
+    append(vector_tags, c("pyarrow", "python"))
 }
 
 questions_content <- get_questions(vector_tags)
-so_data <- get_raw_data(questions_content)
+so_data <- adjust_data(questions_content)
 last_so_data <- so_data %>% filter(last_activity_date > now()- months(3))
 ```
 
@@ -77,7 +77,7 @@ list(
 
 #### Row 
 ```{r}
-#| title: New contributors
+#| title: All open issues, new contributors highlighted
 dt_show_issues(py$issues_open)
 ```
 
@@ -92,7 +92,7 @@ fig_issues.show()
 #### Row 
 
 ```{r}
-#| title: All open PRs
+#| title: All open PRs, new contributors highlighted
 dt_show_issues(py$prs_open)
 ```
 
@@ -107,6 +107,11 @@ fig_prs.show()
 #### Row 
 
 ```{r}
-#| title: Created questions
-dt_show_questions(so_data)
+#| title: Unanswered questions
+dt_show_unanswered_questions(so_data)
+```
+
+```{r}
+#| title: Answered questions, highlighted have accepted answer
+dt_show_answered_questions(so_data)
 ```

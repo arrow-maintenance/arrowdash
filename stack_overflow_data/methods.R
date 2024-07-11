@@ -25,6 +25,7 @@ library(dplyr)
 library(glue)
 library(httr)
 library(lubridate)
+library(tidyr)
 
 dt_show_issues <- function(x){
 
@@ -48,23 +49,12 @@ dt_show_issues <- function(x){
 }
 
 get_data <- function(api_name, url){
-  # message("retrieving ", api_name, " data from Stack Exchange API")
 
   api_data <- httr::GET(url)
-
-  # if (api_data$status_code == 200) {
-  #   message(api_name, " data successfully retrieved")
-  # } else {
-  #   warning("status code ", api_data$status_code, " when querying", api_name, "API")
-  # }
-
   out <- content(api_data, as = "text") %>%
     jsonlite::fromJSON()
 
-  # message(nrow(out$items) %||% 0, " items retrieved")
-
   out
-
 }
 
 #' Get questions from Stack Overflow containing the specified tags
@@ -88,25 +78,100 @@ get_questions <- function(tags){
   out
 }
 
-get_raw_data <- function(questions_content){
+get_comments <- function(question_ids){
 
-  # reformat date columns
+  comments_content <- get_data(
+    api_name = "comments",
+    url = paste0(
+      "https://api.stackexchange.com/2.3/questions/",
+      paste(question_ids, collapse = ";"),
+      "/comments?order=desc&sort=creation&site=stackoverflow&filter=!-).qJXDT0Z5I"
+    )
+  )
+
+  if (nrow(comments_content$items) == 0) {
+    return(NULL)
+  }
+
+  comments_content$items %>%
+    tidyr::unnest(owner) %>%
+    select(display_name, account_id, score, post_id, comment_id, creation_date)
+
+}
+
+get_answers <- function(question_ids){
+
+  answers_content <- get_data(
+    api_name = "answers",
+    url = paste0(
+      "https://api.stackexchange.com/2.3/questions/",
+      paste(question_ids, collapse = ";"),
+      "/answers?order=desc&sort=activity&site=stackoverflow&filter=!9Rgp29w2U"
+    )
+  )
+
+  if (nrow(answers_content$items) == 0) {
+    return(NULL)
+  }
+
+  answers_content$items %>%
+    tidyr::unnest(owner) %>%
+    select(display_name, account_id, score, is_accepted, question_id, creation_date)
+}
+
+adjust_data <- function(questions_content){
+
   questions <- questions_content$items %>%
     mutate(last_activity_date = as_datetime(last_activity_date)) %>%
     mutate(retrieved = now())
+
+  # retrieve comments
+  comments <- get_comments(questions$question_id)
+
+  # get counts of comments
+  reply_counts <- comments %>%
+    select(question_id = post_id) %>%
+    group_by(question_id) %>%
+    summarise(comments = n())
+
+  answers <- get_answers(questions$question_id)
+  answer_counts <- answers %>%
+    select(question_id) %>%
+    group_by(question_id) %>%
+    summarise(answers = n())
+
+  answer_accepted <- answers %>%
+    filter(is_accepted) %>%
+    select(question_id, is_accepted)
+
+  # add in raw data, reply counts, and whether an answer has been accepted
+  left_join(questions, reply_counts, by = "question_id") %>%
+    left_join(answer_counts, by = "question_id") %>%
+    left_join(answer_accepted, by = "question_id") %>%
+    replace_na(list(is_accepted = FALSE, comments = 0, answers = 0)) %>%
+      select(link, title, last_activity_date, comments, answers, accepted_answer = is_accepted) %>%
+      mutate(days_since_last_activity = round(as.numeric(as.duration(interval(last_activity_date, now())), "days"))) %>%
+      mutate(issue = paste0('<a href="',link,'" target="_blank">', title , '</a>'))
 }
 
-dt_show_questions <- function(row_data){
-
-  so_data_adjusted <- so_data %>%
-  select(link, title, last_activity_date) %>%
-  mutate(days_since_last_activity = round(as.numeric(as.duration(interval(last_activity_date, now())), "days"))) %>%
-  select(-last_activity_date)
+dt_show_unanswered_questions <- function(data_adjusted){
 
   DT::datatable(
     escape = FALSE,
-    so_data_adjusted %>%
-      mutate(issue = paste0("<a href='",link,"' target='_blank'>", title , "</a>")) %>%
-      select(issue, everything(), -link, -title)
+    data_adjusted %>%
+      filter(comments == 0 & answers == 0) %>%
+      select(issue, everything(), -link, -title, -comments, -answers, -accepted_answer, -last_activity_date)
   )
+}
+
+dt_show_answered_questions <- function(data_adjusted){
+
+  selected_rows <- which(data_adjusted$accepted_answer == TRUE)
+  DT::datatable(
+    escape = FALSE,
+    data_adjusted %>%
+      filter(answers != 0)  %>%
+      select(issue, everything(), -link, -title, -comments, -answers, -accepted_answer, -last_activity_date)
+  ) %>%
+    formatStyle("days_since_last_activity", target = "row", backgroundColor = styleRow(selected_rows, 'lightblue'))
 }
