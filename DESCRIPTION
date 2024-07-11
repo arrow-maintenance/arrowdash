@@ -4,7 +4,10 @@ Imports:
   DT,
   dplyr,
   ggplot2,
+  glue,
+  httr,
   knitr,
+  lubridate
   purrr,
   reticulate,
   rmarkdown,

@@ -16,6 +16,19 @@ fig_issues = gha.get_summary(issues)
 fig_prs = gha.get_summary(prs)
 ```
 
+```{r}
+#| include: false
+#| warning: false
+vector_tags = c("apache-arrow", py$lang)
+if(py$lang == "Python"){
+    append(vector_tags, "pyarrow")
+}
+
+questions_content <- get_questions(vector_tags)
+so_data <- get_raw_data(questions_content)
+last_so_data <- so_data %>% filter(last_activity_date > now()- months(3))
+```
+
 ## Row  {height="20%"}
 
 ```{python}
@@ -48,13 +61,13 @@ dict(
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Stack Overflow Questions"
-dict(
+list(
   icon = "question-circle",
   color = "light",
-  value = "2"
+  value = nrow(last_so_data)
 )
 ```
 
@@ -65,7 +78,7 @@ dict(
 #### Row 
 ```{r}
 #| title: New contributors
-dt_show_buttons(py$issues_open)
+dt_show_issues(py$issues_open)
 ```
 
 
@@ -80,11 +93,20 @@ fig_issues.show()
 
 ```{r}
 #| title: All open PRs
-dt_show_buttons(py$prs_open)
+dt_show_issues(py$prs_open)
 ```
 
 
 ```{python}
 #| title: Open PRs by week
 fig_prs.show()
+```
+
+### Stack Overflow
+
+#### Row 
+
+```{r}
+#| title: Created questions
+dt_show_questions(so_data)
 ```
