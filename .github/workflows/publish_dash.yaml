@@ -8,13 +8,12 @@ on:
   schedule:
       - cron:  '30 0 * * *'
 
-
-name: Render and Publish
-
 # you need these permissions to publish to GitHub pages
 permissions:
     contents: write
     pages: write
+
+name: Render and Publish
 
 jobs:
   build-deploy:
