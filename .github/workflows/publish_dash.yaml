@@ -12,7 +12,7 @@ on:
 name: Render and Publish
 
 # you need these permissions to publish to GitHub pages
-permissions:
+  permissions:
     contents: write
     pages: write
 
