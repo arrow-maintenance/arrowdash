@@ -24,12 +24,14 @@ from datetime import date, timedelta
 import os
 import requests
 
-GH_API_TOKEN = os.environ('GH_API_TOKEN')
-HTTP_HEADERS = {
-    "Accept": "application/vnd.github.v3+json",
-    "Authorization": f"token {GH_API_TOKEN}",
-}
-
+try:
+  GH_API_TOKEN = os.environ('GH_API_TOKEN')
+  HTTP_HEADERS = {
+      "Accept": "application/vnd.github.v3+json",
+      "Authorization": f"token {GH_API_TOKEN}",
+  }
+except KeyError:
+  raise EnvironmentError("Environment variable GH_API_TOKEN is not set")
 
 def get_data():
     """
