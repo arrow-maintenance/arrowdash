@@ -54,4 +54,4 @@ jobs:
           target: gh-pages
           path: index.qmd
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_API_TOKEN }}
