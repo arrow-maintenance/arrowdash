@@ -24,7 +24,7 @@ from datetime import date, timedelta
 import os
 import requests
 
-GH_API_TOKEN = os.getenv("GH_API_TOKEN")
+GH_API_TOKEN = os.getenv('GH_API_TOKEN')
 HTTP_HEADERS = {
     "Accept": "application/vnd.github.v3+json",
     "Authorization": f"token {GH_API_TOKEN}",
