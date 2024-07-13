@@ -7,7 +7,7 @@ Imports:
   glue,
   httr,
   knitr,
-  lubridate
+  lubridate,
   purrr,
   reticulate,
   rmarkdown,
