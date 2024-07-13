@@ -16,6 +16,19 @@ fig_issues = gha.get_summary(issues)
 fig_prs = gha.get_summary(prs)
 ```
 
+```{r}
+#| include: false
+#| warning: false
+vector_tags = c("apache-arrow", py$lang)
+if(py$lang == "Python"){
+    append(vector_tags, c("pyarrow", "python"))
+}
+
+questions_content <- get_questions(vector_tags)
+so_data <- adjust_data(questions_content)
+last_so_data <- so_data %>% filter(last_activity_date > now()- months(3))
+```
+
 ## Row  {height="20%"}
 
 ```{python}
@@ -48,13 +61,13 @@ dict(
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Stack Overflow Questions"
-dict(
+list(
   icon = "question-circle",
   color = "light",
-  value = "2"
+  value = nrow(last_so_data)
 )
 ```
 
@@ -64,8 +77,8 @@ dict(
 
 #### Row 
 ```{r}
-#| title: New contributors
-dt_show_buttons(py$issues_open)
+#| title: All open issues, new contributors highlighted
+dt_show_issues(py$issues_open)
 ```
 
 
@@ -79,12 +92,26 @@ fig_issues.show()
 #### Row 
 
 ```{r}
-#| title: All open PRs
-dt_show_buttons(py$prs_open)
+#| title: All open PRs, new contributors highlighted
+dt_show_issues(py$prs_open)
 ```
 
 
 ```{python}
 #| title: Open PRs by week
 fig_prs.show()
+```
+
+### Stack Overflow
+
+#### Row 
+
+```{r}
+#| title: Unanswered questions
+dt_show_unanswered_questions(so_data)
+```
+
+```{r}
+#| title: Answered questions, highlighted have accepted answer
+dt_show_answered_questions(so_data)
 ```
