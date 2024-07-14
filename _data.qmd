@@ -23,7 +23,13 @@ so_data <- adjust_data(questions_content)
 last_so_data <- so_data %>% filter(last_activity_date > now()- months(3))
 ```
 
-## Row  {height="20%"}
+## Row {.tabset}
+
+### Summary 
+
+#### Column 
+
+##### Row {height=20%}
 
 ```{python}
 #| content: valuebox
@@ -65,7 +71,17 @@ list(
 )
 ```
 
-## Column {.tabset}
+##### Row {height=80%}
+
+```{python}
+#| title: Open issues by week
+fig_issues.show()
+```
+
+```{python}
+#| title: Open PRs by week
+fig_prs.show()
+```
 
 ### Issues
 
@@ -75,12 +91,6 @@ list(
 dt_show_issues(py$issues_open)
 ```
 
-
-```{python}
-#| title: Open issues by week
-fig_issues.show()
-```
-
 ### PRs
 
 #### Row 
@@ -88,12 +98,6 @@ fig_issues.show()
 ```{r}
 #| title: All open PRs, new contributors highlighted
 dt_show_issues(py$prs_open)
-```
-
-
-```{python}
-#| title: Open PRs by week
-fig_prs.show()
 ```
 
 ### Stack Overflow
@@ -110,6 +114,6 @@ dt_show_unanswered_questions(so_data)
 dt_show_answered_questions(so_data)
 ```
 
-## Row {height="1%"}
+## Row {height=1%}
 
 Last updated: `{r} update_time`
