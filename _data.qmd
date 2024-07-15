@@ -121,7 +121,7 @@ dt_show_answered_questions(so_data)
 #### Row 
 
 ```{r}
-#| title: All open PRs, new contributors highlighted
+#| title: Mailing list items from the last month
 dt_show_emails(py$data_ml)
 ```
 
