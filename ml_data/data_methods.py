@@ -34,3 +34,43 @@ def get_data():
 
     with open("emails.mbox", mode="wb") as file:
         file.write(resp.content)
+
+
+def get_all(component):
+    """
+    Get user mailing list threads and email subject from the last
+    month that are labelled with a particular component.
+
+    This method needs mbox file to be saved to ./'emails.mbox'.
+
+    Parameters
+    ----------
+    component : string
+        Python or R.
+
+    Returns
+    -------
+    issues : pd.DataFrame
+        Pandas data frame with mailing list information.
+    """
+    if component == "R":
+        component = "[R]"
+    list = [(message['Date'],
+             message['Subject'],
+             message['Thread-Topic'])
+             for message in mailbox.mbox('emails.mbox') 
+             if component.lower() in message['Subject'].lower()]
+    
+    df = pd.DataFrame(list, columns =['date', 'subject', 'thread'])
+
+    # Add url_title column with href link to the search result of the email
+    # thread or subject in the Apache Arrow mailing list Pony Mail
+    # https://lists.apache.org/list?user@arrow.apache.org
+
+    df["url_title"] = df.subject.str.replace(' ', '%20', regex=False)
+    df["url_title"] = (
+        '<a target="_blank" href="https://lists.apache.org/list?user@arrow.apache.org:lte=1M' +
+        df["url_title"] + '">' +
+        df["subject"] + "</a>"
+    )
+    return df[["date", "url_title"]]

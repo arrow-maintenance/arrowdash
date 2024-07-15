@@ -9,7 +9,7 @@ prs_open = gha.get_open(prs)
 fig_issues = gha.get_summary(issues)
 fig_prs = gha.get_summary(prs)
 
-data_ml = mla.get_all(lang)
+data_ml = ml.get_all(lang)
 ```
 
 ```{r}
