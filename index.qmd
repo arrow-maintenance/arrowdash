@@ -36,6 +36,10 @@ source("./stack_overflow_data/methods.R", local = knitr::knit_global())
 import github_data.data as gd
 data = gd.get_data()
 import github_data.methods as gha
+# Save mailing list mbox file to "emails.mbox"
+import ml_data.data as ml
+ml.get_data()
+import ml_data.methods as mla
 ```
 
 # PyArrow

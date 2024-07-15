@@ -48,6 +48,14 @@ dt_show_issues <- function(x){
     formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, 'lightblue'))
 }
 
+dt_show_emails <- function(x){
+
+  DT::datatable(
+    escape = FALSE,
+    x
+  )
+}
+
 get_data <- function(api_name, url){
 
   api_data <- httr::GET(url)

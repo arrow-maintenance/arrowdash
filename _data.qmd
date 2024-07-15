@@ -8,6 +8,8 @@ prs_open = gha.get_open(prs)
 
 fig_issues = gha.get_summary(issues)
 fig_prs = gha.get_summary(prs)
+
+data_ml = mla.get_all(lang)
 ```
 
 ```{r}
@@ -112,6 +114,15 @@ dt_show_unanswered_questions(so_data)
 ```{r}
 #| title: Answered questions, highlighted have accepted answer
 dt_show_answered_questions(so_data)
+```
+
+### Mailing List
+
+#### Row 
+
+```{r}
+#| title: All open PRs, new contributors highlighted
+dt_show_emails(py$data_ml)
 ```
 
 ## Row {height=1%}
