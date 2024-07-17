@@ -2,7 +2,9 @@
 title: "Arrow Maintainer Dashboard"
 format: 
   dashboard:
-    theme: flatly
+    theme:
+      - flatly
+      - custom.scss
     logo: ./images/arrow-logo.png
     nav-buttons: 
       - github
