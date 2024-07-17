@@ -26,7 +26,8 @@ if(Sys.getenv("GITHUB_ACTIONS") == ""){
 }
 update_time <- format(Sys.time(), "%a %b %d %X %Y %z")
 
-source("./stack_overflow_data/methods.R", local = knitr::knit_global())
+source("./stack_overflow_data/data_methods.R", local = knitr::knit_global())
+source("./methods.R", local = knitr::knit_global())
 ```
 
 ```{python}
@@ -36,6 +37,9 @@ source("./stack_overflow_data/methods.R", local = knitr::knit_global())
 import github_data.data as gd
 data = gd.get_data()
 import github_data.methods as gha
+# Save mailing list mbox file to "emails.mbox"
+import ml_data.data_methods as ml
+ml.get_data()
 ```
 
 # PyArrow

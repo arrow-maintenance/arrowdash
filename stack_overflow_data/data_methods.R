@@ -27,27 +27,6 @@ library(httr)
 library(lubridate)
 library(tidyr)
 
-dt_show_issues <- function(x){
-
-  display_data <- x %>%
-    mutate(new_contributor = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR")) %>%
-    select(created_at, url_title, html_url, new_contributor)
-
-  selected_rows <- which(display_data$new_contributor == TRUE)
-  DT::datatable(
-    select(display_data, -new_contributor),
-    escape = FALSE,
-    extensions = 'Buttons',
-    options = list(
-      dom = 'Bfrtip',
-      buttons = c('copy', 'csv', 'excel'),
-      pageLength = 10
-    )
-  ) %>%
-    formatDate("created_at", method = "toUTCString") %>%
-    formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, 'lightblue'))
-}
-
 get_data <- function(api_name, url){
 
   api_data <- httr::GET(url)
