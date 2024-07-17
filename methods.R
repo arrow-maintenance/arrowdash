@@ -56,6 +56,7 @@ dt_show_issues <- function(x){
   DT::datatable(
     select(display_data, -new_contributor),
     rownames = FALSE,
+    colnames = c('Date', 'GitHub title', 'GitHub link'),
     escape = FALSE,
     extensions = 'Buttons',
     options = list(
@@ -71,7 +72,10 @@ dt_show_issues <- function(x){
 dt_show_emails <- function(x){
 
   DT::datatable(
-    escape = FALSE,
-    x
-  )
+    x,
+    rownames = FALSE,
+    colnames = c('Date', 'Email subject'),
+    escape = FALSE
+  ) %>%
+    formatDate("date", method = "toDateString")
 }

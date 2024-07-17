@@ -136,6 +136,8 @@ adjust_data <- function(questions_content){
 dt_show_unanswered_questions <- function(data_adjusted){
 
   DT::datatable(
+    rownames = FALSE,
+    colnames = c('Question', 'Last activity (in days)'),
     escape = FALSE,
     data_adjusted %>%
       filter(comments == 0 & answers == 0) %>%
@@ -147,6 +149,8 @@ dt_show_answered_questions <- function(data_adjusted){
 
   selected_rows <- which(data_adjusted$accepted_answer == TRUE)
   DT::datatable(
+    rownames = FALSE,
+    colnames = c('Question', 'Last activity (in days)'),
     escape = FALSE,
     data_adjusted %>%
       filter(answers != 0)  %>%
