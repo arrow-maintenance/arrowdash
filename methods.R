@@ -66,7 +66,7 @@ dt_show_issues <- function(x){
     )
   ) %>%
     formatDate("created_at", method = "toDateString") %>%
-    formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, 'lightblue'))
+    formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, '#FBCD99'))
 }
 
 dt_show_emails <- function(x){

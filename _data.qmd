@@ -43,7 +43,6 @@ last_so_data <- so_data %>% filter(last_activity_date > now()- months(3))
 #| content: valuebox
 #| title: "All issues"
 dict(
-  icon = "envelope",
   color = "light",
   value = len(issues)
 )
@@ -53,7 +52,6 @@ dict(
 #| content: valuebox
 #| title: "Open Issues"
 dict(
-  icon = "envelope-open",
   color = "light",
   value = len(issues_open)
 )
@@ -61,9 +59,17 @@ dict(
 
 ```{python}
 #| content: valuebox
-#| title: "All Pull Requests"
+#| title: "Pull Requests"
 dict(
-  icon = "code-square",
+  color = "light",
+  value = len(prs)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Open Pull Requests"
+dict(
   color = "light",
   value = len(prs_open)
 )
@@ -71,11 +77,19 @@ dict(
 
 ```{r}
 #| content: valuebox
-#| title: "Stack Overflow Questions"
+#| title: "Stack Overflow"
 list(
-  icon = "question-circle",
   color = "light",
   value = nrow(last_so_data)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Mailing list"
+dict(
+  color = "light",
+  value = len(data_ml)
 )
 ```
 

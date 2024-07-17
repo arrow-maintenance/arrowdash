@@ -156,5 +156,5 @@ dt_show_answered_questions <- function(data_adjusted){
       filter(answers != 0)  %>%
       select(issue, everything(), -link, -title, -comments, -answers, -accepted_answer, -last_activity_date)
   ) %>%
-    formatStyle("days_since_last_activity", target = "row", backgroundColor = styleRow(selected_rows, 'lightblue'))
+    formatStyle("days_since_last_activity", target = "row", backgroundColor = styleRow(selected_rows, '#FBCD99'))
 }

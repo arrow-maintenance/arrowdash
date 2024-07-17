@@ -1,5 +1,6 @@
 --- 
 title: "Arrow Maintainer Dashboard"
+date: last-modified
 format: 
   dashboard:
     theme:
