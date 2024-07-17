@@ -55,6 +55,7 @@ dt_show_issues <- function(x){
   selected_rows <- which(display_data$new_contributor == TRUE)
   DT::datatable(
     select(display_data, -new_contributor),
+    rownames = FALSE,
     escape = FALSE,
     extensions = 'Buttons',
     options = list(
@@ -63,7 +64,7 @@ dt_show_issues <- function(x){
       pageLength = 10
     )
   ) %>%
-    formatDate("created_at", method = "toUTCString") %>%
+    formatDate("created_at", method = "toDateString") %>%
     formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, 'lightblue'))
 }
 
