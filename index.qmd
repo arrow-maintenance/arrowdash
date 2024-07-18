@@ -1,5 +1,6 @@
 --- 
-title: "Arrow Maintainer Dashboard"
+title: "Arrow Maintainer Dashboard "
+author: "updated `{r} format(Sys.time(), '%a %b %d %X %Y %Z')`"
 date: last-modified
 format: 
   dashboard:
@@ -27,7 +28,6 @@ library(reticulate)
 if(Sys.getenv("GITHUB_ACTIONS") == ""){
   use_virtualenv("r-arrow-dash")
 }
-update_time <- format(Sys.time(), "%a %b %d %X %Y %Z")
 
 source("./stack_overflow_data/data_methods.R", local = knitr::knit_global())
 source("./methods.R", local = knitr::knit_global())

@@ -144,7 +144,3 @@ dt_show_answered_questions(so_data)
 #| title: Mailing list items from the last month
 dt_show_emails(py$data_ml)
 ```
-
-## Row {height=1%}
-
-Last updated: `{r} update_time`
