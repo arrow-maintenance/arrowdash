@@ -8,6 +8,7 @@ Imports:
   httr,
   knitr,
   lubridate,
+  plotly,
   purrr,
   reticulate,
   rmarkdown,
