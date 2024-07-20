@@ -55,6 +55,8 @@ dt_show_issues <- function(x){
   selected_rows <- which(display_data$new_contributor == TRUE)
   DT::datatable(
     select(display_data, -new_contributor),
+    rownames = FALSE,
+    colnames = c('Date', 'GitHub title', 'GitHub link'),
     escape = FALSE,
     extensions = 'Buttons',
     options = list(
@@ -63,14 +65,17 @@ dt_show_issues <- function(x){
       pageLength = 10
     )
   ) %>%
-    formatDate("created_at", method = "toUTCString") %>%
-    formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, 'lightblue'))
+    formatDate("created_at", method = "toDateString") %>%
+    formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, '#fbcd9989'))
 }
 
 dt_show_emails <- function(x){
 
   DT::datatable(
-    escape = FALSE,
-    x
-  )
+    x,
+    rownames = FALSE,
+    colnames = c('Date', 'Email subject'),
+    escape = FALSE
+  ) %>%
+    formatDate("date", method = "toDateString")
 }
