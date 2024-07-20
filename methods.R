@@ -22,6 +22,29 @@
 
 library(DT)
 library(dplyr)
+library(plotly)
+
+create_fig <- function(x, y, y_new){
+
+  fig <-  plot_ly(x = x, y = y, type = 'bar',
+          name = 'Other contributors', marker = list(color = 'FBCD99'))
+  if (nrow(y_new)) {
+    fig <- fig %>% add_trace(y = ~y_new, name = 'New contributors', marker = list(color = '#DCAAA6'))
+  }
+  fig <- fig %>% layout(plot_bgcolor='#E9EEEF',
+          xaxis = list(
+            title = "",
+            zerolinecolor = '#ffff',
+            zerolinewidth = 2,
+            gridcolor = 'ffff'),
+          yaxis = list(
+            title = "",
+            zerolinecolor = '#ffff',
+            zerolinewidth = 2,
+            gridcolor = 'ffff'))
+
+  fig
+}
 
 dt_show_issues <- function(x){
 

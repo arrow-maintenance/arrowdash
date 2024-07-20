@@ -22,7 +22,6 @@
 
 from datetime import datetime, timedelta
 import pandas as pd
-import plotly.express as px
 
 
 def parse_gh_date(date):
@@ -104,7 +103,7 @@ def get_open(df):
 
     Returns
     -------
-    issues : pd.DataFrame
+    df : pd.DataFrame
         Pandas data frame with only issues or prs still opened.
     """
     df["url_title"] = (
@@ -118,24 +117,28 @@ def get_open(df):
 
 def get_summary(df):
     """
-    Count the number of issues or pull requests by creation date selected from
-    the data frame with issues or pull requests. Count only issues or pull requests
+    Count the number of issues or pull requests by week selected from the data
+    frame with issues or pull requests. Count only issues or pull requests
     created in last 3 months.
-
     Parameters
     ----------
     df : pa.DataFrame
         Pandas data frame with all issues or pull requests.
-
     Returns
     -------
-    fig : px.histogram
-        Plotly histogram with number of issues or prs created in last 3 months
+    df_new_contrib, df_others : pd.DataFrame, pd.DataFrame
+        Two pandas data frames with number of issues or prs created in last 3 months
+        grouped by week first by new contributors, second by all others.
     """
     last_3_months = datetime.today() - timedelta(days=90)
     df["created_at"] = df["created_at"].apply(lambda x: parse_gh_date(x))
-    fig = px.histogram(df[df.created_at > last_3_months],
-                       x = "created_at",
-                       color = "author_association")
 
-    return fig
+    df_new_contrib = df[["created_at", "labels"]][(df.created_at > last_3_months) & (df.author_association.isin(["NONE", "FIRST_TIME_CONTRIBUTOR"]))]
+    df_new_contrib = df_new_contrib.groupby([pd.Grouper(key="created_at", freq="1W")]).count().reset_index()
+    df_new_contrib = df_new_contrib.rename(columns={"labels": "sum"})
+
+    df_others = df[["created_at", "labels"]][(df.created_at > last_3_months) & (~df.author_association.isin(["NONE", "FIRST_TIME_CONTRIBUTOR"]))]
+    df_others = df_others.groupby([pd.Grouper(key="created_at", freq="1W")]).count().reset_index()
+    df_others = df_others.rename(columns={"labels": "sum"})
+
+    return df_new_contrib, df_others

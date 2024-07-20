@@ -6,8 +6,14 @@ issues, prs = gha.get_all(data, lang)
 issues_open = gha.get_open(issues)
 prs_open = gha.get_open(prs)
 
-fig_issues = gha.get_summary(issues)
-fig_prs = gha.get_summary(prs)
+issues_sum_new, issues_sum_others = gha.get_summary(issues)
+x_issues_others = issues_sum_others["created_at"]
+y_issues_others = issues_sum_others["sum"]
+y_issues_new = issues_sum_new["sum"]
+prs_sum_new, prs_sum_others = gha.get_summary(prs)
+x_prs_others = prs_sum_others["created_at"]
+y_prs_others = prs_sum_others["sum"]
+y_prs_new = prs_sum_new["sum"]
 
 data_ml = ml.get_all(lang)
 ```
@@ -75,14 +81,14 @@ list(
 
 ##### Row {height=80%}
 
-```{python}
-#| title: Open issues by week
-fig_issues.show()
+```{r}
+#| title: Issues open through the last 3 months
+create_fig(py$x_issues_others, py$y_issues_others, py$y_issues_new)
 ```
 
-```{python}
-#| title: Open PRs by week
-fig_prs.show()
+```{r}
+#| title: PRs open through the last 3 months
+create_fig(py$x_prs_others, py$y_prs_others, py$y_prs_new)
 ```
 
 ### Issues
