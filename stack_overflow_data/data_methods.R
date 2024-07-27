@@ -133,28 +133,15 @@ adjust_data <- function(questions_content){
       mutate(issue = paste0('<a href="',link,'" target="_blank">', title , '</a>'))
 }
 
-dt_show_unanswered_questions <- function(data_adjusted){
+dt_show_questions <- function(data_adjusted){
 
+  selected_rows <- which(data_adjusted$accepted_answer == FALSE)
+  data_adjusted %>%
+    select(issue, answers, accepted_answer, comments, days_since_last_activity) %>%
   DT::datatable(
     rownames = FALSE,
-    colnames = c('Question', 'Last activity (in days)'),
-    escape = FALSE,
-    data_adjusted %>%
-      filter(comments == 0 & answers == 0) %>%
-      select(issue, everything(), -link, -title, -comments, -answers, -accepted_answer, -last_activity_date)
-  )
-}
-
-dt_show_answered_questions <- function(data_adjusted){
-
-  selected_rows <- which(data_adjusted$accepted_answer == TRUE)
-  DT::datatable(
-    rownames = FALSE,
-    colnames = c('Question', 'Last activity (in days)'),
-    escape = FALSE,
-    data_adjusted %>%
-      filter(answers != 0)  %>%
-      select(issue, everything(), -link, -title, -comments, -answers, -accepted_answer, -last_activity_date)
+    colnames = c('Question', 'Answers', 'Accepted Answer?', 'Comments', 'Last activity (in days)'),
+    escape = FALSE
   ) %>%
     formatStyle("days_since_last_activity", target = "row", backgroundColor = styleRow(selected_rows, '#fbcd9989'))
 }
