@@ -41,17 +41,9 @@ last_so_data <- so_data %>% filter(last_activity_date > now()- months(3))
 
 ```{python}
 #| content: valuebox
-#| title: "All issues"
-dict(
-  color = "light",
-  value = len(issues)
-)
-```
-
-```{python}
-#| content: valuebox
 #| title: "Open Issues"
 dict(
+  icon = "inboxes",
   color = "light",
   value = len(issues_open)
 )
@@ -59,35 +51,29 @@ dict(
 
 ```{python}
 #| content: valuebox
-#| title: "Pull Requests"
-dict(
-  color = "light",
-  value = len(prs)
-)
-```
-
-```{python}
-#| content: valuebox
 #| title: "Open Pull Requests"
 dict(
+  icon = "diagram-2",
   color = "light",
   value = len(prs_open)
 )
 ```
 
-```{r}
+```{python}
 #| content: valuebox
-#| title: "Stack Overflow"
-list(
+#| title: "Stack Overflow Questions"
+dict(
   color = "light",
-  value = nrow(last_so_data)
+  icon = "stack-overflow",
+  value = len(r.last_so_data)
 )
 ```
 
 ```{python}
 #| content: valuebox
-#| title: "Mailing list"
+#| title: "Mailing List Threads"
 dict(
+  icon = "envelope",
   color = "light",
   value = len(data_ml)
 )
@@ -107,6 +93,38 @@ create_fig(py$x_prs_others, py$y_prs_others, py$y_prs_new)
 
 ### Issues
 
+#### Row
+
+```{python}
+#| content: valuebox
+#| title: "Open Issues"
+dict(
+  color = "light",
+  icon = "list",
+  value = len(r.last_so_data) #TODO: update this
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Issues from New Contributors"
+dict(
+  icon = "egg",
+  color = "light",
+  value = len(r.last_so_data[r.last_so_data["accepted_answer"] == "false"]) #TODO: update this
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Issues with No Replies"
+dict(
+  icon = "hand-index",
+  color = "warning",
+  value = len(r.last_so_data[r.last_so_data["answers"] == 0]) #TODO: update this
+)
+```
+
 #### Row 
 ```{r}
 #| title: All open issues, new contributors highlighted
@@ -114,6 +132,38 @@ dt_show_issues(py$issues_open)
 ```
 
 ### PRs
+
+#### Row
+
+```{python}
+#| content: valuebox
+#| title: "Open PRs"
+dict(
+  color = "light",
+  icon = "diagram-2",
+  value = len(r.last_so_data) #TODO: update this
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "PRs from New Contributors"
+dict(
+  icon = "emoji-heart-eyes",
+  color = "success",
+  value = len(r.last_so_data[r.last_so_data["accepted_answer"] == "false"]) #TODO: update this
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Unreviewed PRs"
+dict(
+  icon = "hand-index",
+  color = "warning",
+  value = len(r.last_so_data[r.last_so_data["answers"] == 0]) #TODO: update this
+)
+```
 
 #### Row 
 
@@ -124,16 +174,43 @@ dt_show_issues(py$prs_open)
 
 ### Stack Overflow
 
+#### Row
+
+```{python}
+#| content: valuebox
+#| title: "Questions in last 90 days"
+dict(
+  color = "light",
+  icon = "question-square",
+  value = len(r.last_so_data)
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Questions without accepted answer"
+dict(
+  icon = "question-diamond",
+  color = "light",
+  value = len(r.last_so_data[r.last_so_data["accepted_answer"] == "false"])
+)
+```
+
+```{python}
+#| content: valuebox
+#| title: "Unanswered questions"
+dict(
+  icon = "question",
+  color = "warning",
+  value = len(r.last_so_data[r.last_so_data["answers"] == 0])
+)
+```
+
 #### Row 
 
 ```{r}
-#| title: Unanswered questions
-dt_show_unanswered_questions(so_data)
-```
-
-```{r}
-#| title: Answered questions, highlighted have accepted answer
-dt_show_answered_questions(so_data)
+#| title: Stack Overflow Questions
+dt_show_questions(last_so_data)
 ```
 
 ### Mailing List
