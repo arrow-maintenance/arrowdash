@@ -4,7 +4,12 @@
 issues, prs = gha.get_all(data, lang)
 
 issues_open = gha.get_open(issues)
+issues_open_new = issues_open[issues_open.author_association == "NONE"]
+issues_open_no_replies = issues_open[issues_open.comments == 0]
+
 prs_open = gha.get_open(prs)
+prs_open_new = prs_open[prs_open.author_association == "FIRST_TIME_CONTRIBUTOR"]
+prs_open_no_replies = prs_open[prs_open.comments == 0]
 
 issues_sum_new, issues_sum_others = gha.get_summary(issues)
 x_issues_others = issues_sum_others["created_at"]
@@ -29,6 +34,9 @@ if(py$lang == "Python"){
 questions_content <- get_questions(vector_tags)
 so_data <- adjust_data(questions_content)
 last_so_data <- so_data %>% filter(last_activity_date > now()- months(3))
+last_so_data_not_accepted <- last_so_data %>% filter(accepted_answer == FALSE)
+last_so_data_no_activity <- last_so_data %>%
+                              filter(answers == 0 & comments == 0)
 ```
 
 ## Row {.tabset}
@@ -41,21 +49,21 @@ last_so_data <- so_data %>% filter(last_activity_date > now()- months(3))
 
 ```{python}
 #| content: valuebox
-#| title: "Open Issues"
+#| title: "Issues"
 dict(
   icon = "inboxes",
   color = "light",
-  value = len(issues_open)
+  value = len(issues)
 )
 ```
 
 ```{python}
 #| content: valuebox
-#| title: "Open Pull Requests"
+#| title: "Pull Requests"
 dict(
   icon = "diagram-2",
   color = "light",
-  value = len(prs_open)
+  value = len(prs)
 )
 ```
 
@@ -63,15 +71,15 @@ dict(
 #| content: valuebox
 #| title: "Stack Overflow Questions"
 dict(
-  color = "light",
   icon = "stack-overflow",
+  color = "light",
   value = len(r.last_so_data)
 )
 ```
 
 ```{python}
 #| content: valuebox
-#| title: "Mailing List Threads"
+#| title: "Mailing List messages"
 dict(
   icon = "envelope",
   color = "light",
@@ -82,12 +90,12 @@ dict(
 ##### Row {height=80%}
 
 ```{r}
-#| title: Issues open through the last 3 months
+#| title: Issues opened through the last 3 months
 create_fig(py$x_issues_others, py$y_issues_others, py$y_issues_new)
 ```
 
 ```{r}
-#| title: PRs open through the last 3 months
+#| title: PRs opened through the last 3 months
 create_fig(py$x_prs_others, py$y_prs_others, py$y_prs_new)
 ```
 
@@ -99,9 +107,9 @@ create_fig(py$x_prs_others, py$y_prs_others, py$y_prs_new)
 #| content: valuebox
 #| title: "Open Issues"
 dict(
-  color = "light",
   icon = "list",
-  value = len(r.last_so_data) #TODO: update this
+  color = "light",
+  value = len(issues_open)
 )
 ```
 
@@ -110,8 +118,8 @@ dict(
 #| title: "Issues from New Contributors"
 dict(
   icon = "egg",
-  color = "light",
-  value = len(r.last_so_data[r.last_so_data["accepted_answer"] == "false"]) #TODO: update this
+  color = "success",
+  value = len(issues_open_new)
 )
 ```
 
@@ -121,7 +129,7 @@ dict(
 dict(
   icon = "hand-index",
   color = "warning",
-  value = len(r.last_so_data[r.last_so_data["answers"] == 0]) #TODO: update this
+  value = len(issues_open_no_replies)
 )
 ```
 
@@ -139,9 +147,9 @@ dt_show_issues(py$issues_open)
 #| content: valuebox
 #| title: "Open PRs"
 dict(
-  color = "light",
   icon = "diagram-2",
-  value = len(r.last_so_data) #TODO: update this
+  color = "light",
+  value = len(prs_open)
 )
 ```
 
@@ -151,7 +159,7 @@ dict(
 dict(
   icon = "emoji-heart-eyes",
   color = "success",
-  value = len(r.last_so_data[r.last_so_data["accepted_answer"] == "false"]) #TODO: update this
+  value = len(prs_open_new)
 )
 ```
 
@@ -161,7 +169,7 @@ dict(
 dict(
   icon = "hand-index",
   color = "warning",
-  value = len(r.last_so_data[r.last_so_data["answers"] == 0]) #TODO: update this
+  value = len(prs_open_no_replies)
 )
 ```
 
@@ -180,8 +188,8 @@ dt_show_issues(py$prs_open)
 #| content: valuebox
 #| title: "Questions in last 90 days"
 dict(
-  color = "light",
   icon = "question-square",
+  color = "light",
   value = len(r.last_so_data)
 )
 ```
@@ -192,17 +200,17 @@ dict(
 dict(
   icon = "question-diamond",
   color = "light",
-  value = len(r.last_so_data[r.last_so_data["accepted_answer"] == "false"])
+  value = len(r.last_so_data_not_accepted)
 )
 ```
 
 ```{python}
 #| content: valuebox
-#| title: "Unanswered questions"
+#| title: "Questions with no activity"
 dict(
   icon = "question",
   color = "warning",
-  value = len(r.last_so_data[r.last_so_data["answers"] == 0])
+  value = len(r.last_so_data_no_activity)
 )
 ```
 

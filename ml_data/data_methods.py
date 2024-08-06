@@ -55,22 +55,24 @@ def get_all(component):
     """
     if component == "R":
         component = "[R]"
-    list = [(message['Date'],
-             message['Subject'],
-             message['Thread-Topic'])
-             for message in mailbox.mbox('emails.mbox') 
-             if component.lower() in message['Subject'].lower()]
-    
-    df = pd.DataFrame(list, columns =['date', 'subject', 'thread'])
+    list = [
+        (message["Date"], message["Subject"], message["Thread-Topic"])
+        for message in mailbox.mbox("emails.mbox")
+        if component.lower() in message["Subject"].lower()
+    ]
+
+    df = pd.DataFrame(list, columns=["date", "subject", "thread"])
 
     # Add url_title column with href link to the search result of the email
     # thread or subject in the Apache Arrow mailing list Pony Mail
     # https://lists.apache.org/list?user@arrow.apache.org
 
-    df["url_title"] = df.subject.str.replace(' ', '%20', regex=False)
+    df["url_title"] = df.subject.str.replace(" ", "%20", regex=False)
     df["url_title"] = (
-        '<a target="_blank" href="https://lists.apache.org/list?user@arrow.apache.org:lte=1M' +
-        df["url_title"] + '">' +
-        df["subject"] + "</a>"
+        '<a target="_blank" href="https://lists.apache.org/list?user@arrow.apache.org:lte=1M'
+        + df["url_title"]
+        + '">'
+        + df["subject"]
+        + "</a>"
     )
     return df[["date", "url_title"]]

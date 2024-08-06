@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 import pandas as pd
 
 
@@ -49,6 +49,7 @@ def select_subset_of_issue_items(issue):
         "title",
         "state",
         "milestone",
+        "comments",
         "created_at",
         "author_association",
     ]
@@ -62,7 +63,7 @@ def select_subset_of_issue_items(issue):
 
 def get_all(data, component):
     """
-    Get issues and PRs from the Apache Arrow repo that were updated in
+    Get issues and PRs from the Apache Arrow repo that were created in
     the last 3 months and are labelled with a particular component.
 
     Parameters
@@ -77,14 +78,19 @@ def get_all(data, component):
     """
     issues = []
     prs = []
+
+    last_3_months = date.today() - timedelta(days=90)
+    last_3_months = last_3_months.strftime("%Y-%m-%dT%H:%M:%SZ")
+
     for item in data:
-        for label in item["labels"]:
-            if label["name"] == "Component: " + component:
-                if "pull_request" in item:
-                    prs.append(select_subset_of_issue_items(item))
-                else:
-                    issues.append(select_subset_of_issue_items(item))
-                break
+        if item["created_at"] > last_3_months:
+            for label in item["labels"]:
+                if label["name"] == "Component: " + component:
+                    if "pull_request" in item:
+                        prs.append(select_subset_of_issue_items(item))
+                    else:
+                        issues.append(select_subset_of_issue_items(item))
+                    break
 
     return pd.DataFrame(issues), pd.DataFrame(prs)
 
@@ -107,11 +113,10 @@ def get_open(df):
         Pandas data frame with only issues or prs still opened.
     """
     df["url_title"] = (
-        '<a target="_blank" href="' + df["html_url"] + '">' +
-        df["title"] + "</a>"
+        '<a target="_blank" href="' + df["html_url"] + '">' + df["title"] + "</a>"
     )
     return df[df.state == "open"][
-        ["created_at", "url_title", "html_url", "author_association"]
+        ["created_at", "url_title", "html_url", "author_association", "comments"]
     ]
 
 
@@ -120,6 +125,7 @@ def get_summary(df):
     Count the number of issues or pull requests by week selected from the data
     frame with issues or pull requests. Count only issues or pull requests
     created in last 3 months.
+
     Parameters
     ----------
     df : pa.DataFrame
@@ -127,18 +133,33 @@ def get_summary(df):
     Returns
     -------
     df_new_contrib, df_others : pd.DataFrame, pd.DataFrame
-        Two pandas data frames with number of issues or prs created in last 3 months
-        grouped by week first by new contributors, second by all others.
+        Two pandas data frames with number of issues or prs created in last
+        3 months grouped by week first by new contributors, second by all
+        others.
     """
     last_3_months = datetime.today() - timedelta(days=90)
     df["created_at"] = df["created_at"].apply(lambda x: parse_gh_date(x))
 
-    df_new_contrib = df[["created_at", "labels"]][(df.created_at > last_3_months) & (df.author_association.isin(["NONE", "FIRST_TIME_CONTRIBUTOR"]))]
-    df_new_contrib = df_new_contrib.groupby([pd.Grouper(key="created_at", freq="1W")]).count().reset_index()
+    df_new_contrib = df[["created_at", "labels"]][
+        (df.created_at > last_3_months)
+        & (df.author_association.isin(["NONE", "FIRST_TIME_CONTRIBUTOR"]))
+    ]
+    df_new_contrib = (
+        df_new_contrib.groupby([pd.Grouper(key="created_at", freq="1W")])
+        .count()
+        .reset_index()
+    )
     df_new_contrib = df_new_contrib.rename(columns={"labels": "sum"})
 
-    df_others = df[["created_at", "labels"]][(df.created_at > last_3_months) & (~df.author_association.isin(["NONE", "FIRST_TIME_CONTRIBUTOR"]))]
-    df_others = df_others.groupby([pd.Grouper(key="created_at", freq="1W")]).count().reset_index()
+    df_others = df[["created_at", "labels"]][
+        (df.created_at > last_3_months)
+        & (~df.author_association.isin(["NONE", "FIRST_TIME_CONTRIBUTOR"]))
+    ]
+    df_others = (
+        df_others.groupby([pd.Grouper(key="created_at", freq="1W")])
+        .count()
+        .reset_index()
+    )
     df_others = df_others.rename(columns={"labels": "sum"})
 
     return df_new_contrib, df_others
