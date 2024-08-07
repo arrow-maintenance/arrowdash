@@ -45,7 +45,7 @@ import ml_data.data_methods as ml
 ml.get_data()
 ```
 
-# PyArrow
+# Python
 ```{python}
 #| label: py
 #| warning: false
