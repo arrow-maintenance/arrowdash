@@ -3,6 +3,11 @@
 Quarto dashboard for simplifying project maintenance and monitoring
 important metrics for tracking project sustainability.
 
+![Summary page for Python dashboard page](./images/dash-1.png)
+
+![Stack Overflow tab for R dashboard page](./images/dash-2.png) | ![Pull requests tab for R dashboard page](./images/dash-3.png)
+:--------------------------------------------------------------:|:--------------------------------------------------------------:
+
 ## Setup for local development
 
 For local development both Python and R need to be installed.
