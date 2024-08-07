@@ -1,7 +1,13 @@
 # Arrow Maintainer Dashboard
 
 Quarto dashboard for simplifying project maintenance and monitoring
-important metrics for tracking project sustainability.
+important metrics for tracking project sustainability:
+[link to the dashboard](https://arrow-maintenance.github.io/arrowdash/#).
+
+![Summary page for Python dashboard page](./images/dash-1.png)
+
+![Stack Overflow tab for R dashboard page](./images/dash-2.png) | ![Pull requests tab for R dashboard page](./images/dash-3.png)
+:--------------------------------------------------------------:|:--------------------------------------------------------------:
 
 ## Setup for local development
 
