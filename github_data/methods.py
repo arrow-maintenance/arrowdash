@@ -20,13 +20,18 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import logging
 from datetime import date, datetime, timedelta
 import pandas as pd
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 def parse_gh_date(date):
     return datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
-
 
 def select_subset_of_issue_items(issue):
     """
@@ -60,7 +65,6 @@ def select_subset_of_issue_items(issue):
 
     return new_list
 
-
 def get_all(data, component):
     """
     Get issues and PRs from the Apache Arrow repo that were created in
@@ -76,6 +80,8 @@ def get_all(data, component):
     issues : pd.DataFrame
         Pandas data frame with issue information in row.
     """
+    logging.info(f"Starting data filtering for component: {component}")
+
     issues = []
     prs = []
 
@@ -92,8 +98,12 @@ def get_all(data, component):
                         issues.append(select_subset_of_issue_items(item))
                     break
 
-    return pd.DataFrame(issues), pd.DataFrame(prs)
+    issues_df = pd.DataFrame(issues)
+    prs_df = pd.DataFrame(prs)
 
+    logging.info(f"Filtered {len(issues)} issues and {len(prs)} pull requests.")
+
+    return issues_df, prs_df
 
 def get_open(df):
     """
@@ -112,13 +122,18 @@ def get_open(df):
     df : pd.DataFrame
         Pandas data frame with only issues or prs still opened.
     """
+    logging.info("Filtering open issues/pull requests.")
+
     df["url_title"] = (
         '<a target="_blank" href="' + df["html_url"] + '">' + df["title"] + "</a>"
     )
-    return df[df.state == "open"][
+    open_df = df[df.state == "open"][
         ["created_at", "url_title", "html_url", "author_association", "comments"]
     ]
 
+    logging.info(f"Found {len(open_df)} open issues/pull requests.")
+
+    return open_df
 
 def get_summary(df):
     """
@@ -137,6 +152,8 @@ def get_summary(df):
         3 months grouped by week first by new contributors, second by all
         others.
     """
+    logging.info("Creating summary of issues/pull requests.")
+
     last_3_months = datetime.today() - timedelta(days=90)
     df["created_at"] = df["created_at"].apply(lambda x: parse_gh_date(x))
 
@@ -161,5 +178,7 @@ def get_summary(df):
         .reset_index()
     )
     df_others = df_others.rename(columns={"labels": "sum"})
+
+    logging.info("Summary created successfully.")
 
     return df_new_contrib, df_others
