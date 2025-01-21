@@ -20,21 +20,33 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import logging
 import mailbox
 import pandas as pd
 import requests
 
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 def get_data():
     """
     Download and save mbox file from Apache Arrow mailing list archive.
     """
     url = "https://lists.apache.org/api/mbox.lua?list=user&domain=arrow.apache.org"
-    resp = requests.get(url)
+    logging.info("Starting download of mbox file from Apache Arrow mailing list.")
 
-    with open("emails.mbox", mode="wb") as file:
-        file.write(resp.content)
-
+    try:
+        resp = requests.get(url)
+        resp.raise_for_status()
+        with open("emails.mbox", mode="wb") as file:
+            file.write(resp.content)
+        logging.info("Successfully downloaded and saved mbox file.")
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Failed to download mbox file: {e}")
+        raise
 
 def get_all(component):
     """
@@ -53,26 +65,35 @@ def get_all(component):
     issues : pd.DataFrame
         Pandas data frame with mailing list information.
     """
+    logging.info(f"Processing mbox file for component: {component}")
+
     if component == "R":
         component = "[R]"
-    list = [
-        (message["Date"], message["Subject"], message["Thread-Topic"])
-        for message in mailbox.mbox("emails.mbox")
-        if component.lower() in message["Subject"].lower()
-    ]
 
-    df = pd.DataFrame(list, columns=["date", "subject", "thread"])
+    try:
+        email_list = [
+            (message["Date"], message["Subject"], message["Thread-Topic"])
+            for message in mailbox.mbox("emails.mbox")
+            if component.lower() in (message["Subject"] or "").lower()
+        ]
 
-    # Add url_title column with href link to the search result of the email
-    # thread or subject in the Apache Arrow mailing list Pony Mail
-    # https://lists.apache.org/list?user@arrow.apache.org
+        logging.info(f"Found {len(email_list)} messages related to component: {component}")
 
-    df["url_title"] = df.subject.str.replace(" ", "%20", regex=False)
-    df["url_title"] = (
-        '<a target="_blank" href="https://lists.apache.org/list?user@arrow.apache.org:lte=1M'
-        + df["url_title"]
-        + '">'
-        + df["subject"]
-        + "</a>"
-    )
-    return df[["date", "url_title"]]
+        df = pd.DataFrame(email_list, columns=["date", "subject", "thread"])
+
+        # Add url_title column with href link to the search result of the email
+        df["url_title"] = df.subject.str.replace(" ", "%20", regex=False)
+        df["url_title"] = (
+            '<a target="_blank" href="https://lists.apache.org/list?user@arrow.apache.org:lte=1M'
+            + df["url_title"]
+            + '">'
+            + df["subject"]
+            + "</a>"
+        )
+
+        logging.info("Successfully created DataFrame with mailing list information.")
+        return df[["date", "url_title"]]
+
+    except Exception as e:
+        logging.error(f"Error while processing mbox file: {e}")
+        raise

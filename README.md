@@ -39,4 +39,4 @@ This will save the virtual environment named "r-arrow-dash" into the
 Make sure you select the "r-arrow-dash" environment in your terminal with
 `source your-path/.virtualenvs/r-arrow-dash/bin/activate`
 and export the GitHub access token in the terminal with
-`export GH_API_TOKEN=my_token` where `py_token` is your active GitHub token.
+`export GH_API_TOKEN=my_token` where `my_token` is your active GitHub token.

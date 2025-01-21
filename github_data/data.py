@@ -20,16 +20,26 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+import logging
 from datetime import date, timedelta
 import os
 import requests
 
-GH_API_TOKEN = os.environ["GH_API_TOKEN"]
+# Configure logging
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+GH_API_TOKEN = os.environ.get("GH_API_TOKEN")
+if not GH_API_TOKEN:
+    logging.error("GitHub API token not found in environment variables.")
+    raise EnvironmentError("GH_API_TOKEN environment variable is not set.")
+
 HTTP_HEADERS = {
     "Accept": "application/vnd.github.v3+json",
     "Authorization": f"token {GH_API_TOKEN}",
 }
-
 
 def get_data():
     """
@@ -40,6 +50,8 @@ def get_data():
     data : list
         list of issues and PRs updated in the last 3 months
     """
+    logging.info("Starting to fetch data from GitHub API.")
+
     data = []
 
     last_3_months = date.today() - timedelta(days=90)
@@ -47,6 +59,8 @@ def get_data():
 
     page_number = 1
     while True:
+        logging.info(f"Fetching page {page_number} of issues/PRs updated since {last_3_months}.")
+
         resp = requests.get(
             "https://api.github.com/repos/apache/arrow/issues",
             params={
@@ -58,13 +72,21 @@ def get_data():
             headers=HTTP_HEADERS,
         )
 
-        for item in resp.json():
-            data.append(item)
+        if resp.status_code != 200:
+            logging.error(f"Failed to fetch data: {resp.status_code} - {resp.reason}")
+            resp.raise_for_status()
+
+        items = resp.json()
+        logging.info(f"Fetched {len(items)} items from page {page_number}.")
+
+        data.extend(items)
 
         # search through all pages from the REST API
         if "Link" in resp.headers and 'rel="next"' in resp.headers["Link"]:
             page_number += 1
         else:
+            logging.info("No more pages to fetch.")
             break
 
+    logging.info(f"Finished fetching data. Total items retrieved: {len(data)}.")
     return data
