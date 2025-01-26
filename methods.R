@@ -47,13 +47,13 @@ create_fig <- function(x, y, y_new){
 }
 
 dt_show_issues <- function(x){
-
+  
   display_data <- x %>%
     mutate(new_contributor = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR")) %>%
     select(created_at, url_title, html_url, new_contributor)
 
   selected_rows <- which(display_data$new_contributor == TRUE)
-  DT::datatable(
+  dt <- DT::datatable(
     select(display_data, -new_contributor),
     rownames = FALSE,
     colnames = c('Date', 'GitHub title', 'GitHub link'),
@@ -65,8 +65,15 @@ dt_show_issues <- function(x){
       pageLength = 10
     )
   ) %>%
-    formatDate("created_at", method = "toDateString") %>%
-    formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, '#fbcd9989'))
+    formatDate("created_at", method = "toDateString")
+  
+  if(length(selected_rows) > 0){
+    dt <- dt %>%
+      formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, '#fbcd9989'))
+  }
+  
+  dt
+  
 }
 
 dt_show_emails <- function(x){
