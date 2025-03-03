@@ -52,6 +52,7 @@ jobs:
 
       - name: Pin reticulate version
         run: |
+          Rscript -e 'install.packages("remotes")'
           Rscript -e 'remotes::install_version("reticulate", version = "1.40.0", repos = "https://cran.r-project.org")'
 
       - name: Publish to GitHub Pages (and render)
