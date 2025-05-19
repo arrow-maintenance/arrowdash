@@ -99,3 +99,6 @@ th2[6]["thread"]
 # 1. get messages as threads
 # 2. for each thread, summarise the participants, the topic, and overall what was said in the dicussion
 # 3. combine each summary and summarise themes
+
+# This works! I think the next step is getting chatlas working, getting your openAI API key hooked up and
+# doing some prompt engineering for how to best summaruse
