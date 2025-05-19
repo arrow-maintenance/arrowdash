@@ -31,21 +31,21 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-def get_data():
+def get_messages(list_name):
     """
     Download and save mbox file from Apache Arrow mailing list archive.
     """
-    url = "https://lists.apache.org/api/mbox.lua?list=user&domain=arrow.apache.org"
-    logging.info("Starting download of mbox file from Apache Arrow mailing list.")
+    url = f"https://lists.apache.org/api/mbox.lua?list={list_name}&domain=arrow.apache.org"
+    logging.info(f"Starting download of mbox file from Apache Arrow {list_name} mailing list.")
 
     try:
         resp = requests.get(url)
         resp.raise_for_status()
-        with open("emails.mbox", mode="wb") as file:
+        with open(f"{list_name}_ml.mbox", mode="wb") as file:
             file.write(resp.content)
-        logging.info("Successfully downloaded and saved mbox file.")
+        logging.info(f"Successfully downloaded and saved {list_name} mbox file.")
     except requests.exceptions.RequestException as e:
-        logging.error(f"Failed to download mbox file: {e}")
+        logging.error(f"Failed to download {list_name} mbox file: {e}")
         raise
 
 def get_all(component):
@@ -53,7 +53,7 @@ def get_all(component):
     Get user mailing list threads and email subject from the last
     month that are labelled with a particular component.
 
-    This method needs mbox file to be saved to ./'emails.mbox'.
+    This method needs mbox file to be saved to ./'user_ml.mbox'.
 
     Parameters
     ----------
@@ -73,7 +73,7 @@ def get_all(component):
     try:
         email_list = [
             (message["Date"], message["Subject"], message["Thread-Topic"])
-            for message in mailbox.mbox("emails.mbox")
+            for message in mailbox.mbox("user_ml.mbox")
             if component.lower() in (message["Subject"] or "").lower()
         ]
 
