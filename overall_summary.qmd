@@ -1,0 +1,14 @@
+```{python}
+#| include: false
+#| warning: false
+import ml_data.summarise_ml as llm_ml
+
+summary = llm_ml.summarise_dev_ml()
+```
+## Row {.tabset}
+
+### Mailing List Summary 
+
+#### Column 
+
+`r py$summary`
