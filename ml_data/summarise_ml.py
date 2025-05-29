@@ -124,7 +124,7 @@ def summarise_dev_ml():
   with open("./ml_data/prompt_ml_summary.txt", "r", encoding="utf-8") as f:
     chat_prompt = f.read()
 
-  summary = chat.chat(chat_prompt, thread_string, echo = "none")
+  summary = chat.chat(chat_prompt, thread_string)
   return str(summary)
 
 
