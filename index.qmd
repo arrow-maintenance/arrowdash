@@ -38,7 +38,7 @@ source("./methods.R", local = knitr::knit_global())
 #| include: false
 #| warning: false
 import github_data.data as gd
-data = gd.get_data()
+data = gd.fetch_gh_issue_pr_data()
 import github_data.methods as gha
 # Save mailing list mbox file to "user_ml.mbox"
 import ml_data.data_methods as ml
