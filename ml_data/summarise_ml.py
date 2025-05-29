@@ -6,6 +6,7 @@ import re
 from email.header import decode_header, make_header
 import os
 from chatlas import ChatGoogle
+import ml_data.data_methods as ml
 
 def decode_mime_words(s):
     if s is None:
@@ -114,7 +115,7 @@ def summarisation_input(threads: list[dict]) -> str:
     )
     
 def summarise_dev_ml():
-  get_messages("dev")
+  ml.get_messages("dev")
 
   th2 = read_mbox_as_threads("dev_ml.mbox")
   thread_string = summarisation_input(th2)
