@@ -5,3 +5,4 @@ requests
 logging
 chatlas
 mailbox
+google-genai
