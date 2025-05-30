@@ -8,7 +8,6 @@ import os
 from chatlas import ChatGoogle
 import ml_data.data_methods as ml
 
-
 def decode_mime_words(s):
     """
     Decodes MIME-encoded words in an email header into a readable string.
@@ -204,7 +203,7 @@ def summarisation_input(threads):
     
 def summarise_dev_ml():
     """
-    Summarizes the development mailing list using a pre-defined prompt and Google Chat API.
+    Summarizes the development mailing list from the past 3 months using a pre-defined prompt and Google Chat API.
 
     Returns:
         str: The summarized output.
