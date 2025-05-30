@@ -24,7 +24,6 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 #| label: r_setup
 #| include: false
 library(reticulate)
-py_require(c("pandas", "requests", "logging"))
 
 if(Sys.getenv("GITHUB_ACTIONS") == ""){
   use_virtualenv("r-arrow-dash")
