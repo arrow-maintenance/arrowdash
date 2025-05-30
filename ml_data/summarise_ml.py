@@ -8,6 +8,7 @@ import os
 from chatlas import ChatGoogle
 import ml_data.data_methods as ml
 
+
 def decode_mime_words(s):
     if s is None:
         return None
