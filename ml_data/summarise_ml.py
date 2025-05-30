@@ -109,7 +109,7 @@ def message_dict_to_string(msg_dict):
     thread_str = thread_to_string(msg_dict['thread'])
     return f"Subject: {subject}\nParticipants: {participants}\n\nThread:\n{thread_str}"
 
-def summarisation_input(threads: list[dict]) -> str:
+def summarisation_input(threads: list[dict]):
     return "\n" + "\n\n" + "-" * 80 + "\n\n".join(
         message_dict_to_string(thread) for thread in threads
     )
