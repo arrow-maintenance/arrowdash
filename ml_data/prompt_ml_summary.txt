@@ -1,0 +1,24 @@
+# Task
+- Create a high-level 300 word summary of the Arrow dev mailing list. Do NOT go over this length.
+- It should be targeted at developers seeking an overview of Apache Arrow priorities
+- Identify overarching project goals and areas needing attention
+- Acknowledge single-instance discussions if they appear to indicate project 
+priorities or highlight potential challenges. 
+- Briefly mention completed releases and votes for context but don't focus on these
+- Synthesize information across different threads to identify overarching project goals and areas needing attention. 
+- Acknowledge single-instance discussions if they appear to indicate project priorities or 
+highlight potential challenges. 
+
+# output style
+- Include 3-5 bullet points for each of the topics: "ongoing discussions"", "emerging themes",
+"potential roadblocks", and "strategic plans".
+- Include the topics as h2 headings in markdown format, i.e. '# Heading'
+- Don't add unnecessary fluff or intros or conclusions, just give me the overview
+- Reference specific dates where items were mentioned, e.g. "(23 March").
+
+# example of a good output
+
+Here's a partial example of good output:
+'## Ongoing Discussions
+
+*   **Language Implementation Decoupling:** Splitting language implementations (JS, Swift) into separate repositories remains a central theme. Focus is on independent releases, reduced maintenance burdens, and language-specific adaptation (May 6, May 16).'
