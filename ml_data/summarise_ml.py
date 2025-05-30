@@ -103,7 +103,6 @@ def fmt_msg(msg):
 def thread_to_string(thread):
     return "\n".join(fmt_msg(msg) for msg in thread)
 
-
 def message_dict_to_string(msg_dict):
     subject = msg_dict['subject']
     participants = ", ".join(msg_dict['participants'])
