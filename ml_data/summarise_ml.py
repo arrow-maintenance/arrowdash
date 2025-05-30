@@ -9,6 +9,15 @@ from chatlas import ChatGoogle
 import ml_data.data_methods as ml
 
 def decode_mime_words(s):
+    """
+    Decodes MIME-encoded words in an email header into a readable string.
+
+    Args:
+        s (str): The MIME-encoded string.
+
+    Returns:
+        str: Decoded string or the original string if decoding fails.
+    """
     if s is None:
         return None
     try:
@@ -17,7 +26,15 @@ def decode_mime_words(s):
         return s  # fallback to raw if decoding fails
 
 def strip_quoted_reply(text):
-    # Remove anything that starts with typical reply indicators
+    """
+    Removes quoted replies and forwarded message indicators from email text.
+
+    Args:
+        text (str): The email text.
+
+    Returns:
+        str: Cleaned email text without quoted replies.
+    """
     patterns = [
         r"\n\s*>",                          # quoted lines
         r"\nOn .*wrote:",                   # "On [date], X wrote:"
@@ -30,6 +47,15 @@ def strip_quoted_reply(text):
     return text.strip()
   
 def extract_message_info(message):
+    """
+    Extracts relevant information from an email message.
+
+    Args:
+        message (email.message.Message): The email message object.
+
+    Returns:
+        dict: A dictionary containing the author, datetime, and cleaned contents of the message.
+    """
     if message.is_multipart():
         parts = []
         for part in message.walk():
@@ -49,6 +75,15 @@ def extract_message_info(message):
     }
 
 def safe_parse_date(date_str):
+    """
+    Safely parses a date string into a timezone-aware datetime object.
+
+    Args:
+        date_str (str): The date string.
+
+    Returns:
+        datetime: A timezone-aware datetime object or None if parsing fails.
+    """
     try:
         dt = parsedate_to_datetime(date_str)
         if dt is None:
@@ -59,8 +94,17 @@ def safe_parse_date(date_str):
         return dt.astimezone(timezone.utc)
     except Exception:
         return None
+
 def get_thread_root_id(message):
-    # Find earliest reference if present; else fallback to In-Reply-To; else its own ID
+    """
+    Determines the root ID of an email thread.
+
+    Args:
+        message (email.message.Message): The email message object.
+
+    Returns:
+        str: The root ID of the thread.
+    """
     references = message.get('References')
     if references:
         return references.split()[0]  # first in chain = root
@@ -70,6 +114,15 @@ def get_thread_root_id(message):
     return message.get('Message-ID')
 
 def read_mbox_as_threads(mbox_file):
+    """
+    Reads an mbox file and organizes messages into threads.
+
+    Args:
+        mbox_file (str): Path to the mbox file.
+
+    Returns:
+        list[dict]: A list of threads, each represented as a dictionary.
+    """
     mbox = mailbox.mbox(mbox_file)
     threads = defaultdict(list)
 
@@ -95,36 +148,74 @@ def read_mbox_as_threads(mbox_file):
     return thread_list
   
 def fmt_msg(msg):
+    """
+    Formats a single message dictionary into a readable string.
+
+    Args:
+        msg (dict): A dictionary containing message details.
+
+    Returns:
+        str: Formatted string representation of the message.
+    """
     dt = msg['datetime'].strftime('%Y-%m-%d %H:%M')
     return f"{msg['author']} on {dt}:\n{msg['contents'].strip()}\n"
 
-
 def thread_to_string(thread):
+    """
+    Converts a thread of messages into a readable string.
+
+    Args:
+        thread (list[dict]): A list of message dictionaries.
+
+    Returns:
+        str: Formatted string representation of the thread.
+    """
     return "\n".join(fmt_msg(msg) for msg in thread)
 
-
 def message_dict_to_string(msg_dict):
+    """
+    Converts a thread dictionary into a readable string.
+
+    Args:
+        msg_dict (dict): A dictionary containing thread details.
+
+    Returns:
+        str: Formatted string representation of the thread dictionary.
+    """
     subject = msg_dict['subject']
     participants = ", ".join(msg_dict['participants'])
     thread_str = thread_to_string(msg_dict['thread'])
     return f"Subject: {subject}\nParticipants: {participants}\n\nThread:\n{thread_str}"
 
 def summarisation_input(threads: list[dict]) -> str:
+    """
+    Prepares input for summarization by formatting threads into a single string.
+
+    Args:
+        threads (list[dict]): A list of thread dictionaries.
+
+    Returns:
+        str: Formatted string representation of all threads.
+    """
     return "\n" + "\n\n" + "-" * 80 + "\n\n".join(
         message_dict_to_string(thread) for thread in threads
     )
     
 def summarise_dev_ml():
-  ml.get_messages("dev")
+    """
+    Summarizes the development mailing list using a pre-defined prompt and Google Chat API.
 
-  th2 = read_mbox_as_threads("dev_ml.mbox")
-  thread_string = summarisation_input(th2)
-  chat = ChatGoogle(api_key=os.getenv("GOOGLE_API_KEY"))
+    Returns:
+        str: The summarized output.
+    """
+    ml.get_messages("dev")
 
-  with open("./ml_data/prompt_ml_summary.txt", "r", encoding="utf-8") as f:
-    chat_prompt = f.read()
+    th2 = read_mbox_as_threads("dev_ml.mbox")
+    thread_string = summarisation_input(th2)
+    chat = ChatGoogle(api_key=os.getenv("GOOGLE_API_KEY"))
 
-  summary = chat.chat(chat_prompt, thread_string)
-  return str(summary)
+    with open("./ml_data/prompt_ml_summary.txt", "r", encoding="utf-8") as f:
+        chat_prompt = f.read()
 
-
+    summary = chat.chat(chat_prompt, thread_string)
+    return str(summary)
