@@ -100,7 +100,6 @@ def fmt_msg(msg):
     dt = msg['datetime'].strftime('%Y-%m-%d %H:%M')
     return f"{msg['author']} on {dt}:\n{msg['contents'].strip()}\n"
 
-
 def thread_to_string(thread):
     return "\n".join(fmt_msg(msg) for msg in thread)
 
