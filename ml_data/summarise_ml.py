@@ -8,6 +8,7 @@ import os
 from chatlas import ChatGoogle
 import ml_data.data_methods as ml
 
+
 def decode_mime_words(s):
     """
     Decodes MIME-encoded words in an email header into a readable string.
@@ -187,7 +188,7 @@ def message_dict_to_string(msg_dict):
     thread_str = thread_to_string(msg_dict['thread'])
     return f"Subject: {subject}\nParticipants: {participants}\n\nThread:\n{thread_str}"
 
-def summarisation_input(threads: list[dict]) -> str:
+def summarisation_input(threads):
     """
     Prepares input for summarization by formatting threads into a single string.
 
