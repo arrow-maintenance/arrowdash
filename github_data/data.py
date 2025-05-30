@@ -24,6 +24,8 @@ import logging
 from datetime import date, timedelta
 import os
 import requests
+import csv
+import time
 
 # Configure logging
 logging.basicConfig(
@@ -41,7 +43,7 @@ HTTP_HEADERS = {
     "Authorization": f"token {GH_API_TOKEN}",
 }
 
-def get_data():
+def fetch_gh_issue_pr_data(months = 3):
     """
     Get issues and PRs updated in last three months with the GitHub API call.
 
@@ -54,7 +56,7 @@ def get_data():
 
     data = []
 
-    last_3_months = date.today() - timedelta(days=90)
+    last_3_months = date.today() - timedelta(days=months*30)
     last_3_months = last_3_months.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     page_number = 1
@@ -90,3 +92,168 @@ def get_data():
 
     logging.info(f"Finished fetching data. Total items retrieved: {len(data)}.")
     return data
+
+def weekly_items_opened(type="issue", start_date=None, end_date=None):
+    """Fetch weekly counts of issues or PRs from start_date to end_date (exclusive), aligned to Sundays."""
+    if type not in ("issue", "pr"):
+        raise ValueError("type must be 'issue' or 'pr'")
+
+    if start_date is None:
+        start_date = datetime.utcnow().date() - timedelta(days=7)
+    if end_date is None:
+        end_date = datetime.utcnow().date()
+
+    current = start_date
+    results = []
+    field_name = "issues_opened" if type == "issue" else "prs_opened"
+
+    while current < end_date:
+        next_week = current + timedelta(days=7)
+        date_range = f"{current.isoformat()}..{next_week.isoformat()}"
+        query = f"repo:apache/arrow is:{type} created:{date_range}"
+
+        resp = requests.get(
+            "https://api.github.com/search/issues",
+            params={"q": query},
+            headers=HTTP_HEADERS
+        )
+
+        if resp.status_code != 200:
+            logging.error(f"Error fetching data for {date_range}: {resp.status_code}")
+            raise requests.HTTPError(resp.text)
+
+        count = resp.json().get("total_count", 0)
+        results.append({
+            "week_start": current.isoformat(),
+            field_name: count
+        })
+
+        current = next_week
+        time.sleep(2.1)
+
+    return results
+
+
+def get_last_sunday(today=None):
+    if today is None:
+        today = datetime.utcnow().date()
+    return today - timedelta(days=today.weekday() + 1 if today.weekday() != 6 else 0)
+
+
+def update_items_csv(type="issue", csv_path="./data/issues_opened.csv"):
+    field_name = "issues_opened" if type == "issue" else "prs_opened"
+
+    if not os.path.exists(csv_path):
+        logging.info(f"{csv_path} not found. Creating new file.")
+        existing_data = []
+    else:
+        with open(csv_path, newline="") as f:
+            reader = csv.DictReader(f)
+            existing_data = list(reader)
+
+    # Determine last recorded week
+    if existing_data:
+        last_week = max(datetime.strptime(row["week_start"], "%Y-%m-%d").date() for row in existing_data)
+    else:
+        last_week = get_last_sunday() - timedelta(weeks=208)
+
+    next_week = last_week + timedelta(days=7)
+    this_sunday = get_last_sunday()
+
+    if next_week >= this_sunday:
+        logging.info("Data is already up to date.")
+        return
+
+    logging.info(f"Fetching new {type} data from {next_week} to {this_sunday}.")
+    new_data = weekly_items_opened(type=type, start_date=next_week, end_date=this_sunday)
+
+    # Append and write out
+    all_data = existing_data + new_data
+    all_data.sort(key=lambda row: row["week_start"])
+
+    os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+    with open(csv_path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["week_start", field_name])
+        writer.writeheader()
+        writer.writerows(all_data)
+
+    logging.info(f"Updated {csv_path} with {len(new_data)} new rows.")
+
+
+def weekly_items_closed(type="issue", start_date=None, end_date=None):
+    """Fetch weekly counts of issues or PRs closed from start_date to end_date (exclusive), aligned to Sundays."""
+    if type not in ("issue", "pr"):
+        raise ValueError("type must be 'issue' or 'pr'")
+
+    if start_date is None:
+        start_date = datetime.utcnow().date() - timedelta(days=7)
+    if end_date is None:
+        end_date = datetime.utcnow().date()
+
+    current = start_date
+    results = []
+    field_name = "issues_closed" if type == "issue" else "prs_closed"
+
+    while current < end_date:
+        next_week = current + timedelta(days=7)
+        date_range = f"{current.isoformat()}..{next_week.isoformat()}"
+        query = f"repo:apache/arrow is:{type} closed:{date_range}"
+
+        resp = requests.get(
+            "https://api.github.com/search/issues",
+            params={"q": query},
+            headers=HTTP_HEADERS
+        )
+
+        if resp.status_code != 200:
+            logging.error(f"Error fetching data for {date_range}: {resp.status_code}")
+            raise requests.HTTPError(resp.text)
+
+        count = resp.json().get("total_count", 0)
+        results.append({
+            "week_start": current.isoformat(),
+            field_name: count
+        })
+
+        current = next_week
+        time.sleep(2.1)
+
+    return results
+
+
+def update_closed_items_csv(type="issue", csv_path="./data/issues_closed.csv"):
+    field_name = "issues_closed" if type == "issue" else "prs_closed"
+
+    if not os.path.exists(csv_path):
+        logging.info(f"{csv_path} not found. Creating new file.")
+        existing_data = []
+    else:
+        with open(csv_path, newline="") as f:
+            reader = csv.DictReader(f)
+            existing_data = list(reader)
+
+    if existing_data:
+        last_week = max(datetime.strptime(row["week_start"], "%Y-%m-%d").date() for row in existing_data)
+    else:
+        last_week = get_last_sunday() - timedelta(weeks=208)
+
+    next_week = last_week + timedelta(days=7)
+    this_sunday = get_last_sunday()
+
+    if next_week >= this_sunday:
+        logging.info("Closed data is already up to date.")
+        return
+
+    logging.info(f"Fetching closed {type} data from {next_week} to {this_sunday}.")
+    new_data = weekly_items_closed(type=type, start_date=next_week, end_date=this_sunday)
+
+    all_data = existing_data + new_data
+    all_data.sort(key=lambda row: row["week_start"])
+
+    os.makedirs(os.path.dirname(csv_path), exist_ok=True)
+    with open(csv_path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=["week_start", field_name])
+        writer.writeheader()
+        writer.writerows(all_data)
+
+    logging.info(f"Updated {csv_path} with {len(new_data)} new rows.")
