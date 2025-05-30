@@ -59,6 +59,7 @@ def safe_parse_date(date_str):
         return dt.astimezone(timezone.utc)
     except Exception:
         return None
+
 def get_thread_root_id(message):
     # Find earliest reference if present; else fallback to In-Reply-To; else its own ID
     references = message.get('References')
