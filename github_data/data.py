@@ -21,7 +21,7 @@
 # SOFTWARE.
 
 import logging
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import os
 import requests
 import csv
@@ -105,7 +105,6 @@ def weekly_items_opened(type="issue", start_date=None, end_date=None):
 
     current = start_date
     results = []
-    field_name = "issues_opened" if type == "issue" else "prs_opened"
 
     while current < end_date:
         next_week = current + timedelta(days=7)
@@ -125,7 +124,7 @@ def weekly_items_opened(type="issue", start_date=None, end_date=None):
         count = resp.json().get("total_count", 0)
         results.append({
             "week_start": current.isoformat(),
-            field_name: count
+            "n": count
         })
 
         current = next_week
@@ -141,7 +140,6 @@ def get_last_sunday(today=None):
 
 
 def update_items_csv(type="issue", csv_path="./data/issues_opened.csv"):
-    field_name = "issues_opened" if type == "issue" else "prs_opened"
 
     if not os.path.exists(csv_path):
         logging.info(f"{csv_path} not found. Creating new file.")
@@ -173,7 +171,7 @@ def update_items_csv(type="issue", csv_path="./data/issues_opened.csv"):
 
     os.makedirs(os.path.dirname(csv_path), exist_ok=True)
     with open(csv_path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["week_start", field_name])
+        writer = csv.DictWriter(f, fieldnames=["week_start", "n"])
         writer.writeheader()
         writer.writerows(all_data)
 
@@ -192,7 +190,6 @@ def weekly_items_closed(type="issue", start_date=None, end_date=None):
 
     current = start_date
     results = []
-    field_name = "issues_closed" if type == "issue" else "prs_closed"
 
     while current < end_date:
         next_week = current + timedelta(days=7)
@@ -212,7 +209,7 @@ def weekly_items_closed(type="issue", start_date=None, end_date=None):
         count = resp.json().get("total_count", 0)
         results.append({
             "week_start": current.isoformat(),
-            field_name: count
+            "n": count
         })
 
         current = next_week
@@ -222,7 +219,6 @@ def weekly_items_closed(type="issue", start_date=None, end_date=None):
 
 
 def update_closed_items_csv(type="issue", csv_path="./data/issues_closed.csv"):
-    field_name = "issues_closed" if type == "issue" else "prs_closed"
 
     if not os.path.exists(csv_path):
         logging.info(f"{csv_path} not found. Creating new file.")
@@ -252,7 +248,7 @@ def update_closed_items_csv(type="issue", csv_path="./data/issues_closed.csv"):
 
     os.makedirs(os.path.dirname(csv_path), exist_ok=True)
     with open(csv_path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=["week_start", field_name])
+        writer = csv.DictWriter(f, fieldnames=["week_start", "n"])
         writer.writeheader()
         writer.writerows(all_data)
 
