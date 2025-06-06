@@ -1,4 +1,4 @@
-name: Update Monthly Commit Count
+name: Update Weekly PR/Issue Count
 
 on:
   schedule:
