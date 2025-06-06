@@ -72,3 +72,12 @@ lang =  "R"
 ```
 
 {{< include overall_summary.qmd >}}
+
+# Maintenance Stats
+
+```{python}
+#| label: r
+#| warning: false
+```
+
+{{< include project_stats.qmd >}}

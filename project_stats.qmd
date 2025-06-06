@@ -1,3 +1,7 @@
+### Project Activity
+
+#### Row 
+
 ```{r}
 #| echo: false
 library(ggplot2)
@@ -17,5 +21,103 @@ ggplot(monthly_commit_counts, aes(x = as.Date(paste0(month, "-01")), y = commit_
     panel.grid.minor = element_blank(),
     panel.grid.major.x = element_blank()
   ) 
+
+```
+
+```{r}
+#| echo: false
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(lubridate)
+
+plot_weekly_activity <- function(opened_path, closed_path, title) {
+  opened <- read_csv(opened_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
+    mutate(type = "Opened")
+  closed <- read_csv(closed_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
+    mutate(type = "Closed")
+  
+  data <- bind_rows(opened, closed) %>%
+    filter(week_start >= (today() - months(6)))
+
+  ggplot(data, aes(x = week_start, y = n, color = type)) +
+    geom_line(linewidth = 1) +
+    scale_color_manual(values = c("Opened" = "#9b59b6", "Closed" = "#27ae60")) +
+    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+    labs(
+      title = title,
+      x = "Week",
+      y = "Count",
+      color = NULL
+    ) +
+    theme_minimal() +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank()
+    )
+}
+```
+#### Row 
+```{r}
+#| echo: false
+plot_weekly_activity(
+  opened_path = "./data/prs_opened.csv",
+  closed_path = "./data/prs_closed.csv",
+  title = "Apache Arrow PRs Opened vs Closed (Weekly)"
+)
+```
+```{r}
+#| echo: false
+plot_weekly_activity(
+  opened_path = "./data/issues_opened.csv",
+  closed_path = "./data/issues_closed.csv",
+  title = "Apache Arrow Issues Opened vs Closed (Weekly)"
+)
+```
+### Project Maintenance
+
+#### Row 
+```{r}
+library(ggplot2)
+library(readr)
+library(tidyr)
+
+# Load data
+open_counts <- read_csv("data/open_counts.csv", col_types = cols(
+  date = col_date(),
+  open_issues = col_integer(),
+  open_prs = col_integer()
+))
+
+# Reshape for plotting
+open_long <- pivot_longer(
+  open_counts,
+  cols = c(open_issues, open_prs),
+  names_to = "type",
+  values_to = "count"
+) %>%
+  mutate(type = recode(type,
+    open_issues = "Open Issues",
+    open_prs = "Open PRs"
+  ))
+
+# Plot
+ggplot(open_long, aes(x = date, y = count, color = type)) +
+  geom_line(linewidth = 1) +
+  scale_color_manual(values = c("Open Issues" = "#0b59b6", "Open PRs" = "#005000")) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  labs(
+    title = "Apache Arrow: Open Issues and PRs Over Time",
+    x = "Date",
+    y = "Open Count",
+    color = NULL
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
+  )
 
 ```
