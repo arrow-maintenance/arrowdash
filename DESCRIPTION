@@ -17,4 +17,5 @@ Imports:
   tidyr,
   bslib,
   bsicons,
-  readr
+  readr,
+  gh
