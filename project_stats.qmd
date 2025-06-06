@@ -1,0 +1,152 @@
+## Row 
+
+### Column
+```{r}
+#| echo: false
+library(ggplot2)
+library(readr)
+monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv")
+ggplot(monthly_commit_counts, aes(x = as.Date(paste0(month, "-01")), y = commit_count)) +
+  geom_line(linewidth = 1) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  labs(
+    title = "Apache Arrow GitHub Commits by Month",
+    x = "Month",
+    y = "Number of Commits"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
+  ) 
+
+```
+
+### Column 
+
+#### Row
+
+##### Column
+```{r}
+#| echo: false
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(lubridate)
+
+plot_monthly_activity <- function(opened_path, closed_path, title) {
+  opened <- read_csv(opened_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
+    mutate(type = "Opened")
+  closed <- read_csv(closed_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
+    mutate(type = "Closed")
+  
+  data <- bind_rows(opened, closed) %>%
+    filter(week_start >= (today() - months(18))) %>%
+    mutate(month = floor_date(week_start, "month")) %>%
+    group_by(month, type) %>%
+    summarise(n = sum(n), .groups = "drop") %>%
+    filter(month < floor_date(Sys.Date(), "month")) 
+
+  ggplot(data, aes(x = month, y = n, color = type)) +
+    geom_line(linewidth = 1) +
+    scale_color_manual(values = c("Opened" = "#9b59b6", "Closed" = "#27ae60")) +
+    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+    labs(
+      title = title,
+      x = "Month",
+      y = "Count",
+      color = NULL
+    ) +
+    theme_minimal() +
+    theme(
+      axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+      panel.grid.minor = element_blank(),
+      panel.grid.major.x = element_blank()
+    )
+}
+```
+```{r}
+#| echo: false
+plot_monthly_activity(
+  opened_path = "./data/prs_opened.csv",
+  closed_path = "./data/prs_closed.csv",
+  title = "PRs"
+)
+```
+
+##### Column
+
+```{r}
+#| echo: false
+plot_monthly_activity(
+  opened_path = "./data/issues_opened.csv",
+  closed_path = "./data/issues_closed.csv",
+  title = "Issues"
+)
+```
+## Row
+
+```{r}
+#| echo: false
+library(ggplot2)
+library(readr)
+library(tidyr)
+
+# Load data
+open_counts <- read_csv("data/open_counts.csv", col_types = cols(
+  date = col_date(),
+  open_issues = col_integer(),
+  open_prs = col_integer()
+))
+
+current_issues <- open_counts %>%
+  filter(date == max(date)) %>%
+  pull(open_issues)
+
+month_ago_issues <- open_counts %>%
+  filter(date == max(date) - months(1)) %>%
+  pull(open_issues)
+
+current_prs <- open_counts %>%
+  filter(date == max(date)) %>%
+  pull(open_prs)
+
+month_ago_prs <- open_counts %>%
+  filter(date == max(date) - months(1)) %>%
+  pull(open_prs)
+
+change_issues <- current_issues - month_ago_issues
+change_prs <- current_prs - month_ago_prs
+
+get_sign_string <- function(x){
+  switch (as.character(sign(x)),
+    "1" = paste0("+", x),
+    "0" = paste0("+", x),
+    "-1" = paste(x)
+  )
+}
+```
+
+
+```{r}
+library(bslib)
+library(bsicons)
+value_box(
+  title = "Open Issues (and change since 1 month ago)",
+  showcase = bsicons::bs_icon("chat"),
+  theme = "primary",
+  value = glue::glue("{current_issues} ({get_sign_string(change_issues)})")
+)
+```
+
+```{r}
+value_box(
+  title = "Open PRs (and change since 1 month ago)",
+  showcase = bsicons::bs_icon("pencil"),
+  theme = "primary",
+  value = glue::glue("{current_prs} ({get_sign_string(change_prs)})")
+)
+
+```
+

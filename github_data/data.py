@@ -21,9 +21,11 @@
 # SOFTWARE.
 
 import logging
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 import os
 import requests
+import csv
+import time
 
 # Configure logging
 logging.basicConfig(
@@ -41,7 +43,7 @@ HTTP_HEADERS = {
     "Authorization": f"token {GH_API_TOKEN}",
 }
 
-def get_data():
+def fetch_gh_issue_pr_data(months = 3):
     """
     Get issues and PRs updated in last three months with the GitHub API call.
 
@@ -54,7 +56,7 @@ def get_data():
 
     data = []
 
-    last_3_months = date.today() - timedelta(days=90)
+    last_3_months = date.today() - timedelta(days=months*30)
     last_3_months = last_3_months.strftime("%Y-%m-%dT%H:%M:%SZ")
 
     page_number = 1
@@ -90,3 +92,4 @@ def get_data():
 
     logging.info(f"Finished fetching data. Total items retrieved: {len(data)}.")
     return data
+
