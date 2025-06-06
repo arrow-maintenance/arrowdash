@@ -16,4 +16,6 @@ Imports:
   tibble,
   tidyr,
   bslib,
-  bsicons
+  bsicons,
+  readr,
+  gh
