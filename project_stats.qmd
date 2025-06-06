@@ -1,10 +1,10 @@
 ```{r}
 #| echo: false
 library(ggplot2)
-
+library(readr)
+monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv")
 ggplot(monthly_commit_counts, aes(x = as.Date(paste0(month, "-01")), y = commit_count)) +
-  geom_line() +
-  geom_point() +
+  geom_line(linewidth = 1) +
   scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
   labs(
     title = "Apache Arrow GitHub Commits by Month",
@@ -12,7 +12,10 @@ ggplot(monthly_commit_counts, aes(x = as.Date(paste0(month, "-01")), y = commit_
     y = "Number of Commits"
   ) +
   theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
+  ) 
 
 ```
