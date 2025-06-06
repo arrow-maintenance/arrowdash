@@ -1,30 +1,18 @@
 ```{r}
 #| echo: false
-library(echarts4r)
-issues_opened <- readr::read_csv("./data/issues_opened.csv", col_types = "Di")
-issues_opened_chart <- issues_opened |> 
-  e_charts(x = week_start, elementId = "chart1") |>
-  e_line(serie = issues_opened) |>
-  e_datazoom(show = FALSE)
+library(ggplot2)
 
-issues_closed <- readr::read_csv("./data/issues_closed.csv", col_types = "Di")
-issues_closed_chart <- issues_closed |> 
-  e_charts(x = week_start, elementId = "chart2") |>
-  e_line(serie = issues_closed) |>
-  e_datazoom(show = FALSE)
+ggplot(monthly_commit_counts, aes(x = as.Date(paste0(month, "-01")), y = commit_count)) +
+  geom_line() +
+  geom_point() +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  labs(
+    title = "Apache Arrow GitHub Commits by Month",
+    x = "Month",
+    y = "Number of Commits"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
-prs_opened <- readr::read_csv("./data/prs_opened.csv", col_types = "Di")
-prs_opened_chart <- prs_opened |> 
-  e_charts(x = week_start, elementId = "chart3") |>
-  e_line(serie = prs_opened) |>
-  e_datazoom(show = FALSE) 
 
-prs_closed <- readr::read_csv("./data/prs_closed.csv", col_types = "Di")
-prs_closed_chart <- prs_closed |> 
-  e_charts(x = week_start, elementId = "chart4") |>
-  e_line(serie = prs_closed) |>
-  e_datazoom() |>
-  e_connect(c("chart1", "chart2", "chart3"))
-
- e_arrange(issues_opened_chart, issues_closed_chart, prs_opened_chart, prs_closed_chart)
 ```
