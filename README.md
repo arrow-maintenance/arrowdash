@@ -43,5 +43,7 @@ reticulate::use_virtualenv("r-arrow-dash")
 ```
  or in your terminal with 
 `source your-path/.virtualenvs/r-arrow-dash/bin/activate`
-and export the GitHub access token in the terminal with
-`export GH_API_TOKEN=my_token` where `my_token` is your active GitHub token.
+and export needed tokens in the terminal with
+`export GH_API_TOKEN=my_token` where `my_token` is your active GitHub token
+and `export GOOGLE_API_KEY=my_gemini_token` where `my_gemini_token` is your active
+Google AI API token.

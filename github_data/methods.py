@@ -24,11 +24,13 @@ import logging
 from datetime import date, datetime, timedelta
 import pandas as pd
 
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
+
 
 def parse_gh_date(date):
     return datetime.strptime(date, "%Y-%m-%dT%H:%M:%SZ")
@@ -182,3 +184,41 @@ def get_summary(df):
     logging.info("Summary created successfully.")
 
     return df_new_contrib, df_others
+
+def get_issues_content(data, component):
+    """
+    Get open issues titles and content from the Apache Arrow repo for issues
+    created in the last year and are labelled with a particular component.
+
+    Parameters
+    ----------
+    component : string
+        Python or R.
+
+    Returns
+    -------
+    issues : list
+        Python list with issue titles and content as text.
+    """
+    logging.info(f"Starting content filtering for component: {component}")
+
+    issues_content = []
+
+    last_year = date.today() - timedelta(days=365)
+    last_year_str = last_year.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    for item in data:
+        if item["created_at"] > last_year_str:
+            for label in item["labels"]:
+                if label["name"] == "Component: " + component:
+                    title = item["title"]
+                    body = item["body"]
+                    issues_content.append({
+                        "title": title,
+                        "body": body,
+                        })
+                    break
+
+    logging.info(f"Filtered {len(issues_content)} issues title and content.")
+
+    return issues_content

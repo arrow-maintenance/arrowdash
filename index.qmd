@@ -21,7 +21,7 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 -->
 
 ```{r}
-#| label: r_setup
+#| label: r-setup
 #| include: false
 library(reticulate)
 py_require(c("pandas", "requests", "logging", "chatlas", "mailbox", "google-genai"))
@@ -34,7 +34,7 @@ source("./methods.R", local = knitr::knit_global())
 ```
 
 ```{python}
-#| label: py_setup
+#| label: py-setup
 #| include: false
 #| warning: false
 import github_data.data as gd
@@ -43,6 +43,7 @@ import github_data.methods as gha
 # Save mailing list mbox file to "user_ml.mbox"
 import ml_data.data_methods as ml
 ml.get_messages("user")
+import github_data.summarise_issues as llm_github
 ```
 
 # Python
@@ -67,7 +68,7 @@ lang =  "R"
 # Overall Summary
 
 ```{python}
-#| label: r
+#| label: llm-summary
 #| warning: false
 ```
 
