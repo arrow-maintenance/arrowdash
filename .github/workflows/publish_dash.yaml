@@ -4,6 +4,7 @@ on:
       - main
   schedule:
       - cron:  '30 3 * * *'
+  workflow_dispatch:     # Allow manual runs
 
 
 name: Render and Publish
