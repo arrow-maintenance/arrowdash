@@ -31,6 +31,14 @@ fetch_weekly_counts_stream <- function(type, start_date, end_date, state, csv_pa
   }
 }
 
+get_last_sunday <- function(today = Sys.Date()) {
+  weekday <- as.integer(format(today, "%w"))  # Sunday = 0, Monday = 1, ..., Saturday = 6
+  if (weekday == 0) {
+    return(today)
+  } else {
+    return(today - weekday)
+  }
+}
 
 update_items_csv <- function(type = "issue", state = "created", csv_path = NULL) {
   if (is.null(csv_path)) {
