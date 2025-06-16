@@ -19,7 +19,10 @@ jobs:
         uses: r-lib/actions/setup-r@v2
 
       - name: Install R deps
-        run: Rscript -e 'install.packages(c("gh", "readr", "tibble", "lubridate"))'
+        run: | 
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev pkg-config
+          Rscript -e 'install.packages(c("gh", "readr", "tibble", "lubridate"))'
 
       - name: Run update script
         run: Rscript scripts/update_open_counts.R
