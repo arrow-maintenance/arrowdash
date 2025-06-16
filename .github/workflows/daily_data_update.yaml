@@ -1,4 +1,4 @@
-name: Record Open Issue/PR Count
+name: Daily Update Open Issue/PR Count
 
 on:
   schedule:

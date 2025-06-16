@@ -1,4 +1,4 @@
-name: Update Weekly PR/Issue Count
+name: Weekly Update PR/Issue Count
 
 on:
   schedule:
