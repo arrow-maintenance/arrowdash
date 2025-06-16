@@ -10,7 +10,7 @@ repo <- "arrow"
 end_date <- floor_date(Sys.Date(), "month") - days(1)  # Last complete month
 
 # Load existing data
-commit_file <- "./data/monthly_commit_counts.csv"
+commit_file <- "./data/monthly_commit_count.csv"
 existing_data <- read_csv(commit_file, col_types = cols(
   month = col_character(),
   commit_count = col_integer()
