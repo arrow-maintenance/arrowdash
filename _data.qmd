@@ -21,6 +21,9 @@ y_prs_others = prs_sum_others["sum"]
 y_prs_new = prs_sum_new["sum"]
 
 data_ml = ml.get_all(lang)
+
+content = gha.get_issues_content(data, lang)
+summary_github = llm_github.summarise_github_issues(content, lang)
 ```
 
 ```{r}
@@ -229,3 +232,11 @@ dt_show_questions(last_so_data)
 #| title: Mailing list items from the last month
 dt_show_emails(py$data_ml)
 ```
+
+### AI
+
+#### Row
+
+::: {.card}
+`r py$summary_github`
+:::
