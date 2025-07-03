@@ -11,6 +11,8 @@ summary = llm_ml.summarise_dev_ml()
 
 #### Column 
 
+The content below is an LLM summary of this month's activity on the mailing list.
+
 ::: {.card}
 `r py$summary`
 :::
