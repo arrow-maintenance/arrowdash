@@ -12,7 +12,7 @@ highlight potential challenges.
 # output style
 - Include 3-5 bullet points for each of the topics: "ongoing discussions"", "emerging themes",
 "potential roadblocks", and "strategic plans".
-- For each bullet point, include titles of any threads for the relevant discussion(s) and one or more links using the format "[Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:<thread_title>)".  The link text should always just say "Thread". You can include more than one for each topic - as many as necessary. The thread title should always be URL encoded.
+- For each bullet point, include titles of any threads for the relevant discussion(s) and one or more links using the format "[Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:<thread_title>)".  The link text should always just say "Thread". You can include more than one for each topic - as many as necessary. The thread title should always be URL encoded and it is very important that any colons (:) are stripped out of the thread title but not the rest of the URL
 - Don't include links to threads talking about the mailing list summary on the dashboard.
 - Include the topics as h2 headings in markdown format, i.e. '# Heading'
 - Don't add unnecessary fluff or intros or conclusions, just give me the overview
