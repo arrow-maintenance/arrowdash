@@ -5,6 +5,7 @@ import ml_data.summarise_ml as llm_ml
 
 summary = llm_ml.summarise_dev_ml()
 ```
+
 ## Row {.tabset}
 
 ### Mailing List Summary 
@@ -16,4 +17,3 @@ The content below is an LLM summary of this month's activity on the mailing list
 ::: {.card}
 `r py$summary`
 :::
-
