@@ -123,7 +123,8 @@ get_sign_string <- function(x){
   switch (as.character(sign(x)),
     "1" = paste0("+", x),
     "0" = paste0("+", x),
-    "-1" = paste(x)
+    "-1" = paste(x),
+    ""
   )
 }
 ```
