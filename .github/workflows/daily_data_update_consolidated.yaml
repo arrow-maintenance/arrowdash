@@ -1,0 +1,41 @@
+name: Daily Data Update (Consolidated)
+
+on:
+  schedule:
+    - cron: '15 0 * * *'  # Every day at 00:15 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-all-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+
+      - name: Install system dependencies
+        run: | 
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev pkg-config
+
+      - name: Install R dependencies
+        run: | 
+          Rscript -e 'install.packages(c("gh", "readr", "tibble", "lubridate", "dplyr", "purrr"))'
+
+      - name: Run consolidated update script
+        run: Rscript scripts/update_all_data.R
+        env:
+          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+
+      - name: Commit and push if data changed
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add data/
+          git diff --cached --quiet || (git commit -m "Update all data metrics [auto]" && git push)

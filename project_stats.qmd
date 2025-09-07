@@ -1,90 +1,3 @@
-## Row 
-
-### Column
-```{r}
-#| echo: false
-library(ggplot2)
-library(readr)
-monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv")
-ggplot(monthly_commit_counts, aes(x = as.Date(paste0(month, "-01")), y = commit_count)) +
-  geom_line(linewidth = 1) +
-  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
-  labs(
-    title = "Apache Arrow GitHub Commits by Month",
-    x = "Month",
-    y = "Number of Commits"
-  ) +
-  theme_minimal() +
-  theme(
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
-    panel.grid.minor = element_blank(),
-    panel.grid.major.x = element_blank()
-  ) 
-
-```
-
-### Column 
-
-#### Row
-
-##### Column
-```{r}
-#| echo: false
-library(ggplot2)
-library(readr)
-library(dplyr)
-library(lubridate)
-
-plot_monthly_activity <- function(opened_path, closed_path, title) {
-  opened <- read_csv(opened_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
-    mutate(type = "Opened")
-  closed <- read_csv(closed_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
-    mutate(type = "Closed")
-  
-  data <- bind_rows(opened, closed) %>%
-    filter(week_start >= (today() - months(18))) %>%
-    mutate(month = floor_date(week_start, "month")) %>%
-    group_by(month, type) %>%
-    summarise(n = sum(n), .groups = "drop") %>%
-    filter(month < floor_date(Sys.Date(), "month")) 
-
-  ggplot(data, aes(x = month, y = n, color = type)) +
-    geom_line(linewidth = 1) +
-    scale_color_manual(values = c("Opened" = "#9b59b6", "Closed" = "#27ae60")) +
-    scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
-    labs(
-      title = title,
-      x = "Month",
-      y = "Count",
-      color = NULL
-    ) +
-    theme_minimal() +
-    theme(
-      axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
-      panel.grid.minor = element_blank(),
-      panel.grid.major.x = element_blank()
-    )
-}
-```
-```{r}
-#| echo: false
-plot_monthly_activity(
-  opened_path = "./data/prs_opened.csv",
-  closed_path = "./data/prs_closed.csv",
-  title = "PRs"
-)
-```
-
-##### Column
-
-```{r}
-#| echo: false
-plot_monthly_activity(
-  opened_path = "./data/issues_opened.csv",
-  closed_path = "./data/issues_closed.csv",
-  title = "Issues"
-)
-```
 ## Row
 
 ```{r}
@@ -92,6 +5,10 @@ plot_monthly_activity(
 library(ggplot2)
 library(readr)
 library(tidyr)
+library(bslib)
+library(bsicons)
+library(dplyr)
+library(lubridate)
 
 # Load data
 open_counts <- read_csv("data/open_counts.csv", col_types = cols(
@@ -129,10 +46,7 @@ get_sign_string <- function(x){
 }
 ```
 
-
 ```{r}
-library(bslib)
-library(bsicons)
 value_box(
   title = "Open Issues (and change since 1 month ago)",
   showcase = bsicons::bs_icon("chat"),
@@ -148,6 +62,40 @@ value_box(
   theme = "primary",
   value = glue::glue("{current_prs} ({get_sign_string(change_prs)})")
 )
+```
 
+## Row
+
+```{r}
+#| echo: false
+library(ggplot2)
+library(readr)
+monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv") %>%
+  mutate(date = as.Date(paste0(month, "-01"))) %>%
+  filter(date > as.Date("2024-04-01")) %>%
+  filter(date < floor_date(Sys.Date(), "month")) %>%
+  arrange(date)
+
+ggplot(monthly_commit_counts, aes(x = date)) +
+  geom_line(aes(y = commit_count, color = "Raw values"), linewidth = 1) +
+  geom_smooth(aes(y = commit_count, color = "Trend"), span = 1.1, method = "loess", se = FALSE, linewidth = 1, linetype = "dashed") +
+  scale_color_manual(values = c("Raw values" = "grey", "Trend" = "blue"), name = "") +
+  scale_x_date(
+    date_labels = "%b %Y", 
+    date_breaks = "1 month",
+    limits = c(min(monthly_commit_counts$date), max(monthly_commit_counts$date)),
+    expand = c(0,0)
+  ) +
+  labs(
+    title = "Development Activity: Commits by Month",
+    x = "Month",
+    y = "Number of Commits"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
+  ) 
 ```
 
