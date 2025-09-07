@@ -5,10 +5,17 @@
 #| echo: false
 library(ggplot2)
 library(readr)
-monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv")
-ggplot(monthly_commit_counts, aes(x = as.Date(paste0(month, "-01")), y = commit_count)) +
+monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv") %>%
+  mutate(date = as.Date(paste0(month, "-01"))) %>%
+  filter(date <= floor_date(Sys.Date(), "month"))
+ggplot(monthly_commit_counts, aes(x = date, y = commit_count)) +
   geom_line(linewidth = 1) +
-  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") +
+  scale_x_date(
+    date_labels = "%b %Y", 
+    date_breaks = "1 month",
+    limits = c(min(monthly_commit_counts$date), max(monthly_commit_counts$date)),
+    expand = c(0,0)
+  ) +
   labs(
     title = "Apache Arrow GitHub Commits by Month",
     x = "Month",
@@ -34,19 +41,37 @@ library(ggplot2)
 library(readr)
 library(dplyr)
 library(lubridate)
+library(stringr)
 
 plot_monthly_activity <- function(opened_path, closed_path, title) {
-  opened <- read_csv(opened_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
-    mutate(type = "Opened")
-  closed <- read_csv(closed_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
-    mutate(type = "Closed")
+  # Try daily files first, fall back to weekly if they don't exist
+  opened_daily <- str_replace(opened_path, "\\.csv$", "_daily.csv")
+  closed_daily <- str_replace(closed_path, "\\.csv$", "_daily.csv")
+  
+  if (file.exists(opened_daily) && file.exists(closed_daily)) {
+    # Use daily data
+    opened <- read_csv(opened_daily, col_types = cols(date = col_date(), n = col_integer())) %>%
+      mutate(type = "Opened") %>%
+      rename(date_col = date)
+    closed <- read_csv(closed_daily, col_types = cols(date = col_date(), n = col_integer())) %>%
+      mutate(type = "Closed") %>%
+      rename(date_col = date)
+  } else {
+    # Fall back to weekly data  
+    opened <- read_csv(opened_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
+      mutate(type = "Opened") %>%
+      rename(date_col = week_start)
+    closed <- read_csv(closed_path, col_types = cols(week_start = col_date(), n = col_integer())) %>%
+      mutate(type = "Closed") %>%
+      rename(date_col = week_start)
+  }
   
   data <- bind_rows(opened, closed) %>%
-    filter(week_start >= (today() - months(18))) %>%
-    mutate(month = floor_date(week_start, "month")) %>%
+    filter(date_col >= (today() - months(18))) %>%
+    mutate(month = floor_date(date_col, "month")) %>%
     group_by(month, type) %>%
     summarise(n = sum(n), .groups = "drop") %>%
-    filter(month < floor_date(Sys.Date(), "month")) 
+    filter(month <= floor_date(Sys.Date(), "month")) 
 
   ggplot(data, aes(x = month, y = n, color = type)) +
     geom_line(linewidth = 1) +
