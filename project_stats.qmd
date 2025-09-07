@@ -13,8 +13,8 @@ monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv") %>%
 
 ggplot(monthly_commit_counts, aes(x = date)) +
   geom_line(aes(y = commit_count, color = "Raw values"), linewidth = 1) +
-  geom_smooth(aes(y = commit_count, color = "Trend line"), span = 1.1, method = "loess", se = FALSE, linewidth = 1, linetype = "dashed") +
-  scale_color_manual(values = c("Raw values" = "grey", "Trend line" = "blue")) +
+  geom_smooth(aes(y = commit_count, color = "Trend"), span = 1.1, method = "loess", se = FALSE, linewidth = 1, linetype = "dashed") +
+  scale_color_manual(values = c("Raw values" = "grey", "Trend" = "blue"), name = "") +
   scale_x_date(
     date_labels = "%b %Y", 
     date_breaks = "1 month",
