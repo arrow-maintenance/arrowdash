@@ -34,6 +34,7 @@ logging.basicConfig(
 )
 
 GH_API_TOKEN = os.environ.get("GH_API_TOKEN")
+
 if not GH_API_TOKEN:
     logging.error("GitHub API token not found in environment variables.")
     raise EnvironmentError("GH_API_TOKEN environment variable is not set.")
