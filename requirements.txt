@@ -1,8 +1,8 @@
+chatlas
+google-genai
 ipython
+logging
+mailbox
 numpy
 pandas
 requests
-logging
-chatlas
-mailbox
-google-genai
