@@ -5,6 +5,7 @@ Imports:
   dplyr,
   ggplot2,
   glue,
+  gt,
   httr,
   knitr,
   lubridate,
