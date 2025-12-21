@@ -23,6 +23,7 @@
 library(DT)
 library(dplyr)
 library(glue)
+library(gt)
 library(httr)
 library(lubridate)
 library(tidyr)
@@ -133,15 +134,37 @@ adjust_data <- function(questions_content){
       mutate(issue = paste0('<a href="',link,'" target="_blank">', title , '</a>'))
 }
 
-dt_show_questions <- function(data_adjusted){
+gt_show_questions <- function(data_adjusted){
+  display_data <- data_adjusted %>%
+    mutate(Question = paste0("[", title, "](", link, ")")) %>%
+    select(Question, Answers = answers, `Accepted?` = accepted_answer,
+           Comments = comments, `Days since activity` = days_since_last_activity)
 
-  selected_rows <- which(data_adjusted$accepted_answer == FALSE)
-  data_adjusted %>%
-    select(issue, answers, accepted_answer, comments, days_since_last_activity) %>%
-  DT::datatable(
-    rownames = FALSE,
-    colnames = c('Question', 'Answers', 'Accepted Answer?', 'Comments', 'Last activity (in days)'),
-    escape = FALSE
-  ) %>%
-    formatStyle("days_since_last_activity", target = "row", backgroundColor = styleRow(selected_rows, '#fbcd9989'))
+  no_answer_rows <- which(!data_adjusted$accepted_answer)
+
+  tbl <- display_data %>%
+    gt() %>%
+    fmt_markdown(columns = Question) %>%
+    cols_width(
+      Question ~ pct(50),
+      Answers ~ pct(12),
+      `Accepted?` ~ pct(12),
+      Comments ~ pct(12),
+      `Days since activity` ~ pct(14)
+    ) %>%
+    tab_options(
+      table.width = pct(100),
+      container.height = px(400),
+      container.overflow.y = TRUE
+    )
+
+  if (length(no_answer_rows) > 0) {
+    tbl <- tbl %>%
+      tab_style(
+        style = cell_fill(color = "#fbcd9989"),
+        locations = cells_body(rows = no_answer_rows)
+      )
+  }
+
+  tbl
 }

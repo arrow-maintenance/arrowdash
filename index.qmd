@@ -1,16 +1,18 @@
---- 
+---
 title: "Arrow Maintainer Dashboard "
 author: "updated `{r} format(Sys.time(), '%a %b %d %X %Y %Z')`"
 date: last-modified
-format: 
+format:
   dashboard:
     theme:
       - flatly
       - custom.scss
     logo: ./images/arrow-logo.png
-    nav-buttons: 
+    nav-buttons:
       - github
       - href: https://github.com/os-maintenance/arrowdash
+execute:
+  error: false
 ---
 
 <!-- 
@@ -80,4 +82,13 @@ lang =  "R"
 #| warning: false
 ```
 
-{{< include project_stats.qmd >}}
+{{< include maintenance_stats.qmd >}}
+
+# Community
+
+```{python}
+#| label: community
+#| warning: false
+```
+
+{{< include community.qmd >}}
