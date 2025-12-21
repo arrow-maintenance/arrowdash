@@ -23,6 +23,7 @@
 library(DT)
 library(dplyr)
 library(plotly)
+library(gt)
 
 create_fig <- function(x, y, y_new){
 
@@ -46,43 +47,57 @@ create_fig <- function(x, y, y_new){
   fig
 }
 
-dt_show_issues <- function(x){
-  
-  display_data <- x %>%
-    mutate(new_contributor = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR")) %>%
-    select(created_at, url_title, html_url, new_contributor)
+gt_show_issues <- function(x){
 
-  selected_rows <- which(display_data$new_contributor == TRUE)
-  dt <- DT::datatable(
-    select(display_data, -new_contributor),
-    rownames = FALSE,
-    colnames = c('Date', 'GitHub title', 'GitHub link'),
-    escape = FALSE,
-    extensions = 'Buttons',
-    options = list(
-      dom = 'Bfrtip',
-      buttons = c('copy', 'csv', 'excel'),
-      pageLength = 10
+  display_data <- x %>%
+    mutate(
+      new_contributor = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR"),
+      Title = paste0("[", url_title, "](", html_url, ")"),
+      Date = as.Date(created_at)
+    ) %>%
+    select(Date, Title, new_contributor)
+
+  tbl <- display_data %>%
+    select(-new_contributor) %>%
+    gt() %>%
+    fmt_markdown(columns = Title) %>%
+    fmt_date(columns = Date, date_style = "iso") %>%
+    cols_width(
+      Date ~ pct(15),
+      Title ~ pct(85)
+    ) %>%
+    tab_options(
+      table.width = pct(100),
+      container.height = px(400),
+      container.overflow.y = TRUE
     )
-  ) %>%
-    formatDate("created_at", method = "toDateString")
-  
-  if(length(selected_rows) > 0){
-    dt <- dt %>%
-      formatStyle("created_at", target = "row", backgroundColor = styleRow(selected_rows, '#fbcd9989'))
+
+  # Highlight new contributor rows
+  new_contrib_rows <- which(display_data$new_contributor)
+  if (length(new_contrib_rows) > 0) {
+    tbl <- tbl %>%
+      tab_style(
+        style = cell_fill(color = "#fbcd9989"),
+        locations = cells_body(rows = new_contrib_rows)
+      )
   }
-  
-  dt
-  
+
+  tbl
 }
 
-dt_show_emails <- function(x){
 
-  DT::datatable(
-    x,
-    rownames = FALSE,
-    colnames = c('Date', 'Email subject'),
-    escape = FALSE
-  ) %>%
-    formatDate("date", method = "toDateString")
+gt_show_emails <- function(x){
+  x %>%
+    rename(Date = date, Subject = url_title) %>%
+    mutate(Subject = purrr::map(Subject, gt::html)) %>%
+    gt() %>%
+    cols_width(
+      Date ~ pct(15),
+      Subject ~ pct(85)
+    ) %>%
+    tab_options(
+      table.width = pct(100),
+      container.height = px(400),
+      container.overflow.y = TRUE
+    )
 }

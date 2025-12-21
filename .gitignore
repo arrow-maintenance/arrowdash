@@ -2,3 +2,4 @@
 /_site/
 .DS_Store
 __pycache__/
+.Rproj.user

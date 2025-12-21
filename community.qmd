@@ -1,0 +1,131 @@
+```{r}
+#| echo: false
+library(gh)
+library(dplyr)
+library(purrr)
+library(stringr)
+library(gt)
+library(lubridate)
+
+# Fetch all open "good-first-issue" issues in a single paginated call
+issues <- gh(
+  "/search/issues",
+  q = "repo:apache/arrow is:issue state:open label:good-first-issue",
+  .limit = Inf
+)
+
+# Extract component labels from each issue
+extract_components <- function(issue) {
+  labels <- map_chr(issue$labels, "name")
+  components <- labels[str_starts(labels, "Component: ")]
+  if (length(components) == 0) {
+    return(tibble(component = "(No component)"))
+  }
+  tibble(component = str_remove(components, "^Component: "))
+}
+
+# Build a table of all component assignments
+component_data <- map_dfr(issues$items, extract_components)
+
+# Count by component and add GitHub links
+gfi_summary <- component_data |>
+  count(component, name = "Issues") |>
+  arrange(desc(Issues)) |>
+  mutate(
+    url = paste0(
+      "https://github.com/apache/arrow/issues?q=",
+      URLencode(paste0('is:issue is:open label:"good-first-issue" label:"Component: ', component, '"'), reserved = TRUE)
+    ),
+    Component = paste0("[", component, "](", url, ")")
+  ) |>
+  select(Component, Issues)
+
+total_issues <- sum(gfi_summary$Issues)
+
+# Fetch all open issues/PRs with "Status: needs champion" label
+champion_items <- gh(
+  "/search/issues",
+  q = 'repo:apache/arrow state:open label:"Status: needs champion"',
+  .limit = Inf
+)
+
+# Extract details from each item
+extract_champion_details <- function(item) {
+  labels <- map_chr(item$labels, "name")
+  components <- labels[str_starts(labels, "Component: ")]
+  component <- if (length(components) > 0) {
+    paste(str_remove(components, "^Component: "), collapse = ", ")
+  } else {
+    "(No component)"
+  }
+
+  tibble(
+    Title = item$title,
+    Type = if (is.null(item$pull_request)) "Issue" else "PR",
+    Component = component,
+    Created = as.Date(item$created_at),
+    Age = as.integer(Sys.Date() - as.Date(item$created_at)),
+    URL = item$html_url
+  )
+}
+
+champion_data <- map_dfr(champion_items$items, extract_champion_details)
+```
+
+## Row
+
+### Column
+
+#### Good First Issues by Component
+
+```{r}
+#| echo: false
+gfi_summary |>
+  gt() |>
+  fmt_markdown(columns = Component) |>
+  tab_header(
+    title = "Issues with `good-first-issues` label",
+    subtitle = paste(total_issues, "issues across", nrow(gfi_summary), "components")
+  ) |>
+  cols_align(align = "left", columns = Component) |>
+  cols_align(align = "right", columns = Issues) |>
+  tab_options(
+    table.width = pct(100),
+    heading.align = "left"
+  )
+```
+
+### Column
+
+#### Needs Champion
+
+```{r}
+#| echo: false
+champion_data |>
+  arrange(Age) |>
+  mutate(
+    Title = paste0("[", Title, "](", URL, ")"),
+    `Age (days)` = Age
+  ) |>
+  select(Title, Type, Component, Created, `Age (days)`) |>
+  gt() |>
+  fmt_markdown(columns = Title) |>
+  fmt_date(columns = Created, date_style = "iso") |>
+  tab_header(
+    title = "Issues & PRs needing a champion",
+    subtitle = paste(nrow(champion_data), "items - sorted by age (newest first)")
+  ) |>
+  cols_width(
+    Title ~ pct(45),
+    Type ~ pct(8),
+    Component ~ pct(22),
+    Created ~ pct(12),
+    `Age (days)` ~ pct(13)
+  ) |>
+  tab_options(
+    table.width = pct(100),
+    heading.align = "left",
+    container.height = px(500),
+    container.overflow.y = TRUE
+  )
+```

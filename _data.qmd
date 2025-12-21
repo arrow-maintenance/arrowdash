@@ -99,7 +99,7 @@ create_fig(py$x_issues_others, py$y_issues_others, py$y_issues_new)
 create_fig(py$x_prs_others, py$y_prs_others, py$y_prs_new)
 ```
 
-### Issues
+### Issues & PRs
 
 #### Row
 
@@ -125,26 +125,6 @@ dict(
 
 ```{python}
 #| content: valuebox
-#| title: "Issues with No Replies"
-dict(
-  icon = "hand-index",
-  color = "warning",
-  value = len(issues_open_no_replies)
-)
-```
-
-#### Row 
-```{r}
-#| title: All open issues, new contributors highlighted
-dt_show_issues(py$issues_open)
-```
-
-### PRs
-
-#### Row
-
-```{python}
-#| content: valuebox
 #| title: "Open PRs"
 dict(
   icon = "diagram-2",
@@ -163,21 +143,16 @@ dict(
 )
 ```
 
-```{python}
-#| content: valuebox
-#| title: "Unreviewed PRs"
-dict(
-  icon = "hand-index",
-  color = "warning",
-  value = len(prs_open_no_replies)
-)
-```
-
-#### Row 
+#### Row
 
 ```{r}
-#| title: All open PRs, new contributors highlighted
-dt_show_issues(py$prs_open)
+#| title: Open issues (new contributors highlighted)
+gt_show_issues(py$issues_open)
+```
+
+```{r}
+#| title: Open PRs (new contributors highlighted)
+gt_show_issues(py$prs_open)
 ```
 
 ### Stack Overflow
@@ -214,11 +189,11 @@ dict(
 )
 ```
 
-#### Row 
+#### Row
 
 ```{r}
 #| title: Stack Overflow Questions
-dt_show_questions(last_so_data)
+gt_show_questions(last_so_data)
 ```
 
 ### Mailing List
@@ -227,5 +202,5 @@ dt_show_questions(last_so_data)
 
 ```{r}
 #| title: Mailing list items from the last month
-dt_show_emails(py$data_ml)
+gt_show_emails(py$data_ml)
 ```
