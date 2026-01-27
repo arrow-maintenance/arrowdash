@@ -15,7 +15,7 @@ execute:
   error: false
 ---
 
-<!-- 
+<!--
 
 Needs Quarto 1.4 installed to run
 Seek inspiration from https://quarto.org/docs/dashboards/examples/
@@ -25,70 +25,38 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 ```{r}
 #| label: r_setup
 #| include: false
-library(reticulate)
-py_require(c("pandas", "requests", "logging", "chatlas", "mailbox", "google-genai"))
-if(Sys.getenv("GITHUB_ACTIONS") == ""){
-  use_virtualenv("r-arrow-dash")
-}
-
 source("./stack_overflow_data/data_methods.R", local = knitr::knit_global())
 source("./methods.R", local = knitr::knit_global())
 ```
 
-```{python}
-#| label: py_setup
-#| include: false
-#| warning: false
-import github_data.data as gd
-data = gd.fetch_gh_issue_pr_data()
-import github_data.methods as gha
-# Save mailing list mbox file to "user_ml.mbox"
-import ml_data.data_methods as ml
-ml.get_messages("user")
-```
-
 # Python
-```{python}
-#| label: py
-#| warning: false
-lang =  "Python"
+
+```{r}
+#| label: py_lang
+#| include: false
+lang <- "Python"
 ```
 
 {{< include _data.qmd >}}
 
 # R
 
-```{python}
-#| label: r
-#| warning: false
-lang =  "R"
+```{r}
+#| label: r_lang
+#| include: false
+lang <- "R"
 ```
 
 {{< include _data.qmd >}}
 
 # Overall Summary
 
-```{python}
-#| label: r
-#| warning: false
-```
-
 {{< include overall_summary.qmd >}}
 
 # Maintenance Stats
 
-```{python}
-#| label: r
-#| warning: false
-```
-
 {{< include maintenance_stats.qmd >}}
 
 # Community
-
-```{python}
-#| label: community
-#| warning: false
-```
 
 {{< include community.qmd >}}

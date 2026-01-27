@@ -1,19 +1,17 @@
-```{python}
+```{r}
 #| include: false
 #| warning: false
-import ml_data.summarise_ml as llm_ml
-
-summary = llm_ml.summarise_dev_ml()
+summary_text <- read_ml_summary()
 ```
+
 ## Row {.tabset}
 
-### Mailing List Summary 
+### Mailing List Summary
 
-#### Column 
+#### Column
 
 The content below is an LLM summary of this month's activity on the mailing list.
 
 ::: {.card}
-`r py$summary`
+`r summary_text`
 :::
-

@@ -212,9 +212,9 @@ def summarise_dev_ml():
 
     th2 = read_mbox_as_threads("dev_ml.mbox")
     thread_string = summarisation_input(th2)
-    chat = ChatGoogle(api_key=os.getenv("GOOGLE_API_KEY"))
+    chat = ChatGoogle(model="gemini-3-flash-preview", api_key=os.getenv("GOOGLE_API_KEY"))
 
-    with open("./ml_data/prompt_ml_summary.txt", "r", encoding="utf-8") as f:
+    with open("./ml_data/prompt_ml_summary.md", "r", encoding="utf-8") as f:
         chat_prompt = f.read()
 
     summary = chat.chat(chat_prompt, thread_string)

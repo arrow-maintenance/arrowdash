@@ -24,6 +24,20 @@ library(DT)
 library(dplyr)
 library(plotly)
 library(gt)
+library(glue)
+library(readr)
+
+# CSV data reading helpers for decoupled Python/R architecture
+
+read_language_data <- function(lang, type) {
+  # type = "issues_open", "prs_open", "issues_summary", "prs_summary", "mailing_list"
+  filepath <- glue::glue("data/{tolower(lang)}_{type}.csv")
+  readr::read_csv(filepath, show_col_types = FALSE)
+}
+
+read_ml_summary <- function() {
+  readLines("data/dev_ml_summary.txt", warn = FALSE) |> paste(collapse = "\n")
+}
 
 create_fig <- function(x, y, y_new){
 
