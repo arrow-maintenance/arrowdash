@@ -6,8 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="updated Wed Jan 21 04:32:12 2026 UTC">
-<meta name="dcterms.date" content="2026-01-21">
+<meta name="author" content="updated Tue Jan 27 22:48:24 2026 UTC">
+<meta name="dcterms.date" content="2026-01-27">
 
 <title>Arrow Maintainer Dashboard</title>
 <style>
@@ -45,17 +45,17 @@ ul.task-list li input[type="checkbox"] {
 <link href="index_files/libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
 <link href="index_files/libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
 <script src="index_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="index_files/libs/plotly-binding-4.11.0/plotly.js"></script>
+<script src="index_files/libs/plotly-binding-4.12.0/plotly.js"></script>
 <script src="index_files/libs/typedarray-0.1/typedarray.min.js"></script>
 <script src="index_files/libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="index_files/libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
 <script src="index_files/libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
-<link href="index_files/libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
-<script src="index_files/libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
-<script src="index_files/libs/bslib-component-js-0.9.0/components.min.js"></script>
-<script src="index_files/libs/bslib-component-js-0.9.0/web-components.min.js" type="module"></script>
-<link href="index_files/libs/bslib-component-css-0.9.0/components.css" rel="stylesheet">
-<script src="index_files/libs/bslib-tag-require-0.9.0/tag-require.js"></script>
+<link href="index_files/libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="index_files/libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
+<script src="index_files/libs/bslib-component-js-0.10.0/components.min.js"></script>
+<script src="index_files/libs/bslib-component-js-0.10.0/web-components.min.js" type="module"></script>
+<link href="index_files/libs/bslib-component-css-0.10.0/components.css" rel="stylesheet">
+<script src="index_files/libs/bslib-tag-require-0.10.0/tag-require.js"></script>
 
 
 </head>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-title">
         <div class="navbar-title-text"><a href="#">Arrow Maintainer Dashboard</a></div>
         
-        <div class="navbar-author">updated Wed Jan 21 04:32:12 2026 UTC</div>
+        <div class="navbar-author">updated Tue Jan 27 22:48:24 2026 UTC</div>
       </div>
     </div>
 <div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-python" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#python" data-scrolling="false" href="#python" aria-controls="python" aria-selected="true"><span class="nav-link-text">Python</span></a></li><li class="nav-item" role="presentation"><a id="tab-r" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#r" data-scrolling="false" href="#r" aria-controls="r" aria-selected="false"><span class="nav-link-text">R</span></a></li><li class="nav-item" role="presentation"><a id="tab-overall-summary" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#overall-summary" data-scrolling="false" href="#overall-summary" aria-controls="overall-summary" aria-selected="false"><span class="nav-link-text">Overall Summary</span></a></li><li class="nav-item" role="presentation"><a id="tab-maintenance-stats" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#maintenance-stats" data-scrolling="false" href="#maintenance-stats" aria-controls="maintenance-stats" aria-selected="false"><span class="nav-link-text">Maintenance Stats</span></a></li><li class="nav-item" role="presentation"><a id="tab-community" class="nav-link" data-bs-toggle="tab" role="tab" data-bs-target="#community" data-scrolling="false" href="#community" aria-controls="community" aria-selected="false"><span class="nav-link-text">Community</span></a></li></ul><div class="quarto-dashboard-links"><a class="quarto-dashboard-link" href="https://github.com/arrow-maintenance/arrowdash/" title="GitHub"><i class="bi bi-github"></i></a><a class="quarto-dashboard-link" href="https://github.com/os-maintenance/arrowdash"></a></div></div></div>
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 <div class="page-layout-custom quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">  
 
-<!-- 
+<!--
 
 Needs Quarto 1.4 installed to run
 Seek inspiration from https://quarto.org/docs/dashboards/examples/
@@ -117,7 +117,7 @@ grid-auto-rows: minmax(0, 1fr);">
 Issues
 </p>
 <p class="value-box-value">
-91
+53
 </p>
 </div>
 </div>
@@ -133,7 +133,7 @@ Issues
 Pull Requests
 </p>
 <p class="value-box-value">
-80
+32
 </p>
 </div>
 </div>
@@ -178,8 +178,8 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Issues opened through the last 3 months</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div class="plotly html-widget html-fill-item html-fill-container" id="htmlwidget-2959617b3ae934da6748" style="width:100%;height:406px;"></div>
-<script type="application/json" data-for="htmlwidget-2959617b3ae934da6748">{"x":{"visdat":{"1a3a4025b69a":["function () ","plotlyVisDat"]},"cur_data":"1a3a4025b69a","attrs":{"1a3a4025b69a":{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":[1,2,3,4,3,5,4,21,4,7,1,5,2,1],"marker":{"color":"FBCD99"},"name":"Other contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1a3a4025b69a.1":{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":{},"marker":{"color":"#DCAAA6"},"name":"New contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"#E9EEEF","xaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":[1,2,3,4,3,5,4,21,4,7,1,5,2,1],"marker":{"color":"FBCD99","line":{"color":"rgba(31,119,180,1)"}},"name":"Other contributors","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":[5,2,2,5,3,1,2,1,0,5,1],"marker":{"color":"#DCAAA6","line":{"color":"rgba(255,127,14,1)"}},"name":"New contributors","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item html-fill-container" id="htmlwidget-9ca62b08b83a81491e2c" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-9ca62b08b83a81491e2c">{"x":{"visdat":{"1f78188c455c":["function () ","plotlyVisDat"]},"cur_data":"1f78188c455c","attrs":{"1f78188c455c":{"x":null,"y":[0,3,4,3,5,4,21,4,7,1,5,2,6,2],"marker":{"color":"FBCD99"},"name":"Other contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1f78188c455c.1":{"x":null,"y":{},"marker":{"color":"#DCAAA6"},"name":"New contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"#E9EEEF","xaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"y":[0,3,4,3,5,4,21,4,7,1,5,2,6,2],"marker":{"color":"FBCD99","line":{"color":"rgba(31,119,180,1)"}},"name":"Other contributors","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":[2,2,2,5,3,1,2,1,0,5,1,0,5,4],"marker":{"color":"#DCAAA6","line":{"color":"rgba(255,127,14,1)"}},"name":"New contributors","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -191,8 +191,8 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">PRs opened through the last 3 months</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div class="plotly html-widget html-fill-item html-fill-container" id="htmlwidget-1ff83f97b4ea4335f90e" style="width:100%;height:406px;"></div>
-<script type="application/json" data-for="htmlwidget-1ff83f97b4ea4335f90e">{"x":{"visdat":{"1a3a4600ebf3":["function () ","plotlyVisDat"]},"cur_data":"1a3a4600ebf3","attrs":{"1a3a4600ebf3":{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000"],"y":[1,7,3,1,4,5,6,19,3,9,1,9,4],"marker":{"color":"FBCD99"},"name":"Other contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1a3a4600ebf3.1":{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000"],"y":{},"marker":{"color":"#DCAAA6"},"name":"New contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"#E9EEEF","xaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000"],"y":[1,7,3,1,4,5,6,19,3,9,1,9,4],"marker":{"color":"FBCD99","line":{"color":"rgba(31,119,180,1)"}},"name":"Other contributors","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000"],"y":[1,0,0,3,0,0,0,1,2,0,0,1],"marker":{"color":"#DCAAA6","line":{"color":"rgba(255,127,14,1)"}},"name":"New contributors","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item html-fill-container" id="htmlwidget-49aa87969d37f574f29f" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-49aa87969d37f574f29f">{"x":{"visdat":{"1f78964173":["function () ","plotlyVisDat"]},"cur_data":"1f78964173","attrs":{"1f78964173":{"x":null,"y":[2,3,1,4,5,6,19,3,9,2,9,4,5,4],"marker":{"color":"FBCD99"},"name":"Other contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1f78964173.1":{"x":null,"y":{},"marker":{"color":"#DCAAA6"},"name":"New contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"#E9EEEF","xaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"y":[2,3,1,4,5,6,19,3,9,2,9,4,5,4],"marker":{"color":"FBCD99","line":{"color":"rgba(31,119,180,1)"}},"name":"Other contributors","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":[0,1,0,0,3,0,0,0,1,1,0,0,2,0],"marker":{"color":"#DCAAA6","line":{"color":"rgba(255,127,14,1)"}},"name":"New contributors","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -219,7 +219,7 @@ grid-auto-rows: minmax(0, 1fr);">
 Open Issues
 </p>
 <p class="value-box-value">
-40
+53
 </p>
 </div>
 </div>
@@ -235,7 +235,7 @@ Open Issues
 Issues from New Contributors
 </p>
 <p class="value-box-value">
-18
+26
 </p>
 </div>
 </div>
@@ -251,7 +251,7 @@ Issues from New Contributors
 Open PRs
 </p>
 <p class="value-box-value">
-28
+32
 </p>
 </div>
 </div>
@@ -280,23 +280,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Open issues (new contributors highlighted)</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="jzbjuhiyxu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
-<style>#jzbjuhiyxu table {
+<div id="wrxccqancu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
+<style>#wrxccqancu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#jzbjuhiyxu thead, #jzbjuhiyxu tbody, #jzbjuhiyxu tfoot, #jzbjuhiyxu tr, #jzbjuhiyxu td, #jzbjuhiyxu th {
+#wrxccqancu thead, #wrxccqancu tbody, #wrxccqancu tfoot, #wrxccqancu tr, #wrxccqancu td, #wrxccqancu th {
   border-style: none;
 }
 
-#jzbjuhiyxu p {
+#wrxccqancu p {
   margin: 0;
   padding: 0;
 }
 
-#jzbjuhiyxu .gt_table {
+#wrxccqancu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -322,12 +322,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_caption {
+#wrxccqancu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#jzbjuhiyxu .gt_title {
+#wrxccqancu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -339,7 +339,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#jzbjuhiyxu .gt_subtitle {
+#wrxccqancu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -351,7 +351,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#jzbjuhiyxu .gt_heading {
+#wrxccqancu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -363,13 +363,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_bottom_border {
+#wrxccqancu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_col_headings {
+#wrxccqancu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -384,7 +384,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_col_heading {
+#wrxccqancu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -404,7 +404,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#jzbjuhiyxu .gt_column_spanner_outer {
+#wrxccqancu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -416,15 +416,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#jzbjuhiyxu .gt_column_spanner_outer:first-child {
+#wrxccqancu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#jzbjuhiyxu .gt_column_spanner_outer:last-child {
+#wrxccqancu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#jzbjuhiyxu .gt_column_spanner {
+#wrxccqancu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -436,11 +436,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#jzbjuhiyxu .gt_spanner_row {
+#wrxccqancu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#jzbjuhiyxu .gt_group_heading {
+#wrxccqancu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -466,7 +466,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#jzbjuhiyxu .gt_empty_group_heading {
+#wrxccqancu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -481,15 +481,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#jzbjuhiyxu .gt_from_md > :first-child {
+#wrxccqancu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#jzbjuhiyxu .gt_from_md > :last-child {
+#wrxccqancu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#jzbjuhiyxu .gt_row {
+#wrxccqancu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -508,7 +508,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#jzbjuhiyxu .gt_stub {
+#wrxccqancu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -521,7 +521,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#jzbjuhiyxu .gt_stub_row_group {
+#wrxccqancu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -535,15 +535,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#jzbjuhiyxu .gt_row_group_first td {
+#wrxccqancu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#jzbjuhiyxu .gt_row_group_first th {
+#wrxccqancu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#jzbjuhiyxu .gt_summary_row {
+#wrxccqancu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -553,16 +553,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#jzbjuhiyxu .gt_first_summary_row {
+#wrxccqancu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_first_summary_row.thick {
+#wrxccqancu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#jzbjuhiyxu .gt_last_summary_row {
+#wrxccqancu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -572,7 +572,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_grand_summary_row {
+#wrxccqancu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -582,7 +582,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#jzbjuhiyxu .gt_first_grand_summary_row {
+#wrxccqancu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -592,7 +592,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_last_grand_summary_row_top {
+#wrxccqancu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -602,11 +602,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_striped {
+#wrxccqancu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#jzbjuhiyxu .gt_table_body {
+#wrxccqancu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -615,7 +615,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_footnotes {
+#wrxccqancu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -629,7 +629,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_footnote {
+#wrxccqancu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -638,7 +638,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#jzbjuhiyxu .gt_sourcenotes {
+#wrxccqancu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -652,7 +652,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#jzbjuhiyxu .gt_sourcenote {
+#wrxccqancu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -660,72 +660,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#jzbjuhiyxu .gt_left {
+#wrxccqancu .gt_left {
   text-align: left;
 }
 
-#jzbjuhiyxu .gt_center {
+#wrxccqancu .gt_center {
   text-align: center;
 }
 
-#jzbjuhiyxu .gt_right {
+#wrxccqancu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#jzbjuhiyxu .gt_font_normal {
+#wrxccqancu .gt_font_normal {
   font-weight: normal;
 }
 
-#jzbjuhiyxu .gt_font_bold {
+#wrxccqancu .gt_font_bold {
   font-weight: bold;
 }
 
-#jzbjuhiyxu .gt_font_italic {
+#wrxccqancu .gt_font_italic {
   font-style: italic;
 }
 
-#jzbjuhiyxu .gt_super {
+#wrxccqancu .gt_super {
   font-size: 65%;
 }
 
-#jzbjuhiyxu .gt_footnote_marks {
+#wrxccqancu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#jzbjuhiyxu .gt_asterisk {
+#wrxccqancu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#jzbjuhiyxu .gt_indent_1 {
+#wrxccqancu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#jzbjuhiyxu .gt_indent_2 {
+#wrxccqancu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#jzbjuhiyxu .gt_indent_3 {
+#wrxccqancu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#jzbjuhiyxu .gt_indent_4 {
+#wrxccqancu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#jzbjuhiyxu .gt_indent_5 {
+#wrxccqancu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#jzbjuhiyxu .katex-display {
+#wrxccqancu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#jzbjuhiyxu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wrxccqancu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -742,6 +742,62 @@ grid-auto-rows: minmax(0, 1fr);">
 </tr>
 </thead>
 <tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date">2026-01-27</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/49036"></a><a target="_blank" href="https://github.com/apache/arrow/issues/49036">[CI][Python] Nightly wheels fail uploading to scientific-python-nightly-wheels due to Storage requirements exceeded</a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/49003"></a><a target="_blank" href="https://github.com/apache/arrow/issues/49003">[Python] CSV reader returns different values in 23.0.0</a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/49002"></a><a target="_blank" href="https://github.com/apache/arrow/issues/49002">[Python] Wrong cast from StringArray to pandas 3 when element is <code>None</code></a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48987"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48987">[Python][Packaging] Drop archery and docker for our Windows wheels and build on the GitHub runner directly</a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48986"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48986">ORC Predicate Pushdown</a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48983"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48983">[Python][Packaging] Missing license files in 23.0.0 wheels</a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date">2026-01-25</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48978"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48978">[Python] test failures on pandas 3.0 (currently CI on 2.3.3)</a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-23</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48972"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48972">EHN: Add a <code>is_castable</code> function and/or <code>errors=coerce</code> option to <code>cast</code></a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date">2026-01-23</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48970"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48970">[CI] Remove <strong>getattr</strong>(name) -&gt; Any from <strong>init</strong>.pyi before next release</a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-23</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48962"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48962">[Python] Add <code>restack_batches()</code></a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date">2026-01-23</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48961"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48961">[Docs][Python] Doctest fails on pandas 3.0</a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-23</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48960"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48960">[Python] DEFAULT option in simd_level of cli.py missing</a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-23</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48959"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48959">[Python] A “personal data” boolean in field metadata</a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-22</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48953"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48953">[Python] <code>extract_regex</code> and <code>extract_regex_span</code> only extract the first match</a></td>
+</tr>
 <tr class="odd">
 <td class="gt_row gt_right" headers="Date">2026-01-09</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48808"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48808">[Python] Drop support for pandas &lt; 2.0.0</a></td>
@@ -883,22 +939,18 @@ grid-auto-rows: minmax(0, 1fr);">
 <td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48111"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48111">[Python][C++] scanner(fragment_readahead=0).to_table() hangs indefinitely.</a></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2025-11-05</td>
-<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48061"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48061">Memory footprint of <code>from pyarrow import dataset</code> in version 21 onwards</a></td>
-</tr>
-<tr class="odd">
 <td class="gt_row gt_right" headers="Date">2025-11-05</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48060"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48060">[C++][Python] <code>list_sort</code> - sorting individual ListScalars</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date">2025-11-03</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48028"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48028">[Python][Packaging] Failing musllinux wheels due to new image from quay.io</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2025-11-03</td>
 <td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48024"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48024">Table.rename_columns() drops schema metadata</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2025-11-02</td>
 <td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48023"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48023">Using pandas Period in filters for parquet fails</a></td>
 </tr>
@@ -917,23 +969,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Open PRs (new contributors highlighted)</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="pqqpzvcuvm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
-<style>#pqqpzvcuvm table {
+<div id="uvkegmimjk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
+<style>#uvkegmimjk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#pqqpzvcuvm thead, #pqqpzvcuvm tbody, #pqqpzvcuvm tfoot, #pqqpzvcuvm tr, #pqqpzvcuvm td, #pqqpzvcuvm th {
+#uvkegmimjk thead, #uvkegmimjk tbody, #uvkegmimjk tfoot, #uvkegmimjk tr, #uvkegmimjk td, #uvkegmimjk th {
   border-style: none;
 }
 
-#pqqpzvcuvm p {
+#uvkegmimjk p {
   margin: 0;
   padding: 0;
 }
 
-#pqqpzvcuvm .gt_table {
+#uvkegmimjk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -959,12 +1011,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_caption {
+#uvkegmimjk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pqqpzvcuvm .gt_title {
+#uvkegmimjk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -976,7 +1028,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#pqqpzvcuvm .gt_subtitle {
+#uvkegmimjk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -988,7 +1040,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#pqqpzvcuvm .gt_heading {
+#uvkegmimjk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1000,13 +1052,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_bottom_border {
+#uvkegmimjk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_col_headings {
+#uvkegmimjk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1021,7 +1073,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_col_heading {
+#uvkegmimjk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1041,7 +1093,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#pqqpzvcuvm .gt_column_spanner_outer {
+#uvkegmimjk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1053,15 +1105,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#pqqpzvcuvm .gt_column_spanner_outer:first-child {
+#uvkegmimjk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pqqpzvcuvm .gt_column_spanner_outer:last-child {
+#uvkegmimjk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pqqpzvcuvm .gt_column_spanner {
+#uvkegmimjk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1073,11 +1125,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#pqqpzvcuvm .gt_spanner_row {
+#uvkegmimjk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#pqqpzvcuvm .gt_group_heading {
+#uvkegmimjk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1103,7 +1155,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#pqqpzvcuvm .gt_empty_group_heading {
+#uvkegmimjk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1118,15 +1170,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#pqqpzvcuvm .gt_from_md > :first-child {
+#uvkegmimjk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pqqpzvcuvm .gt_from_md > :last-child {
+#uvkegmimjk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pqqpzvcuvm .gt_row {
+#uvkegmimjk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1145,7 +1197,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#pqqpzvcuvm .gt_stub {
+#uvkegmimjk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1158,7 +1210,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#pqqpzvcuvm .gt_stub_row_group {
+#uvkegmimjk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1172,15 +1224,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#pqqpzvcuvm .gt_row_group_first td {
+#uvkegmimjk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pqqpzvcuvm .gt_row_group_first th {
+#uvkegmimjk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#pqqpzvcuvm .gt_summary_row {
+#uvkegmimjk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1190,16 +1242,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#pqqpzvcuvm .gt_first_summary_row {
+#uvkegmimjk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_first_summary_row.thick {
+#uvkegmimjk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pqqpzvcuvm .gt_last_summary_row {
+#uvkegmimjk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1209,7 +1261,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_grand_summary_row {
+#uvkegmimjk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1219,7 +1271,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#pqqpzvcuvm .gt_first_grand_summary_row {
+#uvkegmimjk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1229,7 +1281,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_last_grand_summary_row_top {
+#uvkegmimjk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1239,11 +1291,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_striped {
+#uvkegmimjk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pqqpzvcuvm .gt_table_body {
+#uvkegmimjk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1252,7 +1304,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_footnotes {
+#uvkegmimjk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1266,7 +1318,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_footnote {
+#uvkegmimjk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1275,7 +1327,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#pqqpzvcuvm .gt_sourcenotes {
+#uvkegmimjk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1289,7 +1341,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#pqqpzvcuvm .gt_sourcenote {
+#uvkegmimjk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1297,72 +1349,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#pqqpzvcuvm .gt_left {
+#uvkegmimjk .gt_left {
   text-align: left;
 }
 
-#pqqpzvcuvm .gt_center {
+#uvkegmimjk .gt_center {
   text-align: center;
 }
 
-#pqqpzvcuvm .gt_right {
+#uvkegmimjk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pqqpzvcuvm .gt_font_normal {
+#uvkegmimjk .gt_font_normal {
   font-weight: normal;
 }
 
-#pqqpzvcuvm .gt_font_bold {
+#uvkegmimjk .gt_font_bold {
   font-weight: bold;
 }
 
-#pqqpzvcuvm .gt_font_italic {
+#uvkegmimjk .gt_font_italic {
   font-style: italic;
 }
 
-#pqqpzvcuvm .gt_super {
+#uvkegmimjk .gt_super {
   font-size: 65%;
 }
 
-#pqqpzvcuvm .gt_footnote_marks {
+#uvkegmimjk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#pqqpzvcuvm .gt_asterisk {
+#uvkegmimjk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pqqpzvcuvm .gt_indent_1 {
+#uvkegmimjk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pqqpzvcuvm .gt_indent_2 {
+#uvkegmimjk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pqqpzvcuvm .gt_indent_3 {
+#uvkegmimjk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pqqpzvcuvm .gt_indent_4 {
+#uvkegmimjk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pqqpzvcuvm .gt_indent_5 {
+#uvkegmimjk .gt_indent_5 {
   text-indent: 25px;
 }
 
-#pqqpzvcuvm .katex-display {
+#uvkegmimjk .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#pqqpzvcuvm div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uvkegmimjk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1380,6 +1432,30 @@ grid-auto-rows: minmax(0, 1fr);">
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
+<td class="gt_row gt_right" headers="Date">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48994"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48994">GH-48972: [Python] Add errors=‘coerce’ parameter to pyarrow.compute.cast</a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48988"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48988">GH-48983: [Packaging][Python] Ensure and add LICENSE.txt and NOTICE.txt to Python wheels</a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date">2026-01-25</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48979"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48979">GH-48978: [Python] test failures on pandas 3.0 (currently CI on 2.3.3) </a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date">2026-01-23</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48969"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48969">GH-48961: [Docs][Python] Doctest fails on pandas 3.0</a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-23</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/pull/48963"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48963">GH-48962: [Python] Add <code>restack_batches()</code></a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date">2026-01-23</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48958"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48958">GH-48957: [Benchmarking] Add temporal type support to benchmarks</a></td>
+</tr>
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-19</td>
 <td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/pull/48899"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48899">GH-43510: [PYTHON] Move NumPy specific tests to separate test file.</a></td>
 </tr>
@@ -1388,32 +1464,24 @@ grid-auto-rows: minmax(0, 1fr);">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48882"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48882">WIP: Draft PR to test wheels</a></td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_right" headers="Date">2026-01-12</td>
-<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48829"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48829">WIP: Dummy PR to check maint-23.0.0 status</a></td>
-</tr>
-<tr class="even">
 <td class="gt_row gt_right" headers="Date">2026-01-09</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48798"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48798">GH-35830: [C++] Fix fixed-size list scalar hashing with non-zero offsets</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_right" headers="Date">2026-01-07</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48769"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48769">GH-33459: [C++][Python] Support step &gt;= 1 in list_slice kernel</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date">2026-01-06</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48746"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48746">GH-48470: [Python] Construct UuidArray from list of UuidScalars</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_right" headers="Date">2026-01-05</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48727"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48727">GH-48241: [Python] Scalar inferencing doesn’t infer UUID</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-04</td>
 <td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/pull/48719"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48719">GH-48695: [Python][C++] Add max_rows parameter to CSV reader</a></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-03</td>
-<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/pull/48718"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48718">GH-36889: [C++][Python] Fix duplicate CSV header when first batch is empty</a></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Date">2026-01-02</td>
@@ -1565,23 +1633,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Stack Overflow Questions</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="rwapukhlxs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
-<style>#rwapukhlxs table {
+<div id="rxqjyaaugw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
+<style>#rxqjyaaugw table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#rwapukhlxs thead, #rwapukhlxs tbody, #rwapukhlxs tfoot, #rwapukhlxs tr, #rwapukhlxs td, #rwapukhlxs th {
+#rxqjyaaugw thead, #rxqjyaaugw tbody, #rxqjyaaugw tfoot, #rxqjyaaugw tr, #rxqjyaaugw td, #rxqjyaaugw th {
   border-style: none;
 }
 
-#rwapukhlxs p {
+#rxqjyaaugw p {
   margin: 0;
   padding: 0;
 }
 
-#rwapukhlxs .gt_table {
+#rxqjyaaugw .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1607,12 +1675,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_caption {
+#rxqjyaaugw .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#rwapukhlxs .gt_title {
+#rxqjyaaugw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1624,7 +1692,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#rwapukhlxs .gt_subtitle {
+#rxqjyaaugw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1636,7 +1704,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#rwapukhlxs .gt_heading {
+#rxqjyaaugw .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1648,13 +1716,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_bottom_border {
+#rxqjyaaugw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_col_headings {
+#rxqjyaaugw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1669,7 +1737,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_col_heading {
+#rxqjyaaugw .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1689,7 +1757,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#rwapukhlxs .gt_column_spanner_outer {
+#rxqjyaaugw .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1701,15 +1769,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#rwapukhlxs .gt_column_spanner_outer:first-child {
+#rxqjyaaugw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rwapukhlxs .gt_column_spanner_outer:last-child {
+#rxqjyaaugw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rwapukhlxs .gt_column_spanner {
+#rxqjyaaugw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1721,11 +1789,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#rwapukhlxs .gt_spanner_row {
+#rxqjyaaugw .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#rwapukhlxs .gt_group_heading {
+#rxqjyaaugw .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1751,7 +1819,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#rwapukhlxs .gt_empty_group_heading {
+#rxqjyaaugw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1766,15 +1834,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#rwapukhlxs .gt_from_md > :first-child {
+#rxqjyaaugw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rwapukhlxs .gt_from_md > :last-child {
+#rxqjyaaugw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rwapukhlxs .gt_row {
+#rxqjyaaugw .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1793,7 +1861,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#rwapukhlxs .gt_stub {
+#rxqjyaaugw .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1806,7 +1874,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#rwapukhlxs .gt_stub_row_group {
+#rxqjyaaugw .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1820,15 +1888,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#rwapukhlxs .gt_row_group_first td {
+#rxqjyaaugw .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#rwapukhlxs .gt_row_group_first th {
+#rxqjyaaugw .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#rwapukhlxs .gt_summary_row {
+#rxqjyaaugw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1838,16 +1906,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#rwapukhlxs .gt_first_summary_row {
+#rxqjyaaugw .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_first_summary_row.thick {
+#rxqjyaaugw .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#rwapukhlxs .gt_last_summary_row {
+#rxqjyaaugw .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1857,7 +1925,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_grand_summary_row {
+#rxqjyaaugw .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1867,7 +1935,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#rwapukhlxs .gt_first_grand_summary_row {
+#rxqjyaaugw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1877,7 +1945,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_last_grand_summary_row_top {
+#rxqjyaaugw .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1887,11 +1955,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_striped {
+#rxqjyaaugw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#rwapukhlxs .gt_table_body {
+#rxqjyaaugw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1900,7 +1968,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_footnotes {
+#rxqjyaaugw .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1914,7 +1982,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_footnote {
+#rxqjyaaugw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1923,7 +1991,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#rwapukhlxs .gt_sourcenotes {
+#rxqjyaaugw .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1937,7 +2005,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#rwapukhlxs .gt_sourcenote {
+#rxqjyaaugw .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1945,72 +2013,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#rwapukhlxs .gt_left {
+#rxqjyaaugw .gt_left {
   text-align: left;
 }
 
-#rwapukhlxs .gt_center {
+#rxqjyaaugw .gt_center {
   text-align: center;
 }
 
-#rwapukhlxs .gt_right {
+#rxqjyaaugw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rwapukhlxs .gt_font_normal {
+#rxqjyaaugw .gt_font_normal {
   font-weight: normal;
 }
 
-#rwapukhlxs .gt_font_bold {
+#rxqjyaaugw .gt_font_bold {
   font-weight: bold;
 }
 
-#rwapukhlxs .gt_font_italic {
+#rxqjyaaugw .gt_font_italic {
   font-style: italic;
 }
 
-#rwapukhlxs .gt_super {
+#rxqjyaaugw .gt_super {
   font-size: 65%;
 }
 
-#rwapukhlxs .gt_footnote_marks {
+#rxqjyaaugw .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#rwapukhlxs .gt_asterisk {
+#rxqjyaaugw .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#rwapukhlxs .gt_indent_1 {
+#rxqjyaaugw .gt_indent_1 {
   text-indent: 5px;
 }
 
-#rwapukhlxs .gt_indent_2 {
+#rxqjyaaugw .gt_indent_2 {
   text-indent: 10px;
 }
 
-#rwapukhlxs .gt_indent_3 {
+#rxqjyaaugw .gt_indent_3 {
   text-indent: 15px;
 }
 
-#rwapukhlxs .gt_indent_4 {
+#rxqjyaaugw .gt_indent_4 {
   text-indent: 20px;
 }
 
-#rwapukhlxs .gt_indent_5 {
+#rxqjyaaugw .gt_indent_5 {
   text-indent: 25px;
 }
 
-#rwapukhlxs .katex-display {
+#rxqjyaaugw .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#rwapukhlxs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#rxqjyaaugw div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2055,23 +2123,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Mailing list items from the last month</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="ondfslctmp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
-<style>#ondfslctmp table {
+<div id="yuqnqvmmqs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
+<style>#yuqnqvmmqs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ondfslctmp thead, #ondfslctmp tbody, #ondfslctmp tfoot, #ondfslctmp tr, #ondfslctmp td, #ondfslctmp th {
+#yuqnqvmmqs thead, #yuqnqvmmqs tbody, #yuqnqvmmqs tfoot, #yuqnqvmmqs tr, #yuqnqvmmqs td, #yuqnqvmmqs th {
   border-style: none;
 }
 
-#ondfslctmp p {
+#yuqnqvmmqs p {
   margin: 0;
   padding: 0;
 }
 
-#ondfslctmp .gt_table {
+#yuqnqvmmqs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2097,12 +2165,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_caption {
+#yuqnqvmmqs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ondfslctmp .gt_title {
+#yuqnqvmmqs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2114,7 +2182,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#ondfslctmp .gt_subtitle {
+#yuqnqvmmqs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2126,7 +2194,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#ondfslctmp .gt_heading {
+#yuqnqvmmqs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2138,13 +2206,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_bottom_border {
+#yuqnqvmmqs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_col_headings {
+#yuqnqvmmqs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2159,7 +2227,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_col_heading {
+#yuqnqvmmqs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2179,7 +2247,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#ondfslctmp .gt_column_spanner_outer {
+#yuqnqvmmqs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2191,15 +2259,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#ondfslctmp .gt_column_spanner_outer:first-child {
+#yuqnqvmmqs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ondfslctmp .gt_column_spanner_outer:last-child {
+#yuqnqvmmqs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ondfslctmp .gt_column_spanner {
+#yuqnqvmmqs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2211,11 +2279,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#ondfslctmp .gt_spanner_row {
+#yuqnqvmmqs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ondfslctmp .gt_group_heading {
+#yuqnqvmmqs .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2241,7 +2309,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#ondfslctmp .gt_empty_group_heading {
+#yuqnqvmmqs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2256,15 +2324,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#ondfslctmp .gt_from_md > :first-child {
+#yuqnqvmmqs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ondfslctmp .gt_from_md > :last-child {
+#yuqnqvmmqs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ondfslctmp .gt_row {
+#yuqnqvmmqs .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2283,7 +2351,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#ondfslctmp .gt_stub {
+#yuqnqvmmqs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2296,7 +2364,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#ondfslctmp .gt_stub_row_group {
+#yuqnqvmmqs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2310,15 +2378,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#ondfslctmp .gt_row_group_first td {
+#yuqnqvmmqs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ondfslctmp .gt_row_group_first th {
+#yuqnqvmmqs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ondfslctmp .gt_summary_row {
+#yuqnqvmmqs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2328,16 +2396,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#ondfslctmp .gt_first_summary_row {
+#yuqnqvmmqs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_first_summary_row.thick {
+#yuqnqvmmqs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ondfslctmp .gt_last_summary_row {
+#yuqnqvmmqs .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2347,7 +2415,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_grand_summary_row {
+#yuqnqvmmqs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2357,7 +2425,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#ondfslctmp .gt_first_grand_summary_row {
+#yuqnqvmmqs .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2367,7 +2435,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_last_grand_summary_row_top {
+#yuqnqvmmqs .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2377,11 +2445,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_striped {
+#yuqnqvmmqs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ondfslctmp .gt_table_body {
+#yuqnqvmmqs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2390,7 +2458,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_footnotes {
+#yuqnqvmmqs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2404,7 +2472,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_footnote {
+#yuqnqvmmqs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2413,7 +2481,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#ondfslctmp .gt_sourcenotes {
+#yuqnqvmmqs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2427,7 +2495,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#ondfslctmp .gt_sourcenote {
+#yuqnqvmmqs .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2435,72 +2503,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#ondfslctmp .gt_left {
+#yuqnqvmmqs .gt_left {
   text-align: left;
 }
 
-#ondfslctmp .gt_center {
+#yuqnqvmmqs .gt_center {
   text-align: center;
 }
 
-#ondfslctmp .gt_right {
+#yuqnqvmmqs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ondfslctmp .gt_font_normal {
+#yuqnqvmmqs .gt_font_normal {
   font-weight: normal;
 }
 
-#ondfslctmp .gt_font_bold {
+#yuqnqvmmqs .gt_font_bold {
   font-weight: bold;
 }
 
-#ondfslctmp .gt_font_italic {
+#yuqnqvmmqs .gt_font_italic {
   font-style: italic;
 }
 
-#ondfslctmp .gt_super {
+#yuqnqvmmqs .gt_super {
   font-size: 65%;
 }
 
-#ondfslctmp .gt_footnote_marks {
+#yuqnqvmmqs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ondfslctmp .gt_asterisk {
+#yuqnqvmmqs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ondfslctmp .gt_indent_1 {
+#yuqnqvmmqs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ondfslctmp .gt_indent_2 {
+#yuqnqvmmqs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ondfslctmp .gt_indent_3 {
+#yuqnqvmmqs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ondfslctmp .gt_indent_4 {
+#yuqnqvmmqs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ondfslctmp .gt_indent_5 {
+#yuqnqvmmqs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ondfslctmp .katex-display {
+#yuqnqvmmqs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ondfslctmp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#yuqnqvmmqs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2566,7 +2634,7 @@ grid-auto-rows: minmax(0, 1fr);">
 Issues
 </p>
 <p class="value-box-value">
-43
+20
 </p>
 </div>
 </div>
@@ -2582,7 +2650,7 @@ Issues
 Pull Requests
 </p>
 <p class="value-box-value">
-44
+7
 </p>
 </div>
 </div>
@@ -2598,7 +2666,7 @@ Pull Requests
 Stack Overflow Questions
 </p>
 <p class="value-box-value">
-2
+1
 </p>
 </div>
 </div>
@@ -2627,8 +2695,8 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Issues opened through the last 3 months</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div class="plotly html-widget html-fill-item html-fill-container" id="htmlwidget-6d7ca81203cf8a98ced9" style="width:100%;height:406px;"></div>
-<script type="application/json" data-for="htmlwidget-6d7ca81203cf8a98ced9">{"x":{"visdat":{"1a3ae3d086f":["function () ","plotlyVisDat"]},"cur_data":"1a3ae3d086f","attrs":{"1a3ae3d086f":{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":[5,4,0,5,0,2,2,1,0,8,1,3,1,3],"marker":{"color":"FBCD99"},"name":"Other contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1a3ae3d086f.1":{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":{},"marker":{"color":"#DCAAA6"},"name":"New contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"#E9EEEF","xaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":[5,4,0,5,0,2,2,1,0,8,1,3,1,3],"marker":{"color":"FBCD99","line":{"color":"rgba(31,119,180,1)"}},"name":"Other contributors","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":[1,2,1,0,0,1,0,0,0,1,0,1,1],"marker":{"color":"#DCAAA6","line":{"color":"rgba(255,127,14,1)"}},"name":"New contributors","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item html-fill-container" id="htmlwidget-ecb3298698c29f52114b" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-ecb3298698c29f52114b">{"x":{"visdat":{"1f785b9328f8":["function () ","plotlyVisDat"]},"cur_data":"1f785b9328f8","attrs":{"1f785b9328f8":{"x":null,"y":[3,0,5,0,2,2,1,0,8,1,3,1,5,2],"marker":{"color":"FBCD99"},"name":"Other contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1f785b9328f8.1":{"x":null,"y":{},"marker":{"color":"#DCAAA6"},"name":"New contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"#E9EEEF","xaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"y":[3,0,5,0,2,2,1,0,8,1,3,1,5,2],"marker":{"color":"FBCD99","line":{"color":"rgba(31,119,180,1)"}},"name":"Other contributors","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":[0,2,1,0,0,1,0,0,0,1,0,1,1,1],"marker":{"color":"#DCAAA6","line":{"color":"rgba(255,127,14,1)"}},"name":"New contributors","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -2640,8 +2708,8 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">PRs opened through the last 3 months</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div class="plotly html-widget html-fill-item html-fill-container" id="htmlwidget-87fcdda953df8961d752" style="width:100%;height:406px;"></div>
-<script type="application/json" data-for="htmlwidget-87fcdda953df8961d752">{"x":{"visdat":{"1a3a2b42cb5d":["function () ","plotlyVisDat"]},"cur_data":"1a3a2b42cb5d","attrs":{"1a3a2b42cb5d":{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":[4,3,1,2,1,4,3,0,2,13,1,3,4,1],"marker":{"color":"FBCD99"},"name":"Other contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1a3a2b42cb5d.1":{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":{},"marker":{"color":"#DCAAA6"},"name":"New contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"#E9EEEF","xaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":[4,3,1,2,1,4,3,0,2,13,1,3,4,1],"marker":{"color":"FBCD99","line":{"color":"rgba(31,119,180,1)"}},"name":"Other contributors","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2025-10-26 00:00:00.000000","2025-11-02 00:00:00.000000","2025-11-09 00:00:00.000000","2025-11-16 00:00:00.000000","2025-11-23 00:00:00.000000","2025-11-30 00:00:00.000000","2025-12-07 00:00:00.000000","2025-12-14 00:00:00.000000","2025-12-21 00:00:00.000000","2025-12-28 00:00:00.000000","2026-01-04 00:00:00.000000","2026-01-11 00:00:00.000000","2026-01-18 00:00:00.000000","2026-01-25 00:00:00.000000"],"y":[1,0,0,0,0,0,0,0,0,0,1],"marker":{"color":"#DCAAA6","line":{"color":"rgba(255,127,14,1)"}},"name":"New contributors","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+<div class="plotly html-widget html-fill-item html-fill-container" id="htmlwidget-5b1278719d620ec33d17" style="width:100%;height:406px;"></div>
+<script type="application/json" data-for="htmlwidget-5b1278719d620ec33d17">{"x":{"visdat":{"1f78da0a7c4":["function () ","plotlyVisDat"]},"cur_data":"1f78da0a7c4","attrs":{"1f78da0a7c4":{"x":null,"y":[1,1,2,1,4,3,0,2,13,1,3,4,4,4],"marker":{"color":"FBCD99"},"name":"Other contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar"},"1f78da0a7c4.1":{"x":null,"y":{},"marker":{"color":"#DCAAA6"},"name":"New contributors","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"bar","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"plot_bgcolor":"#E9EEEF","xaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"yaxis":{"domain":[0,1],"automargin":true,"title":"","zerolinecolor":"#ffff","zerolinewidth":2,"gridcolor":"ffff"},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"y":[1,1,2,1,4,3,0,2,13,1,3,4,4,4],"marker":{"color":"FBCD99","line":{"color":"rgba(31,119,180,1)"}},"name":"Other contributors","type":"bar","error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"y":[0,1,0,0,0,0,0,0,0,0,0,1,0,0],"marker":{"color":"#DCAAA6","line":{"color":"rgba(255,127,14,1)"}},"name":"New contributors","type":"bar","error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -2668,7 +2736,7 @@ grid-auto-rows: minmax(0, 1fr);">
 Open Issues
 </p>
 <p class="value-box-value">
-19
+20
 </p>
 </div>
 </div>
@@ -2684,7 +2752,7 @@ Open Issues
 Issues from New Contributors
 </p>
 <p class="value-box-value">
-5
+6
 </p>
 </div>
 </div>
@@ -2700,7 +2768,7 @@ Issues from New Contributors
 Open PRs
 </p>
 <p class="value-box-value">
-6
+7
 </p>
 </div>
 </div>
@@ -2729,23 +2797,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Open issues (new contributors highlighted)</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="hxrecgslfk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
-<style>#hxrecgslfk table {
+<div id="qipcsslvqp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
+<style>#qipcsslvqp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hxrecgslfk thead, #hxrecgslfk tbody, #hxrecgslfk tfoot, #hxrecgslfk tr, #hxrecgslfk td, #hxrecgslfk th {
+#qipcsslvqp thead, #qipcsslvqp tbody, #qipcsslvqp tfoot, #qipcsslvqp tr, #qipcsslvqp td, #qipcsslvqp th {
   border-style: none;
 }
 
-#hxrecgslfk p {
+#qipcsslvqp p {
   margin: 0;
   padding: 0;
 }
 
-#hxrecgslfk .gt_table {
+#qipcsslvqp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2771,12 +2839,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_caption {
+#qipcsslvqp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hxrecgslfk .gt_title {
+#qipcsslvqp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2788,7 +2856,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#hxrecgslfk .gt_subtitle {
+#qipcsslvqp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2800,7 +2868,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#hxrecgslfk .gt_heading {
+#qipcsslvqp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2812,13 +2880,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_bottom_border {
+#qipcsslvqp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_col_headings {
+#qipcsslvqp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2833,7 +2901,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_col_heading {
+#qipcsslvqp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2853,7 +2921,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#hxrecgslfk .gt_column_spanner_outer {
+#qipcsslvqp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2865,15 +2933,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#hxrecgslfk .gt_column_spanner_outer:first-child {
+#qipcsslvqp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hxrecgslfk .gt_column_spanner_outer:last-child {
+#qipcsslvqp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hxrecgslfk .gt_column_spanner {
+#qipcsslvqp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2885,11 +2953,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#hxrecgslfk .gt_spanner_row {
+#qipcsslvqp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hxrecgslfk .gt_group_heading {
+#qipcsslvqp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2915,7 +2983,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#hxrecgslfk .gt_empty_group_heading {
+#qipcsslvqp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2930,15 +2998,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#hxrecgslfk .gt_from_md > :first-child {
+#qipcsslvqp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hxrecgslfk .gt_from_md > :last-child {
+#qipcsslvqp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hxrecgslfk .gt_row {
+#qipcsslvqp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2957,7 +3025,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#hxrecgslfk .gt_stub {
+#qipcsslvqp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2970,7 +3038,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hxrecgslfk .gt_stub_row_group {
+#qipcsslvqp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2984,15 +3052,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#hxrecgslfk .gt_row_group_first td {
+#qipcsslvqp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hxrecgslfk .gt_row_group_first th {
+#qipcsslvqp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hxrecgslfk .gt_summary_row {
+#qipcsslvqp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3002,16 +3070,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hxrecgslfk .gt_first_summary_row {
+#qipcsslvqp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_first_summary_row.thick {
+#qipcsslvqp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hxrecgslfk .gt_last_summary_row {
+#qipcsslvqp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3021,7 +3089,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_grand_summary_row {
+#qipcsslvqp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3031,7 +3099,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hxrecgslfk .gt_first_grand_summary_row {
+#qipcsslvqp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3041,7 +3109,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_last_grand_summary_row_top {
+#qipcsslvqp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3051,11 +3119,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_striped {
+#qipcsslvqp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hxrecgslfk .gt_table_body {
+#qipcsslvqp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3064,7 +3132,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_footnotes {
+#qipcsslvqp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3078,7 +3146,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_footnote {
+#qipcsslvqp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3087,7 +3155,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hxrecgslfk .gt_sourcenotes {
+#qipcsslvqp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3101,7 +3169,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#hxrecgslfk .gt_sourcenote {
+#qipcsslvqp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3109,72 +3177,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hxrecgslfk .gt_left {
+#qipcsslvqp .gt_left {
   text-align: left;
 }
 
-#hxrecgslfk .gt_center {
+#qipcsslvqp .gt_center {
   text-align: center;
 }
 
-#hxrecgslfk .gt_right {
+#qipcsslvqp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hxrecgslfk .gt_font_normal {
+#qipcsslvqp .gt_font_normal {
   font-weight: normal;
 }
 
-#hxrecgslfk .gt_font_bold {
+#qipcsslvqp .gt_font_bold {
   font-weight: bold;
 }
 
-#hxrecgslfk .gt_font_italic {
+#qipcsslvqp .gt_font_italic {
   font-style: italic;
 }
 
-#hxrecgslfk .gt_super {
+#qipcsslvqp .gt_super {
   font-size: 65%;
 }
 
-#hxrecgslfk .gt_footnote_marks {
+#qipcsslvqp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hxrecgslfk .gt_asterisk {
+#qipcsslvqp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hxrecgslfk .gt_indent_1 {
+#qipcsslvqp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hxrecgslfk .gt_indent_2 {
+#qipcsslvqp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hxrecgslfk .gt_indent_3 {
+#qipcsslvqp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hxrecgslfk .gt_indent_4 {
+#qipcsslvqp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hxrecgslfk .gt_indent_5 {
+#qipcsslvqp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hxrecgslfk .katex-display {
+#qipcsslvqp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hxrecgslfk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#qipcsslvqp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3192,8 +3260,16 @@ grid-auto-rows: minmax(0, 1fr);">
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_right" headers="Date">2026-01-20</td>
-<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48912"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48912">[R] Compilation errors on continuous benchmarking</a></td>
+<td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-27</td>
+<td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/49006"></a><a target="_blank" href="https://github.com/apache/arrow/issues/49006">[R] Error, read_parquet new expected indices in 23.0.0</a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/49000"></a><a target="_blank" href="https://github.com/apache/arrow/issues/49000">[R] Warning building docs due to unresolved references to base R functions</a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48998"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48998">[R] Add note to docs on validating IPC streams</a></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-20</td>
@@ -3212,58 +3288,54 @@ grid-auto-rows: minmax(0, 1fr);">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48830"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48830">[CI][R] Update our gcc12 job for R CI</a></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="Date">2026-01-11</td>
-<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48815"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48815">[R] CRAN <code>NOTE</code> about Makevars</a></td>
-</tr>
-<tr class="odd">
 <td class="gt_row gt_right" headers="Date">2026-01-09</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48805"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48805">[CI][R] test-r-alpine-linux-cran fails with segmentation fault</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2026-01-02</td>
 <td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48712"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48712">[R] “Invalid metadata$r” warning</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_right" headers="Date">2025-12-26</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48662"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48662">[R] Remove <code>trace$calls %||% trace$call</code> once rlang &gt; 0.4.11 is released</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date">2025-12-26</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48660"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48660">[R] Add tests for filter() and arrange() with aggregation expressions</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_right" headers="Date">2025-12-26</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48658"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48658">[R] Add test for slice_sample with prop = 1 edge case</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date">2025-12-23</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48629"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48629">[R] Add tests for duplicate column names and incompatible types in joins</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_right" headers="Date">2025-12-08</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48397"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48397">[R] How should we suggest to folks to get our libarrow builds?</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2025-12-03</td>
 <td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48321"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48321">[R] Cannot install Arrow 22 to RHEL due to lack of escape characters in grepl</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_right" headers="Date">2025-11-16</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48145"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48145">[R][Dev] Update test helpers for testthat 3.3.0</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date" style="background-color: rgba(251,205,153,0.54)">2025-11-16</td>
 <td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/issues/48144"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48144">[R] <code>col_types</code> ignored when <code>convert_options</code> specified</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_right" headers="Date">2025-11-12</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48103"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48103">[Release][R] Add verification of R binaries to release process verification script</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date">2025-10-31</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/48012"></a><a target="_blank" href="https://github.com/apache/arrow/issues/48012">[R] Build scripts use bash-specific syntax, requiring bash on Alpine Linux</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td class="gt_row gt_right" headers="Date">2025-10-29</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/47997"></a><a target="_blank" href="https://github.com/apache/arrow/issues/47997">[R][Dev] pre-commit RScript local check fails on ubuntu 25.10</a></td>
 </tr>
@@ -3282,23 +3354,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Open PRs (new contributors highlighted)</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="qkgmzlpmkk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
-<style>#qkgmzlpmkk table {
+<div id="jzcogflhka" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
+<style>#jzcogflhka table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#qkgmzlpmkk thead, #qkgmzlpmkk tbody, #qkgmzlpmkk tfoot, #qkgmzlpmkk tr, #qkgmzlpmkk td, #qkgmzlpmkk th {
+#jzcogflhka thead, #jzcogflhka tbody, #jzcogflhka tfoot, #jzcogflhka tr, #jzcogflhka td, #jzcogflhka th {
   border-style: none;
 }
 
-#qkgmzlpmkk p {
+#jzcogflhka p {
   margin: 0;
   padding: 0;
 }
 
-#qkgmzlpmkk .gt_table {
+#jzcogflhka .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3324,12 +3396,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_caption {
+#jzcogflhka .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#qkgmzlpmkk .gt_title {
+#jzcogflhka .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3341,7 +3413,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#qkgmzlpmkk .gt_subtitle {
+#jzcogflhka .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3353,7 +3425,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#qkgmzlpmkk .gt_heading {
+#jzcogflhka .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3365,13 +3437,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_bottom_border {
+#jzcogflhka .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_col_headings {
+#jzcogflhka .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3386,7 +3458,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_col_heading {
+#jzcogflhka .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3406,7 +3478,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#qkgmzlpmkk .gt_column_spanner_outer {
+#jzcogflhka .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3418,15 +3490,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#qkgmzlpmkk .gt_column_spanner_outer:first-child {
+#jzcogflhka .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#qkgmzlpmkk .gt_column_spanner_outer:last-child {
+#jzcogflhka .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#qkgmzlpmkk .gt_column_spanner {
+#jzcogflhka .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3438,11 +3510,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#qkgmzlpmkk .gt_spanner_row {
+#jzcogflhka .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#qkgmzlpmkk .gt_group_heading {
+#jzcogflhka .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3468,7 +3540,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#qkgmzlpmkk .gt_empty_group_heading {
+#jzcogflhka .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -3483,15 +3555,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#qkgmzlpmkk .gt_from_md > :first-child {
+#jzcogflhka .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#qkgmzlpmkk .gt_from_md > :last-child {
+#jzcogflhka .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#qkgmzlpmkk .gt_row {
+#jzcogflhka .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3510,7 +3582,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#qkgmzlpmkk .gt_stub {
+#jzcogflhka .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3523,7 +3595,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#qkgmzlpmkk .gt_stub_row_group {
+#jzcogflhka .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3537,15 +3609,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#qkgmzlpmkk .gt_row_group_first td {
+#jzcogflhka .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#qkgmzlpmkk .gt_row_group_first th {
+#jzcogflhka .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#qkgmzlpmkk .gt_summary_row {
+#jzcogflhka .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3555,16 +3627,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#qkgmzlpmkk .gt_first_summary_row {
+#jzcogflhka .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_first_summary_row.thick {
+#jzcogflhka .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#qkgmzlpmkk .gt_last_summary_row {
+#jzcogflhka .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3574,7 +3646,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_grand_summary_row {
+#jzcogflhka .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -3584,7 +3656,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#qkgmzlpmkk .gt_first_grand_summary_row {
+#jzcogflhka .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3594,7 +3666,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_last_grand_summary_row_top {
+#jzcogflhka .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -3604,11 +3676,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_striped {
+#jzcogflhka .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#qkgmzlpmkk .gt_table_body {
+#jzcogflhka .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3617,7 +3689,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_footnotes {
+#jzcogflhka .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3631,7 +3703,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_footnote {
+#jzcogflhka .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -3640,7 +3712,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#qkgmzlpmkk .gt_sourcenotes {
+#jzcogflhka .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -3654,7 +3726,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#qkgmzlpmkk .gt_sourcenote {
+#jzcogflhka .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3662,72 +3734,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#qkgmzlpmkk .gt_left {
+#jzcogflhka .gt_left {
   text-align: left;
 }
 
-#qkgmzlpmkk .gt_center {
+#jzcogflhka .gt_center {
   text-align: center;
 }
 
-#qkgmzlpmkk .gt_right {
+#jzcogflhka .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#qkgmzlpmkk .gt_font_normal {
+#jzcogflhka .gt_font_normal {
   font-weight: normal;
 }
 
-#qkgmzlpmkk .gt_font_bold {
+#jzcogflhka .gt_font_bold {
   font-weight: bold;
 }
 
-#qkgmzlpmkk .gt_font_italic {
+#jzcogflhka .gt_font_italic {
   font-style: italic;
 }
 
-#qkgmzlpmkk .gt_super {
+#jzcogflhka .gt_super {
   font-size: 65%;
 }
 
-#qkgmzlpmkk .gt_footnote_marks {
+#jzcogflhka .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#qkgmzlpmkk .gt_asterisk {
+#jzcogflhka .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#qkgmzlpmkk .gt_indent_1 {
+#jzcogflhka .gt_indent_1 {
   text-indent: 5px;
 }
 
-#qkgmzlpmkk .gt_indent_2 {
+#jzcogflhka .gt_indent_2 {
   text-indent: 10px;
 }
 
-#qkgmzlpmkk .gt_indent_3 {
+#jzcogflhka .gt_indent_3 {
   text-indent: 15px;
 }
 
-#qkgmzlpmkk .gt_indent_4 {
+#jzcogflhka .gt_indent_4 {
   text-indent: 20px;
 }
 
-#qkgmzlpmkk .gt_indent_5 {
+#jzcogflhka .gt_indent_5 {
   text-indent: 25px;
 }
 
-#qkgmzlpmkk .katex-display {
+#jzcogflhka .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#qkgmzlpmkk div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#jzcogflhka div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -3745,8 +3817,16 @@ grid-auto-rows: minmax(0, 1fr);">
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_right" headers="Date">2026-01-19</td>
-<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48902"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48902">GH-44926: [R] Remove usage of cpp11’s cpp11/altrep.hpp and HAS_ALTREP</a></td>
+<td class="gt_row gt_right" headers="Date">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/49001"></a><a target="_blank" href="https://github.com/apache/arrow/pull/49001">GH-49000: [R] Warning building docs due to unresolved references to base R functions</a></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_right" headers="Date">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48999"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48999">GH-48998: [R] Add note to docs on validating IPC streams </a></td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_right" headers="Date">2026-01-26</td>
+<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48995"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48995">GH-48397: [R] Update docs on how to get our libarrow builds</a></td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_right" headers="Date">2026-01-14</td>
@@ -3757,14 +3837,10 @@ grid-auto-rows: minmax(0, 1fr);">
 <td class="gt_row gt_left" headers="Title" style="background-color: rgba(251,205,153,0.54)"><a href="https://github.com/apache/arrow/pull/48840"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48840">Update dplyr-funcs-doc.R to fix a typo</a></td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_right" headers="Date">2026-01-12</td>
-<td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48829"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48829">WIP: Dummy PR to check maint-23.0.0 status</a></td>
-</tr>
-<tr class="odd">
 <td class="gt_row gt_right" headers="Date">2025-12-19</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48601"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48601">GH-48593: [C++] C++20: use standard calendar / timezone APIs</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td class="gt_row gt_right" headers="Date">2025-12-17</td>
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/48574"></a><a target="_blank" href="https://github.com/apache/arrow/pull/48574">GH-36193: [R] arm64 binaries for R </a></td>
 </tr>
@@ -3797,7 +3873,7 @@ grid-auto-rows: minmax(0, 1fr);">
 Questions in last 90 days
 </p>
 <p class="value-box-value">
-2
+1
 </p>
 </div>
 </div>
@@ -3842,23 +3918,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Stack Overflow Questions</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="hloemjpbfh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
-<style>#hloemjpbfh table {
+<div id="xtupinrvuc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
+<style>#xtupinrvuc table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#hloemjpbfh thead, #hloemjpbfh tbody, #hloemjpbfh tfoot, #hloemjpbfh tr, #hloemjpbfh td, #hloemjpbfh th {
+#xtupinrvuc thead, #xtupinrvuc tbody, #xtupinrvuc tfoot, #xtupinrvuc tr, #xtupinrvuc td, #xtupinrvuc th {
   border-style: none;
 }
 
-#hloemjpbfh p {
+#xtupinrvuc p {
   margin: 0;
   padding: 0;
 }
 
-#hloemjpbfh .gt_table {
+#xtupinrvuc .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -3884,12 +3960,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_caption {
+#xtupinrvuc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hloemjpbfh .gt_title {
+#xtupinrvuc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -3901,7 +3977,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#hloemjpbfh .gt_subtitle {
+#xtupinrvuc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -3913,7 +3989,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#hloemjpbfh .gt_heading {
+#xtupinrvuc .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -3925,13 +4001,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_bottom_border {
+#xtupinrvuc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_col_headings {
+#xtupinrvuc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -3946,7 +4022,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_col_heading {
+#xtupinrvuc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3966,7 +4042,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#hloemjpbfh .gt_column_spanner_outer {
+#xtupinrvuc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -3978,15 +4054,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#hloemjpbfh .gt_column_spanner_outer:first-child {
+#xtupinrvuc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hloemjpbfh .gt_column_spanner_outer:last-child {
+#xtupinrvuc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hloemjpbfh .gt_column_spanner {
+#xtupinrvuc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -3998,11 +4074,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#hloemjpbfh .gt_spanner_row {
+#xtupinrvuc .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#hloemjpbfh .gt_group_heading {
+#xtupinrvuc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4028,7 +4104,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#hloemjpbfh .gt_empty_group_heading {
+#xtupinrvuc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4043,15 +4119,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#hloemjpbfh .gt_from_md > :first-child {
+#xtupinrvuc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hloemjpbfh .gt_from_md > :last-child {
+#xtupinrvuc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hloemjpbfh .gt_row {
+#xtupinrvuc .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4070,7 +4146,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#hloemjpbfh .gt_stub {
+#xtupinrvuc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4083,7 +4159,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hloemjpbfh .gt_stub_row_group {
+#xtupinrvuc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4097,15 +4173,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#hloemjpbfh .gt_row_group_first td {
+#xtupinrvuc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hloemjpbfh .gt_row_group_first th {
+#xtupinrvuc .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#hloemjpbfh .gt_summary_row {
+#xtupinrvuc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4115,16 +4191,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hloemjpbfh .gt_first_summary_row {
+#xtupinrvuc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_first_summary_row.thick {
+#xtupinrvuc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hloemjpbfh .gt_last_summary_row {
+#xtupinrvuc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4134,7 +4210,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_grand_summary_row {
+#xtupinrvuc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4144,7 +4220,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hloemjpbfh .gt_first_grand_summary_row {
+#xtupinrvuc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4154,7 +4230,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_last_grand_summary_row_top {
+#xtupinrvuc .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4164,11 +4240,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_striped {
+#xtupinrvuc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hloemjpbfh .gt_table_body {
+#xtupinrvuc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4177,7 +4253,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_footnotes {
+#xtupinrvuc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4191,7 +4267,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_footnote {
+#xtupinrvuc .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4200,7 +4276,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hloemjpbfh .gt_sourcenotes {
+#xtupinrvuc .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4214,7 +4290,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#hloemjpbfh .gt_sourcenote {
+#xtupinrvuc .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4222,72 +4298,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#hloemjpbfh .gt_left {
+#xtupinrvuc .gt_left {
   text-align: left;
 }
 
-#hloemjpbfh .gt_center {
+#xtupinrvuc .gt_center {
   text-align: center;
 }
 
-#hloemjpbfh .gt_right {
+#xtupinrvuc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hloemjpbfh .gt_font_normal {
+#xtupinrvuc .gt_font_normal {
   font-weight: normal;
 }
 
-#hloemjpbfh .gt_font_bold {
+#xtupinrvuc .gt_font_bold {
   font-weight: bold;
 }
 
-#hloemjpbfh .gt_font_italic {
+#xtupinrvuc .gt_font_italic {
   font-style: italic;
 }
 
-#hloemjpbfh .gt_super {
+#xtupinrvuc .gt_super {
   font-size: 65%;
 }
 
-#hloemjpbfh .gt_footnote_marks {
+#xtupinrvuc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#hloemjpbfh .gt_asterisk {
+#xtupinrvuc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hloemjpbfh .gt_indent_1 {
+#xtupinrvuc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hloemjpbfh .gt_indent_2 {
+#xtupinrvuc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hloemjpbfh .gt_indent_3 {
+#xtupinrvuc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hloemjpbfh .gt_indent_4 {
+#xtupinrvuc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hloemjpbfh .gt_indent_5 {
+#xtupinrvuc .gt_indent_5 {
   text-indent: 25px;
 }
 
-#hloemjpbfh .katex-display {
+#xtupinrvuc .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#hloemjpbfh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#xtupinrvuc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4315,14 +4391,7 @@ grid-auto-rows: minmax(0, 1fr);">
 <td class="gt_row gt_right" headers="Answers">2</td>
 <td class="gt_row gt_center" headers="Accepted?">TRUE</td>
 <td class="gt_row gt_right" headers="Comments">2</td>
-<td class="gt_row gt_right" headers="Days since activity">75</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Question"><a href="https://stackoverflow.com/questions/78786226/in-arrow-how-to-create-schema-according-the-original-variable-type-and-avoid-t">In arrow , how to create schema according the original variable type and avoid type in manually</a></td>
-<td class="gt_row gt_right" headers="Answers">2</td>
-<td class="gt_row gt_center" headers="Accepted?">TRUE</td>
-<td class="gt_row gt_right" headers="Comments">0</td>
-<td class="gt_row gt_right" headers="Days since activity">87</td>
+<td class="gt_row gt_right" headers="Days since activity">81</td>
 </tr>
 </tbody>
 </table>
@@ -4346,23 +4415,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card-header"><div class="card-title">Mailing list items from the last month</div></div>
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="siafjjnzjr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
-<style>#siafjjnzjr table {
+<div id="zfhyxvuhry" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:400px;" class="html-fill-item html-fill-container">
+<style>#zfhyxvuhry table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#siafjjnzjr thead, #siafjjnzjr tbody, #siafjjnzjr tfoot, #siafjjnzjr tr, #siafjjnzjr td, #siafjjnzjr th {
+#zfhyxvuhry thead, #zfhyxvuhry tbody, #zfhyxvuhry tfoot, #zfhyxvuhry tr, #zfhyxvuhry td, #zfhyxvuhry th {
   border-style: none;
 }
 
-#siafjjnzjr p {
+#zfhyxvuhry p {
   margin: 0;
   padding: 0;
 }
 
-#siafjjnzjr .gt_table {
+#zfhyxvuhry .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -4388,12 +4457,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_caption {
+#zfhyxvuhry .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#siafjjnzjr .gt_title {
+#zfhyxvuhry .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4405,7 +4474,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#siafjjnzjr .gt_subtitle {
+#zfhyxvuhry .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4417,7 +4486,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#siafjjnzjr .gt_heading {
+#zfhyxvuhry .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4429,13 +4498,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_bottom_border {
+#zfhyxvuhry .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_col_headings {
+#zfhyxvuhry .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4450,7 +4519,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_col_heading {
+#zfhyxvuhry .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4470,7 +4539,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#siafjjnzjr .gt_column_spanner_outer {
+#zfhyxvuhry .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4482,15 +4551,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#siafjjnzjr .gt_column_spanner_outer:first-child {
+#zfhyxvuhry .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#siafjjnzjr .gt_column_spanner_outer:last-child {
+#zfhyxvuhry .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#siafjjnzjr .gt_column_spanner {
+#zfhyxvuhry .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4502,11 +4571,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#siafjjnzjr .gt_spanner_row {
+#zfhyxvuhry .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#siafjjnzjr .gt_group_heading {
+#zfhyxvuhry .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4532,7 +4601,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#siafjjnzjr .gt_empty_group_heading {
+#zfhyxvuhry .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4547,15 +4616,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#siafjjnzjr .gt_from_md > :first-child {
+#zfhyxvuhry .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#siafjjnzjr .gt_from_md > :last-child {
+#zfhyxvuhry .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#siafjjnzjr .gt_row {
+#zfhyxvuhry .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4574,7 +4643,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#siafjjnzjr .gt_stub {
+#zfhyxvuhry .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4587,7 +4656,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#siafjjnzjr .gt_stub_row_group {
+#zfhyxvuhry .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4601,15 +4670,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#siafjjnzjr .gt_row_group_first td {
+#zfhyxvuhry .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#siafjjnzjr .gt_row_group_first th {
+#zfhyxvuhry .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#siafjjnzjr .gt_summary_row {
+#zfhyxvuhry .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4619,16 +4688,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#siafjjnzjr .gt_first_summary_row {
+#zfhyxvuhry .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_first_summary_row.thick {
+#zfhyxvuhry .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#siafjjnzjr .gt_last_summary_row {
+#zfhyxvuhry .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4638,7 +4707,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_grand_summary_row {
+#zfhyxvuhry .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4648,7 +4717,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#siafjjnzjr .gt_first_grand_summary_row {
+#zfhyxvuhry .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4658,7 +4727,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_last_grand_summary_row_top {
+#zfhyxvuhry .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4668,11 +4737,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_striped {
+#zfhyxvuhry .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#siafjjnzjr .gt_table_body {
+#zfhyxvuhry .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4681,7 +4750,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_footnotes {
+#zfhyxvuhry .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4695,7 +4764,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_footnote {
+#zfhyxvuhry .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -4704,7 +4773,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#siafjjnzjr .gt_sourcenotes {
+#zfhyxvuhry .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4718,7 +4787,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#siafjjnzjr .gt_sourcenote {
+#zfhyxvuhry .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -4726,72 +4795,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#siafjjnzjr .gt_left {
+#zfhyxvuhry .gt_left {
   text-align: left;
 }
 
-#siafjjnzjr .gt_center {
+#zfhyxvuhry .gt_center {
   text-align: center;
 }
 
-#siafjjnzjr .gt_right {
+#zfhyxvuhry .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#siafjjnzjr .gt_font_normal {
+#zfhyxvuhry .gt_font_normal {
   font-weight: normal;
 }
 
-#siafjjnzjr .gt_font_bold {
+#zfhyxvuhry .gt_font_bold {
   font-weight: bold;
 }
 
-#siafjjnzjr .gt_font_italic {
+#zfhyxvuhry .gt_font_italic {
   font-style: italic;
 }
 
-#siafjjnzjr .gt_super {
+#zfhyxvuhry .gt_super {
   font-size: 65%;
 }
 
-#siafjjnzjr .gt_footnote_marks {
+#zfhyxvuhry .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#siafjjnzjr .gt_asterisk {
+#zfhyxvuhry .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#siafjjnzjr .gt_indent_1 {
+#zfhyxvuhry .gt_indent_1 {
   text-indent: 5px;
 }
 
-#siafjjnzjr .gt_indent_2 {
+#zfhyxvuhry .gt_indent_2 {
   text-indent: 10px;
 }
 
-#siafjjnzjr .gt_indent_3 {
+#zfhyxvuhry .gt_indent_3 {
   text-indent: 15px;
 }
 
-#siafjjnzjr .gt_indent_4 {
+#zfhyxvuhry .gt_indent_4 {
   text-indent: 20px;
 }
 
-#siafjjnzjr .gt_indent_5 {
+#zfhyxvuhry .gt_indent_5 {
   text-indent: 25px;
 }
 
-#siafjjnzjr .katex-display {
+#zfhyxvuhry .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#siafjjnzjr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#zfhyxvuhry div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -4853,43 +4922,15 @@ grid-auto-rows: minmax(0, 1fr);">
 </bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 <div class="card html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
-<p>The Apache Arrow dev mailing list reflects a dynamic and growing project, with recent activity including releases for Apache Arrow ADBC 22, Apache Arrow Rust 57.2.0, Rust Object Store (0.13.0, 0.13.1, 0.12.5), and Julia 2.8.1. The main Apache Arrow 23.0.0 release’s feature freeze and RC vote were observed, along with an upcoming Apache Arrow Java 19.0.0.</p>
-<div class="h4">
-Ongoing
-
-Discussions
-</div>
 <ul>
-<li><strong>Parquet Performance &amp; Arrow Interoperability</strong>: Discussions optimize Parquet-to-Arrow conversion, especially for late materialization, addressing if Arrow’s data model limits advanced Parquet features. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Support%20for%20late%20materialization%20in%20Parquet%20-%3E%20Arrow">Thread</a></li>
-<li><strong>Java Dataset API Maturity</strong>: Community queries focus on the Java Dataset API’s stability, roadmap, and production readiness, plus C++ alignment. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Current%20status%20and%20roadmap%20for%20Java%20Dataset%20API">Thread</a></li>
-</ul>
-<div class="h4">
-Emerging
-
-Themes
-</div>
-<ul>
-<li><strong>DACP Ecosystem Integration</strong>: Proposal integrates DACP with Arrow Flight, aligning with Substrait and potentially formalizing it as a Flight extension for enhanced data access. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:PROPOSAL%20Presentation%20DACP%20for%20Arrow%20ecosystem%20%28Jan%2014%20slot%29">Thread</a></li>
-<li><strong>Standalone Parquet Handling</strong>: Carquet (pure C, no Arrow dependency) signals demand for lightweight Parquet file handling outside the full Arrow ecosystem. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Carquet%20-%20standalone%20C%20library%20for%20Parquet%20files">Thread</a></li>
-<li><strong>AI Contributions Policy</strong>: Discussions establish guidelines for AI-generated code, focusing on transparency, ownership, review burden, and licensing. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions">Thread</a></li>
-</ul>
-<div class="h4">
-Potential
-
-Roadblocks
-</div>
-<ul>
-<li><strong>Release Platform Compatibility</strong>: Go release RC failures on Debian Forky highlight challenges in ensuring broad platform/toolchain compatibility during releases. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEGo%20Release%20Apache%20Arrow%20Go%2018.5.1%20RC0">Thread</a></li>
-<li><strong>Operational &amp; Quality Burden</strong>: Missing mailing list headers and managing AI-generated code raise concerns about infrastructure compliance and maintainer overhead for quality control. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Messages%20to%20builds%40%20list%20don%27t%20have%20Date%20or%20Message-ID%20headers">Thread 1</a> <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions">Thread 2</a></li>
-</ul>
-<div class="h4">
-Strategic
-
-Plans
-</div>
-<ul>
-<li><strong>Security Model Formalization</strong>: A strategic goal is documenting Arrow format security, with plans for language-specific security documentation (e.g., C++). <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Security%20model%20for%20the%20Arrow%20format">Thread</a></li>
-<li><strong>Enhancing Arrow Flight Capabilities</strong>: The DACP proposal signifies a strategic direction to expand Arrow Flight, integrating advanced data access, collaboration, and provenance. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:PROPOSAL%20Presentation%20DACP%20for%20Arrow%20ecosystem%20%28Jan%2014%20slot%29">Thread</a></li>
+<li><p><strong>Arrow 23.0.0 Release:</strong> The community released version 23.0.0, resolving over 330 issues across the project’s various language implementations and libraries. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2023.0.0%20released">Thread</a></p></li>
+<li><p><strong>AI-generated contribution guidelines:</strong> Proposal to establish clear documentation regarding the use of LLMs for pull requests, emphasizing that contributors must own and understand the generated code to reduce maintainer burden. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions">Thread</a></p></li>
+<li><p><strong>Late materialization in Parquet:</strong> Technical discussion on optimizing the Rust Parquet reader to evaluate predicates directly on encoded dictionary data, avoiding expensive string comparisons for low-cardinality columns. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Support%20for%20late%20materialization%20in%20Parquet%20-%3E%20Arrow">Thread</a></p></li>
+<li><p><strong>Security model for Arrow format:</strong> A new initiative to formalize a security model for the Arrow memory format and IPC, including a draft document for security considerations in the C++ implementation. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Security%20model%20for%20the%20Arrow%20format">Thread</a></p></li>
+<li><p><strong>Standalone C library for Parquet:</strong> Announcement of “Carquet,” a new standalone C99 library for reading and writing Parquet files designed for embedded environments without C++ or Arrow dependencies. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Carquet%20-%20standalone%20C%20library%20for%20Parquet%20files">Thread</a></p></li>
+<li><p><strong>ADBC 22 release:</strong> The Arrow Database Connectivity (ADBC) libraries reached version 22, featuring updates to C#, Java, Go, and Rust subcomponents. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20ADBC%2022%20Released">Thread</a></p></li>
+<li><p><strong>Java Dataset API roadmap:</strong> Discussion regarding the stability of the Java Dataset API, its roadmap for leaving experimental status, and plans for improved feature parity with the C++ implementation. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Current%20status%20and%20roadmap%20for%20Java%20Dataset%20API">Thread</a></p></li>
+<li><p><strong>Java JDBC thread-safety:</strong> Clarification on the thread-safety guarantees of the Arrow JDBC driver, confirming that connections and associated objects are generally not intended for concurrent multi-threaded access. <a href="https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Java%20JDBC%20Driver%20thread-safety%20guarantees">Thread</a></p></li>
 </ul>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -4918,7 +4959,7 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-chat " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z"></path></svg></div>
 <div class="value-box-area html-fill-item html-fill-container">
 <p class="value-box-title">Open Issues (and change since 1 month ago)</p>
-<div class="value-box-value html-fill-item html-fill-container">3753 (-202)</div>
+<div class="value-box-value html-fill-item html-fill-container">3727 (-202)</div>
 </div>
 </div>
 </div>
@@ -4934,7 +4975,7 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="value-box-showcase html-fill-item html-fill-container"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16" class="bi bi-pencil " style="height:1em;width:1em;fill:currentColor;vertical-align:-0.125em;" aria-hidden="true" role="img"><path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"></path></svg></div>
 <div class="value-box-area html-fill-item html-fill-container">
 <p class="value-box-title">Open PRs (and change since 1 month ago)</p>
-<div class="value-box-value html-fill-item html-fill-container">318 (-12)</div>
+<div class="value-box-value html-fill-item html-fill-container">336 (-11)</div>
 </div>
 </div>
 </div>
@@ -4951,7 +4992,7 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<img src="index_files/figure-html/unnamed-chunk-43-1.png" class="img-fluid quarto-dashboard-img-contain">
+<img src="index_files/figure-html/unnamed-chunk-41-1.png" class="img-fluid quarto-dashboard-img-contain">
 </div>
 </div>
 <bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
@@ -4973,23 +5014,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="kkgvgljmld" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
-<style>#kkgvgljmld table {
+<div id="oczppvsolo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;" class="html-fill-item html-fill-container">
+<style>#oczppvsolo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#kkgvgljmld thead, #kkgvgljmld tbody, #kkgvgljmld tfoot, #kkgvgljmld tr, #kkgvgljmld td, #kkgvgljmld th {
+#oczppvsolo thead, #oczppvsolo tbody, #oczppvsolo tfoot, #oczppvsolo tr, #oczppvsolo td, #oczppvsolo th {
   border-style: none;
 }
 
-#kkgvgljmld p {
+#oczppvsolo p {
   margin: 0;
   padding: 0;
 }
 
-#kkgvgljmld .gt_table {
+#oczppvsolo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5015,12 +5056,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_caption {
+#oczppvsolo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#kkgvgljmld .gt_title {
+#oczppvsolo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5032,7 +5073,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#kkgvgljmld .gt_subtitle {
+#oczppvsolo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5044,7 +5085,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#kkgvgljmld .gt_heading {
+#oczppvsolo .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -5056,13 +5097,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_bottom_border {
+#oczppvsolo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_col_headings {
+#oczppvsolo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5077,7 +5118,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_col_heading {
+#oczppvsolo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5097,7 +5138,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#kkgvgljmld .gt_column_spanner_outer {
+#oczppvsolo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5109,15 +5150,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#kkgvgljmld .gt_column_spanner_outer:first-child {
+#oczppvsolo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#kkgvgljmld .gt_column_spanner_outer:last-child {
+#oczppvsolo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#kkgvgljmld .gt_column_spanner {
+#oczppvsolo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5129,11 +5170,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#kkgvgljmld .gt_spanner_row {
+#oczppvsolo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#kkgvgljmld .gt_group_heading {
+#oczppvsolo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5159,7 +5200,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#kkgvgljmld .gt_empty_group_heading {
+#oczppvsolo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5174,15 +5215,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#kkgvgljmld .gt_from_md > :first-child {
+#oczppvsolo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#kkgvgljmld .gt_from_md > :last-child {
+#oczppvsolo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#kkgvgljmld .gt_row {
+#oczppvsolo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5201,7 +5242,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#kkgvgljmld .gt_stub {
+#oczppvsolo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5214,7 +5255,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#kkgvgljmld .gt_stub_row_group {
+#oczppvsolo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5228,15 +5269,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#kkgvgljmld .gt_row_group_first td {
+#oczppvsolo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#kkgvgljmld .gt_row_group_first th {
+#oczppvsolo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#kkgvgljmld .gt_summary_row {
+#oczppvsolo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5246,16 +5287,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#kkgvgljmld .gt_first_summary_row {
+#oczppvsolo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_first_summary_row.thick {
+#oczppvsolo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#kkgvgljmld .gt_last_summary_row {
+#oczppvsolo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5265,7 +5306,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_grand_summary_row {
+#oczppvsolo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5275,7 +5316,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#kkgvgljmld .gt_first_grand_summary_row {
+#oczppvsolo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5285,7 +5326,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_last_grand_summary_row_top {
+#oczppvsolo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5295,11 +5336,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_striped {
+#oczppvsolo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#kkgvgljmld .gt_table_body {
+#oczppvsolo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5308,7 +5349,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_footnotes {
+#oczppvsolo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5322,7 +5363,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_footnote {
+#oczppvsolo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5331,7 +5372,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#kkgvgljmld .gt_sourcenotes {
+#oczppvsolo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5345,7 +5386,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#kkgvgljmld .gt_sourcenote {
+#oczppvsolo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5353,72 +5394,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#kkgvgljmld .gt_left {
+#oczppvsolo .gt_left {
   text-align: left;
 }
 
-#kkgvgljmld .gt_center {
+#oczppvsolo .gt_center {
   text-align: center;
 }
 
-#kkgvgljmld .gt_right {
+#oczppvsolo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#kkgvgljmld .gt_font_normal {
+#oczppvsolo .gt_font_normal {
   font-weight: normal;
 }
 
-#kkgvgljmld .gt_font_bold {
+#oczppvsolo .gt_font_bold {
   font-weight: bold;
 }
 
-#kkgvgljmld .gt_font_italic {
+#oczppvsolo .gt_font_italic {
   font-style: italic;
 }
 
-#kkgvgljmld .gt_super {
+#oczppvsolo .gt_super {
   font-size: 65%;
 }
 
-#kkgvgljmld .gt_footnote_marks {
+#oczppvsolo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#kkgvgljmld .gt_asterisk {
+#oczppvsolo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#kkgvgljmld .gt_indent_1 {
+#oczppvsolo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#kkgvgljmld .gt_indent_2 {
+#oczppvsolo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#kkgvgljmld .gt_indent_3 {
+#oczppvsolo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#kkgvgljmld .gt_indent_4 {
+#oczppvsolo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#kkgvgljmld .gt_indent_5 {
+#oczppvsolo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#kkgvgljmld .katex-display {
+#oczppvsolo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#kkgvgljmld div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#oczppvsolo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5429,7 +5470,7 @@ grid-auto-rows: minmax(0, 1fr);">
 <th colspan="2" class="gt_heading gt_title gt_font_normal">Issues with `good-first-issues` label</th>
 </tr>
 <tr class="odd gt_heading">
-<th colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">105 issues across 11 components</th>
+<th colspan="2" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border">104 issues across 11 components</th>
 </tr>
 <tr class="header gt_col_headings">
 <th id="Component" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Component</th>
@@ -5439,7 +5480,7 @@ grid-auto-rows: minmax(0, 1fr);">
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="Component"><a href="https://github.com/apache/arrow/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good-first-issue%22%20label%3A%22Component%3A%20C%2B%2B%22">C++</a></td>
-<td class="gt_row gt_right" headers="Issues">44</td>
+<td class="gt_row gt_right" headers="Issues">43</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Component"><a href="https://github.com/apache/arrow/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good-first-issue%22%20label%3A%22Component%3A%20Python%22">Python</a></td>
@@ -5500,23 +5541,23 @@ grid-auto-rows: minmax(0, 1fr);">
 <div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
 <div class="card-body html-fill-item html-fill-container">
 <div class="cell-output-display html-fill-item html-fill-container">
-<div id="gbcmnvuzdr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;" class="html-fill-item html-fill-container">
-<style>#gbcmnvuzdr table {
+<div id="vlsceuvgkp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:500px;" class="html-fill-item html-fill-container">
+<style>#vlsceuvgkp table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#gbcmnvuzdr thead, #gbcmnvuzdr tbody, #gbcmnvuzdr tfoot, #gbcmnvuzdr tr, #gbcmnvuzdr td, #gbcmnvuzdr th {
+#vlsceuvgkp thead, #vlsceuvgkp tbody, #vlsceuvgkp tfoot, #vlsceuvgkp tr, #vlsceuvgkp td, #vlsceuvgkp th {
   border-style: none;
 }
 
-#gbcmnvuzdr p {
+#vlsceuvgkp p {
   margin: 0;
   padding: 0;
 }
 
-#gbcmnvuzdr .gt_table {
+#vlsceuvgkp .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -5542,12 +5583,12 @@ grid-auto-rows: minmax(0, 1fr);">
   border-left-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_caption {
+#vlsceuvgkp .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#gbcmnvuzdr .gt_title {
+#vlsceuvgkp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -5559,7 +5600,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-width: 0;
 }
 
-#gbcmnvuzdr .gt_subtitle {
+#vlsceuvgkp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -5571,7 +5612,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-width: 0;
 }
 
-#gbcmnvuzdr .gt_heading {
+#vlsceuvgkp .gt_heading {
   background-color: #FFFFFF;
   text-align: left;
   border-bottom-color: #FFFFFF;
@@ -5583,13 +5624,13 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_bottom_border {
+#vlsceuvgkp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_col_headings {
+#vlsceuvgkp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5604,7 +5645,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_col_heading {
+#vlsceuvgkp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5624,7 +5665,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#gbcmnvuzdr .gt_column_spanner_outer {
+#vlsceuvgkp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5636,15 +5677,15 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 4px;
 }
 
-#gbcmnvuzdr .gt_column_spanner_outer:first-child {
+#vlsceuvgkp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#gbcmnvuzdr .gt_column_spanner_outer:last-child {
+#vlsceuvgkp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#gbcmnvuzdr .gt_column_spanner {
+#vlsceuvgkp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -5656,11 +5697,11 @@ grid-auto-rows: minmax(0, 1fr);">
   width: 100%;
 }
 
-#gbcmnvuzdr .gt_spanner_row {
+#vlsceuvgkp .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#gbcmnvuzdr .gt_group_heading {
+#vlsceuvgkp .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5686,7 +5727,7 @@ grid-auto-rows: minmax(0, 1fr);">
   text-align: left;
 }
 
-#gbcmnvuzdr .gt_empty_group_heading {
+#vlsceuvgkp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -5701,15 +5742,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: middle;
 }
 
-#gbcmnvuzdr .gt_from_md > :first-child {
+#vlsceuvgkp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#gbcmnvuzdr .gt_from_md > :last-child {
+#vlsceuvgkp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#gbcmnvuzdr .gt_row {
+#vlsceuvgkp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5728,7 +5769,7 @@ grid-auto-rows: minmax(0, 1fr);">
   overflow-x: hidden;
 }
 
-#gbcmnvuzdr .gt_stub {
+#vlsceuvgkp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5741,7 +5782,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gbcmnvuzdr .gt_stub_row_group {
+#vlsceuvgkp .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -5755,15 +5796,15 @@ grid-auto-rows: minmax(0, 1fr);">
   vertical-align: top;
 }
 
-#gbcmnvuzdr .gt_row_group_first td {
+#vlsceuvgkp .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#gbcmnvuzdr .gt_row_group_first th {
+#vlsceuvgkp .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#gbcmnvuzdr .gt_summary_row {
+#vlsceuvgkp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5773,16 +5814,16 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gbcmnvuzdr .gt_first_summary_row {
+#vlsceuvgkp .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_first_summary_row.thick {
+#vlsceuvgkp .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#gbcmnvuzdr .gt_last_summary_row {
+#vlsceuvgkp .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5792,7 +5833,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_grand_summary_row {
+#vlsceuvgkp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -5802,7 +5843,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gbcmnvuzdr .gt_first_grand_summary_row {
+#vlsceuvgkp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5812,7 +5853,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-top-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_last_grand_summary_row_top {
+#vlsceuvgkp .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -5822,11 +5863,11 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_striped {
+#vlsceuvgkp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#gbcmnvuzdr .gt_table_body {
+#vlsceuvgkp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -5835,7 +5876,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-bottom-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_footnotes {
+#vlsceuvgkp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5849,7 +5890,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_footnote {
+#vlsceuvgkp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -5858,7 +5899,7 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gbcmnvuzdr .gt_sourcenotes {
+#vlsceuvgkp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -5872,7 +5913,7 @@ grid-auto-rows: minmax(0, 1fr);">
   border-right-color: #D3D3D3;
 }
 
-#gbcmnvuzdr .gt_sourcenote {
+#vlsceuvgkp .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -5880,72 +5921,72 @@ grid-auto-rows: minmax(0, 1fr);">
   padding-right: 5px;
 }
 
-#gbcmnvuzdr .gt_left {
+#vlsceuvgkp .gt_left {
   text-align: left;
 }
 
-#gbcmnvuzdr .gt_center {
+#vlsceuvgkp .gt_center {
   text-align: center;
 }
 
-#gbcmnvuzdr .gt_right {
+#vlsceuvgkp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#gbcmnvuzdr .gt_font_normal {
+#vlsceuvgkp .gt_font_normal {
   font-weight: normal;
 }
 
-#gbcmnvuzdr .gt_font_bold {
+#vlsceuvgkp .gt_font_bold {
   font-weight: bold;
 }
 
-#gbcmnvuzdr .gt_font_italic {
+#vlsceuvgkp .gt_font_italic {
   font-style: italic;
 }
 
-#gbcmnvuzdr .gt_super {
+#vlsceuvgkp .gt_super {
   font-size: 65%;
 }
 
-#gbcmnvuzdr .gt_footnote_marks {
+#vlsceuvgkp .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#gbcmnvuzdr .gt_asterisk {
+#vlsceuvgkp .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#gbcmnvuzdr .gt_indent_1 {
+#vlsceuvgkp .gt_indent_1 {
   text-indent: 5px;
 }
 
-#gbcmnvuzdr .gt_indent_2 {
+#vlsceuvgkp .gt_indent_2 {
   text-indent: 10px;
 }
 
-#gbcmnvuzdr .gt_indent_3 {
+#vlsceuvgkp .gt_indent_3 {
   text-indent: 15px;
 }
 
-#gbcmnvuzdr .gt_indent_4 {
+#vlsceuvgkp .gt_indent_4 {
   text-indent: 20px;
 }
 
-#gbcmnvuzdr .gt_indent_5 {
+#vlsceuvgkp .gt_indent_5 {
   text-indent: 25px;
 }
 
-#gbcmnvuzdr .katex-display {
+#vlsceuvgkp .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#gbcmnvuzdr div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#vlsceuvgkp div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -5979,406 +6020,406 @@ grid-auto-rows: minmax(0, 1fr);">
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Documentation</td>
 <td class="gt_row gt_right" headers="Created">2024-11-28</td>
-<td class="gt_row gt_right" headers="Age (days)">419</td>
+<td class="gt_row gt_right" headers="Age (days)">425</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44740">[R] Provide helpful hints for NotImplemented kernel errors</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-11-15</td>
-<td class="gt_row gt_right" headers="Age (days)">432</td>
+<td class="gt_row gt_right" headers="Age (days)">438</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44688">[C++][Python] Potential improvements around supply chain security</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++, Python</td>
 <td class="gt_row gt_right" headers="Created">2024-11-09</td>
-<td class="gt_row gt_right" headers="Age (days)">438</td>
+<td class="gt_row gt_right" headers="Age (days)">444</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44676">[Python] Efficient way to iterate over groups</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python</td>
 <td class="gt_row gt_right" headers="Created">2024-11-07</td>
-<td class="gt_row gt_right" headers="Age (days)">440</td>
+<td class="gt_row gt_right" headers="Age (days)">446</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44673">[R] Add Cumsum and duplicated bindings to datasets in R</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-11-07</td>
-<td class="gt_row gt_right" headers="Age (days)">440</td>
+<td class="gt_row gt_right" headers="Age (days)">446</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44671">[CI][Packaging][Python] Enable BuildKit for building wheel on Windows</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python, Continuous Integration, Packaging</td>
 <td class="gt_row gt_right" headers="Created">2024-11-07</td>
-<td class="gt_row gt_right" headers="Age (days)">440</td>
+<td class="gt_row gt_right" headers="Age (days)">446</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44655">[Python] Enable pyarrow AzureFileSystem for Windows</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python, Packaging</td>
 <td class="gt_row gt_right" headers="Created">2024-11-05</td>
-<td class="gt_row gt_right" headers="Age (days)">442</td>
+<td class="gt_row gt_right" headers="Age (days)">448</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44594">[Dev][Archery] Use <code>--arrow-ref</code> instead of <code>--arrow-sha</code> in <code>archery crossbow submit</code></a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Archery, Developer Tools</td>
 <td class="gt_row gt_right" headers="Created">2024-10-31</td>
-<td class="gt_row gt_right" headers="Age (days)">447</td>
+<td class="gt_row gt_right" headers="Age (days)">453</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44535">[Format][Docs] Describe C device interface on C data interface and C stream interface docs pages</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Documentation, Format</td>
 <td class="gt_row gt_right" headers="Created">2024-10-26</td>
-<td class="gt_row gt_right" headers="Age (days)">452</td>
+<td class="gt_row gt_right" headers="Age (days)">458</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44534">Misleading error message when casting</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python</td>
 <td class="gt_row gt_right" headers="Created">2024-10-25</td>
-<td class="gt_row gt_right" headers="Age (days)">453</td>
+<td class="gt_row gt_right" headers="Age (days)">459</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44471">[CI][C++] Use a separated Docker image for Emscripten</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++, Continuous Integration</td>
 <td class="gt_row gt_right" headers="Created">2024-10-18</td>
-<td class="gt_row gt_right" headers="Age (days)">460</td>
+<td class="gt_row gt_right" headers="Age (days)">466</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44378">[CI][C++] Add clang-cl job</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++</td>
 <td class="gt_row gt_right" headers="Created">2024-10-11</td>
-<td class="gt_row gt_right" headers="Age (days)">467</td>
+<td class="gt_row gt_right" headers="Age (days)">473</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44349">[GLib] Add a sub <code>Buffer</code> class for <code>GBytes</code> based buffer</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">GLib</td>
 <td class="gt_row gt_right" headers="Created">2024-10-09</td>
-<td class="gt_row gt_right" headers="Age (days)">469</td>
+<td class="gt_row gt_right" headers="Age (days)">475</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44336">[C++] Binary View Compute Kernels</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++</td>
 <td class="gt_row gt_right" headers="Created">2024-10-08</td>
-<td class="gt_row gt_right" headers="Age (days)">470</td>
+<td class="gt_row gt_right" headers="Age (days)">476</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44306">[R] please write unregister_scalar_function and/or make registration local/temporary</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-10-04</td>
-<td class="gt_row gt_right" headers="Age (days)">474</td>
+<td class="gt_row gt_right" headers="Age (days)">480</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/44174">[R] Support integer date and time classes from data.table</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-09-19</td>
-<td class="gt_row gt_right" headers="Age (days)">489</td>
+<td class="gt_row gt_right" headers="Age (days)">495</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/43549">[C++][Parquet] Add support for arrow::ArrayStatistics</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Parquet, C++</td>
 <td class="gt_row gt_right" headers="Created">2024-08-04</td>
-<td class="gt_row gt_right" headers="Age (days)">535</td>
+<td class="gt_row gt_right" headers="Age (days)">541</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/43521">[R] Subtracting X days from a given date in ymd format</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-08-01</td>
-<td class="gt_row gt_right" headers="Age (days)">538</td>
+<td class="gt_row gt_right" headers="Age (days)">544</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/43510">[Python] Move tests that are explicitly about conversion to/from numpy on test_array.py to a separate file</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python</td>
 <td class="gt_row gt_right" headers="Created">2024-08-01</td>
-<td class="gt_row gt_right" headers="Age (days)">538</td>
+<td class="gt_row gt_right" headers="Age (days)">544</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/43207">[R] Implement anonymous functions in calls to dplyr::across</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-07-10</td>
-<td class="gt_row gt_right" headers="Age (days)">560</td>
+<td class="gt_row gt_right" headers="Age (days)">566</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/43079">[CI][Dev] Add shell script formatter</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Continuous Integration, Developer Tools</td>
 <td class="gt_row gt_right" headers="Created">2024-06-28</td>
-<td class="gt_row gt_right" headers="Age (days)">572</td>
+<td class="gt_row gt_right" headers="Age (days)">578</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/42211">[C++] Add support for system mimalloc</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++</td>
 <td class="gt_row gt_right" headers="Created">2024-06-19</td>
-<td class="gt_row gt_right" headers="Age (days)">581</td>
+<td class="gt_row gt_right" headers="Age (days)">587</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/42033">[Python] Get size of IPC File ahead of time</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python</td>
 <td class="gt_row gt_right" headers="Created">2024-06-07</td>
-<td class="gt_row gt_right" headers="Age (days)">593</td>
+<td class="gt_row gt_right" headers="Age (days)">599</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/41671">[Docs][Format] Move IPC format spec back into a separate page</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Documentation, Format</td>
 <td class="gt_row gt_right" headers="Created">2024-05-15</td>
-<td class="gt_row gt_right" headers="Age (days)">616</td>
+<td class="gt_row gt_right" headers="Age (days)">622</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/41670">[C++][Python] Update DLPack version</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++, Python</td>
 <td class="gt_row gt_right" headers="Created">2024-05-15</td>
-<td class="gt_row gt_right" headers="Age (days)">616</td>
+<td class="gt_row gt_right" headers="Age (days)">622</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/41651">[C++][Parquet] Predicate pushdown through arrow::dataset::ScanBuilder::Filter() not available on list fields</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Parquet, C++</td>
 <td class="gt_row gt_right" headers="Created">2024-05-14</td>
-<td class="gt_row gt_right" headers="Age (days)">617</td>
+<td class="gt_row gt_right" headers="Age (days)">623</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/41618">[R] Unable to disable url-encoding</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-05-10</td>
-<td class="gt_row gt_right" headers="Age (days)">621</td>
+<td class="gt_row gt_right" headers="Age (days)">627</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/41365">[Python] Pyarrow fs incorrectly resolves S3 URIs with white space as a local path</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python</td>
 <td class="gt_row gt_right" headers="Created">2024-04-24</td>
-<td class="gt_row gt_right" headers="Age (days)">637</td>
+<td class="gt_row gt_right" headers="Age (days)">643</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40966">[CI][Archery] Archery linking should also check for undefined symbols Windows</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Archery</td>
 <td class="gt_row gt_right" headers="Created">2024-04-03</td>
-<td class="gt_row gt_right" headers="Age (days)">658</td>
+<td class="gt_row gt_right" headers="Age (days)">664</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40965">[CI][Archery] Archery linking should also check for undefined symbols macOS</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Archery</td>
 <td class="gt_row gt_right" headers="Created">2024-04-03</td>
-<td class="gt_row gt_right" headers="Age (days)">658</td>
+<td class="gt_row gt_right" headers="Age (days)">664</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40964">[CI][Archery] Archery linking should also check for undefined symbols Linux</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Archery</td>
 <td class="gt_row gt_right" headers="Created">2024-04-03</td>
-<td class="gt_row gt_right" headers="Age (days)">658</td>
+<td class="gt_row gt_right" headers="Age (days)">664</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40881">[Ruby] Improve Ruby’s GC integration</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Ruby</td>
 <td class="gt_row gt_right" headers="Created">2024-03-29</td>
-<td class="gt_row gt_right" headers="Age (days)">663</td>
+<td class="gt_row gt_right" headers="Age (days)">669</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40849">[Python] Allow pyarrow import to fail without triggering Py_FatalError</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python</td>
 <td class="gt_row gt_right" headers="Created">2024-03-27</td>
-<td class="gt_row gt_right" headers="Age (days)">665</td>
+<td class="gt_row gt_right" headers="Age (days)">671</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40636">[Parquet] Make default fallback encoding choice smarter</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Parquet, C++</td>
 <td class="gt_row gt_right" headers="Created">2024-03-18</td>
-<td class="gt_row gt_right" headers="Age (days)">674</td>
+<td class="gt_row gt_right" headers="Age (days)">680</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40576">[Python][Docs] Max batch size for Dataset</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python, Documentation</td>
 <td class="gt_row gt_right" headers="Created">2024-03-15</td>
-<td class="gt_row gt_right" headers="Age (days)">677</td>
+<td class="gt_row gt_right" headers="Age (days)">683</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40521">[C++] Update vendored FlatBuffers to 24</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++</td>
 <td class="gt_row gt_right" headers="Created">2024-03-14</td>
-<td class="gt_row gt_right" headers="Age (days)">678</td>
+<td class="gt_row gt_right" headers="Age (days)">684</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40430">[C++] String manipulation on a dictionary column</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++</td>
 <td class="gt_row gt_right" headers="Created">2024-03-08</td>
-<td class="gt_row gt_right" headers="Age (days)">684</td>
+<td class="gt_row gt_right" headers="Age (days)">690</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/40166">[Python] Consider splitting _lib module into several parts</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python</td>
 <td class="gt_row gt_right" headers="Created">2024-02-20</td>
-<td class="gt_row gt_right" headers="Age (days)">701</td>
+<td class="gt_row gt_right" headers="Age (days)">707</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/39998">[Docs] Add a doc section for tensor arrays</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Documentation</td>
 <td class="gt_row gt_right" headers="Created">2024-02-08</td>
-<td class="gt_row gt_right" headers="Age (days)">713</td>
+<td class="gt_row gt_right" headers="Age (days)">719</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/39793">[R] Export functions for low-level pointer operations</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-01-25</td>
-<td class="gt_row gt_right" headers="Age (days)">727</td>
+<td class="gt_row gt_right" headers="Age (days)">733</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/39660">[R] Update the docs to show how to avoid situations like data loss with leading zero in partition column</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-01-17</td>
-<td class="gt_row gt_right" headers="Age (days)">735</td>
+<td class="gt_row gt_right" headers="Age (days)">741</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/39600">[R] Use correct attribution in the footer of pkgdown site</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2024-01-14</td>
-<td class="gt_row gt_right" headers="Age (days)">738</td>
+<td class="gt_row gt_right" headers="Age (days)">744</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/38456">[R] Inconsistent naming</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2023-10-25</td>
-<td class="gt_row gt_right" headers="Age (days)">819</td>
+<td class="gt_row gt_right" headers="Age (days)">825</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/38178">[R] open_dataset - format is unclear</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2023-10-10</td>
-<td class="gt_row gt_right" headers="Age (days)">834</td>
+<td class="gt_row gt_right" headers="Age (days)">840</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/37908">[R] open_dataset() behavior with incorrectly quoted input data</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2023-09-27</td>
-<td class="gt_row gt_right" headers="Age (days)">847</td>
+<td class="gt_row gt_right" headers="Age (days)">853</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/37227">Update default version in parquet.rst</a></td>
 <td class="gt_row gt_left" headers="Type">PR</td>
 <td class="gt_row gt_left" headers="Component">Documentation</td>
 <td class="gt_row gt_right" headers="Created">2023-08-17</td>
-<td class="gt_row gt_right" headers="Age (days)">888</td>
+<td class="gt_row gt_right" headers="Age (days)">894</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/pull/37100">GH-36831: [C++] DictionaryArray support for MinMax Function</a></td>
 <td class="gt_row gt_left" headers="Type">PR</td>
 <td class="gt_row gt_left" headers="Component">C++</td>
 <td class="gt_row gt_right" headers="Created">2023-08-10</td>
-<td class="gt_row gt_right" headers="Age (days)">895</td>
+<td class="gt_row gt_right" headers="Age (days)">901</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/35638">[C++][Parquet] Process parquet rowgroups without Arrow conversion</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Parquet, C++, Python</td>
 <td class="gt_row gt_right" headers="Created">2023-05-17</td>
-<td class="gt_row gt_right" headers="Age (days)">980</td>
+<td class="gt_row gt_right" headers="Age (days)">986</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/35319">[C++] Why is arrow mmap marked MAP_PRIVATE (during read)?</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++</td>
 <td class="gt_row gt_right" headers="Created">2023-04-25</td>
-<td class="gt_row gt_right" headers="Age (days)">1002</td>
+<td class="gt_row gt_right" headers="Age (days)">1008</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/34905">[Python] unexpected URL encoded path (white spaces) when uploading to S3</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python</td>
 <td class="gt_row gt_right" headers="Created">2023-04-05</td>
-<td class="gt_row gt_right" headers="Age (days)">1022</td>
+<td class="gt_row gt_right" headers="Age (days)">1028</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/30936">[R] Arrow/Parquet can’t open encrypted parquet files</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2022-01-26</td>
-<td class="gt_row gt_right" headers="Age (days)">1456</td>
+<td class="gt_row gt_right" headers="Age (days)">1462</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/25593">[Python] Array.__str__ shows misleading output for timestamp types with time zone set</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++, Python</td>
 <td class="gt_row gt_right" headers="Created">2020-07-19</td>
-<td class="gt_row gt_right" headers="Age (days)">2012</td>
+<td class="gt_row gt_right" headers="Age (days)">2018</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/25505">[C++/Python] Kernel for SetItem(IntegerArray, values) (“replace_with_indices”)</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++, Python</td>
 <td class="gt_row gt_right" headers="Created">2020-07-13</td>
-<td class="gt_row gt_right" headers="Age (days)">2018</td>
+<td class="gt_row gt_right" headers="Age (days)">2024</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/24898">[R] Add bindings to ConcatenateTables</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">R</td>
 <td class="gt_row gt_right" headers="Created">2020-05-09</td>
-<td class="gt_row gt_right" headers="Age (days)">2083</td>
+<td class="gt_row gt_right" headers="Age (days)">2089</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/24294">[Crossbow] Eliminate libgit2 dependency</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Developer Tools</td>
 <td class="gt_row gt_right" headers="Created">2020-03-12</td>
-<td class="gt_row gt_right" headers="Age (days)">2141</td>
+<td class="gt_row gt_right" headers="Age (days)">2147</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/22304">[C++][Python] Support ExtensionType arrays in more kernels</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++</td>
 <td class="gt_row gt_right" headers="Created">2019-07-09</td>
-<td class="gt_row gt_right" headers="Age (days)">2388</td>
+<td class="gt_row gt_right" headers="Age (days)">2394</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/22275">[Doc] Better document the Tensor classes in the prose documentation</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">C++, Python, Documentation</td>
 <td class="gt_row gt_right" headers="Created">2019-07-04</td>
-<td class="gt_row gt_right" headers="Age (days)">2393</td>
+<td class="gt_row gt_right" headers="Age (days)">2399</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="Title"><a href="https://github.com/apache/arrow/issues/18052">[Python] Add documentation section for integrations with PyTorch, TensorFlow</a></td>
 <td class="gt_row gt_left" headers="Type">Issue</td>
 <td class="gt_row gt_left" headers="Component">Python, Documentation</td>
 <td class="gt_row gt_right" headers="Created">2018-02-01</td>
-<td class="gt_row gt_right" headers="Age (days)">2911</td>
+<td class="gt_row gt_right" headers="Age (days)">2917</td>
 </tr>
 </tbody>
 </table>
