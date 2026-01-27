@@ -29,7 +29,7 @@ create_fig <- function(x, y, y_new){
 
   fig <-  plot_ly(x = x, y = y, type = 'bar',
           name = 'Other contributors', marker = list(color = 'FBCD99'))
-  if (nrow(y_new)) {
+  if (length(y_new) > 0) {
     fig <- fig %>% add_trace(y = ~y_new, name = 'New contributors', marker = list(color = '#DCAAA6'))
   }
   fig <- fig %>% layout(plot_bgcolor='#E9EEEF',
