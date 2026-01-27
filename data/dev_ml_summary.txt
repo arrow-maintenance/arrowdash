@@ -1,0 +1,15 @@
+* **Arrow 23.0.0 Release:** The community released version 23.0.0, resolving over 330 issues across the project's various language implementations and libraries. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2023.0.0%20released)
+
+* **AI-generated contribution guidelines:** Proposal to establish clear documentation regarding the use of LLMs for pull requests, emphasizing that contributors must own and understand the generated code to reduce maintainer burden. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
+
+* **Late materialization in Parquet:** Technical discussion on optimizing the Rust Parquet reader to evaluate predicates directly on encoded dictionary data, avoiding expensive string comparisons for low-cardinality columns. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Support%20for%20late%20materialization%20in%20Parquet%20-%3E%20Arrow)
+
+* **Security model for Arrow format:** A new initiative to formalize a security model for the Arrow memory format and IPC, including a draft document for security considerations in the C++ implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Security%20model%20for%20the%20Arrow%20format)
+
+* **Standalone C library for Parquet:** Announcement of "Carquet," a new standalone C99 library for reading and writing Parquet files designed for embedded environments without C++ or Arrow dependencies. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Carquet%20-%20standalone%20C%20library%20for%20Parquet%20files)
+
+* **ADBC 22 release:** The Arrow Database Connectivity (ADBC) libraries reached version 22, featuring updates to C#, Java, Go, and Rust subcomponents. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20ADBC%2022%20Released)
+
+* **Java Dataset API roadmap:** Discussion regarding the stability of the Java Dataset API, its roadmap for leaving experimental status, and plans for improved feature parity with the C++ implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Current%20status%20and%20roadmap%20for%20Java%20Dataset%20API)
+
+* **Java JDBC thread-safety:** Clarification on the thread-safety guarantees of the Arrow JDBC driver, confirming that connections and associated objects are generally not intended for concurrent multi-threaded access. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Java%20JDBC%20Driver%20thread-safety%20guarantees)

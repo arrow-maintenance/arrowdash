@@ -3,3 +3,6 @@
 .DS_Store
 __pycache__/
 .Rproj.user
+index_files/**
+*.mbox
+*.html

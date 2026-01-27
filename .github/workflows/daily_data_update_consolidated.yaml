@@ -15,23 +15,39 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up R
-        uses: r-lib/actions/setup-r@v2
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
-      - name: Install system dependencies
-        run: | 
-          sudo apt-get update
-          sudo apt-get install -y libcurl4-openssl-dev pkg-config
+      - name: Install Python dependencies
+        run: |
+          pip install pandas requests chatlas google-genai
 
-      - name: Install R dependencies
-        run: | 
-          Rscript -e 'install.packages(c("gh", "readr", "tibble", "lubridate", "dplyr", "purrr"))'
-
-      - name: Run consolidated update script
-        run: Rscript scripts/update_all_data.R
+      - name: Update language-specific data
+        run: python scripts/update_language_data.py
         env:
-          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+
+      - name: Update open counts
+        run: python scripts/update_open_counts.py
+        env:
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+
+      - name: Update monthly commits
+        run: python scripts/update_monthly_commits.py
+        env:
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+
+      - name: Update daily activity
+        run: python scripts/update_daily_activity.py
+        env:
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+
+      - name: Update mailing list summary
+        run: python scripts/update_ml_summary.py
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
       - name: Commit and push if data changed
         run: |

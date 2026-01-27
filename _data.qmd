@@ -1,89 +1,89 @@
-```{python}
-#| include: false
-#| warning: false
-issues, prs = gha.get_all(data, lang)
-
-issues_open = gha.get_open(issues)
-issues_open_new = issues_open[issues_open.author_association == "NONE"]
-issues_open_no_replies = issues_open[issues_open.comments == 0]
-
-prs_open = gha.get_open(prs)
-prs_open_new = prs_open[prs_open.author_association == "FIRST_TIME_CONTRIBUTOR"]
-prs_open_no_replies = prs_open[prs_open.comments == 0]
-
-issues_sum_new, issues_sum_others = gha.get_summary(issues)
-x_issues_others = issues_sum_others["created_at"]
-y_issues_others = issues_sum_others["sum"]
-y_issues_new = issues_sum_new["sum"]
-prs_sum_new, prs_sum_others = gha.get_summary(prs)
-x_prs_others = prs_sum_others["created_at"]
-y_prs_others = prs_sum_others["sum"]
-y_prs_new = prs_sum_new["sum"]
-
-data_ml = ml.get_all(lang)
-```
-
 ```{r}
 #| include: false
 #| warning: false
-vector_tags = c("apache-arrow", py$lang)
-if(py$lang == "Python"){
-    append(vector_tags, c("pyarrow", "python"))
+
+# Read pre-computed data from CSV files
+issues_open <- read_language_data(lang, "issues_open")
+prs_open <- read_language_data(lang, "prs_open")
+issues_summary <- read_language_data(lang, "issues_summary")
+prs_summary <- read_language_data(lang, "prs_summary")
+mailing_list_data <- read_language_data(lang, "mailing_list")
+
+# Filter for new contributors and no replies
+if (nrow(issues_open) > 0) {
+  issues_open_new <- issues_open[issues_open$author_association == "NONE", ]
+  issues_open_no_replies <- issues_open[issues_open$comments == 0, ]
+} else {
+  issues_open_new <- issues_open
+  issues_open_no_replies <- issues_open
+}
+
+if (nrow(prs_open) > 0) {
+  prs_open_new <- prs_open[prs_open$author_association == "FIRST_TIME_CONTRIBUTOR", ]
+  prs_open_no_replies <- prs_open[prs_open$comments == 0, ]
+} else {
+  prs_open_new <- prs_open
+  prs_open_no_replies <- prs_open
+}
+
+# Stack Overflow data (already R-only)
+vector_tags <- c("apache-arrow", lang)
+if (lang == "Python") {
+  vector_tags <- c(vector_tags, "pyarrow", "python")
 }
 
 questions_content <- get_questions(vector_tags)
 so_data <- adjust_data(questions_content)
-last_so_data <- so_data %>% filter(last_activity_date > now()- months(3))
+last_so_data <- so_data %>% filter(last_activity_date > now() - months(3))
 last_so_data_not_accepted <- last_so_data %>% filter(accepted_answer == FALSE)
-last_so_data_no_activity <- last_so_data %>%
-                              filter(answers == 0 & comments == 0)
+last_so_data_no_activity <- last_so_data %>% filter(answers == 0 & comments == 0)
 ```
 
 ## Row {.tabset}
 
-### Summary 
+### Summary
 
-#### Column 
+#### Column
 
 ##### Row {height=20%}
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Issues"
-dict(
+list(
   icon = "inboxes",
   color = "light",
-  value = len(issues)
+  value = nrow(issues_open)
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Pull Requests"
-dict(
+list(
   icon = "diagram-2",
   color = "light",
-  value = len(prs)
+  value = nrow(prs_open)
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Stack Overflow Questions"
-dict(
+list(
   icon = "stack-overflow",
   color = "light",
-  value = len(r.last_so_data)
+  value = nrow(last_so_data)
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Mailing List messages"
-dict(
+list(
   icon = "envelope",
   color = "light",
-  value = len(data_ml)
+  value = nrow(mailing_list_data)
 )
 ```
 
@@ -91,55 +91,55 @@ dict(
 
 ```{r}
 #| title: Issues opened through the last 3 months
-create_fig(py$x_issues_others, py$y_issues_others, py$y_issues_new)
+create_fig(issues_summary$dates, issues_summary$others, issues_summary$new)
 ```
 
 ```{r}
 #| title: PRs opened through the last 3 months
-create_fig(py$x_prs_others, py$y_prs_others, py$y_prs_new)
+create_fig(prs_summary$dates, prs_summary$others, prs_summary$new)
 ```
 
 ### Issues & PRs
 
 #### Row
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Open Issues"
-dict(
+list(
   icon = "list",
   color = "light",
-  value = len(issues_open)
+  value = nrow(issues_open)
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Issues from New Contributors"
-dict(
+list(
   icon = "egg",
   color = "success",
-  value = len(issues_open_new)
+  value = nrow(issues_open_new)
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Open PRs"
-dict(
+list(
   icon = "diagram-2",
   color = "light",
-  value = len(prs_open)
+  value = nrow(prs_open)
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "PRs from New Contributors"
-dict(
+list(
   icon = "emoji-heart-eyes",
   color = "success",
-  value = len(prs_open_new)
+  value = nrow(prs_open_new)
 )
 ```
 
@@ -147,45 +147,45 @@ dict(
 
 ```{r}
 #| title: Open issues (new contributors highlighted)
-gt_show_issues(py$issues_open)
+gt_show_issues(issues_open)
 ```
 
 ```{r}
 #| title: Open PRs (new contributors highlighted)
-gt_show_issues(py$prs_open)
+gt_show_issues(prs_open)
 ```
 
 ### Stack Overflow
 
 #### Row
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Questions in last 90 days"
-dict(
+list(
   icon = "question-square",
   color = "light",
-  value = len(r.last_so_data)
+  value = nrow(last_so_data)
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Questions without accepted answer"
-dict(
+list(
   icon = "question-diamond",
   color = "light",
-  value = len(r.last_so_data_not_accepted)
+  value = nrow(last_so_data_not_accepted)
 )
 ```
 
-```{python}
+```{r}
 #| content: valuebox
 #| title: "Questions with no activity"
-dict(
+list(
   icon = "question",
   color = "warning",
-  value = len(r.last_so_data_no_activity)
+  value = nrow(last_so_data_no_activity)
 )
 ```
 
@@ -198,9 +198,9 @@ gt_show_questions(last_so_data)
 
 ### Mailing List
 
-#### Row 
+#### Row
 
 ```{r}
 #| title: Mailing list items from the last month
-gt_show_emails(py$data_ml)
+gt_show_emails(mailing_list_data)
 ```
