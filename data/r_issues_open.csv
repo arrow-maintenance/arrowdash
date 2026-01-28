@@ -18,4 +18,3 @@ created_at,url_title,html_url,author_association,comments
 2025-11-16T18:30:33Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48144"">[R] `col_types` ignored when `convert_options` specified</a>",https://github.com/apache/arrow/issues/48144,NONE,1
 2025-11-12T08:48:07Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48103"">[Release][R] Add verification of R binaries to release process verification script</a>",https://github.com/apache/arrow/issues/48103,MEMBER,0
 2025-10-31T09:18:43Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48012"">[R] Build scripts use bash-specific syntax, requiring bash on Alpine Linux</a>",https://github.com/apache/arrow/issues/48012,MEMBER,3
-2025-10-29T20:57:28Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/47997"">[R][Dev] pre-commit RScript local check fails on ubuntu 25.10</a>",https://github.com/apache/arrow/issues/47997,MEMBER,0
