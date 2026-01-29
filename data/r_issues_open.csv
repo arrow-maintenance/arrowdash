@@ -3,7 +3,6 @@ created_at,url_title,html_url,author_association,comments
 2026-01-26T19:06:09Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49000"">[R] Warning building docs due to unresolved references to base R functions</a>",https://github.com/apache/arrow/issues/49000,MEMBER,0
 2026-01-26T18:54:16Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48998"">[R] Add note to docs on validating IPC streams</a>",https://github.com/apache/arrow/issues/48998,MEMBER,0
 2026-01-20T11:53:47Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48908"">[R] write_to_raw is very slow</a>",https://github.com/apache/arrow/issues/48908,NONE,3
-2026-01-19T16:39:56Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48903"">[R] CRAN packaging checklist for version 23.0.0</a>",https://github.com/apache/arrow/issues/48903,MEMBER,11
 2026-01-12T16:24:21Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48832"">[R] arrow::write_parquet error with zero-length datetimes in R 4.5.2</a>",https://github.com/apache/arrow/issues/48832,NONE,3
 2026-01-12T14:03:41Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48830"">[CI][R] Update our gcc12 job for R CI</a>",https://github.com/apache/arrow/issues/48830,MEMBER,2
 2026-01-09T09:04:34Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48805"">[CI][R] test-r-alpine-linux-cran fails with segmentation fault</a>",https://github.com/apache/arrow/issues/48805,MEMBER,1
