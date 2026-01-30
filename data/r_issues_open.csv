@@ -1,5 +1,5 @@
 created_at,url_title,html_url,author_association,comments
-2026-01-27T07:33:20Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49006"">[R] Error, read_parquet new expected indices in 23.0.0</a>",https://github.com/apache/arrow/issues/49006,NONE,1
+2026-01-30T02:32:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49067"">[R] Disable GCS on macos</a>",https://github.com/apache/arrow/issues/49067,MEMBER,0
 2026-01-26T19:06:09Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49000"">[R] Warning building docs due to unresolved references to base R functions</a>",https://github.com/apache/arrow/issues/49000,MEMBER,0
 2026-01-26T18:54:16Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48998"">[R] Add note to docs on validating IPC streams</a>",https://github.com/apache/arrow/issues/48998,MEMBER,0
 2026-01-20T11:53:47Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48908"">[R] write_to_raw is very slow</a>",https://github.com/apache/arrow/issues/48908,NONE,3
@@ -16,4 +16,3 @@ created_at,url_title,html_url,author_association,comments
 2025-11-16T19:11:03Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48145"">[R][Dev] Update test helpers for testthat 3.3.0</a>",https://github.com/apache/arrow/issues/48145,MEMBER,0
 2025-11-16T18:30:33Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48144"">[R] `col_types` ignored when `convert_options` specified</a>",https://github.com/apache/arrow/issues/48144,NONE,1
 2025-11-12T08:48:07Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48103"">[Release][R] Add verification of R binaries to release process verification script</a>",https://github.com/apache/arrow/issues/48103,MEMBER,0
-2025-10-31T09:18:43Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48012"">[R] Build scripts use bash-specific syntax, requiring bash on Alpine Linux</a>",https://github.com/apache/arrow/issues/48012,MEMBER,3
