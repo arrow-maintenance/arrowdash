@@ -1,5 +1,5 @@
 created_at,url_title,html_url,author_association,comments
-2026-01-28T16:50:49Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49047"">GH-46008: [Python][Benchmarking] Remove unused asv benchmarking files</a>",https://github.com/apache/arrow/pull/49047,MEMBER,11
+2026-01-28T16:50:49Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49047"">GH-46008: [Python][Benchmarking] Remove unused asv benchmarking files</a>",https://github.com/apache/arrow/pull/49047,MEMBER,12
 2026-01-26T15:17:12Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48994"">GH-48972: [Python] Add errors='coerce' parameter to pyarrow.compute.cast</a>",https://github.com/apache/arrow/pull/48994,CONTRIBUTOR,0
 2026-01-25T12:55:59Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48979"">GH-48978: [Python] test failures on pandas 3.0 (currently CI on 2.3.3) </a>",https://github.com/apache/arrow/pull/48979,CONTRIBUTOR,3
 2026-01-23T02:25:19Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48958"">GH-48957: [Benchmarking] Add temporal type support to benchmarks</a>",https://github.com/apache/arrow/pull/48958,MEMBER,1
