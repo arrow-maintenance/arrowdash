@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-01-31T15:24:53Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49103"">[Python] Add internal type system stubs (_types, error, _stubs_typing)</a>",https://github.com/apache/arrow/issues/49103,MEMBER,0
 2026-01-30T11:12:20Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49083"">[CI][Python] Nigthly dask tests are failing due to type and conversion differences</a>",https://github.com/apache/arrow/issues/49083,MEMBER,2
 2026-01-30T10:03:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49078"">[Python][FS][Azure] Pickling `SubTreeFileSystem(base_path, AzureFileSystem(...))` is lossy</a>",https://github.com/apache/arrow/issues/49078,CONTRIBUTOR,0
 2026-01-29T13:25:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49058"">[Python] Non-UTF-8 bytes should be disallowed in custom_metadata</a>",https://github.com/apache/arrow/issues/49058,NONE,0
@@ -51,4 +52,3 @@ created_at,url_title,html_url,author_association,comments
 2025-11-05T14:22:13Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48060"">[C++][Python] `list_sort` - sorting individual ListScalars</a>",https://github.com/apache/arrow/issues/48060,CONTRIBUTOR,8
 2025-11-03T13:39:19Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48028"">[Python][Packaging] Failing musllinux wheels due to new image from quay.io</a>",https://github.com/apache/arrow/issues/48028,MEMBER,4
 2025-11-03T02:58:15Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48024"">Table.rename_columns() drops schema metadata</a>",https://github.com/apache/arrow/issues/48024,NONE,1
-2025-11-02T13:31:51Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48023"">Using pandas Period in filters for parquet fails</a>",https://github.com/apache/arrow/issues/48023,NONE,1
