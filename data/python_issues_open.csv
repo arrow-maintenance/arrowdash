@@ -1,7 +1,7 @@
 created_at,url_title,html_url,author_association,comments
-2026-02-01T08:18:38Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49108"">[Python] SparseCOOTensor.__repr__ missing f-string prefix</a>",https://github.com/apache/arrow/issues/49108,CONTRIBUTOR,0
+2026-02-02T10:08:57Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49115"">[CI][Packaging][Python] Nightly wheels fail due to utf8proc::utf8proc not being found</a>",https://github.com/apache/arrow/issues/49115,MEMBER,2
 2026-01-31T15:24:53Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49103"">[Python] Add internal type system stubs (_types, error, _stubs_typing)</a>",https://github.com/apache/arrow/issues/49103,MEMBER,0
-2026-01-30T11:12:20Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49083"">[CI][Python] Nigthly dask tests are failing due to type and conversion differences</a>",https://github.com/apache/arrow/issues/49083,MEMBER,2
+2026-01-30T11:12:20Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49083"">[CI][Python] Nigthly dask tests are failing due to type and conversion differences</a>",https://github.com/apache/arrow/issues/49083,MEMBER,3
 2026-01-30T10:03:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49078"">[Python][FS][Azure] Pickling `SubTreeFileSystem(base_path, AzureFileSystem(...))` is lossy</a>",https://github.com/apache/arrow/issues/49078,CONTRIBUTOR,0
 2026-01-29T13:25:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49058"">[Python] Non-UTF-8 bytes should be disallowed in custom_metadata</a>",https://github.com/apache/arrow/issues/49058,NONE,0
 2026-01-29T09:47:12Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49057"">[Python][Packaging] Merge Windows wheels base and test base images into a single image</a>",https://github.com/apache/arrow/issues/49057,MEMBER,0
