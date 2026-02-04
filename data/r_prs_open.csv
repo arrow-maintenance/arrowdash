@@ -1,8 +1,9 @@
 created_at,url_title,html_url,author_association,comments
-2026-01-30T02:33:14Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49068"">GH-49067: [R] Disable GCS on macos</a>",https://github.com/apache/arrow/pull/49068,MEMBER,7
+2026-02-03T14:46:31Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49130"">WIP: Dummy PR to check maint-23.0.1 status</a>",https://github.com/apache/arrow/pull/49130,MEMBER,8
+2026-02-03T13:18:25Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49128"">GH-49129: [R][Parquet] Guard Parquet dataset code with ARROW_R_WITH_PARQUET</a>",https://github.com/apache/arrow/pull/49128,FIRST_TIME_CONTRIBUTOR,10
 2026-01-26T19:19:59Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49001"">GH-49000: [R] Warning building docs due to unresolved references to base R functions</a>",https://github.com/apache/arrow/pull/49001,MEMBER,1
 2026-01-26T19:03:25Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48999"">GH-48998: [R] Add note to docs on validating IPC streams </a>",https://github.com/apache/arrow/pull/48999,MEMBER,0
-2026-01-26T16:39:26Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48995"">GH-48397: [R] Update docs on how to get our libarrow builds</a>",https://github.com/apache/arrow/pull/48995,MEMBER,0
+2026-01-26T16:39:26Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48995"">GH-48397: [R] Update docs on how to get our libarrow builds</a>",https://github.com/apache/arrow/pull/48995,MEMBER,1
 2026-01-14T10:21:38Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48854"">GH-48832: [R] Fix crash with zero-length POSIXct tzone attribute</a>",https://github.com/apache/arrow/pull/48854,CONTRIBUTOR,0
 2026-01-13T11:41:29Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48840"">Update dplyr-funcs-doc.R to fix a typo</a>",https://github.com/apache/arrow/pull/48840,FIRST_TIME_CONTRIBUTOR,2
 2025-12-19T22:57:19Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48601"">GH-48593: [C++] C++20: use standard calendar / timezone APIs</a>",https://github.com/apache/arrow/pull/48601,MEMBER,26

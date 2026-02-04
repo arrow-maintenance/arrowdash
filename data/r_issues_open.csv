@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-03T13:27:34Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49129"">[R] Compilation fails when Parquet support is disabled</a>",https://github.com/apache/arrow/issues/49129,NONE,0
 2026-01-30T02:32:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49067"">[R] Disable GCS on macos</a>",https://github.com/apache/arrow/issues/49067,MEMBER,0
 2026-01-26T19:06:09Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49000"">[R] Warning building docs due to unresolved references to base R functions</a>",https://github.com/apache/arrow/issues/49000,MEMBER,0
 2026-01-26T18:54:16Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48998"">[R] Add note to docs on validating IPC streams</a>",https://github.com/apache/arrow/issues/48998,MEMBER,0
