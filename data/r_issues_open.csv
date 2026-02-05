@@ -1,4 +1,7 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-04T16:03:50Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49149"">parquet does not retain haven::tagged_na()</a>",https://github.com/apache/arrow/issues/49149,NONE,0
+2026-02-04T14:13:09Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49144"">[R][CI] Get rid of unused CentOS CI job</a>",https://github.com/apache/arrow/issues/49144,MEMBER,0
+2026-02-04T13:33:59Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49143"">[R] Bindings for new dplyr verbs</a>",https://github.com/apache/arrow/issues/49143,MEMBER,0
 2026-02-03T13:27:34Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49129"">[R] Compilation fails when Parquet support is disabled</a>",https://github.com/apache/arrow/issues/49129,NONE,0
 2026-01-30T02:32:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49067"">[R] Disable GCS on macos</a>",https://github.com/apache/arrow/issues/49067,MEMBER,0
 2026-01-26T19:06:09Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49000"">[R] Warning building docs due to unresolved references to base R functions</a>",https://github.com/apache/arrow/issues/49000,MEMBER,0
@@ -12,7 +15,6 @@ created_at,url_title,html_url,author_association,comments
 2025-12-26T03:46:33Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48660"">[R] Add tests for filter() and arrange() with aggregation expressions</a>",https://github.com/apache/arrow/issues/48660,MEMBER,0
 2025-12-26T03:38:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48658"">[R] Add test for slice_sample with prop = 1 edge case</a>",https://github.com/apache/arrow/issues/48658,MEMBER,0
 2025-12-23T06:01:49Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48629"">[R] Add tests for duplicate column names and incompatible types in joins</a>",https://github.com/apache/arrow/issues/48629,MEMBER,0
-2025-12-08T14:35:25Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48397"">[R] How should we suggest to folks to get our libarrow builds?</a>",https://github.com/apache/arrow/issues/48397,MEMBER,2
 2025-12-03T19:33:45Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48321"">[R] Cannot install Arrow 22 to RHEL due to lack of escape characters in grepl</a>",https://github.com/apache/arrow/issues/48321,NONE,2
 2025-11-16T19:11:03Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48145"">[R][Dev] Update test helpers for testthat 3.3.0</a>",https://github.com/apache/arrow/issues/48145,MEMBER,0
 2025-11-16T18:30:33Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48144"">[R] `col_types` ignored when `convert_options` specified</a>",https://github.com/apache/arrow/issues/48144,NONE,1

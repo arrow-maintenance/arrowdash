@@ -1,10 +1,11 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-04T09:26:15Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49138"">[Packaging][Python] PyArrow fails building with nightlies Cython</a>",https://github.com/apache/arrow/issues/49138,MEMBER,5
 2026-01-31T15:24:53Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49103"">[Python] Add internal type system stubs (_types, error, _stubs_typing)</a>",https://github.com/apache/arrow/issues/49103,MEMBER,0
 2026-01-30T10:03:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49078"">[Python][FS][Azure] Pickling `SubTreeFileSystem(base_path, AzureFileSystem(...))` is lossy</a>",https://github.com/apache/arrow/issues/49078,CONTRIBUTOR,0
-2026-01-29T13:25:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49058"">[Python] Non-UTF-8 bytes should be disallowed in custom_metadata</a>",https://github.com/apache/arrow/issues/49058,NONE,0
+2026-01-29T13:25:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49058"">[Python] Non-UTF-8 bytes should be disallowed in custom_metadata</a>",https://github.com/apache/arrow/issues/49058,NONE,4
 2026-01-29T09:47:12Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49057"">[Python][Packaging] Merge Windows wheels base and test base images into a single image</a>",https://github.com/apache/arrow/issues/49057,MEMBER,0
 2026-01-28T16:14:10Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49046"">[Dev][Python] Unused python scripts under python/scripts</a>",https://github.com/apache/arrow/issues/49046,MEMBER,2
-2026-01-26T20:01:14Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49002"">[Python] Wrong cast from StringArray to pandas 3 when element is `None`</a>",https://github.com/apache/arrow/issues/49002,NONE,1
+2026-01-26T20:01:14Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49002"">[Python] Wrong cast from StringArray to pandas 3 when element is `None`</a>",https://github.com/apache/arrow/issues/49002,NONE,4
 2026-01-26T09:35:41Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48987"">[Python][Packaging] Drop archery and docker for our Windows wheels and build on the GitHub runner directly</a>",https://github.com/apache/arrow/issues/48987,MEMBER,7
 2026-01-26T09:32:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48986"">ORC Predicate Pushdown</a>",https://github.com/apache/arrow/issues/48986,NONE,0
 2026-01-25T12:17:32Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48978"">[Python] test failures on pandas 3.0 (currently CI on 2.3.3)</a>",https://github.com/apache/arrow/issues/48978,CONTRIBUTOR,1
