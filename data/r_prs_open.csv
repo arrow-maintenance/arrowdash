@@ -1,6 +1,6 @@
 created_at,url_title,html_url,author_association,comments
 2026-02-03T14:46:31Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49130"">WIP: Dummy PR to check maint-23.0.1 status</a>",https://github.com/apache/arrow/pull/49130,MEMBER,12
-2026-02-03T13:18:25Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49128"">GH-49129: [R][Parquet] Guard Parquet dataset code with ARROW_R_WITH_PARQUET</a>",https://github.com/apache/arrow/pull/49128,FIRST_TIME_CONTRIBUTOR,14
+2026-02-03T13:18:25Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49128"">GH-49129: [R][Parquet] Guard Parquet dataset code with ARROW_R_WITH_PARQUET</a>",https://github.com/apache/arrow/pull/49128,FIRST_TIME_CONTRIBUTOR,15
 2026-01-26T19:19:59Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49001"">GH-49000: [R] Warning building docs due to unresolved references to base R functions</a>",https://github.com/apache/arrow/pull/49001,MEMBER,1
 2026-01-26T19:03:25Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48999"">GH-48998: [R] Add note to docs on validating IPC streams </a>",https://github.com/apache/arrow/pull/48999,MEMBER,0
 2026-01-14T10:21:38Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48854"">GH-48832: [R] Fix crash with zero-length POSIXct tzone attribute</a>",https://github.com/apache/arrow/pull/48854,CONTRIBUTOR,0

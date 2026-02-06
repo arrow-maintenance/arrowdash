@@ -1,5 +1,7 @@
 created_at,url_title,html_url,author_association,comments
-2026-02-04T09:26:15Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49138"">[Packaging][Python] PyArrow fails building with nightlies Cython</a>",https://github.com/apache/arrow/issues/49138,MEMBER,5
+2026-02-05T20:00:45Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49158"">PyArrow cannot read from a newline-delimited JSON file with inconsistent column types, even if parse_options specifies a schema</a>",https://github.com/apache/arrow/issues/49158,NONE,1
+2026-02-05T16:15:33Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49156"">[Python] String comparison on pyarrow/table.pxi should require the GIL</a>",https://github.com/apache/arrow/issues/49156,MEMBER,0
+2026-02-05T11:26:55Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49153"">[C++][Python] Act on existing deprecations</a>",https://github.com/apache/arrow/issues/49153,MEMBER,12
 2026-01-31T15:24:53Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49103"">[Python] Add internal type system stubs (_types, error, _stubs_typing)</a>",https://github.com/apache/arrow/issues/49103,MEMBER,0
 2026-01-30T10:03:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49078"">[Python][FS][Azure] Pickling `SubTreeFileSystem(base_path, AzureFileSystem(...))` is lossy</a>",https://github.com/apache/arrow/issues/49078,CONTRIBUTOR,0
 2026-01-29T13:25:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49058"">[Python] Non-UTF-8 bytes should be disallowed in custom_metadata</a>",https://github.com/apache/arrow/issues/49058,NONE,4
