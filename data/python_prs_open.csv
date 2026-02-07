@@ -1,9 +1,12 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-06T16:25:37Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49166"">WIP: [R] Verify CRAN release 23.0.0.1</a>",https://github.com/apache/arrow/pull/49166,MEMBER,3
+2026-02-06T12:15:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49163"">Docs: `Array.from_buffers` accepts `None` buffers</a>",https://github.com/apache/arrow/pull/49163,FIRST_TIME_CONTRIBUTOR,2
+2026-02-06T11:09:10Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49162"">GH-48182: [Python] Add regression test for RecordBatch.from_struct_array with list offsets</a>",https://github.com/apache/arrow/pull/49162,FIRST_TIMER,0
 2026-02-05T10:13:32Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49152"">GH-43075: [Docs][Python] Document that source parameter to IPC reader…</a>",https://github.com/apache/arrow/pull/49152,FIRST_TIME_CONTRIBUTOR,0
 2026-02-04T16:00:43Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49148"">GH-49146: [C++] Add option to disable atfork handlers</a>",https://github.com/apache/arrow/pull/49148,MEMBER,0
 2026-02-04T15:57:53Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49147"">GH-43352: [Docs][Python] Add all tensor classes documentation</a>",https://github.com/apache/arrow/pull/49147,CONTRIBUTOR,0
 2026-02-04T11:18:31Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49140"">GH-49078: [FS][Azure] Fix lossy pickling of `SubTreeFileSystem(base_path, AzureFileSystem(...))`</a>",https://github.com/apache/arrow/pull/49140,CONTRIBUTOR,1
-2026-02-03T14:46:31Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49130"">WIP: Dummy PR to check maint-23.0.1 status</a>",https://github.com/apache/arrow/pull/49130,MEMBER,12
+2026-02-03T14:46:31Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49130"">WIP: Dummy PR to check maint-23.0.1 status</a>",https://github.com/apache/arrow/pull/49130,MEMBER,16
 2026-01-26T15:17:12Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48994"">GH-48972: [Python] Add errors='coerce' parameter to pyarrow.compute.cast</a>",https://github.com/apache/arrow/pull/48994,CONTRIBUTOR,0
 2026-01-25T12:55:59Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48979"">GH-48978: [Python] test failures on pandas 3.0 (currently CI on 2.3.3) </a>",https://github.com/apache/arrow/pull/48979,CONTRIBUTOR,3
 2026-01-23T02:25:19Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48958"">GH-48957: [Benchmarking] Add temporal type support to benchmarks</a>",https://github.com/apache/arrow/pull/48958,MEMBER,1
@@ -31,4 +34,3 @@ created_at,url_title,html_url,author_association,comments
 2025-11-23T14:08:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48232"">GH-48231 [C++][Parquet] Add FSST encoding support for Parquet</a>",https://github.com/apache/arrow/pull/48232,MEMBER,9
 2025-11-21T12:19:49Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48201"">GH-48199: [Python][Parquet] Expose existing Parquet C++ metadata about index_page and bloom_filter to Python</a>",https://github.com/apache/arrow/pull/48201,MEMBER,3
 2025-11-20T14:30:12Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48191"">GH-48172: [Python] Add cp315 to build</a>",https://github.com/apache/arrow/pull/48191,CONTRIBUTOR,5
-2025-11-08T00:59:43Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48085"">GH-32007 [Python] Support arithmetic on arrays and scalars</a>",https://github.com/apache/arrow/pull/48085,CONTRIBUTOR,20
