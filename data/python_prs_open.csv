@@ -1,5 +1,7 @@
 created_at,url_title,html_url,author_association,comments
-2026-02-07T14:50:16Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49177"">GH-49158: Allow type conversion in JSON parser when explicit schema is provided</a>",https://github.com/apache/arrow/pull/49177,CONTRIBUTOR,1
+2026-02-08T11:34:02Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49182"">   Fix: Replace std::floating_point concept with std::is_floating_point_v for Apple Clang 14.0.0 compatibility</a>",https://github.com/apache/arrow/pull/49182,CONTRIBUTOR,2
+2026-02-08T06:37:16Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49181"">GH-48986: [Python][Dataset] Add filters parameter to orc.read_table() for predicate pushdown (15/15)</a>",https://github.com/apache/arrow/pull/49181,FIRST_TIME_CONTRIBUTOR,0
+2026-02-07T14:50:16Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49177"">GH-49158: [Python] Allow type conversion in JSON parser when explicit schema is provided</a>",https://github.com/apache/arrow/pull/49177,CONTRIBUTOR,1
 2026-02-06T16:25:37Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49166"">WIP: [R] Verify CRAN release 23.0.0.1</a>",https://github.com/apache/arrow/pull/49166,MEMBER,3
 2026-02-06T12:15:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49163"">Docs: `Array.from_buffers` accepts `None` buffers</a>",https://github.com/apache/arrow/pull/49163,FIRST_TIME_CONTRIBUTOR,2
 2026-02-06T11:09:10Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49162"">GH-48182: [Python] Add regression test for RecordBatch.from_struct_array with list offsets</a>",https://github.com/apache/arrow/pull/49162,FIRST_TIMER,0
