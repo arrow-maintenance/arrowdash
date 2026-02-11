@@ -19,4 +19,3 @@ created_at,url_title,html_url,author_association,comments
 2025-12-03T19:33:45Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48321"">[R] Cannot install Arrow 22 to RHEL due to lack of escape characters in grepl</a>",https://github.com/apache/arrow/issues/48321,NONE,2
 2025-11-16T19:11:03Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48145"">[R][Dev] Update test helpers for testthat 3.3.0</a>",https://github.com/apache/arrow/issues/48145,MEMBER,0
 2025-11-16T18:30:33Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48144"">[R] `col_types` ignored when `convert_options` specified</a>",https://github.com/apache/arrow/issues/48144,NONE,1
-2025-11-12T08:48:07Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48103"">[Release][R] Add verification of R binaries to release process verification script</a>",https://github.com/apache/arrow/issues/48103,MEMBER,0
