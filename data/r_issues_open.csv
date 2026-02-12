@@ -1,6 +1,7 @@
 created_at,url_title,html_url,author_association,comments
-2026-02-09T08:22:30Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49186"">[R]: add support to the new dplyr verb filter_out</a>",https://github.com/apache/arrow/issues/49186,NONE,0
-2026-02-04T16:03:50Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49149"">parquet does not retain haven::tagged_na()</a>",https://github.com/apache/arrow/issues/49149,NONE,1
+2026-02-11T16:09:22Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49237"">[R] Deprecate Feather reader and writer</a>",https://github.com/apache/arrow/issues/49237,MEMBER,0
+2026-02-09T08:22:30Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49186"">[R]: add support to the new dplyr verb filter_out</a>",https://github.com/apache/arrow/issues/49186,NONE,4
+2026-02-04T16:03:50Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49149"">[R] parquet does not retain haven::tagged_na()</a>",https://github.com/apache/arrow/issues/49149,NONE,1
 2026-02-04T14:13:09Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49144"">[R][CI] Get rid of unused CentOS CI job</a>",https://github.com/apache/arrow/issues/49144,MEMBER,0
 2026-02-04T13:33:59Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49143"">[R] Bindings for new dplyr verbs</a>",https://github.com/apache/arrow/issues/49143,MEMBER,0
 2026-02-03T13:27:34Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49129"">[R] Compilation fails when Parquet support is disabled</a>",https://github.com/apache/arrow/issues/49129,NONE,0

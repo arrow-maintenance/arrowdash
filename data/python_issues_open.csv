@@ -1,4 +1,8 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-11T15:38:44Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49234"">[CI][Python] Nightly sdist job fails due to missing update_stub_docstrings.py file</a>",https://github.com/apache/arrow/issues/49234,MEMBER,1
+2026-02-11T15:37:15Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49233"">[CI][Python] Nightly wheels fail to be uploaded to anaconda scientific nightlies channel</a>",https://github.com/apache/arrow/issues/49233,MEMBER,0
+2026-02-11T12:02:54Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49227"">[Python] Deprecate `pyarrow.gandiva`</a>",https://github.com/apache/arrow/issues/49227,MEMBER,3
+2026-02-11T04:23:02Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49222"">[Python] data loss converting to Table from pandas Timedelta built using `replace`</a>",https://github.com/apache/arrow/issues/49222,NONE,1
 2026-02-09T20:39:53Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49199"">[Python][Annotations] Remaining test fixes</a>",https://github.com/apache/arrow/issues/49199,MEMBER,0
 2026-02-09T20:37:52Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49198"">[Python][Annotations] Flight, CUDA and other modules</a>",https://github.com/apache/arrow/issues/49198,MEMBER,0
 2026-02-09T20:36:28Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49197"">[Python][Annotations] Parquet and Dataset</a>",https://github.com/apache/arrow/issues/49197,MEMBER,0
