@@ -1,5 +1,6 @@
 created_at,url_title,html_url,author_association,comments
-2026-02-12T13:38:51Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49256"">GH-49257: [R] Support dplyr::filter_out() in Arrow dplyr backend</a>",https://github.com/apache/arrow/pull/49256,FIRST_TIMER,2
+2026-02-13T15:31:25Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49276"">GH-49237: [R] Deprecate Feather reader and writer</a>",https://github.com/apache/arrow/pull/49276,MEMBER,1
+2026-02-12T13:38:51Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49256"">GH-49186: [R] Support dplyr::filter_out() in Arrow dplyr backend</a>",https://github.com/apache/arrow/pull/49256,FIRST_TIMER,4
 2026-02-10T11:01:36Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49212"">WIP: [Release] Verify release-23.0.1-rc0</a>",https://github.com/apache/arrow/pull/49212,MEMBER,4
 2026-02-06T16:25:37Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49166"">WIP: [R] Verify CRAN release 23.0.0.1</a>",https://github.com/apache/arrow/pull/49166,MEMBER,3
 2026-02-03T14:46:31Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49130"">WIP: Dummy PR to check maint-23.0.1 status</a>",https://github.com/apache/arrow/pull/49130,MEMBER,26

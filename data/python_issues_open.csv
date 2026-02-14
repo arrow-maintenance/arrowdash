@@ -1,8 +1,10 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-13T15:54:07Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49278"">[Python][Doc] Add from_numpy examples for sparse tensor constructors</a>",https://github.com/apache/arrow/issues/49278,CONTRIBUTOR,3
+2026-02-13T11:44:47Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49273"">[Python] Wheel / sdist build uses docstrings generation script we don't want to distribute</a>",https://github.com/apache/arrow/issues/49273,MEMBER,0
+2026-02-13T04:23:21Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49269"">[Python][Docs] Add code examples for compute function first/last/first_last</a>",https://github.com/apache/arrow/issues/49269,MEMBER,0
 2026-02-12T17:03:28Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49263"">[CI][Python] Debian i386 job fails installing libcst dependency</a>",https://github.com/apache/arrow/issues/49263,MEMBER,0
 2026-02-12T13:50:02Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49258"">[Python] RecordBatch.serialize() silently drops dictionary messages</a>",https://github.com/apache/arrow/issues/49258,NONE,0
 2026-02-12T12:25:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49255"">[Python] Fix DeprecationWarnings in PyArrow tests</a>",https://github.com/apache/arrow/issues/49255,MEMBER,1
-2026-02-11T15:38:44Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49234"">[CI][Python] Nightly sdist job fails due to missing update_stub_docstrings.py file</a>",https://github.com/apache/arrow/issues/49234,MEMBER,1
 2026-02-11T12:02:54Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49227"">[Python] Deprecate `pyarrow.gandiva`</a>",https://github.com/apache/arrow/issues/49227,MEMBER,5
 2026-02-11T04:23:02Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49222"">[Python] data loss converting to Table from pandas Timedelta built using `replace`</a>",https://github.com/apache/arrow/issues/49222,NONE,1
 2026-02-09T20:39:53Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49199"">[Python][Annotations] Remaining test fixes</a>",https://github.com/apache/arrow/issues/49199,MEMBER,0
@@ -23,7 +25,7 @@ created_at,url_title,html_url,author_association,comments
 2026-01-26T20:01:14Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49002"">[Python] Wrong cast from StringArray to pandas 3 when element is `None`</a>",https://github.com/apache/arrow/issues/49002,NONE,4
 2026-01-26T09:35:41Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48987"">[Python][Packaging] Drop archery and docker for our Windows wheels and build on the GitHub runner directly</a>",https://github.com/apache/arrow/issues/48987,MEMBER,7
 2026-01-26T09:32:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48986"">ORC Predicate Pushdown</a>",https://github.com/apache/arrow/issues/48986,NONE,0
-2026-01-25T12:17:32Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48978"">[Python] test failures on pandas 3.0 (currently CI on 2.3.3)</a>",https://github.com/apache/arrow/issues/48978,CONTRIBUTOR,1
+2026-01-25T12:17:32Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48978"">[Python] test failures on pandas 3.0 for fastparquet and for zoneinfo w/o pytz</a>",https://github.com/apache/arrow/issues/48978,CONTRIBUTOR,1
 2026-01-23T17:04:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48972"">EHN: Add a `is_castable` function and/or `errors=coerce` option to `cast`</a>",https://github.com/apache/arrow/issues/48972,NONE,2
 2026-01-23T16:40:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48970"">[CI] Remove all __getattr__(name) -> Any from *.pyi files before next release</a>",https://github.com/apache/arrow/issues/48970,MEMBER,0
 2026-01-23T11:08:35Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48960"">[Python] DEFAULT option in simd_level of cli.py missing</a>",https://github.com/apache/arrow/issues/48960,NONE,0
@@ -60,4 +62,3 @@ created_at,url_title,html_url,author_association,comments
 2025-11-19T08:12:33Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48172"">[Python] Add support and wheels for Python 3.15</a>",https://github.com/apache/arrow/issues/48172,MEMBER,7
 2025-11-18T22:46:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48169"">[Parquet][Python] parquet arrow schema inconsistent for file with UUID</a>",https://github.com/apache/arrow/issues/48169,NONE,3
 2025-11-17T10:56:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48149"">Pyarrow does not support abfs uri syntax in Azure</a>",https://github.com/apache/arrow/issues/48149,NONE,0
-2025-11-15T18:52:14Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48138"">[Python][Parquet] RowGroupMetadata.total_byte_size computes wrong uncompressed size</a>",https://github.com/apache/arrow/issues/48138,MEMBER,0
