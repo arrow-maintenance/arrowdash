@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-14T13:39:18Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49286"">GH-49285: [Python] Add `buffer` parameter to `RecordBatch.serialize()`</a>",https://github.com/apache/arrow/pull/49286,FIRST_TIME_CONTRIBUTOR,1
 2026-02-13T16:28:20Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49279"">GH-49278: [Python][Doc] Add from_numpy examples for sparse tensor constructors</a>",https://github.com/apache/arrow/pull/49279,CONTRIBUTOR,2
 2026-02-13T06:51:07Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49271"">GH-49255: Fix pandas deprecation warnings in Categorical tests</a>",https://github.com/apache/arrow/pull/49271,CONTRIBUTOR,0
 2026-02-13T04:24:41Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49270"">GH-49269: [Python][Docs] Add code examples for compute function first/last/first_last</a>",https://github.com/apache/arrow/pull/49270,MEMBER,3

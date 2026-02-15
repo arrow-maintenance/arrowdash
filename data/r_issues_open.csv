@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-14T15:39:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49287"">[C++][R] Clean up macOS C++20 partial compatibility issues</a>",https://github.com/apache/arrow/issues/49287,MEMBER,0
 2026-02-11T16:09:22Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49237"">[R] Deprecate Feather reader and writer</a>",https://github.com/apache/arrow/issues/49237,MEMBER,0
 2026-02-09T08:22:30Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49186"">[R]: add support to the new dplyr verb filter_out</a>",https://github.com/apache/arrow/issues/49186,NONE,5
 2026-02-04T16:03:50Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49149"">[R] parquet does not retain haven::tagged_na()</a>",https://github.com/apache/arrow/issues/49149,NONE,1
@@ -17,5 +18,3 @@ created_at,url_title,html_url,author_association,comments
 2025-12-26T03:38:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48658"">[R] Add test for slice_sample with prop = 1 edge case</a>",https://github.com/apache/arrow/issues/48658,MEMBER,0
 2025-12-23T06:01:49Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48629"">[R] Add tests for duplicate column names and incompatible types in joins</a>",https://github.com/apache/arrow/issues/48629,MEMBER,0
 2025-12-03T19:33:45Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48321"">[R] Cannot install Arrow 22 to RHEL due to lack of escape characters in grepl</a>",https://github.com/apache/arrow/issues/48321,NONE,2
-2025-11-16T19:11:03Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48145"">[R][Dev] Update test helpers for testthat 3.3.0</a>",https://github.com/apache/arrow/issues/48145,MEMBER,0
-2025-11-16T18:30:33Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48144"">[R] `col_types` ignored when `convert_options` specified</a>",https://github.com/apache/arrow/issues/48144,NONE,1
