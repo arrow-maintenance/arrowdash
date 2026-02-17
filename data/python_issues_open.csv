@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-16T07:59:09Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49295"">[Python] test_memory.py fails with `-DARROW_MIMALLOC=OFF`</a>",https://github.com/apache/arrow/issues/49295,MEMBER,1
 2026-02-14T13:36:37Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49285"">[Python] RecordBatch.serialize() should support writing into a pre-allocated buffer</a>",https://github.com/apache/arrow/issues/49285,NONE,0
 2026-02-13T15:54:07Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49278"">[Python][Doc] Add from_numpy examples for sparse tensor constructors</a>",https://github.com/apache/arrow/issues/49278,CONTRIBUTOR,3
 2026-02-13T11:44:47Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49273"">[Python] Wheel / sdist build uses docstrings generation script we don't want to distribute</a>",https://github.com/apache/arrow/issues/49273,MEMBER,4
@@ -61,4 +62,3 @@ created_at,url_title,html_url,author_association,comments
 2025-11-20T18:41:27Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48193"">[Python] UUIDScalar can't be pickled</a>",https://github.com/apache/arrow/issues/48193,NONE,0
 2025-11-19T16:30:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48182"">[Python] RecordBatch.from_struct_array(array_of_lists_of_structs[i].values) needs a test</a>",https://github.com/apache/arrow/issues/48182,NONE,8
 2025-11-19T08:12:33Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48172"">[Python] Add support and wheels for Python 3.15</a>",https://github.com/apache/arrow/issues/48172,MEMBER,7
-2025-11-18T22:46:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48169"">[Parquet][Python] parquet arrow schema inconsistent for file with UUID</a>",https://github.com/apache/arrow/issues/48169,NONE,3
