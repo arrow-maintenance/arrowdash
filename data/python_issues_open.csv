@@ -1,5 +1,7 @@
 created_at,url_title,html_url,author_association,comments
-2026-02-17T15:37:21Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49310"">[C++] Segmentation fault in pyarrow.compute.if_else: arguments have string type but the result only fits in large_string type</a>",https://github.com/apache/arrow/issues/49310,NONE,4
+2026-02-18T14:35:26Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49327"">[Python][Packaging] Wrong ARROW_SIMD_LEVEL=SSE4_2 on arm64 macOS wheels</a>",https://github.com/apache/arrow/issues/49327,MEMBER,2
+2026-02-18T09:24:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49321"">[Python] Add a PyArrow sanitizers build</a>",https://github.com/apache/arrow/issues/49321,MEMBER,2
+2026-02-17T15:37:21Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49310"">[C++] Segmentation fault in pyarrow.compute.if_else: arguments have string type but the result only fits in large_string type</a>",https://github.com/apache/arrow/issues/49310,NONE,6
 2026-02-17T15:32:40Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49309"">[Python ] Table.to_batches() loses schema information when table has zero rows</a>",https://github.com/apache/arrow/issues/49309,NONE,0
 2026-02-17T13:37:02Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49305"">[Python] Expose RecordBatchFileReader::CountRows in Python</a>",https://github.com/apache/arrow/issues/49305,NONE,0
 2026-02-16T07:59:09Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49295"">[Python] test_memory.py fails with `-DARROW_MIMALLOC=OFF`</a>",https://github.com/apache/arrow/issues/49295,MEMBER,1
@@ -61,4 +63,3 @@ created_at,url_title,html_url,author_association,comments
 2025-11-25T16:43:12Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48254"">[Python][Parquet] read_schema drops extension types (UUID returned as fixed_size_binary[16])</a>",https://github.com/apache/arrow/issues/48254,NONE,1
 2025-11-24T16:37:36Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48241"">[Python] Scalar inferencing doesn't infer UUID</a>",https://github.com/apache/arrow/issues/48241,NONE,2
 2025-11-21T12:02:29Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48199"">[Python][Parquet] Expose whether a Parquet file has index pages and bloom filters</a>",https://github.com/apache/arrow/issues/48199,MEMBER,0
-2025-11-20T18:41:27Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48193"">[Python] UUIDScalar can't be pickled</a>",https://github.com/apache/arrow/issues/48193,NONE,0
