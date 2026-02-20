@@ -1,5 +1,5 @@
 created_at,url_title,html_url,author_association,comments
-2026-02-18T18:58:51Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49330"">[R] Update docs to reflect removal of OpenSSL 1.0 and 1.1 support</a>",https://github.com/apache/arrow/issues/49330,MEMBER,0
+2026-02-19T20:11:54Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49340"">[R] Preserve row order in `write_dataset()`</a>",https://github.com/apache/arrow/issues/49340,NONE,0
 2026-02-11T16:09:22Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49237"">[R] Deprecate Feather reader and writer</a>",https://github.com/apache/arrow/issues/49237,MEMBER,0
 2026-02-04T16:03:50Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49149"">[R] parquet does not retain haven::tagged_na()</a>",https://github.com/apache/arrow/issues/49149,NONE,2
 2026-02-04T13:33:59Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49143"">[R] Bindings for new dplyr verbs</a>",https://github.com/apache/arrow/issues/49143,MEMBER,0
