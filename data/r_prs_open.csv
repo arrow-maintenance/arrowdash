@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-20T05:15:48Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49343"">GH-49340: [R] Preserve row order in `write_dataset()`</a>",https://github.com/apache/arrow/pull/49343,FIRST_TIME_CONTRIBUTOR,1
 2026-02-19T09:31:51Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49338"">GH-35806: [R] Improve error message for null type inference with sparse CSV data</a>",https://github.com/apache/arrow/pull/49338,MEMBER,2
 2026-02-18T19:43:34Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49333"">GH-48145: [R] Update to testthat 3.3.0 and use its expect_r6_class()</a>",https://github.com/apache/arrow/pull/49333,MEMBER,1
 2026-02-18T19:09:38Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49332"">GH-39600: [R] Add trademark attribution to pkgdown site footer</a>",https://github.com/apache/arrow/pull/49332,MEMBER,4
