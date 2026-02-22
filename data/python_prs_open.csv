@@ -1,5 +1,6 @@
 created_at,url_title,html_url,author_association,comments
-2026-02-20T22:56:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49353"">GH-49351: [C++] Check TZDIR environment variable in vendored date library</a>",https://github.com/apache/arrow/pull/49353,FIRST_TIME_CONTRIBUTOR,6
+2026-02-21T20:42:34Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49357"">GH-49273: [Python] Move stub docstring script to _build_utils with gr…</a>",https://github.com/apache/arrow/pull/49357,FIRST_TIME_CONTRIBUTOR,0
+2026-02-20T22:56:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49353"">GH-49351: [C++] Check TZDIR environment variable in vendored date library</a>",https://github.com/apache/arrow/pull/49353,FIRST_TIME_CONTRIBUTOR,7
 2026-02-20T20:29:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49350"">GH-49349: [Doc][Python] Simplify doctests in tables.pxi and types.pxi</a>",https://github.com/apache/arrow/pull/49350,CONTRIBUTOR,2
 2026-02-17T01:50:56Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49303"">GH-49302: [Python][Doc] Incorrect parameter descriptions in SparseCSCMatrix.from_numpy</a>",https://github.com/apache/arrow/pull/49303,CONTRIBUTOR,1
 2026-02-14T13:39:18Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49286"">GH-49285: [Python] Add `buffer` parameter to `RecordBatch.serialize()`</a>",https://github.com/apache/arrow/pull/49286,FIRST_TIME_CONTRIBUTOR,1
@@ -52,4 +53,3 @@ created_at,url_title,html_url,author_association,comments
 2025-11-29T12:42:08Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48289"">GH-36593: [Python] Add rename_columns method to pyarrow datasets</a>",https://github.com/apache/arrow/pull/48289,FIRST_TIME_CONTRIBUTOR,6
 2025-11-26T07:13:51Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48258"">GH 40849: [Python] Remove all Py_FatalError calls</a>",https://github.com/apache/arrow/pull/48258,FIRST_TIME_CONTRIBUTOR,8
 2025-11-25T17:05:26Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48255"">GH-48254: [Python][Parquet] Support extension types in read_schema</a>",https://github.com/apache/arrow/pull/48255,FIRST_TIME_CONTRIBUTOR,1
-2025-11-23T14:08:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48232"">GH-48231 [C++][Parquet] Add FSST encoding support for Parquet</a>",https://github.com/apache/arrow/pull/48232,MEMBER,9
