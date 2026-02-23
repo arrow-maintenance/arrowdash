@@ -1,4 +1,6 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-22T15:54:16Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49368"">Basic compute/comparison kernels missing for string_view?</a>",https://github.com/apache/arrow/issues/49368,NONE,0
+2026-02-22T06:29:52Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49363"">[Python][Dataset] Add filters parameter to orc.read_table() for predicate pushdown</a>",https://github.com/apache/arrow/issues/49363,NONE,0
 2026-02-18T14:35:26Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49327"">[Python][Packaging] Wrong ARROW_SIMD_LEVEL=SSE4_2 on arm64 macOS wheels</a>",https://github.com/apache/arrow/issues/49327,MEMBER,3
 2026-02-18T09:24:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49321"">[Python] Add a PyArrow sanitizers build</a>",https://github.com/apache/arrow/issues/49321,MEMBER,2
 2026-02-17T15:37:21Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49310"">[C++] Segmentation fault in pyarrow.compute.if_else: arguments have string type but the result only fits in large_string type</a>",https://github.com/apache/arrow/issues/49310,NONE,11
@@ -30,7 +32,7 @@ created_at,url_title,html_url,author_association,comments
 2026-01-28T16:14:10Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49046"">[Dev][Python] Unused python scripts under python/scripts</a>",https://github.com/apache/arrow/issues/49046,MEMBER,2
 2026-01-26T20:01:14Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49002"">[Python] Wrong cast from StringArray to pandas 3 when element is `None`</a>",https://github.com/apache/arrow/issues/49002,NONE,4
 2026-01-26T09:35:41Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48987"">[Python][Packaging] Drop archery and docker for our Windows wheels and build on the GitHub runner directly</a>",https://github.com/apache/arrow/issues/48987,MEMBER,7
-2026-01-26T09:32:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48986"">ORC Predicate Pushdown</a>",https://github.com/apache/arrow/issues/48986,NONE,0
+2026-01-26T09:32:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48986"">ORC Predicate Pushdown</a>",https://github.com/apache/arrow/issues/48986,NONE,1
 2026-01-23T17:04:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48972"">EHN: Add a `is_castable` function and/or `errors=coerce` option to `cast`</a>",https://github.com/apache/arrow/issues/48972,NONE,2
 2026-01-23T16:40:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48970"">[CI] Remove all __getattr__(name) -> Any from *.pyi files before next release</a>",https://github.com/apache/arrow/issues/48970,MEMBER,0
 2026-01-23T11:08:35Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48960"">[Python] DEFAULT option in simd_level of cli.py missing</a>",https://github.com/apache/arrow/issues/48960,NONE,0
@@ -60,4 +62,3 @@ created_at,url_title,html_url,author_association,comments
 2025-11-28T08:10:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48279"">[Python][Docs] Add pyarrow.parquet.filters_to_expression example to the User Guide</a>",https://github.com/apache/arrow/issues/48279,MEMBER,1
 2025-11-26T13:46:05Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48265"">[Python][GPU] Numba interop tests broken by Numba API changes</a>",https://github.com/apache/arrow/issues/48265,MEMBER,3
 2025-11-25T16:43:12Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48254"">[Python][Parquet] read_schema drops extension types (UUID returned as fixed_size_binary[16])</a>",https://github.com/apache/arrow/issues/48254,NONE,1
-2025-11-24T16:37:36Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48241"">[Python] Scalar inferencing doesn't infer UUID</a>",https://github.com/apache/arrow/issues/48241,NONE,2
