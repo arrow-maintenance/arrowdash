@@ -1,5 +1,5 @@
 created_at,url_title,html_url,author_association,comments
-2026-02-22T17:32:39Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49369"">[C++][R] More robust `libtool` checking</a>",https://github.com/apache/arrow/issues/49369,MEMBER,0
+2026-02-24T02:22:00Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49378"">[R] CRAN packaging checklist for version 23.0.1.1</a>",https://github.com/apache/arrow/issues/49378,MEMBER,0
 2026-02-19T20:11:54Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49340"">[R] Preserve row order in `write_dataset()`</a>",https://github.com/apache/arrow/issues/49340,NONE,0
 2026-02-11T16:09:22Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49237"">[R] Deprecate Feather reader and writer</a>",https://github.com/apache/arrow/issues/49237,MEMBER,0
 2026-02-04T16:03:50Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49149"">[R] parquet does not retain haven::tagged_na()</a>",https://github.com/apache/arrow/issues/49149,NONE,2

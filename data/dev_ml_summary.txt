@@ -1,15 +1,1 @@
-* **Arrow 23.0.x releases and provenance:** Following the 23.0.0 release, the community discussed and implemented stricter release candidate verification procedures, including the mandatory inclusion of SHA256 hashes in vote emails to ensure artifact integrity. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2023.0.0%20released) [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20candidate%20provenance%20question)
-
-* **Clarification of StructArray validity buffers:** A discussion regarding non-nullable fields within nullable StructArrays led to a consensus on a "Liberal Reader, Conservative Writer" principle to maintain compatibility while encouraging memory-efficient layouts. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20add%20to%20the%20specification%20a%20clarification%20of%20validity%20buffer%20for%20non%20nullable%20field%20of%20nullable%20StructArray)
-
-* **IPC ApplicationData and Empty message types:** Proposal to extend the IPC format with an `ApplicationData` message type for opaque bytes and an `Empty` message type to allow signaling and metadata exchange without the overhead of zero-row record batches. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20IPC%20MessageType%20-%20OpaqueBytes)
-
-* **Apache Arrow 10-year anniversary:** The project celebrated its tenth anniversary since its establishment in February 2016, reflecting on its growth into a universal standard for columnar data exchange. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20is%2010%20years%20old%20%F0%9F%8E%89)
-
-* **Equivalence of IPC file and stream formats:** Developers discussed formalizing the requirement that IPC files must be readable as valid IPC streams (after skipping the header) to ensure consistent behavior across implementations like DuckDB and nanoarrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Equivalence%20of%20IPC%20file%20and%20stream%20formats)
-
-* **Flight SQL prepared statement execution path:** A proposal suggests adding an `is_update` boolean to `ActionCreatePreparedStatementResult` to explicitly inform clients whether a prepared statement should be executed as a query or an update. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFlight%20SQL%20Indicating%20execution%20path%20for%20Flight%20SQL%20Prepared%20Statements)
-
-* **Guidelines for AI-generated contributions:** The community is considering a policy to require disclosure for AI-generated mailing list responses to ensure transparency in technical discussions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
-
-* **Rust implementation version 58.0.0:** Release planning is underway for the next major version of the Rust implementation, including new breaking API changes and performance improvements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTERUST%20Release%20Apache%20Arrow%20Rust%2058.0.0%20RC1)
+Summary generation failed. Please check the mailing list directly.

@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-23T20:41:15Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49377"">GH-49376: [Python] Add ability to write Bloom filters from pyarrow</a>",https://github.com/apache/arrow/pull/49377,MEMBER,1
 2026-02-22T19:10:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49372"">GH-41365: [Python] Fix S3 URI with whitespace silently falling back to LocalFileSystem</a>",https://github.com/apache/arrow/pull/49372,FIRST_TIME_CONTRIBUTOR,2
 2026-02-22T05:28:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49359"">GH-49358: [Python][Doc] Add import statement to filters_to_expression docstring example</a>",https://github.com/apache/arrow/pull/49359,CONTRIBUTOR,1
 2026-02-21T20:42:34Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49357"">GH-49273: [Python] Move stub docstring script to _build_utils with gr…</a>",https://github.com/apache/arrow/pull/49357,FIRST_TIME_CONTRIBUTOR,2
@@ -19,7 +20,7 @@ created_at,url_title,html_url,author_association,comments
 2026-02-09T20:49:40Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49203"">GH-49196: [Python][Annotations] Filesystems</a>",https://github.com/apache/arrow/pull/49203,MEMBER,1
 2026-02-09T20:48:00Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49202"">GH-49195: [Python][Annotations] I/O, IPC, and Serialization Formats</a>",https://github.com/apache/arrow/pull/49202,MEMBER,1
 2026-02-09T20:45:37Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49201"">GH-49194: [Python][Annotations] Compute module</a>",https://github.com/apache/arrow/pull/49201,MEMBER,1
-2026-02-09T20:43:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49200"">GH-49193: [Python][Annotations] Core Data Structures #49193</a>",https://github.com/apache/arrow/pull/49200,MEMBER,1
+2026-02-09T20:43:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49200"">GH-49193: [Python][Annotations] Core Data Structures</a>",https://github.com/apache/arrow/pull/49200,MEMBER,1
 2026-02-06T16:25:37Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49166"">WIP: [R] Verify CRAN release 23.0.0.1</a>",https://github.com/apache/arrow/pull/49166,MEMBER,3
 2026-02-06T12:15:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49163"">MINOR: [Python] `Array.from_buffers` accepts `None` buffers</a>",https://github.com/apache/arrow/pull/49163,FIRST_TIME_CONTRIBUTOR,5
 2026-02-06T11:09:10Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49162"">GH-48182: [Python] Add regression test for RecordBatch.from_struct_array with list offsets</a>",https://github.com/apache/arrow/pull/49162,FIRST_TIMER,0
@@ -45,4 +46,3 @@ created_at,url_title,html_url,author_association,comments
 2025-12-07T23:35:00Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48391"">GH-42018: Add numpy.StringDType support</a>",https://github.com/apache/arrow/pull/48391,CONTRIBUTOR,12
 2025-11-29T12:42:08Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48289"">GH-36593: [Python] Add rename_columns method to pyarrow datasets</a>",https://github.com/apache/arrow/pull/48289,FIRST_TIME_CONTRIBUTOR,6
 2025-11-26T07:13:51Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48258"">GH 40849: [Python] Remove all Py_FatalError calls</a>",https://github.com/apache/arrow/pull/48258,FIRST_TIME_CONTRIBUTOR,8
-2025-11-25T17:05:26Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48255"">GH-48254: [Python][Parquet] Support extension types in read_schema</a>",https://github.com/apache/arrow/pull/48255,FIRST_TIME_CONTRIBUTOR,1
