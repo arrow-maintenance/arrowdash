@@ -1,6 +1,7 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-24T20:06:46Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49384"">Single chunk ChunkedArray doesn't correctly respect copy in __array__method</a>",https://github.com/apache/arrow/issues/49384,NONE,0
+2026-02-24T17:18:07Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49382"">[Python] Enable OpenTelemetry on PyArrow wheels</a>",https://github.com/apache/arrow/issues/49382,MEMBER,0
 2026-02-23T20:35:03Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49376"">[Python][Parquet] Add options to control writing of Bloom filters to `parquet.write_table`</a>",https://github.com/apache/arrow/issues/49376,MEMBER,0
-2026-02-22T15:54:16Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49368"">[Python][C++] Basic compute/comparison kernels missing for string_view?</a>",https://github.com/apache/arrow/issues/49368,NONE,6
 2026-02-22T06:29:52Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49363"">[Python][Dataset] Add filters parameter to orc.read_table() for predicate pushdown</a>",https://github.com/apache/arrow/issues/49363,NONE,0
 2026-02-18T14:35:26Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49327"">[Python][Packaging] Wrong ARROW_SIMD_LEVEL=SSE4_2 on arm64 macOS wheels</a>",https://github.com/apache/arrow/issues/49327,MEMBER,3
 2026-02-18T09:24:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49321"">[Python] Add a PyArrow sanitizers build</a>",https://github.com/apache/arrow/issues/49321,MEMBER,2
@@ -61,4 +62,3 @@ created_at,url_title,html_url,author_association,comments
 2025-12-04T22:28:18Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48344"">`pa.Table.from_struct_array` fails for an empty array</a>",https://github.com/apache/arrow/issues/48344,NONE,0
 2025-12-04T06:06:06Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48325"">[Python] Tests fail on Windows with spaces in username due to improper URI encoding</a>",https://github.com/apache/arrow/issues/48325,CONTRIBUTOR,2
 2025-11-28T08:10:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48279"">[Python][Docs] Add pyarrow.parquet.filters_to_expression example to the User Guide</a>",https://github.com/apache/arrow/issues/48279,MEMBER,1
-2025-11-26T13:46:05Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48265"">[Python][GPU] Numba interop tests broken by Numba API changes</a>",https://github.com/apache/arrow/issues/48265,MEMBER,3
