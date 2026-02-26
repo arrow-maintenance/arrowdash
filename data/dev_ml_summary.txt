@@ -1,15 +1,1 @@
-* **10-Year Anniversary:** Apache Arrow celebrated its tenth anniversary on February 5th, reflecting on a decade of providing agnostic, high-efficiency columnar data standards. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20is%2010%20years%20old%20%F0%9F%8E%89)
-
-* **StructArray validity clarification:** Discussion on whether non-nullable child fields of a nullable StructArray must strictly exclude nulls or if the parent's validity buffer should be the sole source of truth. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:add%20to%20the%20specification%20a%20clarification%20of%20validity%20buffer%20for%20non%20nullable%20field%20of%20nullable%20StructArray)
-
-* **IPC ApplicationData proposal:** Proposal to add a new "ApplicationData" or "OpaqueBytes" message type to IPC streams to allow embedding arbitrary metadata like logging or spatial indices. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20MessageType%20-%20OpaqueBytes)
-
-* **Release candidate provenance:** A series of discussions initiated by Julian Hyde led to updated project procedures requiring SHA-512 hashes to be explicitly included in vote threads to ensure artifact integrity. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20candidate%20provenance%20question)
-
-* **Apache Arrow 23.0.0 and 23.0.1 releases:** The community successfully released version 23.0.0 followed by a 23.0.1 patch release containing 28 resolved issues. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2023.0.1%20released)
-
-* **vgi-rpc framework introduction:** Introduction of vgi-rpc, a new community-led open-source RPC framework for Python that uses Arrow IPC directly for typed communication without gRPC or Protobuf dependencies. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Introducing%20vgi-rpc%20%E2%80%94%20typed%20Arrow%20RPC%20for%20Python%20and%20soon%20other%20languages)
-
-* **IPC file and stream equivalence:** Architectural discussion on whether the IPC file format should be strictly defined as a stream preceded by a header, ensuring file contents are always readable via stream readers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Equivalence%20of%20IPC%20file%20and%20stream%20formats)
-
-* **Rust implementation 58.0.0 release:** The Rust community released version 58.0.0, a major version update including planned breaking API changes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2058.0.0%20RC1)
+Summary generation failed. Please check the mailing list directly.

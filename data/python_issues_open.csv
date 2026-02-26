@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-25T22:00:06Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49392"">Filtering corrupts data in column containing an array</a>",https://github.com/apache/arrow/issues/49392,NONE,0
 2026-02-24T20:06:46Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49384"">Single chunk ChunkedArray doesn't correctly respect copy in __array__method</a>",https://github.com/apache/arrow/issues/49384,NONE,0
 2026-02-24T17:18:07Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49382"">[Python] Enable OpenTelemetry on PyArrow wheels</a>",https://github.com/apache/arrow/issues/49382,MEMBER,0
 2026-02-23T20:35:03Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49376"">[Python][Parquet] Add options to control writing of Bloom filters to `parquet.write_table`</a>",https://github.com/apache/arrow/issues/49376,MEMBER,0
