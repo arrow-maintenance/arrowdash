@@ -1,4 +1,6 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-26T11:04:54Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49398"">[Python] Investigate whether we can rely on `pyproject.toml` for build dependencies</a>",https://github.com/apache/arrow/issues/49398,MEMBER,0
+2026-02-26T10:31:03Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49397"">[Python] Validate PYARROW_GENERATE_COVERAGE works as expected</a>",https://github.com/apache/arrow/issues/49397,MEMBER,0
 2026-02-25T22:00:06Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49392"">Filtering corrupts data in column containing an array</a>",https://github.com/apache/arrow/issues/49392,NONE,0
 2026-02-24T20:06:46Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49384"">Single chunk ChunkedArray doesn't correctly respect copy in __array__method</a>",https://github.com/apache/arrow/issues/49384,NONE,0
 2026-02-24T17:18:07Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49382"">[Python] Enable OpenTelemetry on PyArrow wheels</a>",https://github.com/apache/arrow/issues/49382,MEMBER,0
@@ -35,7 +37,7 @@ created_at,url_title,html_url,author_association,comments
 2026-01-28T16:14:10Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49046"">[Dev][Python] Unused python scripts under python/scripts</a>",https://github.com/apache/arrow/issues/49046,MEMBER,2
 2026-01-26T20:01:14Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49002"">[Python] Wrong cast from StringArray to pandas 3 when element is `None`</a>",https://github.com/apache/arrow/issues/49002,NONE,4
 2026-01-26T09:35:41Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48987"">[Python][Packaging] Drop archery and docker for our Windows wheels and build on the GitHub runner directly</a>",https://github.com/apache/arrow/issues/48987,MEMBER,7
-2026-01-26T09:32:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48986"">ORC Predicate Pushdown</a>",https://github.com/apache/arrow/issues/48986,NONE,1
+2026-01-26T09:32:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48986"">ORC Predicate Pushdown</a>",https://github.com/apache/arrow/issues/48986,NONE,2
 2026-01-23T17:04:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48972"">EHN: Add a `is_castable` function and/or `errors=coerce` option to `cast`</a>",https://github.com/apache/arrow/issues/48972,NONE,2
 2026-01-23T16:40:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48970"">[CI] Remove all __getattr__(name) -> Any from *.pyi files before next release</a>",https://github.com/apache/arrow/issues/48970,MEMBER,0
 2026-01-23T11:08:35Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48960"">[Python] DEFAULT option in simd_level of cli.py missing</a>",https://github.com/apache/arrow/issues/48960,NONE,0
@@ -62,4 +64,3 @@ created_at,url_title,html_url,author_association,comments
 2025-12-05T04:21:25Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48349"">[Python] Support array indices in pc.list_element</a>",https://github.com/apache/arrow/issues/48349,CONTRIBUTOR,3
 2025-12-04T22:28:18Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48344"">`pa.Table.from_struct_array` fails for an empty array</a>",https://github.com/apache/arrow/issues/48344,NONE,0
 2025-12-04T06:06:06Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48325"">[Python] Tests fail on Windows with spaces in username due to improper URI encoding</a>",https://github.com/apache/arrow/issues/48325,CONTRIBUTOR,2
-2025-11-28T08:10:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48279"">[Python][Docs] Add pyarrow.parquet.filters_to_expression example to the User Guide</a>",https://github.com/apache/arrow/issues/48279,MEMBER,1
