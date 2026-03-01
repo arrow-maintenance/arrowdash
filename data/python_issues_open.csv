@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-02-28T09:02:28Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49413"">[Python] MacOs stuck on importing (23.0.1) while works on (15.0.1)</a>",https://github.com/apache/arrow/issues/49413,NONE,0
 2026-02-27T13:22:21Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49410"">[C++][Python] if_else kernel creates invalid results with chunked array string inputs with non-aligned chunks</a>",https://github.com/apache/arrow/issues/49410,MEMBER,1
 2026-02-26T11:04:54Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49398"">[Python] Investigate whether we can rely on `pyproject.toml` for build dependencies</a>",https://github.com/apache/arrow/issues/49398,MEMBER,0
 2026-02-26T10:31:03Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49397"">[Python] Validate PYARROW_GENERATE_COVERAGE works as expected</a>",https://github.com/apache/arrow/issues/49397,MEMBER,0
