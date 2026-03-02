@@ -1,7 +1,7 @@
 created_at,url_title,html_url,author_association,comments
 2026-02-24T17:20:57Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49383"">GH-49382: [Python] Enable OpenTelemetry on PyArrow wheels</a>",https://github.com/apache/arrow/pull/49383,MEMBER,17
 2026-02-23T20:41:15Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49377"">GH-49376: [Python][Parquet] Add ability to write Bloom filters from pyarrow</a>",https://github.com/apache/arrow/pull/49377,MEMBER,1
-2026-02-22T19:10:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49372"">GH-41365: [Python] Fix S3 URI with whitespace silently falling back to LocalFileSystem</a>",https://github.com/apache/arrow/pull/49372,FIRST_TIME_CONTRIBUTOR,2
+2026-02-22T19:10:23Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49372"">GH-41365: [Python] Fix S3 URI with whitespace silently falling back to LocalFileSystem</a>",https://github.com/apache/arrow/pull/49372,FIRST_TIME_CONTRIBUTOR,3
 2026-02-22T05:28:24Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49359"">GH-49358: [Python][Doc] Add import statement to filters_to_expression docstring example</a>",https://github.com/apache/arrow/pull/49359,CONTRIBUTOR,1
 2026-02-21T20:42:34Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49357"">GH-49273: [Python] Move stub docstring script to _build_utils with gr…</a>",https://github.com/apache/arrow/pull/49357,FIRST_TIME_CONTRIBUTOR,2
 2026-02-20T22:56:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/49353"">GH-49351: [C++] Check TZDIR environment variable in vendored date library</a>",https://github.com/apache/arrow/pull/49353,FIRST_TIME_CONTRIBUTOR,7
