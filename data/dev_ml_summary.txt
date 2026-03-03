@@ -1,15 +1,1 @@
-* **New IPC message type for metadata:** Discussion on adding an `ApplicationData` or `OpaqueBytes` message type to the IPC format to allow arbitrary bytes, such as logging or spatial indices, to be interleaved with record batches. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20MessageType%20-%20OpaqueBytes)
-
-* **Release provenance and hash integrity:** Following a reported SHA512 mismatch in ADBC artifacts, the community discussed improving release integrity and standardizing the inclusion of checksums in vote emails. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20candidate%20provenance%20question)
-
-* **Apache Arrow 10-year anniversary:** The community celebrated the 10th anniversary of the project's establishment in February 2016, reflecting on its growth into a universal standard for columnar data. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20is%2010%20years%20old%20%F0%9F%8E%89)
-
-* **Equivalence of IPC file and stream formats:** Proposal to formalize the requirement that IPC files must be readable as valid IPC streams (by skipping header bytes) to improve interoperability for tools like DuckDB and nanoarrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Equivalence%20of%20IPC%20file%20and%20stream%20formats)
-
-* **Support for 24:00:00 in Time types:** Discussion on extending Arrow's Time types to support `24:00:00` to maintain data fidelity when round-tripping from databases like PostgreSQL and DuckDB. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:TIME%20support%20for%20240000)
-
-* **Rust implementation major release:** Version 58.0.0 of the Arrow Rust implementation was released, introducing breaking API changes alongside a separate patch release for the 57.x line. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2058.0.0%20RC1)
-
-* **StructArray validity specification clarification:** Debate on clarifying how validity buffers should behave for non-nullable child fields within nullable StructArrays, focusing on a "Liberal Reader, Conservative Writer" principle. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20add%20to%20the%20specification%20a%20clarification%20of%20validity%20buffer%20for%20non%20nullable%20field%20of%20nullable%20StructArray)
-
-* **Apache Arrow 23.0.1 release:** The community approved the 23.0.1 maintenance release, which resolves 28 issues across the core implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2023.0.1%20-%20RC0)
+Summary generation failed. Please check the mailing list directly.
