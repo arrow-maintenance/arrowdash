@@ -13,4 +13,3 @@ created_at,url_title,html_url,author_association,comments
 2025-12-26T03:55:49Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48662"">[R] Remove `trace$calls %||% trace$call` once rlang > 0.4.11 is released</a>",https://github.com/apache/arrow/issues/48662,MEMBER,0
 2025-12-26T03:38:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48658"">[R] Add test for slice_sample with prop = 1 edge case</a>",https://github.com/apache/arrow/issues/48658,MEMBER,0
 2025-12-23T06:01:49Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48629"">[R] Add tests for duplicate column names and incompatible types in joins</a>",https://github.com/apache/arrow/issues/48629,MEMBER,0
-2025-12-03T19:33:45Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48321"">[R] Cannot install Arrow 22 to RHEL due to lack of escape characters in grepl</a>",https://github.com/apache/arrow/issues/48321,NONE,3
