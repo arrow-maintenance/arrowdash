@@ -1,15 +1,1 @@
-* **Apache Arrow 10th Anniversary:** The community celebrated a decade since the project's first git commit on February 5, 2016, reflecting on Arrow's growth into a universal standard for columnar data exchange. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20is%2010%20years%20old%20%F0%9F%8E%89)
-
-* **New IPC "ApplicationData" message type:** Proposal to add a dedicated message type for carrying opaque bytes (logs, signaling, or spatial indices) within IPC streams to avoid the overhead of zero-row record batches. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20IPC%20MessageType%20-%20OpaqueBytes)
-
-* **Release provenance and SHA verification:** Discussion following a checksum mismatch on GitHub led to a consensus on including SHA512 hashes directly in release vote emails to ensure better security and provenance tracking. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20candidate%20provenance%20question)
-
-* **Equivalence of IPC file and stream formats:** Developers are discussing formalizing the requirement that an IPC file must be readable as a valid IPC stream (after skipping the magic header) to support simplified parsing and DuckDB integration. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Equivalence%20of%20IPC%20file%20and%20stream%20formats)
-
-* **TIME support for 24:00:00:** Debate over whether to allow a `24:00:00` value in the TIME type to improve interoperability and data fidelity when round-tripping data from databases like PostgreSQL and DuckDB. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:TIME%20support%20for%2024%2000%2000)
-
-* **vgi-rpc framework introduction:** A new open-source RPC framework was introduced that leverages Arrow IPC for typed service definitions in Python without the dependencies or complexity of gRPC/Protobuf. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Introducing%20vgi-rpc%20%E2%80%94%20typed%20Arrow%20RPC%20for%20Python%20(and%20soon%20other%20languages))
-
-* **StructArray validity buffer semantics:** Discussion on clarifying the specification regarding whether "non-nullable" child fields in a nullable StructArray should contain redundant nulls or skip the validity bitmap entirely for performance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20add%20to%20the%20specification%20a%20clarification%20of%20validity%20buffer%20for%20non%20nullable%20field%20of%20nullable%20StructArray)
-
-* **Release activity:** Successful votes and releases were held for Apache Arrow 23.0.1, Arrow Rust 58.0.0, and nanoarrow 0.8.0. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2023.0.1%20-%20RC0) [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2058.0.0%20RC1) [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20nanoarrow%200.8.0)
+Summary generation failed. Please check the mailing list directly.
