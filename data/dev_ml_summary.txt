@@ -1,17 +1,1 @@
-* **10th anniversary of Apache Arrow:** The community celebrated 10 years since the first git commit in February 2016, marking its growth into a universal columnar standard. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Apache%20Arrow%20is%2010%20years%20old%20%F0%9F%8E%89)
-
-* **Release provenance and security concerns:** Discussion was triggered by a SHA512 checksum mismatch on GitHub-generated source archives, leading to new requirements to include checksums in all vote emails and prioritize official ASF infrastructure over GitHub's automatically generated releases. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:SHA512%20mismatch%20for%20apache-arrow-adbc-21.tar.gz)
-
-* **Arrow 23.0.1 release:** The project successfully released version 23.0.1, a patch release addressing 28 issues including a fix for integration test failures. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%2023.0.1%20-%20RC0)
-
-* **Equivalence of IPC file and stream formats:** Developers are discussing whether to formalize the requirement that IPC files must be readable as valid IPC streams by simply skipping the file header, ensuring better compatibility with streaming readers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Equivalence%20of%20IPC%20file%20and%20stream%20formats)
-
-* **Flight SQL prepared statements execution path:** A proposal to add an `is_update` boolean to prepared statement results to help clients explicitly choose between the Query and Update execution paths, improving compatibility with database APIs like JDBC and ODBC. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Indicating%20execution%20path%20for%20Flight%20SQL%20Prepared%20Statements)
-
-* **TIME type support for 24:00:00:** The community is reconsidering the exclusion of `24:00:00` in the Time32/Time64 types to support high-fidelity data round-tripping from databases like PostgreSQL and DuckDB that allow this value. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:TIME%20support%20for%20240000)
-
-* **StructArray validity buffer clarification:** Discussion on refining the specification for nullable `StructArrays` with non-nullable children, advocating for a "Liberal Reader, Conservative Writer" approach to maintain performance while ensuring ecosystem compatibility. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:add%20to%20the%20specification%20a%20clarification%20of%20validity%20buffer%20for%20non%20nullable%20field%20of%20nullable%20StructArray)
-
-* **IPC stream multiplexing:** Exploration of application-level interleaving to allow multiple logical data sources to be serialized into a single, ordered IPC stream, distinct from transport-level multiplexing like QUIC. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20stream%20multiplexing)
-
-* **Map type field names enforcement:** An investigation into whether implementations should strictly enforce "entries", "key", and "value" as field names for Map types or continue to allow flexibility as noted in the Flatbuffers specification. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Map%20type's%20keyitemvalue%20field%20names)
+Summary generation failed. Please check the mailing list directly.
