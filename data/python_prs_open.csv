@@ -38,4 +38,3 @@ created_at,url_title,html_url,author_association,comments
 2025-12-14T16:18:01Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48534"">[Python][Docs] Document file path support for IPC reader source</a>",https://github.com/apache/arrow/pull/48534,FIRST_TIME_CONTRIBUTOR,2
 2025-12-11T09:39:30Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48458"">GH-48457: [Python] Overflow check in datetime conversion in pa.array</a>",https://github.com/apache/arrow/pull/48458,MEMBER,2
 2025-12-11T08:16:54Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48456"">GH-48455: [Python] Handle nested field names when sanitizing table at ParquetWriter (flavor='spark')</a>",https://github.com/apache/arrow/pull/48456,MEMBER,3
-2025-12-07T23:35:00Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/pull/48391"">GH-42018: Add numpy.StringDType support</a>",https://github.com/apache/arrow/pull/48391,CONTRIBUTOR,12
