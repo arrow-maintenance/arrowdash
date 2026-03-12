@@ -1,4 +1,5 @@
 created_at,url_title,html_url,author_association,comments
+2026-03-11T10:59:16Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49493"">[Python][C++] Add OpenTelemetry to possible CMakePresets.json</a>",https://github.com/apache/arrow/issues/49493,MEMBER,0
 2026-03-09T10:33:17Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49474"">[Python] Memory Leak while iterating batches of pyarrow dataset</a>",https://github.com/apache/arrow/issues/49474,NONE,0
 2026-03-09T09:13:49Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49473"">[Python] test_cython fails on editable install</a>",https://github.com/apache/arrow/issues/49473,MEMBER,2
 2026-03-04T19:56:39Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/49452"">[Python] Reintroduce docstring injection for stubfiles</a>",https://github.com/apache/arrow/issues/49452,MEMBER,0
@@ -59,7 +60,3 @@ created_at,url_title,html_url,author_association,comments
 2025-12-12T14:11:31Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48473"">[Python] Require numpy 2.x</a>",https://github.com/apache/arrow/issues/48473,CONTRIBUTOR,5
 2025-12-12T10:36:04Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48470"">[Python] Cannot construct `UuidArray` from list of `UuidScalar`s</a>",https://github.com/apache/arrow/issues/48470,NONE,2
 2025-12-12T08:00:36Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48469"">[CI][Python] Python install manager can't be used on the free-threaded Win wheels test step</a>",https://github.com/apache/arrow/issues/48469,MEMBER,0
-2025-12-11T09:34:11Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48457"">[Python] Overflow check in datetime conversion in pa.array</a>",https://github.com/apache/arrow/issues/48457,MEMBER,0
-2025-12-11T08:01:31Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48455"">[Python] Handle nested field names when sanitizing table at ParquetWriter when flavor='spark'</a>",https://github.com/apache/arrow/issues/48455,MEMBER,0
-2025-12-11T03:53:45Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48448"">[Python] Implement Alphanumeric and Surrogate text in Random schema generator</a>",https://github.com/apache/arrow/issues/48448,MEMBER,0
-2025-12-11T01:57:14Z,"<a target=""_blank"" href=""https://github.com/apache/arrow/issues/48436"">[Python] Automatically create child directories in `pyarrow.fs.copy_files`</a>",https://github.com/apache/arrow/issues/48436,MEMBER,0
