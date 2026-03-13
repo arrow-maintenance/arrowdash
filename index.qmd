@@ -28,7 +28,15 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 source("./methods.R", local = knitr::knit_global())
 ```
 
-# Python
+# Home
+
+{{< include overall_summary.qmd >}}
+
+# Issues & PRs
+
+## Row {.tabset}
+
+### Python
 
 ```{r}
 #| label: py_lang
@@ -38,7 +46,7 @@ lang <- "Python"
 
 {{< include _data.qmd >}}
 
-# R
+### R
 
 ```{r}
 #| label: r_lang
@@ -48,14 +56,20 @@ lang <- "R"
 
 {{< include _data.qmd >}}
 
-# Overall Summary
+### C++
 
-{{< include overall_summary.qmd >}}
+```{r}
+#| label: cpp_lang
+#| include: false
+lang <- "C++"
+```
 
-# Maintenance Stats
+{{< include _data.qmd >}}
+
+# Project Health
 
 {{< include maintenance_stats.qmd >}}
 
-# Community
+# Onboarding
 
 {{< include community.qmd >}}

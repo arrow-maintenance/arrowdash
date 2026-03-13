@@ -1,3 +1,9 @@
+```{r}
+#| include: false
+#| warning: false
+summary_text <- read_ml_summary()
+```
+
 ## Row
 
 ```{r}
@@ -66,8 +72,11 @@ value_box(
 
 ## Row
 
+### Column {width=60%}
+
 ```{r}
 #| echo: false
+#| title: Development Activity - Commits by Month
 library(ggplot2)
 library(readr)
 monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv") %>%
@@ -78,16 +87,15 @@ monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv") %>%
 
 ggplot(monthly_commit_counts, aes(x = date)) +
   geom_line(aes(y = commit_count, color = "Raw values"), linewidth = 1) +
-  geom_smooth(aes(y = commit_count, color = "Trend"), span = 1.1, method = "loess", se = FALSE, linewidth = 1, linetype = "dashed") +
+  geom_smooth(aes(y = commit_count, color = "Trend"), span = 0.9, method = "loess", se = FALSE, linewidth = 1, linetype = "dashed") +
   scale_color_manual(values = c("Raw values" = "grey", "Trend" = "blue"), name = "") +
   scale_x_date(
-    date_labels = "%b %Y", 
+    date_labels = "%b %Y",
     date_breaks = "1 month",
     limits = c(min(monthly_commit_counts$date), max(monthly_commit_counts$date)),
     expand = c(0,0)
   ) +
   labs(
-    title = "Development Activity: Commits by Month",
     x = "Month",
     y = "Number of Commits"
   ) +
@@ -96,6 +104,13 @@ ggplot(monthly_commit_counts, aes(x = date)) +
     axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
     panel.grid.minor = element_blank(),
     panel.grid.major.x = element_blank()
-  ) 
+  )
 ```
 
+### Column {width=40%}
+
+::: {.card title="Dev Mailing List Summary"}
+LLM-generated summary of this month's activity on the dev mailing list.
+
+`r summary_text`
+:::

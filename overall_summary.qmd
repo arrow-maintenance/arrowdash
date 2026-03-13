@@ -1,17 +1,6 @@
-```{r}
-#| include: false
-#| warning: false
-summary_text <- read_ml_summary()
-```
+## Row
 
-## Row {.tabset}
-
-### Mailing List Summary
-
-#### Column
-
-The content below is an LLM summary of this month's activity on the mailing list.
-
-::: {.card}
-`r summary_text`
+::: {.card title="Links"}
+- [Crossbow Nightly Report](https://crossbow.arrow-dev.org/) - Nightly build status
+- [Conbench](https://conbench.arrow-dev.org/) - Performance benchmarks
 :::

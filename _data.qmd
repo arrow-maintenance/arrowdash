@@ -20,11 +20,11 @@ if (nrow(prs_open) > 0) {
 }
 ```
 
-## Row {height=20%}
+#### Row {height=20%}
 
 ```{r}
 #| content: valuebox
-#| title: "Open Issues"
+#| title: "Open Issues (last 90 days)"
 list(
   icon = "list",
   color = "light",
@@ -44,7 +44,7 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: "Open PRs"
+#| title: "Open PRs (last 90 days)"
 list(
   icon = "diagram-2",
   color = "light",
@@ -62,15 +62,15 @@ list(
 )
 ```
 
-## Row {height=80%}
+#### Row {height=80%}
 
 ```{r}
-#| title: Open issues (new contributors highlighted)
+#| title: Open issues from last 90 days (new contributors highlighted)
 gt_show_issues(issues_open)
 ```
 
 ```{r}
-#| title: Open PRs (new contributors highlighted)
+#| title: Open PRs from last 90 days (new contributors highlighted)
 gt_show_issues(prs_open)
 ```
 
