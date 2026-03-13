@@ -60,17 +60,6 @@ def filter_by_component(data, component):
     return pd.DataFrame(issues), pd.DataFrame(prs)
 
 
-def get_open_items(df):
-    """Filter to open items and format for display."""
-    if df.empty:
-        return pd.DataFrame(columns=["created_at", "url_title", "html_url", "author_association", "comments"])
-
-    df = df.copy()
-    df["url_title"] = '<a target="_blank" href="' + df["html_url"] + '">' + df["title"] + "</a>"
-    open_df = df[df["state"] == "open"][["created_at", "url_title", "html_url", "author_association", "comments"]]
-    return open_df
-
-
 def get_summary(df):
     """Get weekly summary counts for charts."""
     if df.empty:
@@ -106,15 +95,6 @@ def process_language_data(gh_data, lang):
     lang_lower = lang.lower()
 
     issues_df, prs_df = filter_by_component(gh_data, lang)
-
-    # Open issues/PRs
-    issues_open = get_open_items(issues_df)
-    prs_open = get_open_items(prs_df)
-
-    issues_open.to_csv(f"data/{lang_lower}_issues_open.csv", index=False)
-    prs_open.to_csv(f"data/{lang_lower}_prs_open.csv", index=False)
-    logging.info(f"  Wrote {lang_lower}_issues_open.csv ({len(issues_open)} rows)")
-    logging.info(f"  Wrote {lang_lower}_prs_open.csv ({len(prs_open)} rows)")
 
     # Summaries for charts
     issues_summary = get_summary(issues_df)

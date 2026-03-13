@@ -2,9 +2,9 @@
 #| include: false
 #| warning: false
 
-# Read pre-computed data from CSV files
-issues_open <- read_language_data(lang, "issues_open")
-prs_open <- read_language_data(lang, "prs_open")
+# Read issues/PRs from parquet cache
+issues_open <- read_open_issues(lang)
+prs_open <- read_open_prs(lang)
 issues_summary <- read_language_data(lang, "issues_summary")
 prs_summary <- read_language_data(lang, "prs_summary")
 mailing_list_data <- read_language_data(lang, "mailing_list")
