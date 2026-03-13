@@ -14,15 +14,27 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          lfs: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
       - name: Install Python dependencies
         run: |
           pip install pandas requests chatlas google-genai
+
+      - name: Install R dependencies
+        run: |
+          install.packages(c("gh", "dplyr", "purrr", "arrow"), repos = "https://p3m.dev/cran/__linux__/noble/latest")
+        shell: Rscript {0}
 
       - name: Update open counts
         run: python scripts/update_open_counts.py
@@ -38,6 +50,11 @@ jobs:
         run: python scripts/update_ml_summary.py
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+
+      - name: Update parquet cache
+        run: Rscript scripts/gh_cache/fetch_latest_activity.R
+        env:
+          GITHUB_PAT: ${{ secrets.GH_API_TOKEN }}
 
       - name: Commit and push if data changed
         run: |
