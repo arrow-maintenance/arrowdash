@@ -19,15 +19,13 @@ jobs:
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
 
       - name: Install R dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: |
-            gh
-            dplyr
-            purrr
-            arrow
+        run: |
+          install.packages(c("gh", "dplyr", "purrr", "arrow"), repos = "https://p3m.dev/cran/__linux__/noble/latest")
+        shell: Rscript {0}
 
       - name: Fetch latest activity
         run: Rscript scripts/gh_cache/fetch_latest_activity.R
