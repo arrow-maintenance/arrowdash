@@ -25,7 +25,6 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 ```{r}
 #| label: r_setup
 #| include: false
-source("./stack_overflow_data/data_methods.R", local = knitr::knit_global())
 source("./methods.R", local = knitr::knit_global())
 ```
 
