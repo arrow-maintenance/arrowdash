@@ -39,11 +39,6 @@ jobs:
         env:
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
 
-      - name: Update daily activity
-        run: python scripts/update_daily_activity.py
-        env:
-          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
-
       - name: Update mailing list summary
         run: python scripts/update_ml_summary.py
         env:
