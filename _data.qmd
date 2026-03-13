@@ -5,8 +5,8 @@
 # Read issues/PRs from parquet cache
 issues_open <- read_open_issues(lang)
 prs_open <- read_open_prs(lang)
-issues_summary <- read_language_data(lang, "issues_summary")
-prs_summary <- read_language_data(lang, "prs_summary")
+issues_summary <- get_issues_summary(lang)
+prs_summary <- get_prs_summary(lang)
 mailing_list_data <- read_language_data(lang, "mailing_list")
 
 # Filter for new contributors and no replies

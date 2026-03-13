@@ -32,7 +32,7 @@ library(lubridate)
 # CSV data reading helpers for decoupled Python/R architecture
 
 read_language_data <- function(lang, type) {
-  # type = "issues_summary", "prs_summary", "mailing_list"
+  # type = "mailing_list"
   filepath <- glue::glue("data/{tolower(lang)}_{type}.csv")
   readr::read_csv(filepath, show_col_types = FALSE)
 }
@@ -80,6 +80,62 @@ read_open_prs <- function(lang) {
       comments = 0L
     ) %>%
     arrange(desc(created_at))
+}
+
+# Weekly summary of issues by contributor type (for bar charts)
+get_issues_summary <- function(lang) {
+  label <- paste0("Component: ", lang)
+  cutoff <- Sys.time() - months(3)
+  issues <- arrow::read_parquet("data/cache/issue_details.parquet")
+  contributors <- arrow::read_parquet("data/cache/contributors.parquet")
+  known_users <- contributors$login
+
+  issues %>%
+    filter(created_at > cutoff) %>%
+    filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
+    mutate(
+      is_new = !(user_login %in% known_users),
+      week = floor_date(as.Date(created_at), "week")
+    ) %>%
+    group_by(week) %>%
+    summarise(
+      others = sum(!is_new),
+      new = sum(is_new),
+      .groups = "drop"
+    ) %>%
+    arrange(week) %>%
+    transmute(
+      dates = as.character(week),
+      others = as.integer(others),
+      new = as.integer(new)
+    )
+}
+
+# Weekly summary of PRs by contributor type (for bar charts)
+get_prs_summary <- function(lang) {
+  label <- paste0("Component: ", lang)
+  cutoff <- Sys.time() - months(3)
+  prs <- arrow::read_parquet("data/cache/pr_details.parquet")
+
+  prs %>%
+    filter(created_at > cutoff) %>%
+    filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
+    mutate(
+      is_new = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR"),
+      week = floor_date(as.Date(created_at), "week")
+    ) %>%
+    group_by(week) %>%
+    summarise(
+      others = sum(!is_new),
+      new = sum(is_new),
+      .groups = "drop"
+    ) %>%
+    arrange(week) %>%
+    transmute(
+      dates = as.character(week),
+      others = as.integer(others),
+      new = as.integer(new)
+    )
 }
 
 read_ml_summary <- function() {
