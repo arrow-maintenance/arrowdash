@@ -31,12 +31,6 @@ library(lubridate)
 
 # CSV data reading helpers for decoupled Python/R architecture
 
-read_language_data <- function(lang, type) {
-  # type = "mailing_list"
-  filepath <- glue::glue("data/{tolower(lang)}_{type}.csv")
-  readr::read_csv(filepath, show_col_types = FALSE)
-}
-
 # Read open issues/PRs from parquet cache, filtered by language label and last 3 months
 read_open_issues <- function(lang) {
   label <- paste0("Component: ", lang)
@@ -200,21 +194,4 @@ gt_show_issues <- function(x){
   }
 
   tbl
-}
-
-
-gt_show_emails <- function(x){
-  x %>%
-    rename(Date = date, Subject = url_title) %>%
-    mutate(Subject = purrr::map(Subject, gt::html)) %>%
-    gt() %>%
-    cols_width(
-      Date ~ pct(15),
-      Subject ~ pct(85)
-    ) %>%
-    tab_options(
-      table.width = pct(100),
-      container.height = px(400),
-      container.overflow.y = TRUE
-    )
 }

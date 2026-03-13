@@ -7,7 +7,6 @@ issues_open <- read_open_issues(lang)
 prs_open <- read_open_prs(lang)
 issues_summary <- get_issues_summary(lang)
 prs_summary <- get_prs_summary(lang)
-mailing_list_data <- read_language_data(lang, "mailing_list")
 
 # Filter for new contributors and no replies
 if (nrow(issues_open) > 0) {
@@ -77,15 +76,6 @@ list(
 )
 ```
 
-```{r}
-#| content: valuebox
-#| title: "Mailing List messages"
-list(
-  icon = "envelope",
-  color = "light",
-  value = nrow(mailing_list_data)
-)
-```
 
 ##### Row {height=80%}
 
@@ -196,11 +186,3 @@ list(
 gt_show_questions(last_so_data)
 ```
 
-### Mailing List
-
-#### Row
-
-```{r}
-#| title: Mailing list items from the last month
-gt_show_emails(mailing_list_data)
-```
