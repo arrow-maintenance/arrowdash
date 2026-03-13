@@ -48,6 +48,10 @@ jobs:
 
       - name: Install R dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: |
+            gh
+            arrow
 
       - name: Update open counts
         run: python scripts/update_open_counts.py
