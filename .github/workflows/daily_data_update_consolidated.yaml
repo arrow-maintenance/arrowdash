@@ -1,40 +1,53 @@
-name: Daily Data Update (Consolidated)
+name: Update Data and Publish
 
 on:
+  push:
+    branches:
+      - main
   schedule:
     - cron: '15 0 * * *'  # Every day at 00:15 UTC
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
 
 jobs:
-  update-all-data:
+  update-and-publish:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v4
         with:
           lfs: true
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          version: 1.4.533
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
+          cache: 'pip'
 
       - name: Set up R
         uses: r-lib/actions/setup-r@v2
-        with:
-          use-public-rspm: true
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcurl4-openssl-dev pkg-config
 
       - name: Install Python dependencies
-        run: |
-          pip install pandas requests chatlas google-genai
+        run: pip install -r requirements.txt
 
       - name: Install R dependencies
-        run: |
-          install.packages(c("gh", "dplyr", "purrr", "arrow"), repos = "https://p3m.dev/cran/__linux__/noble/latest")
-        shell: Rscript {0}
+        uses: r-lib/actions/setup-r-dependencies@v2
 
       - name: Update open counts
         run: python scripts/update_open_counts.py
@@ -56,9 +69,19 @@ jobs:
         env:
           GITHUB_PAT: ${{ secrets.GH_API_TOKEN }}
 
-      - name: Commit and push if data changed
+      - name: Commit data updates
         run: |
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/
           git diff --cached --quiet || (git commit -m "Update all data metrics [auto]" && git push)
+
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+          path: index.qmd
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
