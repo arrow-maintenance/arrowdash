@@ -46,6 +46,14 @@ lang <- "Python"
 
 {{< include _data.qmd >}}
 
+### Dummy
+
+#### Column
+
+##### Row
+
+<!-- absorbs broken position 2 -->
+
 ### R
 
 ```{r}
@@ -55,6 +63,14 @@ lang <- "R"
 ```
 
 {{< include _data.qmd >}}
+
+### Dummy2
+
+#### Column
+
+##### Row
+
+<!-- absorbs broken position 4 -->
 
 ### C++
 

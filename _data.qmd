@@ -20,7 +20,9 @@ if (nrow(prs_open) > 0) {
 }
 ```
 
-#### Row {height=20%}
+#### Column
+
+##### Row {height=20%}
 
 ```{r}
 #| content: valuebox
@@ -62,7 +64,7 @@ list(
 )
 ```
 
-#### Row {height=80%}
+##### Row {height=80%}
 
 ```{r}
 #| title: Open issues from last 90 days (new contributors highlighted)
