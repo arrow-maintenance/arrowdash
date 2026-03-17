@@ -7,31 +7,28 @@ It is written in a mix of Python and R. It is not desirable to go only in one la
 
 ## Key Components
 
-### Per-language summaries
+### Per-language summaries (Issues & PRs page)
 
-The dashboard contains per-language pages for Python and R, though this could be extended.
-Each language-based page contains the following tabs:
-- Summary
-    - showing how many open issues, PRs, stack overflow questions, and mailing list messages there are for the past few months
-    - Bar plots of issues opebned by new and existing contributors over the past 3 months
-- Issues
-    - boxes showing numbers of open issues, issues from new contributors and issues with no replies
-    - a table of issues with ones from new contributors highlights
-- PRs
-    - (as for issues but for pull requests)
-- Stack Overflow
-    - summarising questions from SO
-- Mailing List
-    - ANy maililng list conversations which are relevant
+The dashboard contains per-language tabs for Python, R, and C++.
+Each language tab contains:
+- Valueboxes showing open issues/PRs count and issues/PRs from new contributors
+- Tables of open issues and PRs from last 90 days (new contributors highlighted)
 
-### Overall Summary
+Note: There are hidden "Dummy" tabs to work around a Quarto bug where even-positioned tabs
+get inverted layout orientation. See custom.scss for the CSS that hides them.
 
-A page which takes the month's activity on the mailing list and provides a high-level summary of it
+### Home page
 
-### Maintenance stats
+Links to useful Arrow project resources for maintainers across all languages.
 
-- Various plots and matetrics, showing commits, PRs opened/closed and issues opened/closed over the past 18 months.
+### Project Health page
+
+- Various plots and metrics, showing commits, PRs opened/closed and issues opened/closed over the past 18 months
 - Also shows changes in open issues/PRs and change since a month ago
+
+### Onboarding page
+
+- Community/new contributor tracking and metrics
 
 ## Key files to understand
 
