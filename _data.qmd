@@ -5,42 +5,20 @@
 # Read issues/PRs from parquet cache
 issues_open <- read_open_issues(lang)
 prs_open <- read_open_prs(lang)
-issues_summary <- get_issues_summary(lang)
-prs_summary <- get_prs_summary(lang)
 
 # Filter for new contributors and no replies
 if (nrow(issues_open) > 0) {
   issues_open_new <- issues_open[issues_open$author_association == "NONE", ]
-  issues_open_no_replies <- issues_open[issues_open$comments == 0, ]
 } else {
   issues_open_new <- issues_open
-  issues_open_no_replies <- issues_open
 }
 
 if (nrow(prs_open) > 0) {
   prs_open_new <- prs_open[prs_open$author_association == "FIRST_TIME_CONTRIBUTOR", ]
-  prs_open_no_replies <- prs_open[prs_open$comments == 0, ]
 } else {
   prs_open_new <- prs_open
-  prs_open_no_replies <- prs_open
 }
-
-# Stack Overflow data (already R-only)
-vector_tags <- c("apache-arrow", lang)
-if (lang == "Python") {
-  vector_tags <- c(vector_tags, "pyarrow", "python")
-}
-
-questions_content <- get_questions(vector_tags)
-so_data <- adjust_data(questions_content)
-last_so_data <- so_data %>% filter(last_activity_date > now() - months(3))
-last_so_data_not_accepted <- last_so_data %>% filter(accepted_answer == FALSE)
-last_so_data_no_activity <- last_so_data %>% filter(answers == 0 & comments == 0)
 ```
-
-## Row {.tabset}
-
-### Summary
 
 #### Column
 
@@ -48,54 +26,7 @@ last_so_data_no_activity <- last_so_data %>% filter(answers == 0 & comments == 0
 
 ```{r}
 #| content: valuebox
-#| title: "Issues"
-list(
-  icon = "inboxes",
-  color = "light",
-  value = nrow(issues_open)
-)
-```
-
-```{r}
-#| content: valuebox
-#| title: "Pull Requests"
-list(
-  icon = "diagram-2",
-  color = "light",
-  value = nrow(prs_open)
-)
-```
-
-```{r}
-#| content: valuebox
-#| title: "Stack Overflow Questions"
-list(
-  icon = "stack-overflow",
-  color = "light",
-  value = nrow(last_so_data)
-)
-```
-
-
-##### Row {height=80%}
-
-```{r}
-#| title: Issues opened through the last 3 months
-create_fig(issues_summary$dates, issues_summary$others, issues_summary$new)
-```
-
-```{r}
-#| title: PRs opened through the last 3 months
-create_fig(prs_summary$dates, prs_summary$others, prs_summary$new)
-```
-
-### Issues & PRs
-
-#### Row
-
-```{r}
-#| content: valuebox
-#| title: "Open Issues"
+#| title: "Open Issues (last 90 days)"
 list(
   icon = "list",
   color = "light",
@@ -115,7 +46,7 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: "Open PRs"
+#| title: "Open PRs (last 90 days)"
 list(
   icon = "diagram-2",
   color = "light",
@@ -133,56 +64,15 @@ list(
 )
 ```
 
-#### Row
+##### Row {height=80%}
 
 ```{r}
-#| title: Open issues (new contributors highlighted)
+#| title: Open issues from last 90 days (new contributors highlighted)
 gt_show_issues(issues_open)
 ```
 
 ```{r}
-#| title: Open PRs (new contributors highlighted)
+#| title: Open PRs from last 90 days (new contributors highlighted)
 gt_show_issues(prs_open)
-```
-
-### Stack Overflow
-
-#### Row
-
-```{r}
-#| content: valuebox
-#| title: "Questions in last 90 days"
-list(
-  icon = "question-square",
-  color = "light",
-  value = nrow(last_so_data)
-)
-```
-
-```{r}
-#| content: valuebox
-#| title: "Questions without accepted answer"
-list(
-  icon = "question-diamond",
-  color = "light",
-  value = nrow(last_so_data_not_accepted)
-)
-```
-
-```{r}
-#| content: valuebox
-#| title: "Questions with no activity"
-list(
-  icon = "question",
-  color = "warning",
-  value = nrow(last_so_data_no_activity)
-)
-```
-
-#### Row
-
-```{r}
-#| title: Stack Overflow Questions
-gt_show_questions(last_so_data)
 ```
 

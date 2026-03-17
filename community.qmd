@@ -1,11 +1,36 @@
 ```{r}
 #| echo: false
+library(arrow)
 library(gh)
 library(dplyr)
 library(purrr)
 library(stringr)
 library(gt)
 library(lubridate)
+library(ggplot2)
+library(tidyr)
+
+# Load PR data for new contributors plot
+prs <- read_parquet("data/cache/pr_details.parquet")
+
+# Get PRs by contributor type over last 18 months (excluding current month)
+cutoff_start <- Sys.time() - months(18)
+cutoff_end <- floor_date(Sys.Date(), "month")
+
+pr_contributors <- prs %>%
+  filter(created_at > cutoff_start) %>%
+  mutate(month = floor_date(as.Date(created_at), "month")) %>%
+  filter(month < cutoff_end) %>%
+  mutate(
+    contributor_type = if_else(
+      author_association %in% c("FIRST_TIME_CONTRIBUTOR", "FIRST_TIMER"),
+      "New contributors",
+      "Existing contributors"
+    )
+  ) %>%
+  group_by(month, contributor_type) %>%
+  summarise(n = n(), .groups = "drop") %>%
+  complete(month, contributor_type, fill = list(n = 0))
 
 # Fetch all open "good-first-issue" issues in a single paginated call
 issues <- gh(
@@ -74,33 +99,90 @@ champion_data <- map_dfr(champion_items$items, extract_champion_details)
 
 ## Row
 
-### Column
+### Column {width=35%}
 
-#### Good First Issues by Component
+#### Row
 
 ```{r}
 #| echo: false
+#| title: PRs by contributor type (last 18 months)
+ggplot(pr_contributors, aes(x = month, y = n, fill = contributor_type)) +
+  geom_area(alpha = 0.7, position = "stack") +
+  scale_fill_manual(
+    values = c("Existing contributors" = "#4A90A4", "New contributors" = "#E07B53"),
+    name = ""
+  ) +
+  scale_x_date(date_labels = "%b %Y", date_breaks = "3 months") +
+  labs(x = "", y = "PRs opened") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.minor = element_blank(),
+    legend.position = "top"
+  )
+```
+
+#### Row
+
+```{r}
+#| echo: false
+#| title: Recent PRs from new contributors
+
+new_contributor_prs <- prs %>%
+  filter(author_association %in% c("FIRST_TIME_CONTRIBUTOR", "FIRST_TIMER")) %>%
+  filter(created_at > Sys.time() - months(3)) %>%
+  arrange(desc(created_at)) %>%
+  transmute(
+    Date = as.Date(created_at),
+    Title = paste0('<a target="_blank" href="', html_url, '">', title, '</a>'),
+    Author = user_login,
+    State = state
+  )
+
+new_contributor_prs %>%
+  gt() %>%
+  fmt_markdown(columns = Title) %>%
+  fmt_date(columns = Date, date_style = "iso") %>%
+  cols_width(
+    Date ~ pct(12),
+    Title ~ pct(60),
+    Author ~ pct(15),
+    State ~ pct(13)
+  ) %>%
+  tab_options(
+    table.width = pct(100),
+    container.height = px(300),
+    container.overflow.y = TRUE
+  )
+```
+
+### Column {width=30%}
+
+```{r}
+#| echo: false
+#| title: Good First Issues by Component
 gfi_summary |>
   gt() |>
   fmt_markdown(columns = Component) |>
   tab_header(
-    title = "Issues with `good-first-issues` label",
+    title = "Good First Issues",
     subtitle = paste(total_issues, "issues across", nrow(gfi_summary), "components")
   ) |>
   cols_align(align = "left", columns = Component) |>
   cols_align(align = "right", columns = Issues) |>
   tab_options(
     table.width = pct(100),
-    heading.align = "left"
+    heading.align = "left",
+    container.height = px(500),
+    container.overflow.y = TRUE
   )
 ```
 
-### Column
-
-#### Needs Champion
+### Column {width=35%}
 
 ```{r}
 #| echo: false
+#| title: Needs Champion
 champion_data |>
   arrange(Age) |>
   mutate(
@@ -112,7 +194,7 @@ champion_data |>
   fmt_markdown(columns = Title) |>
   fmt_date(columns = Created, date_style = "iso") |>
   tab_header(
-    title = "Issues & PRs needing a champion",
+    title = "Needs Champion",
     subtitle = paste(nrow(champion_data), "items - sorted by age (newest first)")
   ) |>
   cols_width(

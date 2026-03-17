@@ -22,7 +22,6 @@
 
 library(DT)
 library(dplyr)
-library(plotly)
 library(gt)
 library(glue)
 library(readr)
@@ -76,86 +75,8 @@ read_open_prs <- function(lang) {
     arrange(desc(created_at))
 }
 
-# Weekly summary of issues by contributor type (for bar charts)
-get_issues_summary <- function(lang) {
-  label <- paste0("Component: ", lang)
-  cutoff <- Sys.time() - months(3)
-  issues <- arrow::read_parquet("data/cache/issue_details.parquet")
-  contributors <- arrow::read_parquet("data/cache/contributors.parquet")
-  known_users <- contributors$login
-
-  issues %>%
-    filter(created_at > cutoff) %>%
-    filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
-    mutate(
-      is_new = !(user_login %in% known_users),
-      week = floor_date(as.Date(created_at), "week")
-    ) %>%
-    group_by(week) %>%
-    summarise(
-      others = sum(!is_new),
-      new = sum(is_new),
-      .groups = "drop"
-    ) %>%
-    arrange(week) %>%
-    transmute(
-      dates = as.character(week),
-      others = as.integer(others),
-      new = as.integer(new)
-    )
-}
-
-# Weekly summary of PRs by contributor type (for bar charts)
-get_prs_summary <- function(lang) {
-  label <- paste0("Component: ", lang)
-  cutoff <- Sys.time() - months(3)
-  prs <- arrow::read_parquet("data/cache/pr_details.parquet")
-
-  prs %>%
-    filter(created_at > cutoff) %>%
-    filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
-    mutate(
-      is_new = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR"),
-      week = floor_date(as.Date(created_at), "week")
-    ) %>%
-    group_by(week) %>%
-    summarise(
-      others = sum(!is_new),
-      new = sum(is_new),
-      .groups = "drop"
-    ) %>%
-    arrange(week) %>%
-    transmute(
-      dates = as.character(week),
-      others = as.integer(others),
-      new = as.integer(new)
-    )
-}
-
 read_ml_summary <- function() {
   readLines("data/dev_ml_summary.txt", warn = FALSE) |> paste(collapse = "\n")
-}
-
-create_fig <- function(x, y, y_new){
-
-  fig <-  plot_ly(x = x, y = y, type = 'bar',
-          name = 'Other contributors', marker = list(color = 'FBCD99'))
-  if (length(y_new) > 0) {
-    fig <- fig %>% add_trace(y = ~y_new, name = 'New contributors', marker = list(color = '#DCAAA6'))
-  }
-  fig <- fig %>% layout(plot_bgcolor='#E9EEEF',
-          xaxis = list(
-            title = "",
-            zerolinecolor = '#ffff',
-            zerolinewidth = 2,
-            gridcolor = 'ffff'),
-          yaxis = list(
-            title = "",
-            zerolinecolor = '#ffff',
-            zerolinewidth = 2,
-            gridcolor = 'ffff'))
-
-  fig
 }
 
 gt_show_issues <- function(x){

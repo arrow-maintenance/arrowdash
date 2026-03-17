@@ -1,17 +1,56 @@
+## Row {.flow}
+
 ```{r}
-#| include: false
-#| warning: false
-summary_text <- read_ml_summary()
+library(bslib)
+library(htmltools)
+
+link_card <- function(title, icon, href, color = "#0d6efd") {
+  tags$a(
+    href = href,
+    target = "_blank",
+    class = "text-decoration-none",
+    style = "display: block;",
+    tags$div(
+      class = "text-center p-3",
+      tags$i(class = paste0("bi bi-", icon), style = paste0("font-size: 2rem; color: ", color, ";")),
+      tags$div(class = "mt-2 fw-bold text-dark", title)
+    )
+  )
+}
 ```
 
-## Row {.tabset}
+::: {.card expandable="false" fill="false"}
+```{r}
+link_card("Dev Docs", "book", "https://arrow.apache.org/docs/developers/", "#0d6efd")
+```
+:::
 
-### Mailing List Summary
+::: {.card expandable="false" fill="false"}
+```{r}
+link_card("GitHub", "github", "https://github.com/apache/arrow", "#333")
+```
+:::
 
-#### Column
+::: {.card expandable="false" fill="false"}
+```{r}
+link_card("Crossbow", "moon-stars", "https://crossbow.arrow-dev.org/", "#0dcaf0")
+```
+:::
 
-The content below is an LLM summary of this month's activity on the mailing list.
+::: {.card expandable="false" fill="false"}
+```{r}
+link_card("Conbench", "speedometer2", "https://conbench.arrow-dev.org/", "#ffc107")
+```
+:::
 
-::: {.card}
-`r summary_text`
+::: {.card expandable="false" fill="false"}
+```{r}
+link_card("Mailing List", "envelope", "https://lists.apache.org/list.html?dev@arrow.apache.org", "#6c757d")
+```
+:::
+
+::: {.card expandable="false" fill="false"}
+```{r}
+link_card("Discussions", "chat-dots", "https://github.com/apache/arrow/discussions", "#198754")
+```
 :::

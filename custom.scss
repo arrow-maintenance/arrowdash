@@ -22,3 +22,14 @@ $navbar-bg: #343A3F;
 .value-box .value {
     color: white;
 }
+
+/* Hide dummy tabs used to work around quarto tabset orientation bug */
+.nav-link[data-value="Dummy"],
+.nav-link[data-value="Dummy2"] {
+    display: none !important;
+}
+
+[data-title="Dummy"],
+[data-title="Dummy2"] {
+    display: none !important;
+}

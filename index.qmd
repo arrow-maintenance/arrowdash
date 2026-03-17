@@ -25,11 +25,18 @@ Seek inspiration from https://quarto.org/docs/dashboards/examples/
 ```{r}
 #| label: r_setup
 #| include: false
-source("./stack_overflow_data/data_methods.R", local = knitr::knit_global())
 source("./methods.R", local = knitr::knit_global())
 ```
 
-# Python
+# Home
+
+{{< include overall_summary.qmd >}}
+
+# Issues & PRs
+
+## Row {.tabset}
+
+### Python
 
 ```{r}
 #| label: py_lang
@@ -39,7 +46,15 @@ lang <- "Python"
 
 {{< include _data.qmd >}}
 
-# R
+### Dummy
+
+#### Column
+
+##### Row
+
+<!-- absorbs broken position 2 -->
+
+### R
 
 ```{r}
 #| label: r_lang
@@ -49,14 +64,28 @@ lang <- "R"
 
 {{< include _data.qmd >}}
 
-# Overall Summary
+### Dummy2
 
-{{< include overall_summary.qmd >}}
+#### Column
 
-# Maintenance Stats
+##### Row
+
+<!-- absorbs broken position 4 -->
+
+### C++
+
+```{r}
+#| label: cpp_lang
+#| include: false
+lang <- "C++"
+```
+
+{{< include _data.qmd >}}
+
+# Project Health
 
 {{< include maintenance_stats.qmd >}}
 
-# Community
+# Onboarding
 
 {{< include community.qmd >}}
