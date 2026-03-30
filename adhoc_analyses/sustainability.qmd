@@ -1,0 +1,661 @@
+---
+title: "Apache Arrow: Contributor Sustainability Analysis"
+date: today
+format:
+  html:
+    theme: flatly
+    toc: true
+    toc-depth: 2
+    code-fold: true
+    code-summary: "Show code"
+    self-contained: true
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(arrow)
+library(dplyr)
+library(lubridate)
+library(purrr)
+library(ggplot2)
+library(DT)
+library(gh)
+
+pr_details <- read_parquet("../data/cache/pr_details.parquet")
+issue_details <- read_parquet("../data/cache/issue_details.parquet")
+contributors  <- read_parquet("../data/cache/contributors.parquet")
+```
+
+## Overview
+
+This report examines contributor sustainability for the Apache Arrow project,
+drawing on two key metrics from the
+[CHAOSS Practitioner Guide](https://chaoss.community/practitioner-guide-contributor-sustainability/):
+
+1. **Active Contributors** — the size of the contributor pool over time.
+2. **Contributor Absence Factor (CAF)** — how concentrated the workload is among
+   a small number of people.
+
+Together these give a picture of how resilient the project is to individual
+contributors stepping away.
+
+## Activity Over Time
+
+```{r}
+#| label: activity-over-time
+
+activity_by_month <- bind_rows(
+  pr_details |>
+    mutate(date = floor_date(as.Date(created_at), "month"), type = "PRs") |>
+    count(date, type, name = "n"),
+  issue_details |>
+    mutate(date = floor_date(as.Date(created_at), "month"), type = "Issues") |>
+    count(date, type, name = "n")
+) |>
+  filter(date >= floor_date(Sys.Date() - months(18), "month"))
+
+ggplot(activity_by_month, aes(x = date, y = n, colour = type)) +
+  geom_line(aes(linetype = "Actual"), linewidth = 0.5) +
+  geom_smooth(aes(linetype = "Trend"), method = "loess", span = 0.6, se = FALSE, linewidth = 1) +
+  scale_x_date(date_breaks = "3 months", date_labels = "%b %Y") +
+  scale_colour_manual(
+    values = c("PRs" = "#4C72B0", "Issues" = "#E15759"),
+    name = NULL
+  ) +
+  scale_linetype_manual(
+    values = c("Actual" = "dotted", "Trend" = "solid"),
+    name = NULL
+  ) +
+  labs(
+    title = "PRs and Issues Opened per Month",
+    x = NULL,
+    y = "Count"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "top"
+  )
+```
+
+## Active Contributors
+
+The plot below shows the number of unique contributors who opened at least one
+PR or issue in a rolling 90-day window, sampled monthly over the past 18 months.
+
+```{r}
+#| label: active-contributors
+
+all_activity <- bind_rows(
+  pr_details |> select(user_login, created_at),
+  issue_details |> select(user_login, created_at)
+) |>
+  filter(!grepl("\\[bot\\]", user_login, ignore.case = TRUE)) |>
+  mutate(date = as.Date(created_at))
+
+months <- seq(floor_date(Sys.Date() - months(18), "month"), Sys.Date(), by = "month")
+
+active_contributors <- map_dfr(months, function(m) {
+  window_start <- m - days(90)
+  active <- all_activity |>
+    filter(date >= window_start, date < m) |>
+    distinct(user_login) |>
+    nrow()
+  tibble(month = m, active_contributors = active)
+})
+
+ggplot(active_contributors, aes(x = month, y = active_contributors)) +
+  geom_line(linewidth = 1, colour = "#4C72B0") +
+  geom_point(size = 2, colour = "#4C72B0") +
+  scale_x_date(date_breaks = "3 months", date_labels = "%b %Y") +
+  labs(
+    title = "Active Contributors (90-day rolling window)",
+    x = NULL,
+    y = "Active contributors"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+A contributor is considered "active" if they opened at least one PR or issue,
+in the prior 90 days. Bot accounts are excluded.
+
+## Contributor Absence Factor
+
+The Contributor Absence Factor (CAF) is the **minimum number of contributors
+whose absence would remove 50% of all merged PRs** in a given quarter. A low
+CAF signals that a large share of the work rests on very few shoulders —
+increasing risk if any of them step back.
+
+```{r}
+#| label: caf-by-quarter
+
+quarter_starts <- seq(
+  floor_date(Sys.Date() - months(18), "quarter"),
+  floor_date(as.Date("2026-01-01"), "quarter"),
+  by = "quarter"
+)
+
+quarter_labels <- paste0("Q", quarter(quarter_starts), " ", year(quarter_starts))
+
+caf_quarterly <- map2_dfr(quarter_starts, quarter_labels, function(qs, ql) {
+  qe <- qs + months(3)
+
+  q_data <- pr_details |>
+    filter(!grepl("\\[bot\\]", user_login, ignore.case = TRUE)) |>
+    filter(!is.na(merged_at)) |>
+    filter(merged_at >= qs, merged_at < qe) |>
+    count(user_login, name = "prs_merged") |>
+    arrange(desc(prs_merged)) |>
+    mutate(
+      quarter = ql,
+      rank    = row_number(),
+      pct     = prs_merged / sum(prs_merged) * 100,
+      cum_pct = cumsum(pct)
+    )
+
+  caf_n <- min(q_data$rank[q_data$cum_pct >= 50])
+  q_data |> mutate(is_caf = rank <= caf_n, caf_n = caf_n)
+})
+
+caf_quarterly |>
+  slice_head(n = 10, by = quarter) |>
+  mutate(
+    quarter    = factor(quarter, levels = quarter_labels),
+    user_login = paste(quarter, user_login),
+    user_login = reorder(user_login, pct)
+  ) |>
+  mutate(label = sub("^Q[0-9] [0-9]+ ", "", user_login)) |>
+  ggplot(aes(x = user_login, y = pct, fill = is_caf)) +
+  geom_col() +
+  geom_text(aes(label = label), hjust = -0.05, size = 2.5) +
+  coord_flip() +
+  scale_x_discrete(labels = NULL) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
+  scale_fill_manual(
+    values = c("TRUE" = "#E15759", "FALSE" = "#4C72B0"),
+    labels = c("TRUE" = "CAF contributors (50% of PRs)", "FALSE" = "Other top contributors"),
+    name   = NULL
+  ) +
+  facet_wrap(~ quarter, scales = "free_y", ncol = 4) +
+  labs(
+    title    = "Contributor Absence Factor by Quarter",
+    subtitle = "Red = fewest contributors accounting for 50% of merged PRs",
+    x        = NULL,
+    y        = "% of merged PRs"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    strip.text      = element_text(face = "bold")
+  )
+```
+
+## Who Merges PRs?
+
+While the CAF tells us how concentrated PR *authorship* is, it's equally
+important to understand who actually *merges* contributions. Merge authority
+sits with a small group of committers — and if that group is too small or too
+concentrated, it becomes a bottleneck even when there are plenty of willing
+contributors.
+
+```{r}
+#| label: fetch-merged-by
+
+merged_by_data <- pr_details |>
+  filter(
+    !is.na(merged_by),
+    !grepl("\\[bot\\]", merged_by, ignore.case = TRUE),
+    !is.na(merged_at)
+  ) |>
+  mutate(merged_at = as.Date(merged_at)) |>
+  select(number, merged_by, merged_at)
+```
+
+```{r}
+#| label: who-merges-plot
+
+merger_quarters <- map2_dfr(quarter_starts, quarter_labels, function(qs, ql) {
+  qe <- qs + months(3)
+
+  q_data <- merged_by_data |>
+    filter(merged_at >= qs, merged_at < qe) |>
+    count(merged_by, name = "prs_merged") |>
+    arrange(desc(prs_merged)) |>
+    mutate(
+      quarter = ql,
+      rank    = row_number(),
+      pct     = prs_merged / sum(prs_merged) * 100,
+      cum_pct = cumsum(pct)
+    )
+
+  caf_n <- min(q_data$rank[q_data$cum_pct >= 50])
+  q_data |> mutate(is_caf = rank <= caf_n, caf_n = caf_n)
+})
+
+merger_quarters |>
+  slice_head(n = 10, by = quarter) |>
+  mutate(
+    quarter   = factor(quarter, levels = quarter_labels),
+    merged_by = paste(quarter, merged_by),
+    merged_by = reorder(merged_by, pct)
+  ) |>
+  mutate(label = sub("^Q[0-9] [0-9]+ ", "", merged_by)) |>
+  ggplot(aes(x = merged_by, y = pct, fill = is_caf)) +
+  geom_col() +
+  geom_text(aes(label = label), hjust = -0.05, size = 2.5) +
+  coord_flip() +
+  scale_x_discrete(labels = NULL) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.3))) +
+  scale_fill_manual(
+    values = c("TRUE" = "#E15759", "FALSE" = "#4C72B0"),
+    labels = c("TRUE" = "CAF mergers (50% of merges)", "FALSE" = "Other top mergers"),
+    name   = NULL
+  ) +
+  facet_wrap(~ quarter, scales = "free_y", ncol = 4) +
+  labs(
+    title    = "Who Merges PRs? (by quarter)",
+    subtitle = "Red = fewest people accounting for 50% of merges that quarter",
+    x        = NULL,
+    y        = "% of merges"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    strip.text      = element_text(face = "bold")
+  )
+```
+
+Merge activity is highly concentrated: in most quarters, just a handful of
+committers account for half of all merges. Contributors can open PRs freely,
+but the ability to land those PRs depends on a small group of committers.
+
+### What the data shows
+
+The CAF dropped sharply from **11 in Q2 2024 to 5 in Q4 2024**, and has held
+steady at 5 ever since. In practical terms, this means that just 5 people now
+account for half of all merged PRs in any given quarter — down from 11 a year
+and a half ago.
+
+A single contributor - **kou** - has been the top merger in every quarter
+observed, contributing between roughly 10-25% of all merged PRs. Their share
+peaked at 25% in Q3 2025, meaning one person was responsible for a quarter of
+all merged work that period.
+
+At the same time, the **total number of contributors merging PRs** has declined
+from 94 (Q2 2024) to 59 (Q1 2026). Fewer people are doing the work, and the
+work that remains is more concentrated among a smaller core.
+
+### Why this matters
+
+The decline in both the CAF and the total contributor pool has a clear
+structural cause: the dissolution of Voltron Data, which employed a significant
+number of Arrow committers. When a company that pays people to work full-time
+on a project shuts down, those contributors don't disappear overnight, but
+their available hours shrink considerably. The data reflects exactly that —
+fewer total contributors (94 in Q2 2024 → 59 in Q1 2026), and the work that
+remains increasingly concentrated among a smaller group of individuals
+employed by other organisations, but typically with narrower Arrow-specific
+mandates.
+
+A CAF of 5 sustained over several quarters is manageable, but fragile. The
+project is now largely dependent on a small number of people.  
+Any further attrition in that group would have
+an outsized impact on throughput.
+
+## New Contributors
+
+A healthy project needs a steady pipeline of new contributors — both to grow
+the contributor pool and to offset natural attrition. We identify first-time
+contributors by finding each person's earliest PR in the repository.
+
+```{r}
+#| label: new-contributors-overall
+
+# Each person's first PR
+first_prs <- pr_details |>
+  filter(!grepl("\\[bot\\]", user_login, ignore.case = TRUE)) |>
+  group_by(user_login) |>
+  slice_min(created_at, n = 1) |>
+  ungroup()
+
+# First PRs within the 12-month window
+new_contribs <- first_prs |>
+  filter(as.Date(created_at) >= floor_date(Sys.Date() - months(12), "month")) |>
+  mutate(month = floor_date(as.Date(created_at), "month"))
+
+# Monthly counts by outcome
+monthly_new <- new_contribs |>
+  filter(month > as.Date("2025-03-01")) |>
+  mutate(
+    outcome = case_when(
+      !is.na(merged_at) ~ "Merged",
+      state == "closed" ~ "Closed",
+      TRUE ~ "Open"
+    )
+  ) |>
+  count(month, outcome, name = "n") |>
+  mutate(outcome = factor(outcome, levels = c("Open", "Closed", "Merged")))
+
+ggplot(monthly_new, aes(x = month, y = n, fill = outcome)) +
+  geom_area(alpha = 0.8) +
+  scale_x_date(date_breaks = "2 months", date_labels = "%b %Y") +
+  scale_fill_manual(
+    values = c("Merged" = "#59A14F", "Closed" = "#E15759", "Open" = "#4C72B0"),
+    name = NULL
+  ) +
+  labs(
+    title = "First-Time Contributors per Month",
+    subtitle = "Outcome of each person's first PR",
+    x = NULL,
+    y = "Contributors"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "top"
+  )
+```
+
+```{r}
+#| label: new-contributors-stats
+#| include: false
+
+n_first_timers <- nrow(new_contribs)
+n_merged <- sum(!is.na(new_contribs$merged_at))
+n_closed <- sum(new_contribs$state == "closed" & is.na(new_contribs$merged_at))
+n_open <- sum(new_contribs$state == "open")
+pct_merged <- round(n_merged / n_first_timers * 100)
+```
+
+Over the past 12 months, **`r n_first_timers` people** opened their first PR to
+Apache Arrow. Of those first PRs, **`r n_merged` (`r pct_merged`%)** were merged,
+`r n_closed` were closed without merging, and `r n_open` are still open.
+
+### PR Designation
+
+```{r}
+#| label: review-setup
+#| include: false
+
+review_cache   <- "first_timer_review_status.csv"
+bot_pattern    <- "\\[bot\\]|github-actions|codecov|dependabot"
+abandoned_days <- 90
+
+parse_activity <- function(issue_comments, pr_reviews) {
+  ic <- if (length(issue_comments) > 0) {
+    map_dfr(issue_comments, function(c) tibble(
+      login = c$user$login,
+      at    = as.POSIXct(c$created_at, format = "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")
+    ))
+  } else tibble(login = character(), at = as.POSIXct(character()))
+
+  rv <- if (length(pr_reviews) > 0) {
+    map_dfr(pr_reviews, function(r) tibble(
+      login = r$user$login,
+      at    = as.POSIXct(r$submitted_at, format = "%Y-%m-%dT%H:%M:%SZ", tz = "UTC")
+    ))
+  } else tibble(login = character(), at = as.POSIXct(character()))
+
+  bind_rows(ic, rv) |>
+    filter(!grepl(bot_pattern, login, ignore.case = TRUE)) |>
+    arrange(at)
+}
+```
+
+```{r}
+#| label: review-stage1
+#| include: false
+# Stage 1: Build CSV from parquet if it doesn't exist or has new PRs.
+# new_contribs contains each person's first PR to the repo.
+
+if (!file.exists(review_cache)) {
+  review_status <- new_contribs |>
+    select(number, author = user_login) |>
+    mutate(
+      designation = NA_character_,
+      first_response_at = as.POSIXct(NA),
+      days_to_first_response = NA_real_,
+      first_responder = NA_character_
+    )
+  write.csv(review_status, review_cache, row.names = FALSE)
+} else {
+  review_status <- read.csv(
+    review_cache,
+    colClasses = c(number = "integer", author = "character",
+                   designation = "character")
+  ) |>
+    mutate(
+      first_response_at      = as.POSIXct(first_response_at, tz = "UTC"),
+      days_to_first_response = as.numeric(days_to_first_response)
+    )
+  missing <- setdiff(new_contribs$number, review_status$number)
+  if (length(missing) > 0) {
+    new_rows <- new_contribs |>
+      filter(number %in% missing) |>
+      select(number, author = user_login) |>
+      mutate(designation = NA_character_)
+    review_status <- bind_rows(review_status, new_rows)
+    write.csv(review_status, review_cache, row.names = FALSE)
+  }
+}
+```
+
+```{r}
+#| label: review-stage1b
+#| include: false
+# Stage 1b: Mark PRs less than 6 weeks old as "recent" — too new to classify
+
+recent_numbers <- new_contribs |>
+  filter(as.Date(created_at) >= Sys.Date() - 42) |>
+  pull(number)
+
+newly_recent <- recent_numbers[
+  is.na(review_status$designation[review_status$number %in% recent_numbers])
+]
+
+if (length(newly_recent) > 0) {
+  message("Stage 1b: marking ", length(newly_recent), " PRs as recent (< 6 weeks old)")
+  review_status$designation[review_status$number %in% newly_recent] <- "recent"
+  write.csv(review_status, review_cache, row.names = FALSE)
+}
+```
+
+```{r}
+#| label: review-stage2
+#| include: false
+# Stage 2: Check reviews for PRs with no designation yet — classify as
+#          "no-review" if no human has commented, otherwise leave NA for Stage 3
+
+needs_review_check <- review_status |>
+  filter(is.na(designation)) |>
+  pull(number)
+
+if (length(needs_review_check) > 0) {
+  message("Stage 2: checking reviews for ", length(needs_review_check), " PRs...")
+
+  for (pr_number in needs_review_check) {
+    author <- review_status$author[review_status$number == pr_number]
+
+    issue_comments <- tryCatch(
+      gh("GET /repos/{owner}/{repo}/issues/{issue_number}/comments",
+         owner = "apache", repo = "arrow", issue_number = pr_number,
+         per_page = 100, .token = Sys.getenv("GITHUB_PAT")),
+      error = function(e) list()
+    )
+    pr_reviews <- tryCatch(
+      gh("GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+         owner = "apache", repo = "arrow", pull_number = pr_number,
+         per_page = 100, .token = Sys.getenv("GITHUB_PAT")),
+      error = function(e) list()
+    )
+
+    activity       <- parse_activity(issue_comments, pr_reviews)
+    human_activity <- activity |> filter(login != author)
+
+    if (nrow(human_activity) == 0) {
+      review_status$designation[review_status$number == pr_number] <- "no-review"
+    } else {
+      # Record first response
+      first_response <- human_activity |> slice_head(n = 1)
+      pr_created <- new_contribs$created_at[new_contribs$number == pr_number]
+      review_status$first_response_at[review_status$number == pr_number] <- first_response$at
+      review_status$days_to_first_response[review_status$number == pr_number] <-
+        as.numeric(difftime(first_response$at, pr_created, units = "days"))
+      review_status$first_responder[review_status$number == pr_number] <- first_response$login
+    }
+
+    Sys.sleep(0.2)
+  }
+
+  write.csv(review_status, review_cache, row.names = FALSE)
+  message("Stage 2 complete.")
+}
+```
+
+```{r}
+#| label: review-stage3
+#| include: false
+# Stage 3: For reviewed PRs (designation still NA), check if last actor was
+#          not the author and last activity > abandoned_days ago → "abandoned",
+#          activity in past 4 weeks → "active", otherwise leave NA
+
+needs_abandoned_check <- review_status |>
+  filter(is.na(designation)) |>
+  pull(number)
+
+if (length(needs_abandoned_check) > 0) {
+  message("Stage 3: checking abandonment for ", length(needs_abandoned_check), " PRs...")
+
+  for (pr_number in needs_abandoned_check) {
+    author <- review_status$author[review_status$number == pr_number]
+
+    issue_comments <- tryCatch(
+      gh("GET /repos/{owner}/{repo}/issues/{issue_number}/comments",
+         owner = "apache", repo = "arrow", issue_number = pr_number,
+         per_page = 100, .token = Sys.getenv("GITHUB_PAT")),
+      error = function(e) list()
+    )
+    pr_reviews <- tryCatch(
+      gh("GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+         owner = "apache", repo = "arrow", pull_number = pr_number,
+         per_page = 100, .token = Sys.getenv("GITHUB_PAT")),
+      error = function(e) list()
+    )
+
+    all_events <- parse_activity(issue_comments, pr_reviews)
+    last_event <- if (nrow(all_events) > 0) slice_tail(all_events, n = 1) else NULL
+
+    days_since <- if (!is.null(last_event)) {
+      as.numeric(Sys.time() - last_event$at, units = "days")
+    } else NA_real_
+
+    designation <- if (
+      !is.null(last_event) && days_since <= 28
+    ) "active" else if (
+      !is.null(last_event) &&
+      last_event$login != author &&
+      days_since > abandoned_days
+    ) "abandoned" else "stale-risk"
+
+    review_status$designation[review_status$number == pr_number] <- designation
+    Sys.sleep(0.2)
+  }
+
+  write.csv(review_status, review_cache, row.names = FALSE)
+  message("Stage 3 complete.")
+}
+
+# Summary stats
+new_contribs_status <- new_contribs |>
+  mutate(
+    status = case_when(
+      !is.na(merged_at) ~ "Merged",
+      state == "closed" ~ "Closed (not merged)",
+      TRUE              ~ "Open"
+    )
+  ) |>
+  left_join(review_status |> select(number, designation, days_to_first_response),
+            by = "number")
+
+n_opened       <- nrow(new_contribs_status)
+n_merged       <- sum(new_contribs_status$status == "Merged")
+n_closed       <- sum(new_contribs_status$status == "Closed (not merged)")
+n_open         <- sum(new_contribs_status$status == "Open")
+open_contribs  <- new_contribs_status |> filter(status == "Open")
+n_no_review    <- sum(open_contribs$designation == "no-review",  na.rm = TRUE)
+n_abandoned    <- sum(open_contribs$designation == "abandoned",  na.rm = TRUE)
+n_active       <- sum(open_contribs$designation == "active",     na.rm = TRUE)
+n_recent       <- sum(open_contribs$designation == "recent",     na.rm = TRUE)
+n_stale_risk   <- sum(open_contribs$designation == "stale-risk", na.rm = TRUE)
+pct_no_review  <- round(n_no_review  / n_open * 100)
+pct_abandoned  <- round(n_abandoned  / n_open * 100)
+pct_stale_risk <- round(n_stale_risk / n_open * 100)
+
+ttfr        <- review_status |> filter(!is.na(days_to_first_response)) |> pull(days_to_first_response)
+ttfr_median <- round(median(ttfr), 1)
+ttfr_p75    <- round(quantile(ttfr, 0.75), 1)
+ttfr_max    <- round(max(ttfr), 0)
+```
+
+Of those `r n_open` open PRs:
+
+- **`r n_no_review` (`r pct_no_review`%)** received no human review at all
+- **`r n_abandoned` (`r pct_abandoned`%)** are abandoned - reviewed but no
+  response from the author in over 90 days
+- **`r n_stale_risk` (`r pct_stale_risk`%)** are at risk of becoming stale - have had some
+  engagement but no maintainer response in over 6 weeks
+- **`r n_active`** are actively being discussed (recent activity in the past 4 weeks)
+- **`r n_recent`** were opened in the past 6 weeks
+
+### Time to First Response
+
+For the `r length(ttfr)` PRs that received a human response, the median time
+to first response was **`r ttfr_median` days**, with 75% receiving a response
+within `r ttfr_p75` days. The slowest response took `r ttfr_max` days.
+
+```{r}
+#| label: time-to-first-response
+
+review_status |>
+  filter(!is.na(days_to_first_response), days_to_first_response <= 100) |>
+  mutate(days_to_first_response = as.numeric(days_to_first_response)) |>
+  ggplot(aes(x = days_to_first_response)) +
+  geom_histogram(binwidth = 3, fill = "#4C72B0", colour = "white") +
+  geom_vline(xintercept = ttfr_median, linetype = "dashed",
+             colour = "#E15759", linewidth = 0.8) +
+  annotate("text", x = ttfr_median + 1, y = Inf,
+           label = paste0("median: ", ttfr_median, " days"),
+           hjust = 0, vjust = 1.5, colour = "#E15759", size = 3.5) +
+  labs(
+    title = "Time to First Response (reviewed PRs only)",
+    subtitle = "Limited to PRs with response within 100 days",
+    x     = "Days to first human response",
+    y     = "Number of PRs"
+  ) +
+  theme_minimal()
+```
+
+## Conclusion
+
+**The contributor base has contracted.** Following the dissolution of Voltron Data,
+the Contributor Absence Factor fell from 11 to 5: just five people now account for
+half of all merged PRs. Merge authority is similarly concentrated.
+
+**The maintainers are doing their part.** First-time contributors get a response
+in a median of 1.1 days. Half get their first PR merged. Of the 75 first-timer PRs
+still open, only 10 received no review — the rest were reviewed but stalled (17
+abandoned by the author, 20 at risk of stalling). The bottleneck isn't attention;
+it's that a shrinking group is stretched thin.
+
+**The risk is fragility.** If one or two of the top five contributors step back,
+review capacity and release velocity will be directly affected. The project would
+benefit from additional maintainer time, whether through sponsorship or dedicated
+engineering support from organizations that depend on Arrow.
