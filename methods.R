@@ -48,6 +48,7 @@ read_open_issues <- function(lang) {
   first_merged <- read_first_merged_dates()
 
   issues %>%
+    filter(state == "open") %>%
     filter(created_at > cutoff) %>%
     filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
     left_join(first_merged, by = "user_login") %>%
@@ -72,6 +73,7 @@ read_open_prs <- function(lang) {
 
   prs %>%
     filter(state == "open") %>%
+    filter(!draft) %>%
     filter(created_at > cutoff) %>%
     filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
     left_join(first_merged, by = "user_login") %>%
