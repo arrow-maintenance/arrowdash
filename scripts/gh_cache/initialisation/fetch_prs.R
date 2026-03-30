@@ -82,11 +82,34 @@ prs_tbl <- tibble(
   base_ref = map_chr(items, list("base", "ref"))
 )
 
+# Fetch merged_by for merged PRs — not available on list endpoint,
+# must hit individual PR endpoint
+merged_numbers <- prs_tbl |> filter(!is.na(merged_at)) |> pull(number)
+message("\nFetching merged_by for ", length(merged_numbers), " merged PRs...")
+
+merged_by_tbl <- map_dfr(merged_numbers, function(n) {
+  resp <- gh(
+    "GET /repos/{owner}/{repo}/pulls/{pull_number}",
+    owner = "apache",
+    repo = "arrow",
+    pull_number = n
+  )
+  Sys.sleep(0.2)
+  tibble(
+    number    = n,
+    merged_by = resp$merged_by$login %||% NA_character_
+  )
+}, .progress = TRUE)
+
+prs_tbl <- prs_tbl |>
+  left_join(merged_by_tbl, by = "number")
+
 message("\n=== Summary ===")
 message("Total PRs: ", nrow(prs_tbl))
 message("Open: ", sum(prs_tbl$state == "open"))
 message("Closed: ", sum(prs_tbl$state == "closed"))
 message("Merged: ", sum(!is.na(prs_tbl$merged_at)))
+message("merged_by populated: ", sum(!is.na(prs_tbl$merged_by)))
 
 write_parquet(prs_tbl, output_file)
 message("\nSaved to: ", output_file)
