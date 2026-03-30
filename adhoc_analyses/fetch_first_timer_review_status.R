@@ -15,9 +15,15 @@ cutoff <- as.POSIXct(Sys.Date() - 365, tz = "UTC")
 
 pr_details <- read_parquet("../data/cache/pr_details.parquet")
 
+first_merged_prs <- pr_details |>
+  filter(!is.na(merged_at)) |>
+  group_by(user_login) |>
+  summarise(first_merged_at = min(as.POSIXct(merged_at, tz = "UTC")), .groups = "drop")
+
 first_timer_prs <- pr_details |>
+  left_join(first_merged_prs, by = "user_login") |>
   filter(
-    author_association == "FIRST_TIME_CONTRIBUTOR",
+    is.na(first_merged_at) | as.POSIXct(created_at, tz = "UTC") < first_merged_at,
     as.POSIXct(created_at, tz = "UTC") >= cutoff
   )
 
