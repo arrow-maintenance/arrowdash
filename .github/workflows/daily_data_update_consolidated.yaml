@@ -8,6 +8,10 @@ on:
     - cron: '15 0 * * *'  # Every day at 00:15 UTC
   workflow_dispatch:
 
+concurrency:
+  group: update-data-and-publish-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pages: write
@@ -20,6 +24,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           lfs: true
 
       - name: Set up Quarto
@@ -78,7 +83,14 @@ jobs:
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
           git add data/
-          git diff --cached --quiet || (git commit -m "Update all data metrics [auto]" && git push)
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+          else
+            git commit -m "Update all data metrics [auto]"
+            git fetch origin main
+            git rebase origin/main
+            git push
+          fi
 
       - name: Publish to GitHub Pages (and render)
         uses: quarto-dev/quarto-actions/publish@v2
