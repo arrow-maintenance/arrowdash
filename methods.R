@@ -30,27 +30,35 @@ library(lubridate)
 
 # CSV data reading helpers for decoupled Python/R architecture
 
+read_first_merged_dates <- function() {
+  arrow::read_parquet("data/cache/pr_details.parquet") %>%
+    filter(
+      !grepl("\\[bot\\]", user_login, ignore.case = TRUE),
+      !is.na(merged_at)
+    ) %>%
+    group_by(user_login) %>%
+    summarise(first_merged_at = min(merged_at), .groups = "drop")
+}
+
 # Read open issues/PRs from parquet cache, filtered by language label and last 3 months
 read_open_issues <- function(lang) {
   label <- paste0("Component: ", lang)
   cutoff <- Sys.time() - months(3)
   issues <- arrow::read_parquet("data/cache/issue_details.parquet")
-  contributors <- arrow::read_parquet("data/cache/contributors.parquet")
-
-  # Users not in contributors list are new
-  known_users <- contributors$login
+  first_merged <- read_first_merged_dates()
 
   issues %>%
     filter(created_at > cutoff) %>%
     filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
+    left_join(first_merged, by = "user_login") %>%
     mutate(
-      author_association = if_else(user_login %in% known_users, "CONTRIBUTOR", "NONE")
+      new_contributor = is.na(first_merged_at) | created_at < first_merged_at
     ) %>%
     transmute(
       created_at = created_at,
       url_title = paste0('<a target="_blank" href="', html_url, '">', title, '</a>'),
       html_url = html_url,
-      author_association = author_association,
+      new_contributor = new_contributor,
       comments = 0L
     ) %>%
     arrange(desc(created_at))
@@ -60,16 +68,21 @@ read_open_prs <- function(lang) {
   label <- paste0("Component: ", lang)
   cutoff <- Sys.time() - months(3)
   prs <- arrow::read_parquet("data/cache/pr_details.parquet")
+  first_merged <- read_first_merged_dates()
 
   prs %>%
     filter(state == "open") %>%
     filter(created_at > cutoff) %>%
     filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
+    left_join(first_merged, by = "user_login") %>%
+    mutate(
+      new_contributor = is.na(first_merged_at) | created_at < first_merged_at
+    ) %>%
     transmute(
       created_at = created_at,
       url_title = paste0('<a target="_blank" href="', html_url, '">', title, '</a>'),
       html_url = html_url,
-      author_association = author_association,
+      new_contributor = new_contributor,
       comments = 0L
     ) %>%
     arrange(desc(created_at))
@@ -83,7 +96,6 @@ gt_show_issues <- function(x){
 
   display_data <- x %>%
     mutate(
-      new_contributor = author_association %in% c("NONE", "FIRST_TIME_CONTRIBUTOR"),
       Title = url_title,
       Date = as.Date(created_at)
     ) %>%

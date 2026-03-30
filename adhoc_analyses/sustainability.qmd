@@ -30,7 +30,6 @@ library(gh)
 
 pr_details <- read_parquet("../data/cache/pr_details.parquet")
 issue_details <- read_parquet("../data/cache/issue_details.parquet")
-contributors  <- read_parquet("../data/cache/contributors.parquet")
 ```
 
 ## Overview

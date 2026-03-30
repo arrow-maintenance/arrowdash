@@ -4,7 +4,6 @@
 # Updates:
 #   - ./data/cache/pr_details.parquet (all PRs)
 #   - ./data/cache/issue_details.parquet
-#   - ./data/cache/contributors.parquet (first_contribution)
 
 library(gh)
 library(dplyr)
@@ -16,6 +15,11 @@ message("=== Fetching recent activity ===")
 # Load existing data to find last update time
 prs <- read_parquet("./data/cache/pr_details.parquet")
 issues <- read_parquet("./data/cache/issue_details.parquet")
+
+# Ensure merged_by column exists for backward compatibility
+if (!"merged_by" %in% names(prs)) {
+  prs <- prs |> mutate(merged_by = NA_character_)
+}
 
 last_update <- max(
   max(prs$updated_at, na.rm = TRUE),
@@ -60,6 +64,7 @@ updated_issues_raw <- items[!is_pr]
 updated_prs_numbers <- map_int(items[is_pr], "number")
 
 # For PRs, we need to fetch from /pulls endpoint to get full PR details
+# including merged_at and merged_by
 updated_prs_raw <- list()
 if (length(updated_prs_numbers) > 0) {
   message("Fetching full PR details for ", length(updated_prs_numbers), " PRs...")
@@ -75,42 +80,47 @@ if (length(updated_prs_numbers) > 0) {
   }
 }
 
-# Convert updated issues to tibble
-if (length(updated_issues_raw) > 0) {
-  updated_issues <- tibble(
-    number = map_int(updated_issues_raw, "number"),
-    title = map_chr(updated_issues_raw, "title"),
-    state = map_chr(updated_issues_raw, "state"),
-    created_at = as.POSIXct(
-      map_chr(updated_issues_raw, "created_at"),
-      format = "%Y-%m-%dT%H:%M:%SZ",
-      tz = "UTC"
-    ),
-    updated_at = as.POSIXct(
-      map_chr(updated_issues_raw, "updated_at"),
-      format = "%Y-%m-%dT%H:%M:%SZ",
-      tz = "UTC"
-    ),
-    user_login = map_chr(updated_issues_raw, list("user", "login")),
-    body = map_chr(updated_issues_raw, ~ .x$body %||% NA_character_),
-    labels = map(updated_issues_raw, ~ map_chr(.x$labels, "name")),
-    assignees = map(updated_issues_raw, ~ map_chr(.x$assignees, "login")),
-    html_url = map_chr(updated_issues_raw, "html_url")
-  )
+  # Convert updated issues to tibble
+  if (length(updated_issues_raw) > 0) {
+    updated_issues <- tibble(
+      number = map_int(updated_issues_raw, "number"),
+      title = map_chr(updated_issues_raw, "title"),
+      state = map_chr(updated_issues_raw, "state"),
+      created_at = as.POSIXct(
+        map_chr(updated_issues_raw, "created_at"),
+        format = "%Y-%m-%dT%H:%M:%SZ",
+        tz = "UTC"
+      ),
+      updated_at = as.POSIXct(
+        map_chr(updated_issues_raw, "updated_at"),
+        format = "%Y-%m-%dT%H:%M:%SZ",
+        tz = "UTC"
+      ),
+      closed_at = as.POSIXct(
+        map_chr(updated_issues_raw, ~ .x$closed_at %||% NA_character_),
+        format = "%Y-%m-%dT%H:%M:%SZ",
+        tz = "UTC"
+      ),
+      user_login = map_chr(updated_issues_raw, list("user", "login")),
+      body = map_chr(updated_issues_raw, ~ .x$body %||% NA_character_),
+      labels = map(updated_issues_raw, ~ map_chr(.x$labels, "name")),
+      assignees = map(updated_issues_raw, ~ map_chr(.x$assignees, "login")),
+      html_url = map_chr(updated_issues_raw, "html_url")
+    )
 
-  # Update issues - remove old versions, add updated
-  # Convert list columns to plain lists for compatibility
-  issues <- issues |>
-    mutate(
-      labels = as.list(labels),
-      assignees = as.list(assignees)
-    ) |>
-    filter(!number %in% updated_issues$number) |>
-    bind_rows(updated_issues |> filter(state == "open"))
+    # Update issues - remove old versions, add updated (keep all states)
+    # Convert list columns to plain lists for compatibility
+    issues <- issues |>
+      mutate(
+        labels = as.list(labels),
+        assignees = as.list(assignees)
+      ) |>
+      filter(!number %in% updated_issues$number) |>
+      bind_rows(updated_issues)
 
-  write_parquet(issues, "./data/cache/issue_details.parquet")
-  message("Updated issue_details.parquet")
-}
+    write_parquet(issues, "./data/cache/issue_details.parquet")
+    message("Updated issue_details.parquet")
+  }
 
 # Convert updated PRs to tibble
 if (length(updated_prs_raw) > 0) {
@@ -139,6 +149,10 @@ if (length(updated_prs_raw) > 0) {
       format = "%Y-%m-%dT%H:%M:%SZ",
       tz = "UTC"
     ),
+    merged_by = map_chr(
+      updated_prs_raw,
+      ~ .x$merged_by$login %||% NA_character_
+    ),
     user_login = map_chr(updated_prs_raw, list("user", "login")),
     author_association = map_chr(updated_prs_raw, "author_association"),
     body = map_chr(updated_prs_raw, ~ .x$body %||% NA_character_),
@@ -162,9 +176,5 @@ if (length(updated_prs_raw) > 0) {
   write_parquet(prs, "./data/cache/pr_details.parquet")
   message("Updated pr_details.parquet")
 }
-
-# Update first contributions for any new contributors
-message("\nUpdating first contributions...")
-source("scripts/gh_cache/update_first_contributions.R")
 
 message("\n=== Done ===")

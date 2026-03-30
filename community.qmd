@@ -10,26 +10,40 @@ library(lubridate)
 library(ggplot2)
 library(tidyr)
 
-# Load PR data for new contributors plot
+# Load PR data
 prs <- read_parquet("data/cache/pr_details.parquet")
+
+# Identify when each contributor first got a PR merged.
+first_merged_prs <- prs |>
+  filter(!grepl("\\[bot\\]", user_login, ignore.case = TRUE)) |>
+  filter(!is.na(merged_at)) |>
+  group_by(user_login) |>
+  slice_min(merged_at, n = 1, with_ties = FALSE) |>
+  ungroup() |>
+  transmute(user_login, first_merged_date = as.Date(merged_at))
 
 # Get PRs by contributor type over last 18 months (excluding current month)
 cutoff_start <- Sys.time() - months(18)
-cutoff_end <- floor_date(Sys.Date(), "month")
+cutoff_end   <- floor_date(Sys.Date(), "month")
 
-pr_contributors <- prs %>%
-  filter(created_at > cutoff_start) %>%
-  mutate(month = floor_date(as.Date(created_at), "month")) %>%
-  filter(month < cutoff_end) %>%
+pr_contributors <- prs |>
+  filter(
+    created_at > cutoff_start,
+    !grepl("\\[bot\\]", user_login, ignore.case = TRUE)
+  ) |>
+  mutate(created_date = as.Date(created_at)) |>
+  mutate(month = floor_date(created_date, "month")) |>
+  filter(month < cutoff_end) |>
+  left_join(first_merged_prs, by = "user_login") |>
   mutate(
     contributor_type = if_else(
-      author_association %in% c("FIRST_TIME_CONTRIBUTOR", "FIRST_TIMER"),
+      is.na(first_merged_date) | created_date < first_merged_date,
       "New contributors",
       "Existing contributors"
     )
-  ) %>%
-  group_by(month, contributor_type) %>%
-  summarise(n = n(), .groups = "drop") %>%
+  ) |>
+  group_by(month, contributor_type) |>
+  summarise(n = n(), .groups = "drop") |>
   complete(month, contributor_type, fill = list(n = 0))
 
 # Fetch all open "good-first-issue" issues in a single paginated call
@@ -129,7 +143,9 @@ ggplot(pr_contributors, aes(x = month, y = n, fill = contributor_type)) +
 #| title: Recent PRs from new contributors
 
 new_contributor_prs <- prs %>%
-  filter(author_association %in% c("FIRST_TIME_CONTRIBUTOR", "FIRST_TIMER")) %>%
+  left_join(first_merged_prs, by = "user_login") %>%
+  mutate(created_date = as.Date(created_at)) %>%
+  filter(is.na(first_merged_date) | created_date < first_merged_date) %>%
   filter(created_at > Sys.time() - months(3)) %>%
   arrange(desc(created_at)) %>%
   transmute(

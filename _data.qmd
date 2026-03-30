@@ -8,13 +8,13 @@ prs_open <- read_open_prs(lang)
 
 # Filter for new contributors and no replies
 if (nrow(issues_open) > 0) {
-  issues_open_new <- issues_open[issues_open$author_association == "NONE", ]
+  issues_open_new <- issues_open[issues_open$new_contributor, ]
 } else {
   issues_open_new <- issues_open
 }
 
 if (nrow(prs_open) > 0) {
-  prs_open_new <- prs_open[prs_open$author_association == "FIRST_TIME_CONTRIBUTOR", ]
+  prs_open_new <- prs_open[prs_open$new_contributor, ]
 } else {
   prs_open_new <- prs_open
 }
@@ -75,4 +75,3 @@ gt_show_issues(issues_open)
 #| title: Open PRs from last 90 days (new contributors highlighted)
 gt_show_issues(prs_open)
 ```
-
