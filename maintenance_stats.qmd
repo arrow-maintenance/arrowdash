@@ -23,12 +23,14 @@ open_counts <- read_csv("data/open_counts.csv", col_types = cols(
   open_prs = col_integer()
 ))
 
+month_ago_date <- max(open_counts$date) %m-% months(1)
+
 current_issues <- open_counts %>%
   filter(date == max(date)) %>%
   pull(open_issues)
 
 month_ago_issues <- open_counts %>%
-  filter(date == max(date) - months(1)) %>%
+  filter(date == month_ago_date) %>%
   pull(open_issues)
 
 current_prs <- open_counts %>%
@@ -36,7 +38,7 @@ current_prs <- open_counts %>%
   pull(open_prs)
 
 month_ago_prs <- open_counts %>%
-  filter(date == max(date) - months(1)) %>%
+  filter(date == month_ago_date) %>%
   pull(open_prs)
 
 change_issues <- current_issues - month_ago_issues
