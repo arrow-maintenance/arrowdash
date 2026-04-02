@@ -78,41 +78,90 @@ value_box(
 
 ```{r}
 #| echo: false
-#| title: Development Activity - Commits by Month
-library(ggplot2)
-library(readr)
-monthly_commit_counts <- readr::read_csv("./data/monthly_commit_counts.csv") %>%
-  mutate(date = as.Date(paste0(month, "-01"))) %>%
-  filter(date > as.Date("2024-04-01")) %>%
-  filter(date < floor_date(Sys.Date(), "month")) %>%
-  arrange(date)
+#| include: false
 
-ggplot(monthly_commit_counts, aes(x = date)) +
-  geom_line(aes(y = commit_count, color = "Raw values"), linewidth = 1) +
-  geom_smooth(aes(y = commit_count, color = "Trend"), span = 0.9, method = "loess", se = FALSE, linewidth = 1, linetype = "dashed") +
-  scale_color_manual(values = c("Raw values" = "grey", "Trend" = "blue"), name = "") +
-  scale_x_date(
-    date_labels = "%b %Y",
-    date_breaks = "1 month",
-    limits = c(min(monthly_commit_counts$date), max(monthly_commit_counts$date)),
-    expand = c(0,0)
+pr_details <- arrow::read_parquet("data/cache/pr_details.parquet")
+issue_details <- arrow::read_parquet("data/cache/issue_details.parquet")
+
+pr_activity <- bind_rows(
+  pr_details |>
+    mutate(date = floor_date(as.Date(created_at), "month"), type = "Opened") |>
+    count(date, type, name = "n"),
+  pr_details |>
+    filter(!is.na(merged_at)) |>
+    mutate(date = floor_date(as.Date(merged_at), "month"), type = "Merged") |>
+    count(date, type, name = "n")
+) |>
+  filter(date >= floor_date(Sys.Date() - years(2), "month")) |>
+  filter(date < floor_date(Sys.Date(), "month"))
+
+issue_activity <- bind_rows(
+  issue_details |>
+    mutate(date = floor_date(as.Date(created_at), "month"), type = "Opened") |>
+    count(date, type, name = "n"),
+  issue_details |>
+    filter(state == "closed") |>
+    mutate(date = floor_date(as.Date(closed_at), "month"), type = "Closed") |>
+    count(date, type, name = "n")
+) |>
+  filter(date >= floor_date(Sys.Date() - years(2), "month")) |>
+  filter(date < floor_date(Sys.Date(), "month"))
+```
+
+::: {.card title="Activity Trends (2 years)"}
+```{r}
+#| echo: false
+#| fig-width: 10
+#| fig-height: 4
+
+library(patchwork)
+
+p1 <- ggplot(pr_activity, aes(x = date, y = n, colour = type)) +
+  geom_line(aes(linetype = "Actual"), linewidth = 0.7) +
+  geom_smooth(aes(linetype = "Trend"), method = "loess", span = 0.6, se = FALSE, linewidth = 0.7) +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b %Y") +
+  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  scale_colour_manual(
+    values = c("Opened" = "#4C72B0", "Merged" = "#59A14F"),
+    name = NULL
   ) +
-  labs(
-    x = "Month",
-    y = "Number of Commits"
+  scale_linetype_manual(
+    values = c("Actual" = "solid", "Trend" = "dotted"),
+    name = NULL
   ) +
+  labs(title = "PRs: opened vs merged", x = NULL, y = "Count") +
   theme_minimal() +
   theme(
-    axis.text.x = element_text(angle = 45, hjust = 1, size = 10),
-    panel.grid.minor = element_blank(),
-    panel.grid.major.x = element_blank()
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "top"
   )
+
+p2 <- ggplot(issue_activity, aes(x = date, y = n, colour = type)) +
+  geom_line(aes(linetype = "Actual"), linewidth = 0.7) +
+  geom_smooth(aes(linetype = "Trend"), method = "loess", span = 0.6, se = FALSE, linewidth = 0.7) +
+  scale_x_date(date_breaks = "6 months", date_labels = "%b %Y") +
+  scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
+  scale_colour_manual(
+    values = c("Opened" = "#E15759", "Closed" = "#59A14F"),
+    name = NULL
+  ) +
+  scale_linetype_manual(
+    values = c("Actual" = "solid", "Trend" = "dotted"),
+    name = NULL
+  ) +
+  labs(title = "Issues: opened vs closed", x = NULL, y = "Count") +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    legend.position = "top"
+  )
+
+p1 + p2
 ```
+:::
 
 ### Column {width=40%}
 
-::: {.card title="Dev Mailing List Summary"}
-LLM-generated summary of this month's activity on the dev mailing list.
-
+::: {.card title="Dev Mailing List: LLM-generated summary of this month's activity"}
 `r summary_text`
 :::
