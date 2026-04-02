@@ -4,8 +4,6 @@
 summary_text <- read_ml_summary()
 ```
 
-## Row
-
 ```{r}
 #| echo: false
 library(ggplot2)
@@ -54,27 +52,9 @@ get_sign_string <- function(x){
 }
 ```
 
-```{r}
-value_box(
-  title = "Open Issues (and change since 1 month ago)",
-  showcase = bsicons::bs_icon("chat"),
-  theme = "primary",
-  value = glue::glue("{current_issues} ({get_sign_string(change_issues)})")
-)
-```
-
-```{r}
-value_box(
-  title = "Open PRs (and change since 1 month ago)",
-  showcase = bsicons::bs_icon("pencil"),
-  theme = "primary",
-  value = glue::glue("{current_prs} ({get_sign_string(change_prs)})")
-)
-```
-
 ## Row
 
-### Column {width=60%}
+### Column {width=66%}
 
 ```{r}
 #| echo: false
@@ -112,7 +92,7 @@ issue_activity <- bind_rows(
 ```{r}
 #| echo: false
 #| fig-width: 10
-#| fig-height: 4
+#| fig-height: 7
 
 library(patchwork)
 
@@ -129,7 +109,12 @@ p1 <- ggplot(pr_activity, aes(x = date, y = n, colour = type)) +
     values = c("Actual" = "solid", "Trend" = "dotted"),
     name = NULL
   ) +
-  labs(title = "PRs: opened vs merged", x = NULL, y = "Count") +
+  labs(
+    title = "PRs: opened vs merged",
+    subtitle = glue::glue("Open now: {current_prs} ({get_sign_string(change_prs)} vs 1 month ago)"),
+    x = NULL,
+    y = "Count"
+  ) +
   theme_minimal() +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1),
@@ -149,7 +134,12 @@ p2 <- ggplot(issue_activity, aes(x = date, y = n, colour = type)) +
     values = c("Actual" = "solid", "Trend" = "dotted"),
     name = NULL
   ) +
-  labs(title = "Issues: opened vs closed", x = NULL, y = "Count") +
+  labs(
+    title = "Issues: opened vs closed",
+    subtitle = glue::glue("Open now: {current_issues} ({get_sign_string(change_issues)} vs 1 month ago)"),
+    x = NULL,
+    y = "Count"
+  ) +
   theme_minimal() +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1),
@@ -160,7 +150,7 @@ p1 + p2
 ```
 :::
 
-### Column {width=40%}
+### Column {width=34%}
 
 ::: {.card title="Dev Mailing List: LLM-generated summary of this month's activity"}
 `r summary_text`
