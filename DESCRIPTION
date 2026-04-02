@@ -9,6 +9,7 @@ Imports:
   httr,
   knitr,
   lubridate,
+  patchwork,
   plotly,
   purrr,
   reticulate,

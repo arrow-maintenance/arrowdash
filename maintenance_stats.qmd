@@ -119,7 +119,7 @@ library(patchwork)
 p1 <- ggplot(pr_activity, aes(x = date, y = n, colour = type)) +
   geom_line(aes(linetype = "Actual"), linewidth = 0.7) +
   geom_smooth(aes(linetype = "Trend"), method = "loess", span = 0.6, se = FALSE, linewidth = 0.7) +
-  scale_x_date(date_breaks = "6 months", date_labels = "%b %Y") +
+  scale_x_date(date_breaks = "3 months", minor_breaks = "1 month", date_labels = "%b %Y") +
   scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
   scale_colour_manual(
     values = c("Opened" = "#4C72B0", "Merged" = "#59A14F"),
@@ -139,7 +139,7 @@ p1 <- ggplot(pr_activity, aes(x = date, y = n, colour = type)) +
 p2 <- ggplot(issue_activity, aes(x = date, y = n, colour = type)) +
   geom_line(aes(linetype = "Actual"), linewidth = 0.7) +
   geom_smooth(aes(linetype = "Trend"), method = "loess", span = 0.6, se = FALSE, linewidth = 0.7) +
-  scale_x_date(date_breaks = "6 months", date_labels = "%b %Y") +
+  scale_x_date(date_breaks = "3 months", minor_breaks = "1 month", date_labels = "%b %Y") +
   scale_y_continuous(limits = c(0, NA), expand = expansion(mult = c(0, 0.05))) +
   scale_colour_manual(
     values = c("Opened" = "#E15759", "Closed" = "#59A14F"),
