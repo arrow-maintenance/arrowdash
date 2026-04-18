@@ -1,16 +1,15 @@
 # GitHub Data Cache
 
-Parquet files caching Apache Arrow GitHub data to avoid API rate limits.
+Parquet files caching Apache Arrow GitHub data. These files are fetched from the
+[arrow-gh-cache](https://github.com/thisisnic/arrow-gh-cache) repo releases and
+are not stored in this repository.
 
 ## Files
 
-### issue_details.parquet
-Open issues only. Columns: `number`, `title`, `state`, `created_at`, `updated_at`, `user_login`, `body`, `labels`, `assignees`, `html_url`
-
-### pr_details.parquet
-All PRs (open and closed). Columns: `number`, `title`, `state`, `draft`, `created_at`, `updated_at`, `closed_at`, `merged_at`, `user_login`, `author_association`, `body`, `labels`, `assignees`, `html_url`, `head_ref`, `base_ref`
+- `open_issues.parquet` / `closed_issues.parquet` — all Apache Arrow issues
+- `open_prs.parquet` / `closed_prs.parquet` — all Apache Arrow PRs
 
 ## Updating
 
-- Initial population: run scripts in `scripts/gh_cache/initialisation/`
-- Incremental updates: run `scripts/gh_cache/fetch_yesterday_activity.R`
+Run `scripts/fetch_parquet_cache.sh` to download the latest files locally.
+In CI, files are downloaded automatically during the workflow.

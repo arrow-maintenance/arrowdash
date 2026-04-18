@@ -11,7 +11,7 @@ library(ggplot2)
 library(tidyr)
 
 # Load PR data
-prs <- read_parquet("data/cache/pr_details.parquet")
+prs <- read_all_prs()
 
 # Identify when each contributor first got a PR merged.
 first_merged_prs <- prs |>

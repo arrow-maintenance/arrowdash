@@ -30,8 +30,22 @@ library(lubridate)
 
 # CSV data reading helpers for decoupled Python/R architecture
 
+read_all_prs <- function() {
+  bind_rows(
+    arrow::read_parquet("data/cache/open_prs.parquet"),
+    arrow::read_parquet("data/cache/closed_prs.parquet")
+  )
+}
+
+read_all_issues <- function() {
+  bind_rows(
+    arrow::read_parquet("data/cache/open_issues.parquet"),
+    arrow::read_parquet("data/cache/closed_issues.parquet")
+  )
+}
+
 read_first_merged_dates <- function() {
-  arrow::read_parquet("data/cache/pr_details.parquet") %>%
+  arrow::read_parquet("data/cache/closed_prs.parquet") %>%
     filter(
       !grepl("\\[bot\\]", user_login, ignore.case = TRUE),
       !is.na(merged_at)
@@ -44,11 +58,10 @@ read_first_merged_dates <- function() {
 read_open_issues <- function(lang) {
   label <- paste0("Component: ", lang)
   cutoff <- Sys.time() - months(3)
-  issues <- arrow::read_parquet("data/cache/issue_details.parquet")
+  issues <- arrow::read_parquet("data/cache/open_issues.parquet")
   first_merged <- read_first_merged_dates()
 
   issues %>%
-    filter(state == "open") %>%
     filter(created_at > cutoff) %>%
     filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
     left_join(first_merged, by = "user_login") %>%
@@ -68,11 +81,10 @@ read_open_issues <- function(lang) {
 read_open_prs <- function(lang) {
   label <- paste0("Component: ", lang)
   cutoff <- Sys.time() - months(3)
-  prs <- arrow::read_parquet("data/cache/pr_details.parquet")
+  prs <- arrow::read_parquet("data/cache/open_prs.parquet")
   first_merged <- read_first_merged_dates()
 
   prs %>%
-    filter(state == "open") %>%
     filter(!draft) %>%
     filter(created_at > cutoff) %>%
     filter(purrr::map_lgl(labels, ~ label %in% .x)) %>%
