@@ -56,76 +56,66 @@ main_runs <- fetch_runs(list(branch = "main", status = "completed"), max_pages =
 runs_by_workflow <- split(main_runs, map_chr(main_runs, "name"))
 runs_by_workflow <- map(runs_by_workflow, ~ .x[order(map_int(.x, "run_number"), decreasing = TRUE)])
 
-main_failures <- list()
+process_workflow <- function(name, runs) {
+  if (length(runs) == 0 || runs[[1]]$conclusion != "failure") return(NULL)
 
-for (name in sort(names(runs_by_workflow))) {
-  runs <- runs_by_workflow[[name]]
-  if (length(runs) == 0 || runs[[1]]$conclusion != "failure") next
+  # Vectorised streak count
+  conclusions <- map_chr(runs, "conclusion")
+  first_pass <- which(conclusions != "failure")[1]
+  streak <- if (is.na(first_pass)) length(conclusions) else first_pass - 1L
 
-  # Count consecutive failures and find the first failing run
-  streak <- 0
-  first_failing_run <- NULL
-  for (run in runs) {
-    if (identical(run$conclusion, "failure")) {
-      streak <- streak + 1
-      first_failing_run <- run
-    } else {
-      break
-    }
-  }
+  if (streak < 2) return(NULL)
 
-  # Only show if failing 2+ consecutive runs
-  if (streak < 2) next
-
+  first_failing_run <- runs[[streak]]
   failing_since <- as.Date(first_failing_run$created_at)
   days_failing <- as.integer(Sys.Date() - failing_since)
 
   # Find the PR that started the failure streak
   pr_info <- get_pr_for_run(first_failing_run)
-  if (!is.null(pr_info$number)) {
-    broke_since <- paste0(
+  broke_since <- if (!is.null(pr_info$number)) {
+    paste0(
       '<a target="_blank" href="https://github.com/', owner, "/", repo,
       "/pull/", pr_info$number, '">#', pr_info$number, "</a>"
     )
   } else {
     sha <- substr(first_failing_run$head_sha %||% "", 1, 8)
-    broke_since <- paste0(
+    paste0(
       '<a target="_blank" href="https://github.com/', owner, "/", repo,
       "/commit/", sha, '">', sha, "</a>"
     )
   }
 
-  latest_run <- runs[[1]]
-  failed_jobs <- fetch_failed_jobs(latest_run$id)
+  failed_jobs <- fetch_failed_jobs(runs[[1]]$id)
 
   if (length(failed_jobs) > 0) {
-    for (job in failed_jobs) {
-      main_failures <- c(main_failures, list(tibble(
-        Workflow = name,
-        Job = job$name,
-        `Failing Since` = format(failing_since, "%Y-%m-%d"),
-        Days = days_failing,
-        `Broke Since` = broke_since,
-        URL = job$html_url
-      )))
-    }
-  } else {
-    main_failures <- c(main_failures, list(tibble(
+    tibble(
       Workflow = name,
-      Job = "(unknown)",
+      Job = map_chr(failed_jobs, "name"),
       `Failing Since` = format(failing_since, "%Y-%m-%d"),
       Days = days_failing,
       `Broke Since` = broke_since,
-      URL = latest_run$html_url
-    )))
+      URL = map_chr(failed_jobs, "html_url")
+    )
+  } else {
+    tibble(
+      Workflow = name, Job = "(unknown)",
+      `Failing Since` = format(failing_since, "%Y-%m-%d"),
+      Days = days_failing, `Broke Since` = broke_since,
+      URL = runs[[1]]$html_url
+    )
   }
 }
 
-main_failures_df <- if (length(main_failures) > 0) {
-  bind_rows(main_failures) |> arrange(desc(Days))
-} else {
-  tibble(Workflow = character(), Job = character(), `Failing Since` = character(),
-         Days = integer(), `Broke Since` = character(), URL = character())
+main_failures_df <- map2(names(runs_by_workflow), runs_by_workflow, process_workflow) |>
+  compact() |>
+  bind_rows() |>
+  arrange(desc(Days))
+
+if (nrow(main_failures_df) == 0) {
+  main_failures_df <- tibble(
+    Workflow = character(), Job = character(), `Failing Since` = character(),
+    Days = integer(), `Broke Since` = character(), URL = character()
+  )
 }
 
 ```
