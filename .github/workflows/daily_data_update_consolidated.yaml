@@ -25,7 +25,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          lfs: true
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
@@ -73,10 +72,12 @@ jobs:
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
 
-      - name: Update parquet cache
-        run: Rscript scripts/gh_cache/fetch_latest_activity.R
-        env:
-          GITHUB_PAT: ${{ secrets.GH_API_TOKEN }}
+      - name: Download parquet cache from arrow-gh-cache
+        run: |
+          curl -sL "https://github.com/thisisnic/arrow-gh-cache/releases/download/cache-latest/open_prs.parquet" -o data/cache/open_prs.parquet
+          curl -sL "https://github.com/thisisnic/arrow-gh-cache/releases/download/cache-latest/closed_prs.parquet" -o data/cache/closed_prs.parquet
+          curl -sL "https://github.com/thisisnic/arrow-gh-cache/releases/download/cache-latest/open_issues.parquet" -o data/cache/open_issues.parquet
+          curl -sL "https://github.com/thisisnic/arrow-gh-cache/releases/download/cache-latest/closed_issues.parquet" -o data/cache/closed_issues.parquet
 
       - name: Commit data updates
         run: |

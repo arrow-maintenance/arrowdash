@@ -60,8 +60,8 @@ get_sign_string <- function(x){
 #| echo: false
 #| include: false
 
-pr_details <- arrow::read_parquet("data/cache/pr_details.parquet")
-issue_details <- arrow::read_parquet("data/cache/issue_details.parquet")
+pr_details <- read_all_prs()
+issue_details <- read_all_issues()
 
 pr_activity <- bind_rows(
   pr_details |>

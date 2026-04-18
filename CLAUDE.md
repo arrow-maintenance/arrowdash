@@ -60,9 +60,10 @@ Ways around this:
 
 ## Re-rendering the dashboard
 
-To re-render the dashboard, we have to activate the virtual environment and then call quarto:
+First fetch the latest parquet data, then activate the virtual environment and render:
 
 ```
+bash scripts/fetch_parquet_cache.sh
 source ~/.virtualenvs/r-arrow-dash/bin/activate
 quarto render index.qmd
 ```
