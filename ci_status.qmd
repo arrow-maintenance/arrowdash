@@ -1,0 +1,170 @@
+```{r}
+#| label: ci_fetch_data
+#| include: false
+library(gh)
+library(dplyr)
+library(purrr)
+library(gt)
+library(lubridate)
+
+owner <- "apache"
+repo <- "arrow"
+
+fetch_runs <- function(params, max_pages = 5) {
+  runs <- list()
+  for (page in seq_len(max_pages)) {
+    resp <- gh(
+      "GET /repos/{owner}/{repo}/actions/runs",
+      owner = owner, repo = repo,
+      .params = c(params, per_page = 100, page = page)
+    )
+    runs <- c(runs, resp$workflow_runs)
+    if (length(resp$workflow_runs) < 100) break
+  }
+  runs
+}
+
+fetch_failed_jobs <- function(run_id) {
+  resp <- gh(
+    "GET /repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
+    owner = owner, repo = repo, run_id = run_id,
+    filter = "latest", per_page = 100
+  )
+  keep(resp$jobs, ~ .x$conclusion == "failure")
+}
+
+get_pr_for_run <- function(run) {
+  sha <- run$head_sha
+  if (is.null(sha)) return(list(number = NULL, title = NULL))
+  tryCatch({
+    prs <- gh(
+      "GET /repos/{owner}/{repo}/commits/{sha}/pulls",
+      owner = owner, repo = repo, sha = sha
+    )
+    if (length(prs) > 0) {
+      list(number = prs[[1]]$number, title = prs[[1]]$title)
+    } else {
+      list(number = NULL, title = NULL)
+    }
+  }, error = function(e) list(number = NULL, title = NULL))
+}
+
+# --- Failing on main ---
+main_runs <- fetch_runs(list(branch = "main", status = "completed"), max_pages = 5)
+
+# Group by workflow, sorted by run_number descending
+runs_by_workflow <- split(main_runs, map_chr(main_runs, "name"))
+runs_by_workflow <- map(runs_by_workflow, ~ .x[order(map_int(.x, "run_number"), decreasing = TRUE)])
+
+main_failures <- list()
+
+for (name in sort(names(runs_by_workflow))) {
+  runs <- runs_by_workflow[[name]]
+  if (length(runs) == 0 || runs[[1]]$conclusion != "failure") next
+
+  # Count consecutive failures and find the first failing run
+  streak <- 0
+  first_failing_run <- NULL
+  for (run in runs) {
+    if (identical(run$conclusion, "failure")) {
+      streak <- streak + 1
+      first_failing_run <- run
+    } else {
+      break
+    }
+  }
+
+  # Only show if failing 2+ consecutive runs
+  if (streak < 2) next
+
+  failing_since <- as.Date(first_failing_run$created_at)
+  days_failing <- as.integer(Sys.Date() - failing_since)
+
+  # Find the PR that started the failure streak
+  pr_info <- get_pr_for_run(first_failing_run)
+  if (!is.null(pr_info$number)) {
+    broke_since <- paste0(
+      '<a target="_blank" href="https://github.com/', owner, "/", repo,
+      "/pull/", pr_info$number, '">#', pr_info$number, "</a>"
+    )
+  } else {
+    sha <- substr(first_failing_run$head_sha %||% "", 1, 8)
+    broke_since <- paste0(
+      '<a target="_blank" href="https://github.com/', owner, "/", repo,
+      "/commit/", sha, '">', sha, "</a>"
+    )
+  }
+
+  latest_run <- runs[[1]]
+  failed_jobs <- fetch_failed_jobs(latest_run$id)
+
+  if (length(failed_jobs) > 0) {
+    for (job in failed_jobs) {
+      main_failures <- c(main_failures, list(tibble(
+        Workflow = name,
+        Job = job$name,
+        `Failing Since` = format(failing_since, "%Y-%m-%d"),
+        Days = days_failing,
+        `Broke Since` = broke_since,
+        URL = job$html_url
+      )))
+    }
+  } else {
+    main_failures <- c(main_failures, list(tibble(
+      Workflow = name,
+      Job = "(unknown)",
+      `Failing Since` = format(failing_since, "%Y-%m-%d"),
+      Days = days_failing,
+      `Broke Since` = broke_since,
+      URL = latest_run$html_url
+    )))
+  }
+}
+
+main_failures_df <- if (length(main_failures) > 0) {
+  bind_rows(main_failures) |> arrange(desc(Days))
+} else {
+  tibble(Workflow = character(), Job = character(), `Failing Since` = character(),
+         Days = integer(), `Broke Since` = character(), URL = character())
+}
+
+```
+
+## Row
+
+### Column {width=40%}
+
+::: {.card title="Currently Failing on Main" expandable="true"}
+
+```{r}
+#| label: ci_main_failures
+#| echo: false
+if (nrow(main_failures_df) == 0) {
+  cat("**All workflows passing on main!**")
+} else {
+  main_failures_df |>
+    mutate(
+      Job = paste0('<a target="_blank" href="', URL, '">', Job, "</a>")
+    ) |>
+    select(-URL) |>
+    gt() |>
+    fmt_markdown(columns = c(Job, `Broke Since`)) |>
+    cols_align(align = "right", columns = Days) |>
+    tab_options(
+      table.width = pct(100),
+      container.overflow.y = TRUE
+    )
+}
+```
+
+:::
+
+### Column {width=60%}
+
+::: {.card title="Crossbow Nightly Report"}
+
+[View full report](https://crossbow.arrow-dev.org/){target="_blank"}
+
+<iframe src="https://crossbow.arrow-dev.org/" width="100%" height="800" style="border: none;"></iframe>
+
+:::

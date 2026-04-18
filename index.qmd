@@ -89,3 +89,7 @@ lang <- "C++"
 # Onboarding
 
 {{< include community.qmd >}}
+
+# CI Status
+
+{{< include ci_status.qmd >}}
