@@ -1,19 +1,17 @@
-* **Arrow 24.0.0 Release:** The release candidate for version 24.0.0 is currently under review, featuring over 250 resolved issues across the project. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%2024.0.0%20-%20RC0)
+* **Arrow 24.0.0 release candidate:** Voting is underway for the major version 24.0.0 release, which includes over 250 resolved issues across multiple components. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2024.0.0%20-%20RC0)
 
-* **Numba support in PyArrow:** Discussion on integrating Numba JIT support directly into PyArrow to enable high-performance calculations on Arrow data while managing C++ ABI stability concerns. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Numba%20support%20for%20PyArrow)
+* **Numba support for PyArrow:** Developers are discussing integrating a Numba extension layer directly into PyArrow to allow just-in-time compilation for science calculations on Arrow data. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Python%20Numba%20support%20for%20PyArrow)
 
-* **Java JDK 17 Minimum:** Developers reached a consensus to set JDK 17 as the minimum required version for Arrow Java starting with version 20.0.0. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Set%20JDK%2017%20minimum%20for%20Arrow%20Java%2020.0.0)
+* **JDK 17 minimum for Java 20.0.0:** The community reached consensus to increase the minimum required Java version to 17 for the next major Java release to leverage modern JVM features. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Java%20Set%20JDK%2017%20minimum%20for%20Arrow%20Java%2020.0.0)
 
-* **pyarrow-stubs donation:** The community approved the donation of the pyarrow-stubs library to formally include PEP 484 type annotations within the Apache Arrow project. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20pyarrow-stubs%20to%20Apache%20Arrow)
+* **PyArrow-stubs donation:** The community approved the donation of the `pyarrow-stubs` codebase to provide official PEP 484 type annotations for the Python implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20PYTHON%20Donate%20pyarrow-stubs%20to%20Apache%20Arrow)
 
-* **ADBC 23 Release:** Apache Arrow ADBC version 23 has been released, including numerous bug fixes and updates across C++, Java, Go, and Python. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20ADBC%2023%20-%20RC1)
+* **C Device Data Interface stability:** Discussion regarding why the C Device and async stream interfaces remain experimental, with some members suggesting adoption remains too low to finalize the design. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Experimentality%20of%20Arrow%20C%20Device%20Data%20Interface)
 
-* **C Device Data Interface:** Developers discussed moving the C Device Data Interface out of experimental status and potentially adding an asynchronous version of the non-device API. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Experimentality%20of%20Arrow%20C%20Device%20Data%20Interface)
+* **Flight SQL protocol update:** A new `is_update` field is being added to `ActionCreatePreparedStatementResult` to help clients determine the correct execution path for prepared statements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Flight%20SQL%20Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
 
-* **Flight SQL Execution Path:** A proposal is underway to add an `is_update` field to Flight SQL prepared statements to help clients distinguish between query and update execution paths. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
+* **IPC dictionary-encoded extension types:** A gap was identified in how IPC serializes dictionaries with extension values; a proposal was made to add metadata fields to ensure proper roundtripping. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
 
-* **LargeMap format addition:** Discussion on adding a `LargeMap` type to the Arrow specification to support 64-bit offsets, facilitating better integration with engines like Polars. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:LargeMap%20format%20addition)
+* **LargeMap format addition:** Proposal to extend the Arrow specification with a `LargeMap` type to support 64-bit offsets for map structures, mirroring existing `LargeList` and `LargeString` types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20LargeMap%20format%20addition)
 
-* **IPC Dictionary-Encoded Extensions:** A technical discussion on improving the IPC representation of dictionary-encoded extension types to avoid ambiguity during schema serialization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
-
-* **Rust Implementation Updates:** New releases were finalized for the Arrow Rust implementation (58.1.0) and the Rust Object Store (0.13.2). [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2058.1.0%20RC1)
+* **Apache Arrow ADBC 23 released:** The Arrow Database Connectivity (ADBC) subproject released version 23, including significant bug fixes and component updates for Python, Go, and Java. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20ADBC%2023%20Released)
