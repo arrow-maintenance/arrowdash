@@ -28,7 +28,9 @@ current_issues <- open_counts %>%
   pull(open_issues)
 
 month_ago_issues <- open_counts %>%
-  filter(date == month_ago_date) %>%
+  filter(date <= month_ago_date) %>%
+  arrange(desc(date)) %>%
+  slice(1) %>%
   pull(open_issues)
 
 current_prs <- open_counts %>%
@@ -36,7 +38,9 @@ current_prs <- open_counts %>%
   pull(open_prs)
 
 month_ago_prs <- open_counts %>%
-  filter(date == month_ago_date) %>%
+  filter(date <= month_ago_date) %>%
+  arrange(desc(date)) %>%
+  slice(1) %>%
   pull(open_prs)
 
 change_issues <- current_issues - month_ago_issues
