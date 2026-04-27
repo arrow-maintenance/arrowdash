@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Numba support for PyArrow:** Discussion on adding native Numba support to PyArrow via a private ABI to improve performance while managing long-term maintenance burdens. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Python%20Numba%20support%20for%20PyArrow)
+
+* **Arrow 24.0.0 release:** The community released version 24.0.0, resolving over 250 issues across the project's multi-language libraries. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2024.0.0%20-%20RC0)
+
+* **ADBC 23 release:** ADBC version 23 was released, featuring 41 bug fixes and updates to the C++, Go, Python, and Rust database drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20ADBC%2023%20-%20RC1)
+
+* **Canonical BigDecimal extension type:** Proposal for a new canonical extension type to support variable-scale decimals, facilitating higher-fidelity data transport from engines like PostgreSQL and Trino. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20Proposal%20for%20a%20Canonical%20BigDecimal%20Extension%20Type)
+
+* **LargeMap format addition:** Proposal to introduce a `LargeMap` type using 64-bit offsets to ensure consistency with existing `LargeList` and `LargeString` implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20LargeMap%20format%20addition)
+
+* **IPC representation of extension types:** Investigation into a limitation where dictionary-encoded extension types lose metadata during IPC serialization, with a proposal to add `KeyValueMetadata` support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
+
+* **Donation of pyarrow-stubs:** The `pyarrow-stubs` codebase is being formally donated to the project to provide native PEP 484 type annotations for PyArrow users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20PYTHON%20Donate%20pyarrow-stubs%20to%20Apache%20Arrow)
+
+* **C Device Data Interface status:** Maintainers discussed whether to move the C Device Data Interface out of "experimental" status, weighing its current CUDA-centric usage against future non-CUDA requirements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Experimentality%20of%20Arrow%20C%20Device%20Data%20Interface)
