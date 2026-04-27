@@ -30,7 +30,7 @@ fetch_failed_jobs <- function(run_id) {
     owner = owner, repo = repo, run_id = run_id,
     filter = "latest", per_page = 100
   )
-  keep(resp$jobs, ~ .x$conclusion == "failure")
+  keep(resp$jobs, ~ identical(.x$conclusion, "failure"))
 }
 
 get_pr_for_run <- function(run) {
@@ -57,11 +57,12 @@ runs_by_workflow <- split(main_runs, map_chr(main_runs, "name"))
 runs_by_workflow <- map(runs_by_workflow, ~ .x[order(map_int(.x, "run_number"), decreasing = TRUE)])
 
 process_workflow <- function(name, runs) {
-  if (length(runs) == 0 || runs[[1]]$conclusion != "failure") return(NULL)
+  if (length(runs) == 0 || !identical(runs[[1]]$conclusion, "failure")) return(NULL)
 
-  # Vectorised streak count
-  conclusions <- map_chr(runs, "conclusion")
-  first_pass <- which(conclusions != "failure")[1]
+  # Vectorised streak count. Runs with NULL conclusion (e.g. action_required,
+  # stale) end the streak, matching the original identical()-based loop.
+  conclusions <- map_chr(runs, ~ .x$conclusion %||% NA_character_)
+  first_pass <- which(!conclusions %in% "failure")[1]
   streak <- if (is.na(first_pass)) length(conclusions) else first_pass - 1L
 
   if (streak < 2) return(NULL)
