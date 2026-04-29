@@ -1,1 +1,19 @@
-Summary generation failed. Please check the mailing list directly.
+* **Apache Arrow 24.0.0 release:** The community released version 24.0.0, which includes over 250 resolved issues across various language implementations and the core format. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%2024.0.0%20-%20RC0)
+
+* **Donation of pyarrow-stubs:** A vote passed to formally donate the pyarrow-stubs codebase to the Apache Arrow project, integrating PEP 484 type annotations directly into the repository for better Python developer experience. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20pyarrow-stubs%20to%20Apache%20Arrow)
+
+* **Canonical BigDecimal extension type proposal:** Discussion is underway for a new extension type to support arbitrary-precision decimals, allowing variable scale per row to better support data from engines like PostgreSQL and Trino. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20for%20a%20Canonical%20BigDecimal%20Extension%20Type)
+
+* **Flight SQL prepared statement execution path:** A new `is_update` boolean field was proposed for the `ActionCreatePreparedStatementResult` to help clients correctly choose between query and update execution paths. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
+
+* **Apache Arrow ADBC 23 release:** The ADBC subproject released version 23, featuring 41 bug fixes and updates for C, C++, Go, Python, Java, Rust, and R components. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20ADBC%2023%20-%20RC1)
+
+* **LargeMap format addition:** A proposal was made to add a `LargeMap` type utilizing 64-bit offsets, providing consistency with other "Large" types for handling data structures that exceed 32-bit offset limits. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:LargeMap%20format%20addition)
+
+* **IPC representation of dictionary-encoded extension types:** Developers discussed limitations in the IPC schema serialization that make it difficult to distinguish between dictionary-encoded extension types and extension types with dictionary storage. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
+
+* **Stability of C Device Data Interface:** The community debated whether to remove the "experimental" tag from the C Device Data Interface, noting its current adoption is largely limited to CUDA-related workflows. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Experimentality%20of%20Arrow%20C%20Device%20Data%20Interface)
+
+* **ADBC project logo:** A proposal for a formal logo for the ADBC subproject is under review, focusing on a design that aligns with the Arrow family branding while remaining distinct. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Logo%20Proposal)
+
+* **Rust implementation security policy:** A new security policy is being drafted for the Rust implementation to provide clearer guidelines for reporting and handling vulnerabilities. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Security%20Policy)
