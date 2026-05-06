@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Apache Arrow 24.0.0 release:** The community announced the release of version 24.0.0, which includes 259 resolved issues across multiple language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2024.0.0%20released)
+
+* **Donation of pyarrow-stubs:** The project voted to accept the donation of the `pyarrow-stubs` codebase to provide official PEP 484 type annotations for PyArrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20PYTHON%20Donate%20pyarrow-stubs%20to%20Apache%20Arrow)
+
+* **Canonical BigDecimal extension type:** Proposal for a new canonical extension type to support arbitrary-precision decimals (BigDecimal) with variable scales, facilitating high-fidelity data transfer from engines like PostgreSQL and Trino. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20Proposal%20for%20a%20Canonical%20BigDecimal%20Extension%20Type)
+
+* **Apache Arrow ADBC 23 release:** Release 23 of the ADBC subproject is now available, featuring 41 bug fixes and improvements for standardized database connectivity. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20ADBC%2023%20Released)
+
+* **IBM Db2 support:** IBM engineers have proposed adding official Apache Arrow support for Db2, including the development of an ADBC driver and exploring Flight SQL integration. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20DB2%20Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
+
+* **Flight SQL prepared statement updates:** A new `is_update` boolean field was approved for `ActionCreatePreparedStatementResult` to help clients determine the correct execution path for prepared statements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Flight%20SQL%20Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
+
+* **IPC representation of dictionary-encoded extension types:** Discussion on improving the IPC schema serialization to properly distinguish between dictionary-encoded extension types and extension types with dictionary storage. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
+
+* **Rust implementation security policy:** Proposal for a formal security policy for `arrow-rs` to establish clear guidelines for reporting vulnerabilities and distinguishing them from standard bugs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RUST%20Discuss%20Security%20Policy)
+
+* **Apache Arrow .NET 23.0.0 release:** The .NET implementation has reached version 23.0.0, with updated packages now available on NuGet. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20.NET%2023.0.0%20released)
