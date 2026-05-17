@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Apache Arrow 24.0.0 release:** The community announced the release of version 24.0.0, which resolves 259 issues across various implementations. Discussion during the verification process highlighted specific Gandiva test failures related to timezone handling on certain macOS configurations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2024.0.0%20released)
+
+* **Proposal for Canonical BigDecimal Extension Type:** A new canonical extension type has been proposed to support arbitrary-precision decimals with variable scales per row. This aims to improve interoperability with engines like PostgreSQL and Trino that do not use fixed-precision schemas for numeric data. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20Proposal%20for%20a%20Canonical%20BigDecimal%20Extension%20Type)
+
+* **IBM Db2 support via ADBC:** Engineers from IBM proposed adding Arrow support for Db2, starting with a new ADBC driver. The driver will be maintained under the `adbc-drivers` organization to allow for independent development while following Arrow ecosystem standards. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20DB2%20Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
+
+* **Donation of Erlang implementation:** A formal vote is underway to accept the donation of the `arrow-erlang` library. The implementation currently utilizes bindings to the Rust library to provide Arrow support within the Erlang ecosystem. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Donate%20Apache%20Arrow%20Erlang)
+
+* **Metadata restriction to UTF8:** Developers are discussing whether to enforce strict UTF8 encoding for metadata in fields, schemas, and record batches. This follows reports that non-UTF8 strings can cause issues during IPC serialization due to Flatbuffers' theoretical string restrictions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Field/schema/custom%20metadata%20restriction%20to%20UTF8%3F)
+
+* **AVX2 optimization for Parquet Bloom Filters:** A proposal was made to introduce AVX2-optimized Split Block Bloom Filter (SBBF) probes in the C++ Parquet implementation. Initial benchmarks show significant performance gains, particularly for in-cache workloads, using the `xsimd` library for cross-platform SIMD support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AVX2%20SBBF%20probe%20for%20parquet/bloom_filter.cc)
+
+* **Flight SQL dialect-related codes:** A proposal suggests adding new `SqlInfo` codes to Flight SQL to communicate backend-specific dialect metadata, such as `LIMIT/OFFSET` syntax and null ordering. This would allow clients like Spark to generate correct SQL for pushdown operations without hardcoded per-backend logic. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20FlightSQL%20Add%20dialect-related%20SqlInfo%20codes)
+
+* **Rust Security Policy:** A new security policy has been proposed for the Rust implementation to better handle vulnerability reporting. The discussion aims to clarify the distinction between standard bugs and security-sensitive issues to ensure coordinated disclosure. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RUST%20Discuss%20Security%20Policy)
+
+* **ADBC Logo Proposal:** A design proposal for a dedicated ADBC subproject logo was introduced to help differentiate the project while maintaining visual consistency with the Arrow brand. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20Logo%20Proposal)
