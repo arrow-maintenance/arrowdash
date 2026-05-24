@@ -1,19 +1,17 @@
-* **Erlang implementation donation:** Discussion and formal vote to accept the donation of an Erlang implementation of Apache Arrow, currently based on Rust bindings. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+* **ADBC Partitioned Bulk Ingest API:** Proposal for a new API to support atomic, parallel data ingestion from distributed writers like Spark or Flink via a coordinator-worker model. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
 
-* **ADBC Partitioned Bulk Ingest API:** Proposal for a new API to support distributed bulk ingestion, allowing coordinators to manage parallel writes across multiple workers for RDBMS and table formats like Iceberg. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
+* **Parquet Bloom Filter Optimization:** Discussion on significantly speeding up Split Block Bloom Filter (SBBF) probes in C++ using AVX2 and autovectorization techniques. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet/bloom_filter.cc)
 
-* **Metadata UTF-8 enforcement:** Discussion on whether the C++ IPC writer and C Data Interface should strictly enforce UTF-8 for metadata strings to ensure compatibility with Flatbuffers requirements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Field/schema/custom%20metadata%20restriction%20to%20UTF8?)
+* **Erlang implementation donation:** The community voted to accept the donation of an Arrow Erlang implementation, which currently utilizes bindings for the Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
 
-* **IBM Db2 support:** IBM engineers proposed adding support for Db2 via ADBC and Flight SQL, including a new ADBC driver now hosted under the community driver foundry. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
+* **Arrow .NET 23.0.0 release:** The .NET implementation reached version 23.0.0, featuring updated Flight SQL support and a new PowerShell script for release candidate verification. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20.NET%2023.0.0%20RC0)
 
-* **Parquet Bloom Filter SIMD optimization:** Proposal to optimize Split-Block Bloom Filter (SBBF) probes in C++ by using branchless logic that enables compiler autovectorization for AVX2 and NEON. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet/bloom_filter.cc)
+* **Rust implementation security patches:** Several patch releases (58.3.0, 57.3.1, and 56.2.1) were issued to address potential offset overflow issues across multiple versions of the Rust crates. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Planned%20patch%20releases%20this%20week)
 
-* **Rust patch releases for overflow fixes:** Coordination of multiple patch releases (58.3.0, 57.3.1, 56.2.1) to backport fixes for potential offset overflow issues in the Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20Rust%2058.3.0%20RC1)
+* **Flight SQL dialect metadata:** Proposal to add new SqlInfo codes to help clients identify backend-specific SQL syntax for features like limit/offset grammar and boolean literals. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
 
-* **pyarrow-stubs donation:** Completion of the IP clearance process for donating the `pyarrow-stubs` library to the Apache Arrow project to provide better type hinting for Python. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Donate%20pyarrow-stubs%20to%20Apache%20Arrow)
+* **IBM Db2 support:** Discussion on adding IBM Db2 support to the Arrow ecosystem, starting with an ADBC driver hosted in the independent driver foundry. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
 
-* **Flight SQL updates:** Vote to add an `is_update` field to prepared statements, allowing drivers to better handle DDL and DML operations vs standard queries. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
+* **UTF-8 restrictions for metadata:** Technical discussion on whether the C++ implementation and IPC format should strictly enforce UTF-8 validation for field and schema metadata. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Field/schema/custom%20metadata%20restriction%20to%20UTF8%3F)
 
-* **ADBC dialect metadata:** Proposal to add new SqlInfo codes to Flight SQL for describing backend-specific dialects, covering LIMIT/OFFSET grammar and boolean literal support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
-
-* **Apache Arrow .NET 23.0.0 release:** The .NET implementation reached a new major version, including a new PowerShell-based verification script and improved NuGet package structure. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20.NET%2023.0.0%20released)
+* **Pyarrow stubs donation:** The formal transfer of the `pyarrow-stubs` library to the Apache Arrow project was completed to provide official type hinting support for Python users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20pyarrow-stubs%20to%20Apache%20Arrow)
