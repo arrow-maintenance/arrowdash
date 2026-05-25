@@ -1,17 +1,1 @@
-* **Erlang implementation donation:** The community voted to accept the donation of an Erlang implementation of Apache Arrow, which leverages bindings to the Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
-
-* **ADBC Partitioned Bulk Ingest API:** A proposal for a new API to support distributed bulk ingestion, allowing coordinators to manage parallel writes across multiple workers for RDBMS and table formats like Iceberg. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
-
-* **Parquet Bloom Filter SIMD optimization:** Discussion on implementing AVX2-accelerated Split Block Bloom Filter (SBBF) probes to improve read performance, with current evaluations focusing on xsimd and autovectorization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
-
-* **IBM Db2 support for ADBC and Flight:** IBM engineers proposed integrating Arrow support for Db2, starting with an ADBC driver and exploring Flight SQL for high-performance data transport. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
-
-* **Enforcing UTF-8 for metadata:** A discussion on whether the project should strictly enforce UTF-8 for field and schema metadata keys and values to align with Flatbuffers specifications and avoid interoperability issues. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Field%2Fschema%2Fcustom%20metadata%20restriction%20to%20UTF8%3F)
-
-* **Flight SQL Prepared Statement and Dialect improvements:** Proposals to add an `is_update` field for execution path routing and new `SqlInfo` codes to better describe backend SQL dialects for features like LIMIT/OFFSET and NULL ordering. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult) [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
-
-* **Donation of pyarrow-stubs:** The vote passed to donate the `pyarrow-stubs` library to the official Arrow repository to provide better type-hinting support for Python developers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20pyarrow-stubs%20to%20Apache%20Arrow)
-
-* **Apache Arrow .NET 23.0.0 release:** The community announced the release of version 23.0.0 of the .NET implementation, featuring enhanced Flight SQL support and updated verification tools. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20.NET%2023.0.0%20RC0)
-
-* **Community Hackathon at Glasgow 2026:** Plans were initiated for a dedicated Arrow hackathon at the "Community Over Code" conference in October to encourage collaboration on bug fixes and new features. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Hackathon%20at%20Community%20Over%20Code%20Glasgow%202026%20%E2%80%94%20interest%20from%20Arrow%3F)
+Summary generation failed. Please check the mailing list directly.
