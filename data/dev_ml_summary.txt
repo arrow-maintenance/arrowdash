@@ -1,17 +1,1 @@
-* **Erlang implementation donation:** The community has voted to accept a new Erlang implementation of Apache Arrow, which currently utilizes bindings to the Rust implementation for its core functionality. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Donate%20Apache%20Arrow%20Erlang)
-
-* **IBM Db2 ADBC support:** Engineers from IBM proposed adding Arrow support for Db2 via ADBC and Flight SQL, with initial driver development moving to the community-maintained ADBC driver foundry. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSADBCDB2%20Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
-
-* **ADBC partitioned bulk ingest:** Proposal for a new API to support distributed parallel writes, allowing workers to write data partitions into staging while a coordinator commits the transaction atomically. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20Partitioned%20Bulk%20Ingest%20API)
-
-* **Parquet Bloom Filter SIMD optimization:** A new PR implements AVX2 and NEON optimizations for Parquet Bloom Filter probing, showing significant performance gains for analytical workloads. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
-
-* **Canonical extension type for ranges:** Discussion regarding the addition of `arrow.range` to represent bounded intervals, including debate on whether to handle inclusive/exclusive boundary flags at the schema or value level. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **UTF-8 enforcement for metadata:** Debate on whether the C++ implementation and IPC format should strictly validate that field and schema metadata strings are valid UTF-8 to comply with the Flatbuffers specification. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Field%2Fschema%2Fcustom%20metadata%20restriction%20to%20UTF8%3F)
-
-* **Flight SQL prepared statement execution path:** Proposal to add an `is_update` flag to prepared statement results, allowing drivers to automatically choose the correct execution path without using client-side heuristics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFlight%20SQL%20Indicating%20execution%20path%20for%20Flight%20SQL%20Prepared%20Statements)
-
-* **Apache Arrow .NET 23.0.0 release:** The .NET implementation has reached version 23.0.0, featuring updates across the core library, Flight SQL, and compression components. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20.NET%2023.0.0%20released)
-
-* **Community Over Code Glasgow Hackathon:** Maintainers are planning a dedicated Arrow hackathon for the upcoming conference in October to focus on "needs champion" issues and documentation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Hackathon%20at%20Community%20Over%20Code%20Glasgow%202026%20%E2%80%94%20interest%20from%20Arrow%3F)
+Summary generation failed. Please check the mailing list directly.
