@@ -1,17 +1,1 @@
-* **Erlang implementation donation:** The community voted to accept a new Erlang implementation of Arrow, which is currently based on bindings to the Rust implementation and has completed the IP clearance process. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Donate%20Apache%20Arrow%20Erlang)
-
-* **ADBC partitioned bulk ingest:** Proposal for a new API to support distributed write workloads, allowing multiple workers to ingest data partitions in parallel with an atomic commit coordinated by a single handle. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20Partitioned%20Bulk%20Ingest%20API)
-
-* **Canonical range extension type:** Discussion on adding a standard `arrow.range` extension type to represent bounded intervals, with debate focusing on whether to store inclusive/exclusive boundary flags at the schema or value level. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **SIMD-accelerated Parquet Bloom Filters:** Proposal to introduce AVX2 and NEON optimizations for Split Block Bloom Filter (SBBF) probes in the C++ Parquet implementation, significantly improving performance for analytical filtering. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
-
-* **IBM Db2 integration via ADBC:** IBM developers are initiating support for Db2, targeting the creation of an ADBC driver to be maintained within the community-led driver foundry. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSADBCDB2%20Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
-
-* **Flight SQL dialect metadata:** Proposal to add new `SqlInfo` codes to describe backend-specific SQL syntax (such as LIMIT/OFFSET variations and NULL ordering) to help clients generate more accurate SQL pushdowns. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFlightSQL%20Add%20dialect-related%20SqlInfo%20codes)
-
-* **Automated GitHub Copilot reviews:** Trial of automated AI-driven PR reviews to help maintainers identify trivial issues and reduce the manual review burden on the project. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Auto%20GitHub%20Copilot%20review)
-
-* **Rust implementation patch releases:** Multiple patch releases (v58.3.0, v57.3.1, and v56.2.1) were coordinated to backport critical fixes for potential memory offset overflows in the Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RUST%20Planned%20patch%20releases%20this%20week)
-
-* **Strict UTF-8 metadata enforcement:** Technical discussion on whether to strictly validate that key-value metadata is UTF-8 encoded to ensure compatibility with Flatbuffers requirements and prevent IPC serialization errors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Field%2Fschema%2Fcustom%20metadata%20restriction%20to%20UTF8%3F)
+Summary generation failed. Please check the mailing list directly.
