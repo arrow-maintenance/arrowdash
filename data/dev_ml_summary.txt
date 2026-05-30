@@ -1,17 +1,1 @@
-* **Erlang implementation donation:** The community voted to accept the donation of a new Erlang implementation of Apache Arrow, which currently consists of bindings to the Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
-
-* **Parquet Bloom Filter SIMD optimization:** Discussion on improving Parquet Bloom Filter performance using AVX2 and NEON SIMD, with a focus on xsimd integration and compiler autovectorization techniques. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
-
-* **ADBC Partitioned Bulk Ingest API:** Proposal to add a new API to ADBC for partitioned bulk ingestion, enabling distributed systems like Spark and Flink to perform parallelized writes with atomic commit/abort semantics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
-
-* **Canonical Range extension type:** Discussion on adding `arrow.range` as a canonical extension type to represent mathematical intervals (e.g., numeric or temporal ranges) consistently across different language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **Metadata UTF8 enforcement:** Technical debate regarding whether Arrow should strictly validate that field and schema metadata are valid UTF8 to ensure compatibility with IPC and Flatbuffers requirements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Field%2Fschema%2Fcustom%20metadata%20restriction%20to%20UTF8%3F)
-
-* **IBM Db2 Arrow support:** Engineers from IBM proposed adding Arrow support for Db2, initially via a new ADBC driver and potentially through native Arrow Flight SQL integration in the future. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
-
-* **Automated AI code reviews:** Proposal to enable automated GitHub Copilot PR reviews to help catch trivial issues and reduce the maintenance burden on human reviewers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
-
-* **Flight SQL dialect metadata:** Proposal to add new `SqlInfo` codes to the Flight SQL protocol to provide clients with metadata about backend-specific SQL dialects, such as limit/offset syntax and boolean literal formats. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
-
-* **Arrow .NET 23.0.0 release:** The .NET implementation reached a new major version, featuring improvements to Flight SQL and enhanced NuGet package organization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20.NET%2023.0.0%20RC0)
+Summary generation failed. Please check the mailing list directly.
