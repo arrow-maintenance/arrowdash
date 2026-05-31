@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Erlang implementation donation:** The community voted to accept the donation of an Erlang implementation of Apache Arrow, initially built using bindings to the Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Donate%20Apache%20Arrow%20Erlang)
+
+* **ADBC partitioned bulk ingest API:** Proposal to introduce a write-side mirror of the partitioned-read API to support distributed writers like Spark and Flink with atomic commit/abort capabilities. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20Partitioned%20Bulk%20Ingest%20API)
+
+* **SIMD-optimized Parquet Bloom Filters:** Discussion on implementing AVX2 and NEON-optimized SBBF probes for Parquet, which showed significant performance gains in microbenchmarks. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter%2Ecc)
+
+* **New canonical range extension type:** Proposal for a new `arrow.range` canonical extension type to represent bounded intervals, with ongoing debate regarding per-value versus per-column boundary flags. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow%2Erange%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **IBM Db2 ADBC driver support:** Engineers from IBM proposed contributing an ADBC driver for Db2 to improve high-performance data interchange with the IBM data ecosystem. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSADBCDB2%20Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
+
+* **Automated GitHub Copilot PR reviews:** The project is experimenting with automated AI-driven PR reviews to catch trivial issues and assist human reviewers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Auto%20GitHub%20Copilot%20review)
+
+* **UTF8 restrictions for metadata:** Technical debate on whether field and schema metadata must strictly be valid UTF8 to prevent issues with Flatbuffers serialization across different language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Field%2Fschema%2Fcustom%20metadata%20restriction%20to%20UTF8%3F)
+
+* **Flight SQL dialect discovery:** Proposal to add new SqlInfo codes for metadata discovery, including LIMIT/OFFSET syntax and NULL ordering, to help clients generate backend-specific SQL. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFlightSQL%20Add%20dialect-related%20SqlInfo%20codes)
