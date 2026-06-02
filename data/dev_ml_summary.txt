@@ -1,17 +1,1 @@
-* **IBM Db2 support for Arrow:** Discussion on adding Apache Arrow support for IBM Db2, starting with a new ADBC driver and exploring future integrations with Flight SQL. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSADBCDB2%20Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
-
-* **Erlang implementation donation:** The community voted to accept the donation of an Erlang implementation of Apache Arrow, which will be maintained as a new official repository. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Donate%20Apache%20Arrow%20Erlang)
-
-* **Parquet Bloom Filter SIMD optimizations:** Proposal to implement AVX2 and autovectorized SIMD probes for Parquet Split Block Bloom Filters to improve performance for downstream readers like pyarrow and ClickHouse. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
-
-* **ADBC Partitioned Bulk Ingest API:** Proposal for a new API to support distributed, parallel bulk ingestion across multiple connections with atomic commit and abort semantics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20Partitioned%20Bulk%20Ingest%20API)
-
-* **Canonical extension type for bounded ranges:** Discussion on adding an `arrow.range` canonical extension type to represent mathematical intervals, including debates on handling per-value boundary flags. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **UTF-8 metadata restrictions:** Discussion on whether to strictly enforce UTF-8 encoding for field and schema metadata to ensure compatibility with Flatbuffers and various language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Field%2Fschema%2Fcustom%20metadata%20restriction%20to%20UTF8%3F)
-
-* **Flight SQL dialect metadata:** Proposal to add new SqlInfo codes to Flight SQL to help clients identify backend-specific dialect features like LIMIT/OFFSET syntax and NULLs ordering. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFlightSQL%20Add%20dialect-related%20SqlInfo%20codes)
-
-* **Automatic GitHub Copilot reviews:** Exploration of enabling automated AI-driven pull request reviews to assist with trivial code quality issues and alleviate the burden on human maintainers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Auto%20GitHub%20Copilot%20review)
-
-* **Arrow .NET 23.0.0 release:** The .NET implementation has released version 23.0.0, including updates to Flight SQL and enhanced support for scalars and operations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20.NET%2023.0.0%20released)
+Summary generation failed. Please check the mailing list directly.
