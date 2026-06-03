@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Erlang implementation donation:** The community approved the donation of an Erlang implementation of Apache Arrow (based on Rust bindings), with the IP clearance process and repository transfer currently in progress. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+
+* **SIMD-optimized Bloom Filters:** Proposal to implement AVX2-optimized Split Block Bloom Filter probes in C++ using xsimd, showing performance gains up to 5x for in-cache filters. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
+
+* **ADBC Partitioned Bulk Ingest:** Discussion on a new API for ADBC to support partitioned bulk ingestion, enabling distributed writers like Spark and Flink to perform atomic, parallel writes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
+
+* **Canonical Range Extension Type:** Proposal to add `arrow.range` as a canonical extension type for bounded intervals, focusing on representing inclusive/exclusive boundary flags for interoperability with Pandas and PostgreSQL. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **UTF8 Metadata enforcement:** Debate on whether to strictly restrict Field and Schema metadata to UTF8 encoding to prevent serialization issues during IPC and improve cross-language compatibility. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Field%2Fschema%2Fcustom%20metadata%20restriction%20to%20UTF8%3F)
+
+* **Flight SQL Prepared Statements:** Discussion on adding an `is_update` boolean to the `ActionCreatePreparedStatementResult` to help drivers transparently distinguish between queries and DDL/DML updates. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Indicating%20execution%20path%20for%20Flight%20SQL%20Prepared%20Statements)
+
+* **GitHub Copilot auto-reviews:** The project is experimenting with automated GitHub Copilot reviews on pull requests to help identify trivial issues and reduce the burden on human maintainers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **IBM Db2 ADBC Driver:** Coordination on a new ADBC driver for IBM Db2, including discussions on the "driver foundry" model and whether to utilize Arrow Flight SQL for the backend. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20Adding%20Apache%20Arrow%20Support%20for%20IBM%20Db2)
