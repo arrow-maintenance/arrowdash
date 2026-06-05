@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Erlang implementation donation:** The project formally approved the donation of a new Erlang implementation of Apache Arrow, which currently utilizes bindings to the Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+
+* **ADBC Partitioned Bulk Ingest proposal:** Discussion on adding a write-side mirror to partitioned reads, enabling distributed engines like Spark to perform parallel writes with atomic commits and rollbacks. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
+
+* **UTF-8 restrictions for metadata:** A debate on whether the C++ IPC writer should strictly enforce UTF-8 for schema and field metadata to comply with Flatbuffers constraints and improve cross-implementation compatibility. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Field%2fschema%2fcustom%20metadata%20restriction%20to%20UTF8%3f)
+
+* **Canonical Range extension type:** Proposal to introduce `arrow.range` for representing bounded mathematical intervals, aimed at standardizing interval data across libraries like pandas and Polars. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **SIMD optimizations for Parquet Bloom Filters:** Implementation of AVX2 and branchless autovectorization for Split Block Bloom Filter (SBBF) probes to improve read-path performance in Parquet files. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2fbloom_filter.cc)
+
+* **Modernizing Conbench benchmarking:** Discussion regarding the status of the project's continuous benchmarking infrastructure and a potential "v2" rewrite to reduce maintenance costs and improve reliability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2b%20conbench%20OSS%20project)
+
+* **Flight SQL dialect metadata:** Proposal to add new SqlInfo codes for limit/offset grammar and literal forms to help clients push down operations without hardcoded backend configurations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
+
+* **Automated AI code reviews:** Exploration of enabling GitHub Copilot's automated review feature to assist human reviewers and catch trivial issues before manual inspection. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
