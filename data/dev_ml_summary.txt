@@ -1,15 +1,1 @@
-* **Erlang implementation donation:** The community has voted to accept the donation of an Erlang implementation of Apache Arrow, including discussions on contributor CLAs and repository transfer logistics to the Apache incubator. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
-
-* **ADBC partitioned bulk ingest API:** A proposal to add a write-side mirror to the partitioned-read API was introduced to support distributed writers like Spark and Flink targeting RDBMS or table formats like Iceberg. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
-
-* **Parquet Bloom Filter SIMD optimization:** Developers discussed and implemented AVX2 and NEON optimizations for Parquet's Split Block Bloom Filters, achieving significant performance gains on the read path. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
-
-* **Canonical range extension type:** Discussion on adding `arrow.range` as a canonical extension type to represent bounded intervals (e.g., numeric or temporal ranges) to improve interoperability with Pandas and PostgreSQL. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **UTF8 metadata restriction:** The community is evaluating whether to strictly enforce UTF8 encoding for field and schema metadata to ensure compatibility across implementations and the underlying Flatbuffers format. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Field%2Fschema%2Fcustom%20metadata%20restriction%20to%20UTF8%3F)
-
-* **Flight SQL dialect metadata:** New SqlInfo codes were proposed to provide clients with metadata regarding backend-specific SQL dialect features, such as LIMIT/OFFSET syntax and NULL ordering. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
-
-* **Conbench benchmarking infrastructure status:** Maintainers discussed the health of the project's benchmarking platform and proposed a "v2" redesign to improve stability and reduce costs following a migration to community-managed infra. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **GitHub Copilot auto-review experiment:** The project is testing automated AI-driven PR reviews via GitHub Copilot to help catch trivial issues and reduce the maintenance burden on human reviewers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+Summary generation failed. Please check the mailing list directly.
