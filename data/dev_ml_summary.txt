@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Donation of Erlang implementation:** The project accepted a donation of an Erlang implementation of Apache Arrow, which currently utilizes bindings to the Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+
+* **Proposed arrow.range extension type:** Discussion on adding a canonical extension type `arrow.range` to represent bounded mathematical intervals, aiming to improve interoperability between libraries like Pandas and various database connectors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **ADBC Partitioned Bulk Ingest API:** Proposal to add a partitioned write API to ADBC to support distributed ingestion workloads in systems like Spark and Flink, including atomic commit and rollback capabilities. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
+
+* **UTF-8 metadata restrictions:** Debate over whether to strictly enforce UTF-8 validation for field and schema metadata to ensure compatibility with Flatbuffers IPC encoding. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Field/schema/custom%20metadata%20restriction%20to%20UTF8%3f)
+
+* **SIMD optimization for Parquet Bloom Filters:** Proposal and implementation of AVX2 and NEON optimized probes for Parquet Split Block Bloom Filters, yielding significant performance improvements on the read path. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet/bloom_filter.cc)
+
+* **ADBC and Flight SQL dialect metadata:** New SqlInfo codes were proposed to help clients identify backend-specific SQL dialects for features like LIMIT/OFFSET and boolean literal formats during pushdown operations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
+
+* **Conbench benchmarking infrastructure updates:** Discussion on migrating historical benchmark data to new servers and refactoring the Conbench backend to improve stability and reduce resource costs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2b%20conbench%20OSS%20project)
+
+* **Automated GitHub Copilot reviews:** The project is trialing automated GitHub Copilot reviews to identify trivial issues in Pull Requests before human review, though some contributors suggest disabling it for draft PRs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **Flight SQL Prepared Statement updates:** A vote passed to add an `is_update` boolean to Flight SQL prepared statements, allowing servers to indicate if a statement is intended for data modification. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
