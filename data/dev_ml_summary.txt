@@ -1,15 +1,1 @@
-* **Erlang implementation donation:** The community voted to accept the donation of an Erlang implementation of Apache Arrow, which is currently built using bindings for the Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Donate%20Apache%20Arrow%20Erlang)
-
-* **Canonical range extension type:** Proposal to introduce `arrow.range` for representing mathematical intervals (e.g., numeric or temporal ranges) with options for fixed or per-value boundary closedness. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **ADBC partitioned bulk ingest:** Discussion on adding a new API to ADBC to support partitioned writes, enabling distributed engines like Spark or Flink to perform parallel, atomic ingest operations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20Partitioned%20Bulk%20Ingest%20API)
-
-* **Automated GitHub Copilot reviews:** Proposal to enable automated AI code reviews on pull requests to help identify trivial issues, with ongoing discussion regarding draft PR clutter and contributor expectations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Auto%20GitHub%20Copilot%20review)
-
-* **Parquet Bloom filter SIMD optimization:** Proposal to optimize SBBF probes in Parquet using AVX2 or xsimd, though the current consensus favors a branchless scalar approach that compilers can easily autovectorize. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
-
-* **Continuous benchmarking infrastructure (Conbench):** Discussion on the status and migration of benchmarking infrastructure, including a proposal to develop a "v2" backend in Go to improve stability and performance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **FlightSQL dialect metadata:** Proposal to add new SqlInfo codes to help clients identify backend-specific SQL syntax for features like LIMIT/OFFSET and boolean or datetime literals. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20FlightSQL%20Add%20dialect-related%20SqlInfo%20codes)
-
-* **Preparing Arrow Java 20.0.0:** Release triage has begun for the upcoming version 20.0.0 of the Java implementation, focusing on issue cleanup and milestone planning. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:HEADS%20UP%20Preparing%20Arrow%20Java%2020.0.0)
+Summary generation failed. Please check the mailing list directly.
