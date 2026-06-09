@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Erlang implementation donation:** The community voted to accept a new Erlang implementation of Arrow, initially utilizing bindings to the Rust library, following successful IP clearance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Donate%20Apache%20Arrow%20Erlang)
+
+* **ADBC Partitioned Bulk Ingest API:** Proposal to introduce a write-side mirror to the existing partitioned read API, enabling distributed frameworks like Spark and Flink to perform atomic, multi-connection ingestions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
+
+* **Canonical Range extension type:** Discussion on adding a standard `arrow.range` type for mathematical intervals, with ongoing debate regarding whether boundary inclusiveness should be defined at the schema or value level. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Parquet Bloom Filter SIMD optimizations:** A plan to port AVX2 and branchless scalar SBBF (Split Block Bloom Filter) logic to C++ to significantly improve read-path performance for Parquet files. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
+
+* **Flight SQL dialect metadata:** New `SqlInfo` codes were proposed to allow drivers to self-describe SQL dialect features like LIMIT/OFFSET syntax and literal formats, reducing the need for hardcoded logic in clients. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
+
+* **Automated GitHub Copilot reviews:** The project is enabling automated Copilot reviews on pull requests to help maintainers catch trivial errors and provide faster feedback to contributors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **Conbench infrastructure migration:** Following a hosting transition, the community discussed migrating benchmarking data and potentially rewriting the Conbench backend in Go for better sustainability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Arrow Java 20.0.0 preparation:** Triage and planning have begun for the next major release of the Java implementation, with a focus on clearing the current issue backlog and triaging pending PRs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Preparing%20Arrow%20Java%2020.0.0)
+
+* **Arrow Rust 59.0.0 release:** The community approved the latest major release of the Rust implementation, following several smaller maintenance releases for versions 56 through 58. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20Rust%2059.0.0%20RC2)
