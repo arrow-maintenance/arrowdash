@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Erlang implementation donation:** The community approved the donation of the Arrow Erlang library, with efforts now underway to transfer the repository to the Apache Software Foundation infrastructure. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+
+* **SIMD optimization for Parquet Bloom filters:** Discussion on using xsimd to implement AVX2 and NEON accelerated probes for Parquet Bloom filters, which could significantly improve read-path performance for downstream users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
+
+* **ADBC Partitioned Bulk Ingest API:** Proposal for a new API to support distributed, parallel writes in ADBC, enabling atomic commits across multiple executors for RDBMS and table formats like Iceberg. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
+
+* **Canonical extension type for bounded ranges:** Discussion on introducing `arrow.range` to represent mathematical intervals, providing a standardized way to represent range data from databases and libraries like Pandas. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Benchmarking infrastructure updates:** Developers are discussing the future of the project's benchmarking tool, Conbench, including a possible v2 rewrite in Go to improve stability and reduce resource consumption. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Automated GitHub Copilot reviews:** The project is testing automated Copilot reviews on pull requests to catch trivial issues early and alleviate the workload on the project's human maintainers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **Variant type support in C++:** Implementation of a Variant type for C++ is underway to handle semi-structured data, with focus on full specification compliance and high native performance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **Flight SQL dialect metadata:** Proposal to add new SqlInfo codes to Flight SQL that allow servers to share dialect-specific metadata, such as boolean literal forms and limit/offset syntax, to improve client-side SQL generation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
