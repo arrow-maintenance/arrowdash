@@ -1,1 +1,19 @@
-Summary generation failed. Please check the mailing list directly.
+* **Parquet SIMD optimization:** Proposal to implement xsimd-based branchless probes for Parquet Bloom Filters in C++, yielding up to 5x performance gains for in-cache workloads. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
+
+* **Erlang implementation donation:** The community voted to accept the donation of an Erlang implementation of Apache Arrow, which is now officially hosted in the arrow-erlang repository. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Donate%20Apache%20Arrow%20Erlang)
+
+* **ADBC Partitioned Bulk Ingest:** Discussion on a new API for parallelized bulk ingestion to support distributed writers like Spark or Flink when targeting RDBMS or table formats like Iceberg. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20Partitioned%20Bulk%20Ingest%20API)
+
+* **Canonical Range extension type:** Proposal for a new `arrow.range` extension type to represent bounded mathematical intervals, improving interoperability with Pandas and Polars. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Automated GitHub Copilot reviews:** Discussion on enabling AI-driven pull request reviews to alleviate maintenance burden, with focus on reducing noise for draft PRs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Auto%20GitHub%20Copilot%20review)
+
+* **C++ Variant type coordination:** Developers are coordinating multiple efforts to implement Variant type support in C++ to ensure specification compliance and high performance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **Flight SQL dialect metadata:** Proposal to add new SqlInfo codes to help clients identify backend-specific SQL capabilities such as limit/offset grammar and null ordering. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20FlightSQL%20Add%20dialect-related%20SqlInfo%20codes)
+
+* **CI resource optimization:** Following a warning from ASF Infrastructure about high resource usage, the project is working to streamline long-running GitHub Actions builds. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **Conbench infrastructure refactoring:** Discussion on developing a "V2" for the Conbench benchmarking platform to improve maintainability and reliability after recent infrastructure migrations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Arrow Rust 59.0.0 release:** The Rust implementation has officially released version 59.0.0 following a successful community vote. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2059.0.0%20RC2)
