@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Erlang implementation donation:** The community voted to accept the donation of an Erlang implementation of Apache Arrow, which has now been officially transferred to the project's GitHub organization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+
+* **Parquet Bloom Filter SIMD optimizations:** Developers discussed and implemented AVX2 and SIMD optimizations for Parquet Split Block Bloom Filters, achieving significant performance improvements for both probe and insert paths. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet/bloom_filter.cc)
+
+* **ADBC Partitioned Bulk Ingest API:** A proposal was introduced for a new ADBC API to support partitioned bulk ingestion, enabling distributed writers like Spark to perform atomic commits across multiple connections. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
+
+* **Flight SQL Dialect Metadata:** New SqlInfo codes were proposed for Flight SQL to help clients identify backend-specific SQL grammar, such as LIMIT/OFFSET syntax and NULLS ordering support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20dialect-related%20SqlInfo%20codes)
+
+* **Canonical Range extension type:** Discussion is underway for a new `arrow.range` canonical extension type to represent bounded intervals, focusing on how to handle inclusive/exclusive bounds and variable closedness. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Automated GitHub Copilot reviews:** The project has enabled automated GitHub Copilot reviews for pull requests to assist with trivial code issues, with ongoing refinements to reduce noise on draft PRs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **Conbench benchmarking maintenance:** Plans were discussed to migrate historical benchmarking data and refactor the Conbench backend to Go to improve the stability and performance of continuous project benchmarks. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20+%20conbench%20OSS%20project)
+
+* **Variant type support:** Multiple contributors are coordinating to implement a Variant data type in Arrow C++ to support flexible, Iceberg-compatible nested data structures. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **GitHub Actions resource optimization:** Following a notification from ASF Infrastructure, the community is working to streamline long-running CI builds to reduce the consumption of shared GitHub runner resources. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
