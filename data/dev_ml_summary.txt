@@ -1,17 +1,1 @@
-* **Arrow Erlang donation:** The community has voted to accept the donation of the Erlang implementation, and the process of transferring the repository to the Apache infrastructure is currently underway. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
-
-* **ADBC partitioned bulk ingest:** A new API proposal seeks to add support for distributed bulk ingestion in ADBC, allowing multiple workers to write partitions independently before a final atomic commit by a coordinator. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
-
-* **Canonical range extension type:** Discussion is active regarding a new `arrow.range` extension type for mathematical intervals, with a focus on whether to store boundary closedness at the column level or per-value to support formats like PostgreSQL ranges. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **Variant type implementation coordination:** Several parallel efforts to implement a Variant type in Arrow C++ are being coordinated to ensure full specification compliance and high performance for semi-structured data. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
-
-* **SIMD optimizations for Parquet Bloom Filters:** A new implementation provides significant performance improvements for Parquet Split Block Bloom Filter probing by leveraging AVX2 and NEON SIMD instructions through branchless autovectorization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet/bloom_filter.cc)
-
-* **Conbench benchmarking infrastructure updates:** Maintainers are discussing a "v2" rewrite of the Conbench backend to improve stability and performance following a successful migration to new donated AWS infrastructure. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20+%20conbench%20OSS%20project)
-
-* **Automated GitHub Copilot PR reviews:** The project has enabled automated AI reviews for pull requests to help catch trivial issues early, though guidelines are being established to manage noise on draft submissions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
-
-* **Flight SQL is_update field:** A vote passed to add an `is_update` field to prepared statement results in Flight SQL, helping clients distinguish between queries and data manipulation commands. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
-
-* **Optimization of ASF GitHub runner usage:** In response to high demand for shared ASF CI resources, the project is working to streamline long-running builds and reduce the number of concurrent GitHub Actions jobs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+Summary generation failed. Please check the mailing list directly.
