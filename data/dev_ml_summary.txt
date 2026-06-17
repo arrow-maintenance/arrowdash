@@ -1,15 +1,1 @@
-* **Erlang implementation donation:** The community voted to accept the donation of an Erlang implementation, which has now been transferred to the official Apache Arrow GitHub organization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
-
-* **ADBC partitioned bulk ingest API:** Discussion on a new API for ADBC to handle partitioned bulk ingestion, with focus on avoiding confusing "Commit" terminology that might conflict with database transactions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Partitioned%20Bulk%20Ingest%20API)
-
-* **Parquet Bloom Filter optimization:** Proposal to optimize Split Block Bloom Filters using branchless code that autovectorizes effectively on AVX2 and NEON, providing significant performance gains without manual intrinsics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
-
-* **Canonical Range extension type:** Proposal for a new `arrow.range` extension type to represent mathematical intervals, including a debate on how to store per-value inclusive/exclusive boundary flags. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **Automated GitHub Copilot reviews:** The project is experimenting with automated Copilot reviews to assist with PRs, while discussing policies to prevent clutter on draft PRs and defining expectations for contributors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
-
-* **Benchmarking infrastructure status:** Discussion on the future of Conbench, including a potential "v2" rewrite in Go to improve stability and reduce the high cost of running continuous benchmarks on AWS. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20+%20conbench%20OSS%20project)
-
-* **Variant type support in C++:** Coordination of multiple efforts to implement a high-performance "Variant" type in Arrow C++ for handling semi-structured data, ensuring compatibility with upcoming Iceberg features. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
-
-* **CI resource consumption:** ASF Infrastructure flagged Arrow as a top consumer of shared GitHub Actions resources, leading to a discussion on streamlining workflows and optimizing long-running builds. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+Summary generation failed. Please check the mailing list directly.
