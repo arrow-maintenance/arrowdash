@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow Erlang donation:** The Erlang implementation has officially been donated to the ASF and the repository transfer to `apache/arrow-erlang` is complete. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+
+* **Canonical Range extension type:** Discussion is underway for a new `arrow.range` extension type to represent bounded mathematical intervals across language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Variant type support:** Community members are coordinating efforts to implement a "Variant" type in C++ and Parquet for handling semi-structured data, following the Rust implementation's example. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **Auto GitHub Copilot reviews:** The project is testing automated PR reviews via GitHub Copilot to assist with trivial issues, with specific guidelines being drafted for draft PRs and contributor expectations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **Parquet Bloom filter optimization:** A new optimization introduces autovectorized kernels for Parquet Bloom filter probes, providing significant performance gains on AVX2 and NEON. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
+
+* **Conbench infrastructure migration:** Plans are forming to migrate the project's benchmarking infrastructure (Conbench) to a more maintainable Go-based backend using donated AWS credits. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Flight SQL updates:** The community voted to add an `is_update` field to `ActionCreatePreparedStatementResult` to improve driver self-description and metadata accuracy. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
+
+* **CI resource optimization:** Following high queue times for shared GitHub-hosted runners, the project is working to streamline long-running builds to comply with ASF infrastructure limits. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **Release 59.0.0 for Rust:** The community successfully released version 59.0.0 of the Apache Arrow Rust implementation, including several performance and correctness fixes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2059.0.0%20RC2)
