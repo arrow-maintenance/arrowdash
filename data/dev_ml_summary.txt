@@ -1,17 +1,1 @@
-* **Arrow Erlang implementation donation:** The community successfully voted to accept the donation of the Erlang implementation, which has now been transferred to the official Apache repository. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULT%20VOTE%20Donate%20Apache%20Arrow%20Erlang)
-
-* **Canonical range extension type:** Discussion on introducing `arrow.range` and `arrow.range_inc` for representing mathematical intervals, including metadata specifications for closedness and support for per-value boundary flags. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **Automated GitHub Copilot reviews:** The project is experimenting with automated AI-driven PR reviews to help catch trivial issues and reduce the maintenance burden on human reviewers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
-
-* **Benchmarking infrastructure refactor:** Proposal to redesign and stabilize the Conbench benchmarking platform (Conbench v2) to improve performance and manageability of continuous project benchmarks. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **Variant type implementation:** Coordination is underway for C++ support of the Variant type to ensure compatibility with other implementations and meet the requirements for semi-structured data processing. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
-
-* **GitHub Actions resource optimization:** In response to high consumption of ASF shared runner resources, the project is investigating ways to streamline CI workflows and reduce the number of concurrent jobs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
-
-* **Flight SQL update field:** A vote passed to include an `is_update` field in prepared statement results, which will be implemented across Java, Go, and relevant ADBC/JDBC drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Flight%20SQL%20Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
-
-* **Parquet Bloom filter performance:** Development of autovectorized AVX2 and NEON kernels for Parquet Bloom filter probing, resulting in significant throughput improvements for hit and miss scenarios. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
-
-* **Arrow Rust 59.0.0 release:** The community approved the release of the Rust implementation version 59.0.0, including various improvements and fixes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2059.0.0%20RC2)
+Summary generation failed. Please check the mailing list directly.
