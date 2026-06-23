@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Canonical extension type for bounded ranges:** Proposal to add `arrow.range` for representing mathematical intervals like `[0, 10)`. The discussion covers storage as a `Struct<lower: T, upper: T>`, handling inclusive/exclusive bounds via metadata, and ensuring compatibility with PostgreSQL and Pandas. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Variant type implementation coordination:** Discussion on adding the complex Variant type to Arrow C++ to support Iceberg compatibility. Maintainers are coordinating to avoid duplicate efforts and ensure the implementation meets high performance standards while potentially referencing the existing Rust version. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **Conbench benchmarking platform modernization:** Proposal to rewrite the Conbench backend in Go and use a TypeScript frontend to improve UI performance and maintainability. The plan includes migrating historical benchmark data and exploring Parquet-based storage for results. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Automated GitHub Copilot reviews:** Evaluation of using GitHub Copilot to perform initial reviews on pull requests to alleviate maintainer burden. Developers discussed disabling the tool for draft PRs and establishing guidelines for how contributors should address AI-generated feedback. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **CI resource optimization:** ASF Infrastructure identified Arrow as a top consumer of shared GitHub Actions runners, leading to a discussion on streamlining long-running builds. The community is looking into workflow optimizations and the potential use of more self-hosted runners. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **AVX2 optimizations for Parquet Bloom filters:** Implementation of AVX2 and NEON SIMD kernels for Parquet Bloom filter probing. Benchmarks show significant performance gains for both hit and miss scenarios on modern x86 and ARM hardware. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
+
+* **Arrow Erlang donation completion:** The Erlang implementation has officially completed its donation process and been transferred to the Apache Arrow organization. Work is ongoing to set up the new repository and integrate it with project infrastructure. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+
+* **Flight SQL protocol enhancement:** A vote passed to add an `is_update` field to `ActionCreatePreparedStatementResult`. This addition helps Flight SQL and ADBC drivers more accurately distinguish between queries and data modification statements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
+
+* **Preparation for Arrow Java 20.0.0:** Maintainers have begun triaging issues and PRs for the upcoming Java 20.0.0 release. The community is encouraged to update milestones for any critical bug fixes or features intended for this version. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Preparing%20Arrow%20Java%2020.0.0)
