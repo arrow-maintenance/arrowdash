@@ -1,15 +1,1 @@
-* **Canonical range extension type:** Proposal to add a new `arrow.range` extension type for representing bounded mathematical intervals. Discussion focused on supporting different closedness behaviors (left-closed, right-closed, etc.) and handling per-value boundary flags to improve interoperability with systems like PostgreSQL. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **Automated GitHub Copilot reviews:** Discussion on enabling automated AI reviews for pull requests to alleviate the burden on human maintainers. The community is refining the workflow to exclude draft PRs and establishing expectations for how contributors should respond to AI-generated feedback. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Auto%20GitHub%20Copilot%20review)
-
-* **Donation of Arrow Erlang:** Following a successful community vote and IP clearance, the Erlang implementation has been officially donated to the project. The repository is currently being transferred to the Apache Software Foundation organization on GitHub. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULT%20VOTE%20Donate%20Apache%20Arrow%20Erlang)
-
-* **Conbench infrastructure v2:** Proposal to modernize the Conbench benchmarking platform with a new Go-based backend and TypeScript frontend. The effort aims to improve the performance and maintainability of Arrow's continuous benchmarking suite while exploring more cost-effective storage architectures like DuckDB and Parquet. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **Variant type support in C++:** Coordination is underway to implement the Variant data type in the C++ implementation, mirroring existing work in the Rust implementation. This feature is a high priority for downstream projects like Iceberg-cpp that require support for shredded and unshredded data. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
-
-* **GitHub Actions resource constraints:** ASF Infrastructure flagged Arrow as a top consumer of shared CI resources, prompting a discussion on optimizing workflows. The project is looking for ways to reduce concurrent build jobs and long-running builds to help alleviate foundation-wide queue delays. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
-
-* **Arrow Java 20.0.0 release:** Initial triaging of issues and PRs has begun for the upcoming Arrow Java 20.0.0 release. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:HEADS%20UP%20Preparing%20Arrow%20Java%2020.0.0)
-
-* **AVX2 Bloom Filter optimization:** Implementation of an AVX2-optimized probe for Parquet Split Block Bloom Filters (SBBF), showing performance improvements of up to 3.5x on x86 targets. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AVX2%20SBBF%20probe%20for%20parquet%2Fbloom_filter.cc)
+Summary generation failed. Please check the mailing list directly.
