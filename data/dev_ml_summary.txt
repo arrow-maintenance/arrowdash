@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Erlang implementation donation:** The Apache Arrow Erlang repository has been successfully transferred to the official Apache organization following a community vote. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+
+* **Conbench modernization proposal:** Discussion on a major refactor of the Conbench benchmarking tool, including a new Go backend, TypeScript frontend, and potential move to DuckDB and Parquet for result storage. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Canonical range extension type:** Proposal for a new `arrow.range` extension type to represent bounded ranges, with ongoing debate regarding naming and how to handle per-value versus fixed closedness. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Variant type in C++:** Developers are coordinating on the implementation of the Variant type for the C++ library to ensure spec compliance and native performance while avoiding duplicate efforts. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **DuckDB ADBC extension donation:** Proposal to donate a DuckDB extension that allows connecting to external databases like Snowflake and BigQuery via ADBC drivers to the Arrow project. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **CI resource optimization:** In response to ASF-wide GitHub Actions resource constraints, the project successfully reduced its build minute consumption by approximately 27% through workflow streamlining. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **Automated AI code reviews:** Community discussion on the utility of GitHub Copilot for PR reviews, with a consensus emerging to disable automated reviews for draft pull requests to minimize noise. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **Flight SQL updates:** Successful vote to add an `is_update` field to `ActionCreatePreparedStatementResult` to better distinguish between DDL/DML and query statements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
+
+* **Arrow Rust releases:** Both the main Arrow Rust implementation (version 59.0.0) and the Object Store library (version 0.14.0) reached successful releases this month. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2059.0.0%20RC2)
