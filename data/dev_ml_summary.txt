@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Conbench v2 Redesign:** Wes McKinney proposed a major overhaul of the Conbench benchmarking platform, introducing a Go-based backend and a TypeScript frontend to improve performance and maintainability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **CI Resource Usage Reduction:** Following a request from ASF Infrastructure regarding high resource consumption, the community successfully reduced GitHub Actions usage by approximately 27% through workflow optimizations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **ADBC Extension for DuckDB:** A proposal to donate a hand-coded DuckDB extension for ADBC to the ASF led to discussions about governance and its relationship with existing community-maintained extensions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Variant Type Implementation:** Developers are coordinating the implementation of the Variant type in Arrow C++ for Iceberg compatibility while ensuring specification alignment with Parquet regarding optional fields. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **GitHub Copilot PR Reviews:** The project is refining its use of automated GitHub Copilot reviews, establishing guidelines for when the tool should run and how contributors should respond to its suggestions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **Arrow Range Extension Type:** Discussion continues on the naming and design of new canonical extension types for ranges, specifically addressing how to handle fixed versus per-value closedness. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Flight SQL Metadata Improvements:** The community approved the addition of an `is_update` field for prepared statements and new dialect-related `SqlInfo` codes to help drivers better describe their capabilities. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
+
+* **Arrow Erlang Donation:** The Apache Arrow Erlang implementation has completed its transfer process and is now officially hosted in the Apache Arrow GitHub organization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
