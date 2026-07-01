@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Conbench v2 proposal:** Wes McKinney shared a proposal and prototype for a Go-based rewrite of the Conbench benchmarking platform to improve UI performance and long-term maintainability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Variant type implementation:** Developers are coordinating the implementation of the Variant type in Arrow C++, focusing on high-performance encoding and compatibility with the existing Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **CI resource optimization:** In response to ASF Infrastructure limits, the project successfully reduced its GitHub Actions runner minute consumption by nearly 30% through workflow streamlining and efficiency improvements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **DuckDB ADBC extension:** A proposal to donate a new DuckDB extension for ADBC prompted discussion on ecosystem collaboration and comparisons with existing community-maintained drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Arrow Erlang donation:** The donation of the Erlang implementation is complete, with the repository now officially transferred to the Apache Software Foundation organization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULT%20VOTE%20Donate%20Apache%20Arrow%20Erlang)
+
+* **AI-assisted PR reviews:** The community is establishing guidelines for GitHub Copilot automated reviews, including disabling them for draft PRs to minimize noise for contributors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Auto%20GitHub%20Copilot%20review)
+
+* **Flight SQL update flag:** A vote passed to add an `is_update` boolean to Flight SQL’s prepared statement results to help clients distinguish between data modifications and queries. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Flight%20SQL%20Add%20is_update%20field%20to%20ActionCreatePreparedStatementResult)
+
+* **Canonical Range type:** Discussion is underway for a new `arrow.range` canonical extension type to standardize the representation of bounded intervals across different implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Arrow Rust 59.0.0 release:** Version 59.0.0 of the Rust implementation has been released and published to crates.io, including various performance fixes and feature enhancements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2059.0.0%20RC2)
