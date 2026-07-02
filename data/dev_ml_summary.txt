@@ -1,1 +1,19 @@
-Summary generation failed. Please check the mailing list directly.
+* **Conbench v2 infrastructure overhaul:** Wes McKinney proposed a major redesign of the project's benchmarking infrastructure using a Go backend and Svelte frontend to improve performance and maintenance. A parallel deployment has been established at conbench-v2.arrow-dev.org for community evaluation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Deprecation of IPC Tensor messages:** Antoine Pitrou proposed deprecating experimental Tensor and SparseTensor IPC messages as they are largely superseded by canonical extension types and carry a security maintenance burden. The consensus favors using FixedShapeTensor and VariableShapeTensor extension types for N-dimensional data instead. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
+
+* **GitHub Actions resource optimization:** Following an alert from ASF Infra regarding high resource consumption, the Arrow project reduced its CI usage by over 25% through workflow streamlining and concurrency optimizations. Developers are encouraged to monitor usage via infra-reports to stay within foundation limits. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **ADBC extension donation for DuckDB:** Columnar-tech announced the donation of a new ADBC extension for DuckDB to the ASF, sparking a discussion on coordination with existing community extensions and the benefits of neutral governance. The extension supports features like connection pooling and streaming bulk ingest for various database backends. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Variant type implementation in C++:** Discussion is ongoing regarding the implementation of the Variant type in Arrow C++, with maintainers aiming to align with existing Rust implementations while ensuring high native performance. Recent work focuses on spec compliance for shredded and unshredded data representations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **Canonical Range extension types:** A proposal to add canonical extension types for bounded ranges is being debated, with a focus on whether to use distinct types for different boundary closedness (e.g., half-open vs. closed) or per-value metadata. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Rust implementation releases:** The community successfully released version 59.0.0 of the Arrow Rust implementation and version 0.14.0 of the Rust Object Store library. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2059.0.0%20RC2) [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%20Object%20Store%200.14.0%20RC1)
+
+* **GitHub Copilot review policy:** Maintainers are establishing guidelines for AI-generated code reviews to ensure they do not clutter draft PRs and to clarify expectations for how contributors should respond to AI suggestions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **Erlang implementation donation:** The donation process for the Apache Arrow Erlang implementation is complete, with the repository successfully transferred to the ASF infrastructure. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Donate%20Apache%20Arrow%20Erlang)
+
+* **Bug squashing and issue triage:** An initiative is underway to clear the project's backlog of old issues, with a specific call for volunteers to help reproduce old bugs and for maintainers to close irrelevant tickets. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
