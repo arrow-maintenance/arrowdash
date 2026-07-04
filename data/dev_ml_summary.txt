@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Conbench v2 redesign:** Wes McKinney proposed a major overhaul of the project's benchmarking infrastructure, introducing a Go-based backend and Svelte frontend to resolve performance bottlenecks and improve maintainability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20+%20conbench%20OSS%20project)
+
+* **Variant type implementation coordination:** Developers from multiple organizations are collaborating on adding the complex Variant type to Arrow C++, focusing on native performance and Parquet specification compliance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **Deprecating Tensor IPC messages:** A proposal was introduced to deprecate experimental IPC messages for Tensors and SparseTensors in favor of using canonical extension types like FixedShapeTensor. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20IPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
+
+* **GitHub Actions resource optimization:** In response to ASF infrastructure limits, the project successfully reduced its shared runner usage by approximately 27% through workflow streamlining. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **JSON representation of Arrow schemas:** Discussion is underway to define a canonical human-readable JSON format for schemas to improve ergonomics for ADBC metadata and application-level API contracts. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **DuckDB ADBC extension donation:** The community is evaluating the donation of a new DuckDB extension for ADBC, sparking discussions about project governance and competition with existing community-led drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Arrow Erlang repository transfer:** The project has officially accepted the donation of the Erlang implementation, which has now been moved to the Apache Arrow organization on GitHub. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULT%20VOTE%20Donate%20Apache%20Arrow%20Erlang)
+
+* **GitHub Copilot review guidelines:** Maintainers are establishing best practices for automated AI code reviews, including disabling them for draft pull requests to reduce clutter and defining how contributors should address AI suggestions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Auto%20GitHub%20Copilot%20review)
