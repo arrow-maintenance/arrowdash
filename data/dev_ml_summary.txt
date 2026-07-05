@@ -1,15 +1,1 @@
-* **Conbench modernization (V2):** Proposal to rewrite the Conbench benchmarking tool using a Go backend and a modern Svelte/Vite frontend to improve performance, deployment ease, and UI ergonomics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **Design of arrow.range extension type:** Discussion on a new canonical extension type for bounded ranges, debating whether to use fixed types for bounds closedness or per-value flags to better support columnar compute functions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
-
-* **Automated GitHub Copilot reviews:** Debate over the utility of automated Copilot PR reviews, resulting in a plan to disable them for draft PRs and establish guidelines for how contributors should address AI-generated feedback. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
-
-* **Variant type implementation in C++:** Developers are working on adding support for the Variant type to the C++ implementation, focusing on Parquet shredding compatibility and mirroring features from the existing Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
-
-* **CI resource usage reduction:** Following a request from ASF Infrastructure, the project successfully reduced its GitHub Actions runner consumption by approximately 27% through workflow optimizations and streamlining concurrent builds. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
-
-* **ADBC extension for DuckDB:** Proposal to donate a hand-coded DuckDB extension for ADBC to the Arrow project to provide an official, neutrally-governed client for connecting DuckDB to various remote databases. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
-
-* **Deprecating IPC Tensor messages:** Suggestion to deprecate the experimental Tensor and SparseTensor IPC message types in favor of using FixedShapeTensor and VariableShapeTensor canonical extension types within standard RecordBatches. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
-
-* **Canonical JSON representation for schemas:** Discussion on creating a standard human-readable JSON format for Arrow schemas to simplify tasks like hand-authoring schemas and defining JSON API contracts without requiring binary IPC. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:JSON%20representation%20of%20Arrow%20schemas)
+Summary generation failed. Please check the mailing list directly.
