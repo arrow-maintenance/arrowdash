@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **GitHub Copilot reviews:** Discussion on implementing automated Copilot reviews for pull requests and establishing expectations for how contributors should respond to AI-generated feedback. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Auto%20GitHub%20Copilot%20review)
+
+* **CI resource optimization:** Following an ASF Infrastructure request to reduce GitHub Actions usage, the project successfully streamlined workflows to reduce CI consumption by approximately 27%. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **Variant type support:** Coordination is underway to implement the Variant type in Arrow C++, focusing on native performance and alignment with the existing Rust implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **DuckDB ADBC extension:** Columnar announced a new DuckDB extension for ADBC and proposed donating it to the ASF, prompting a discussion on governance and overlap with existing community tools. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Conbench V2 proposal:** A prototype was presented to modernize the benchmarking dashboard using a Go backend and Svelte frontend to address performance issues and ease of development. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Tensor deprecation in IPC:** Proposal to deprecate dedicated Tensor and SparseTensor messages in the IPC format, favoring the use of canonical extension types for better integration and reduced maintenance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages)
+
+* **JSON schema representation:** Discussion on creating a canonical, human-readable JSON representation of Arrow schemas to simplify application-level tasks and web API contracts. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Format%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **Arrow Erlang donation:** The repository for the Erlang implementation has been officially transferred to the Apache Software Foundation organization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULT%20VOTE%20Donate%20Apache%20Arrow%20Erlang)
+
+* **Range canonical extension type:** Ongoing debate regarding the naming and structure of a range extension type, specifically comparing fixed closedness against per-value granular closedness. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
