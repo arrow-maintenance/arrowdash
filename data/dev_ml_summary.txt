@@ -1,17 +1,1 @@
-* **Arrow 25.0.0 release:** The first release candidate for version 25.0.0 is available with over 200 resolved issues, including significant discussion on improving PyArrow performance for Spark 4.2 users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
-
-* **Variant type implementation:** Developers are coordinating the addition of Variant type support in Arrow C++ and Parquet, using the existing Rust implementation as a reference to ensure cross-language compatibility. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
-
-* **Deprecating IPC Tensor messages:** There is consensus to deprecate dedicated Tensor and SparseTensor IPC messages in favor of using standard RecordBatches with the newer tensor extension types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussIPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3f)
-
-* **JSON representation of schemas:** A proposal was introduced to create a canonical human-readable JSON format for Arrow schemas to better support REST APIs and ADBC metadata exchanges. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **CI resource optimization:** Following an urgent request from ASF Infrastructure, the project successfully reduced its GitHub Actions CI usage by 73% through workflow streamlining and concurrency limits. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
-
-* **Conbench v2 proposal:** Development has begun on a "Conbench v2" prototype featuring a Go-based backend and modern web frontend to improve the performance and maintainability of the project's benchmarking infrastructure. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2b%20conbench%20OSS%20project)
-
-* **ADBC extension for DuckDB:** A new DuckDB extension for ADBC was proposed for donation to the ASF, which would allow DuckDB to natively query various databases using Arrow-native drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
-
-* **Erlang repository donation:** The Apache Arrow Erlang implementation has been officially transferred to the ASF following a successful community vote and repository migration. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULTVOTE%20Donate%20Apache%20Arrow%20Erlang)
-
-* **Bug backlog cleanup:** Maintainers are seeking community volunteers to help triage and reproduce stale bug reports in the project's issue tracker to manage the high volume of open tickets. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
+Summary generation failed. Please check the mailing list directly.
