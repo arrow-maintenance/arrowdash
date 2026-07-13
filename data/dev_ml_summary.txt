@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **CI resource optimization:** The community successfully reduced GitHub Actions runner usage by roughly 27% to better align with ASF Infrastructure resource consumption policies. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **Arrow 25.0.0 release:** The community approved the release of version 25.0.0, resolving over 220 issues, while also planning a 25.0.1 patch to address PyArrow performance regressions affecting Spark users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
+
+* **Variant type support:** Discussion regarding the implementation of Variant type support in Arrow C++, utilizing the existing Rust implementation as a reference for handling shredded and unshredded types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
+
+* **Conbench v2 proposal:** Wes McKinney introduced a modernization effort for the Conbench benchmarking tool, proposing a Go-based backend and Svelte frontend to resolve performance bottlenecks and improve UI features. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **ADBC extension for DuckDB:** A proposal was made to donate a new DuckDB extension for ADBC to the Arrow project to provide a centralized, officially governed client for database connectivity. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Deprecating Tensor IPC messages:** Maintainers discussed deprecating experimental Tensor and SparseTensor IPC message types in favor of using FixedShapeTensor and VariableShapeTensor extension types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussIPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
+
+* **JSON representation for Arrow schemas:** Proposal for a canonical, human-readable JSON serialization format for Arrow schemas to facilitate easier use in REST APIs and ADBC metadata boundaries. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **Extended range timestamp support in Parquet:** Announcement of a Parquet community proposal to support the full SQL range for nanosecond-level timestamps, allowing for storage of a wider temporal range. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:FYI%20Parquet%20proposal%20for%20extended%20range%20timestamp%20type)
+
+* **Community "Bug Squash" effort:** A call for volunteers to help triage the issue tracker by reproducing and closing stale bug reports to improve project maintenance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
