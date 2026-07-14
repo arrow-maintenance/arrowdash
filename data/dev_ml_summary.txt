@@ -1,17 +1,1 @@
-* **Conbench V2 performance overhaul:** Wes McKinney presented a major redesign of the benchmarking dashboard using Go, Svelte, and DuckDB to address performance bottlenecks and modernize the infrastructure. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **ADBC extension for DuckDB:** A proposal to donate a new DuckDB extension for ADBC to the ASF sparked discussion regarding coordination with existing community-led projects and the benefits of vendor-neutral governance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
-
-* **JSON representation of Arrow schemas:** Discussion is underway to define a canonical human-readable JSON format for schemas to improve ergonomics for REST APIs and metadata persistence. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **Deprecating Tensor IPC messages:** Core developers proposed deprecating the experimental Tensor and SparseTensor IPC messages in favor of using canonical extension types within standard RecordBatches. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20IPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
-
-* **Arrow 25.0.0 release:** The community approved the 25.0.0 release, featuring over 200 resolved issues; a follow-up patch was discussed to further optimize PyArrow performance for Spark 4.2 integration. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
-
-* **CI resource usage reduction:** Following a request from ASF Infrastructure, the project successfully reduced its GitHub Actions runner consumption by approximately 27% to stay within shared resource limits. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
-
-* **C Data Interface nul-byte handling:** A clarification on the C FFI specification suggests that producers should error out when field names contain embedded nul bytes to ensure safety across different language runtimes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
-
-* **Variant type implementation progress:** Work continues on bringing Parquet Variant type support to the C++ implementation, with a focus on matching the behavior of the existing Rust version and handling shredded values. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
-
-* **Stale issue cleanup initiative:** Maintainers have launched a community-wide effort to triage, reproduce, and close old bug reports and feature requests to improve project health and manageability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
+Summary generation failed. Please check the mailing list directly.
