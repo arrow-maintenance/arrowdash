@@ -1,1 +1,19 @@
-Summary generation failed. Please check the mailing list directly.
+* **GitHub CI resource optimization:** The project successfully reduced its GitHub Actions runner usage by nearly 30% to comply with ASF Infrastructure resource policies. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **Conbench v2 proposal:** Wes McKinney introduced a "v2" rewrite of the project's benchmarking dashboard, utilizing a Go backend and Svelte/Vite frontend to improve performance and maintenance ergonomics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20+%20conbench%20OSS%20project)
+
+* **DuckDB ADBC extension donation:** Columnar.tech proposed donating a new DuckDB extension for ADBC to the Arrow project, providing a standardized way for DuckDB users to connect to systems like Snowflake and BigQuery. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Deprecating experimental Tensor IPC:** A proposal was made to deprecate experimental Tensor and SparseTensor IPC messages in favor of the newer canonical extension types like FixedShapeTensorArray. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20IPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages)
+
+* **JSON representation of Arrow schemas:** Developers are discussing a canonical human-readable JSON format for Arrow schemas to aid in REST API contracts and metadata persistence. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **Arrow 25.0.0 release:** The project completed the release of version 25.0.0, resolving over 220 GitHub issues across multiple language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
+
+* **C Data Interface field name safety:** Discussion regarding how the C FFI should handle Arrow field names containing embedded NUL bytes, which are valid in UTF-8 but can cause crashes in C-based readers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
+
+* **Bug squashing initiative:** Maintainers are calling for community help to triage and reproduce stale bug reports to reduce the project's issue backlog. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
+
+* **Rust Object Store releases:** Versions 0.14.0 and 0.14.1 of the Arrow Rust Object Store implementation were released, including improved verification scripts and storage integration fixes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%20Object%20Store%200.14.0%20RC1)
+
+* **Variant type support in C++:** Following the Rust implementation, developers discussed adding support for the Variant type (semi-structured data) in the C++ Parquet implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
