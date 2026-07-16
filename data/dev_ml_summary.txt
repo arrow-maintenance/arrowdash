@@ -1,17 +1,1 @@
-* **Arrow 25.0.0 release:** Discussion on the version 25.0.0 release candidate, including a proposal to potentially follow up with a patch release for PyArrow performance improvements requested for Spark 4.2 compatibility. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
-
-* **Conbench v2 development:** Wes McKinney proposed a modernized benchmarking foundation featuring a Go backend and a Svelte frontend, aiming to use DuckDB and Parquet for scalable result storage and improved UI ergonomics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **JSON representation of Arrow schemas:** Proposal for a canonical, human-readable JSON representation of Arrow schemas to simplify application-level tasks like REST API contracts and ADBC metadata exchange. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **ADBC extension for DuckDB:** Discussion regarding the donation of a hand-coded ADBC extension for DuckDB to the ASF to provide a neutral, collaboratively governed alternative to existing community implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
-
-* **Deprecating Tensor IPC messages:** Discussion on deprecating dedicated Tensor and SparseTensor messages in the IPC format, recommending the use of existing canonical extension types within standard RecordBatches instead. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20IPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
-
-* **CI resource optimization:** The community successfully reduced its weekly GitHub Actions usage by approximately 27% to comply with Apache Software Foundation infrastructure resource policies. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
-
-* **Variant Type implementation:** Ongoing coordination to bring the C++ implementation of the Variant type into parity with the Rust implementation, specifically focusing on Parquet format requirements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20Type%20Support)
-
-* **Issue backlog triage:** A call for volunteers to help triage stale issues and reproduce old bug reports against recent Arrow versions to improve project health and maintenance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
-
-* **Arrow Rust releases:** Successful release of Arrow Rust 59.1.0 and Object Store 0.14.x, featuring critical fixes for integration tests and performance optimizations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2059.1.0%20RC1)
+Summary generation failed. Please check the mailing list directly.
