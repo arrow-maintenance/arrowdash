@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow 25.0.0 release:** The community approved the release of version 25.0.0, which includes over 220 resolved issues across multiple language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
+
+* **JSON representation of Arrow schemas:** Discussion on creating a canonical human-readable JSON format for schemas to improve ergonomics in REST APIs and ADBC metadata exchanges. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **Deprecating Tensor and SparseTensor IPC messages:** Proposal to deprecate dedicated IPC messages for tensors in favor of modern canonical extension types like FixedShapeTensor, reducing maintenance and security overhead. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20IPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
+
+* **ADBC Extension for DuckDB:** Columnar proposed donating a hand-coded DuckDB extension for ADBC to the Arrow project, leading to a comparison with existing AI-assisted community implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Conbench v2 rewrite:** Wes McKinney proposed a major update to the benchmark monitoring tool, moving to a Go backend and Svelte frontend with DuckDB and Parquet for more scalable result storage. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Parquet Variant specification alignment:** Discussion on modifying the Parquet Variant description to allow the `value` field to be omitted in shredded scenarios, aligning it with the existing Arrow extension type behavior. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Allow%20VARIANT%20value%20field%20to%20be%20omitted)
+
+* **Reduction of GitHub Actions usage:** The project successfully reduced its weekly CI minute consumption by approximately 27% to better comply with ASF Infrastructure resource limits. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **Triage of aging issue backlog:** A call for volunteers was issued to help reproduce and resolve old bug reports across the repository, using a shared tracking sheet to organize language-specific efforts. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
