@@ -1,17 +1,1 @@
-* **Conbench infrastructure modernization:** Wes McKinney proposed and implemented an experimental "Conbench v2" using Go and Svelte to modernize the project's benchmarking infrastructure and improve performance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **Deprecating IPC Tensor messages:** Discussion on deprecating experimental Tensor and SparseTensor IPC messages in favor of using FixedShapeTensor canonical extension types within standard RecordBatches. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20IPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages)
-
-* **Canonical JSON representation of schemas:** A proposal for a standardized JSON representation of Arrow schemas to simplify human-readable serialization and integration with REST APIs and ADBC metadata. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **Arrow 25.0.0 release:** The community passed the vote for the 25.0.0 release, featuring over 220 resolved issues and performance optimizations for PyArrow's conversion methods. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
-
-* **DuckDB ADBC Extension donation:** Proposal to donate a DuckDB ADBC client extension to the ASF to provide a neutral, official way to connect DuckDB to various remote database systems. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
-
-* **Parquet Variant specification alignment:** Developers discussed modifying the Parquet format description to allow the value field to be omitted in shredded Variant columns, aligning it with Arrow's canonical implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Allow%20VARIANT%20value%20field%20to%20be%20omitted)
-
-* **C Data Interface field name validation:** Discussion on how to handle embedded null bytes in field names within the C Data Interface, recommending that producers validate strings to prevent security issues and unexpected crashes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
-
-* **ADBC documentation overhaul:** A significant update to the ADBC documentation site was completed to better clarify driver ownership and improve the overall user experience. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Documentation%20overhauled%20for%20ADBC)
-
-* **CI resource management:** The project successfully reduced its GitHub Actions runner consumption to comply with ASF Infrastructure limits through continuous workflow optimization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+Summary generation failed. Please check the mailing list directly.
