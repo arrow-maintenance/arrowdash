@@ -1,17 +1,1 @@
-* **Conbench v2 proposal:** Wes McKinney proposed a modernized version of the benchmarking platform featuring a Go backend and TypeScript frontend to improve performance and UI ergonomics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **CI resource usage reduction:** Developers successfully reduced Arrow's GitHub-hosted runner consumption by 27% through workflow optimizations following concerns from ASF Infrastructure. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
-
-* **ADBC extension for DuckDB:** Discussion regarding the donation of a hand-coded DuckDB extension for ADBC to the ASF, which enables DuckDB to connect to external databases like Snowflake and BigQuery. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
-
-* **Deprecation of IPC Tensor messages:** A proposal was made to deprecate experimental Tensor and SparseTensor IPC messages in favor of modern canonical extension types like FixedShapeTensor. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
-
-* **Canonical JSON representation for schemas:** Contributors are discussing a standard JSON format for Arrow schemas to simplify application-level tasks and improve ergonomics for ADBC metadata APIs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Format%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **Apache Arrow 25.0.0 release:** The community approved the 25.0.0 release, which includes 220 resolved issues across multiple language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
-
-* **C Data Interface field name clarification:** Developers clarified that the C FFI should explicitly error out when encountering embedded null bytes in UTF-8 field names to prevent crashes in downstream C-based consumers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
-
-* **Extended range timestamps in Parquet:** The community was alerted to a Parquet proposal for storing nanosecond-precision timestamps that cover the full SQL range, which may require future Arrow implementation updates. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:FYI%20Parquet%20proposal%20for%20extended%20range%20timestamp%20type)
-
-* **ADBC documentation overhaul:** A major update to the ADBC documentation site was completed to better clarify the roles of various driver vendors and improve navigation for new users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Documentation%20overhauled%20for%20ADBC)
+Summary generation failed. Please check the mailing list directly.
