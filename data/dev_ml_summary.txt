@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Apache Arrow 25.0.0 release:** The community approved the 25.0.0 release resolving 222 issues, with additional discussion regarding a 25.0.1 patch to address specific PyArrow performance bottlenecks affecting Spark users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
+
+* **JSON representation of Arrow schemas:** A new proposal aims to establish a canonical human-readable JSON format for schemas to improve ergonomics for REST APIs and ADBC metadata interchange. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **Deprecating IPC Tensor messages:** There is general support for deprecating experimental Tensor and SparseTensor IPC messages in favor of canonical extension types like FixedShapeTensor. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussIPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
+
+* **Conbench v2 infrastructure modernization:** Developers are coordinating a migration of the project's benchmarking platform to a more modern stack featuring a Go backend and Svelte frontend. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **DuckDB ADBC extension donation:** Discussion occurred regarding the donation of a new DuckDB extension for ADBC to the ASF and its potential integration with existing community-led tools. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Semantics of non-nullable fields:** A technical discussion explored how the `nullable` flag should be semantically interpreted for complex types, such as non-nullable child fields within nullable parent structs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
+
+* **Bug squashing and issue cleanup:** Maintainers have launched a call for volunteers to help reproduce and resolve stale bug reports to reduce the project's overall issue backlog. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
+
+* **JavaScript and Go releases:** Independent of the main project release, Apache Arrow JS 21.2.0 and Arrow Go 18.7.0 were approved and released to their respective package managers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEJS%20Release%20Apache%20Arrow%20JS%2021.2.0%20RC1)
