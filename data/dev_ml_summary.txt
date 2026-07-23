@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow 25.0.0 release:** Version 25.0.0 was released with over 220 resolved issues, including significant performance optimizations for PyArrow list conversions to support Spark 4.2. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
+
+* **JSON representation of Arrow schemas:** Proposal to establish a canonical, human-readable JSON format for Arrow schemas to simplify REST API integrations and metadata exchange. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:JSON%20representation%20of%20Arrow%20schemas)
+
+* **Conbench modernization plan:** Discussion on rebuilding the Conbench benchmarking tool using a Go backend and DuckDB storage to address performance bottlenecks in the UI and result processing. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **ADBC extension for DuckDB:** Columnar proposed donating a hand-coded ADBC extension for DuckDB to the Arrow project, sparking a debate regarding collaboration with existing community-led extensions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Deprecating Tensor IPC messages:** Proposal to deprecate experimental Tensor and SparseTensor IPC message types in favor of the newer canonical extension types like FixedShapeTensorArray. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
+
+* **CI resource reduction:** The project successfully reduced its weekly GitHub Actions runner usage by nearly 30% to align with updated Apache Software Foundation infrastructure consumption policies. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
+
+* **Parquet Variant alignment:** Discussion on aligning Parquet's Variant format with Arrow by allowing the `value` field to be omitted in shredded variants. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Allow%20VARIANT%20value%20field%20to%20be%20omitted)
+
+* **Nullability semantics in nested types:** Technical debate on the implications of the `nullable` flag for complex types, such as how to handle non-nullable child fields within nullable parent structures. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
