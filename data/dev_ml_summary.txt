@@ -1,17 +1,1 @@
-* **Apache Arrow 25.0.0 release:** This major release includes over 220 resolved issues and introduces significant performance improvements for Python UDFs when using Arrow serialization in Spark. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
-
-* **JSON representation of Arrow schemas:** A proposal to define a canonical human-readable JSON format for schemas to improve ergonomics in REST APIs and ADBC metadata management. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **Conbench v2 migration:** Discussion on modernizing the benchmarking infrastructure with a Go/Rust backend and DuckDB storage to address performance issues in the current web UI. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
-
-* **Deprecating Tensor and SparseTensor IPC messages:** Proposal to phase out experimental N-dimensional tensor IPC messages in favor of modern canonical extension types like FixedShapeTensor. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussIPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
-
-* **DuckDB ADBC extension donation:** The community is evaluating the donation of a DuckDB extension that allows DuckDB users to connect to various databases via ADBC drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
-
-* **Semantics of non-nullable nested fields:** Technical deep dive into how the `nullable` flag should be interpreted when nulls exist in parent structs or child dictionary values. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
-
-* **Parquet Variant type alignment:** Effort to align the Parquet format with Arrow's canonical extensions by allowing the `value` field to be omitted in Variant encodings. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Allow%20VARIANT%20value%20field%20to%20be%20omitted)
-
-* **CI resource efficiency:** Developers successfully reduced GitHub Actions runner usage by 73% to stay within the Apache Software Foundation's resource consumption limits. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Consumption%20of%20ASF%20Shared%20GitHub-hosted%20Runner%20Resources)
-
-* **Apache Arrow Rust 59.1.0 release:** The Rust implementation released a new version including various bug fixes and feature enhancements across the core and Parquet crates. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTERUST%20Release%20Apache%20Arrow%20Rust%2059.1.0%20RC1)
+Summary generation failed. Please check the mailing list directly.
