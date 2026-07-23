@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow 25.0.0 Release:** The community passed the vote for the 25.0.0 release containing over 200 resolved issues, with plans for a 25.0.1 patch to address PyArrow performance bottlenecks affecting Spark users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
+
+* **JSON Representation of Arrow Schemas:** Proposal for a canonical human-readable JSON format for Arrow schemas to improve ergonomics in REST APIs and ADBC metadata interchange. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **Deprecating Tensor IPC Messages:** Discussion on deprecating experimental Tensor and SparseTensor IPC messages in favor of modern canonical extension types like FixedShapeTensorArray. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussIPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
+
+* **ADBC Extension for DuckDB:** Proposal to donate a hand-coded DuckDB extension for ADBC to the ASF to provide an official, neutrally governed client for connecting DuckDB to various cloud databases. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Extension%20for%20DuckDB)
+
+* **Nullability Semantics in Nested Types:** Technical debate on how the `nullable` flag should be interpreted in the IPC format for complex structures, such as non-nullable child fields within nullable parent structs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
+
+* **Conbench v2 Infrastructure:** Coordination on migrating the project’s benchmarking dashboard to a new Go-based backend and Svelte frontend to improve performance and UI ergonomics for regression detection. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20%2B%20conbench%20OSS%20project)
+
+* **Alignment on Parquet Variant Format:** Discussion on allowing the `value` field to be omitted in the Parquet Variant extension type to ensure consistency between the Arrow and Parquet format specifications. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Allow%20VARIANT%20value%20field%20to%20be%20omitted)
+
+* **Extended Range Timestamps in Parquet:** Announcement of a Parquet community proposal to support the full SQL range for timestamp types at nanosecond precision, requiring future alignment with Arrow implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:FYI%20Parquet%20proposal%20for%20extended%20range%20timestamp%20type)
+
+* **Stale Issue Cleanup Initiative:** A call for community volunteers to assist in triaging and closing old bug reports by verifying if they can be reproduced with recent Arrow versions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
