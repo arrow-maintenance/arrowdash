@@ -1,15 +1,1 @@
-* **Arrow 25.0.0 release:** The community released version 25.0.0, resolving over 220 issues and introducing significant updates across the C++, Python, and Rust implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2025.0.0%20released)
-
-* **JSON representation of Arrow schemas:** Discussion on creating a canonical, human-readable JSON format for Arrow schemas to improve ergonomics for REST APIs and ADBC metadata. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussFormat%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **Deprecating Tensor and SparseTensor IPC messages:** Proposal to deprecate dedicated IPC messages for tensors in favor of using canonical extension types, which allow tensors to be transported as standard RecordBatch columns. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussIPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages?)
-
-* **Semantics of non-nullable fields in nested types:** Technical debate regarding how the `nullable` flag should be interpreted for child fields within structs, specifically when parent elements are null. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
-
-* **Variant format consistency with Parquet shredding:** Proposals to align the Arrow Variant extension specification with the Parquet shredding spec to resolve inconsistencies in supported primitive type mappings. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
-
-* **Swift minimum version bump:** Discussion on raising the minimum required Swift version to 6.0 to utilize native Int128 support for high-precision Decimal types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSSwift%20Proposal%20to%20raise%20minimum%20Swift%20version%20to%206.0)
-
-* **ADBC 24 release and documentation overhaul:** Release of version 24 for the ADBC libraries alongside a major documentation refresh to clarify the status of community versus vendor-supported drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20ADBC%2024%20-%20RC2)
-
-* **C Data Interface field name clarification:** Clarification that producers using the C Data Interface must ensure field names do not contain embedded nul bytes to maintain compatibility with C-style strings. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
+Summary generation failed. Please check the mailing list directly.
