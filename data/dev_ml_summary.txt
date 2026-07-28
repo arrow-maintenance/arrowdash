@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Apache Arrow 25.0.0 release:** The community announced the release of version 25.0.0, resolving over 220 issues across various implementations and including significant performance optimizations for PyArrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
+
+* **JSON representation of Arrow schemas:** Discussion on establishing a canonical human-readable JSON format for schemas to improve ergonomics in REST APIs and non-binary environments like ADBC metadata. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:JSON%20representation%20of%20Arrow%20schemas)
+
+* **Deprecation of IPC Tensor messages:** Proposal to deprecate dedicated Tensor and SparseTensor IPC messages in favor of using canonical extension types, which offer better integration with existing RecordBatch-centric APIs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
+
+* **Semantics of non-nullable fields:** A deep dive into how the `nullable` flag should be interpreted for nested types, such as when a child field is marked non-nullable but its parent struct contains nulls. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
+
+* **Swift minimum version bump:** Proposal to raise the minimum required Swift version to 6.0 to utilize native `Int128` support, which is critical for implementing Decimal types in the Swift library. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20to%20raise%20minimum%20Swift%20version%20to%206.0)
+
+* **ADBC 24 release:** Completion of the ADBC 24 release, featuring significant documentation overhauls and fixes for JNI build issues on Windows. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20ADBC%2024%20-%20RC2)
+
+* **Variant extension and Parquet shredding alignment:** Technical discussion on resolving inconsistencies between the Arrow Variant extension and the Parquet shredding specification, specifically regarding unsigned integer support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
+
+* **C FFI field name clarification:** Analysis of how the C Data Interface should handle field names containing null bytes to ensure safety when round-tripping between implementations that use different string formats. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
+
+* **Bug squashing and stale issue cleanup:** A coordinated effort to triage older bug reports and verify if they persist in current Arrow versions, with a call for community volunteers to help manage the backlog. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
