@@ -1,15 +1,1 @@
-* **Arrow 25.0.0 release:** Major release including 222 resolved issues across various implementations; a follow-up 25.0.1 patch is discussed to optimize PyArrow performance for Spark users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
-
-* **JSON representation of Arrow schemas:** Discussion on establishing a canonical human-readable JSON format for schemas to improve ergonomics for ADBC metadata and JSON-based API contracts. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **Deprecation of IPC Tensor and SparseTensor messages:** Proposal to phase out experimental IPC-level tensor messages in favor of modern canonical extension types like `FixedShapeTensorArray`. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20IPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
-
-* **ADBC 24 release and documentation overhaul:** Release of ADBC version 24 alongside a significant restructuring of the documentation to better distinguish between ASF and vendor-developed drivers. [Thread 1](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20ADBC%2024%20-%20RC2) | [Thread 2](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Documentation%20overhauled%20for%20ADBC)
-
-* **Semantics of non-nullable fields in nested types:** Deep technical debate on how the `nullable` flag should behave for child fields in structs and whether to support sparse representations using positional indices. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
-
-* **Swift version bump to 6.0:** Proposal to raise the minimum required Swift version to 6.0 to leverage native `Int128` support for high-precision decimal arithmetic. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Swift%20Proposal%20to%20raise%20minimum%20Swift%20version%20to%206.0)
-
-* **Variant extension and Parquet spec alignment:** Efforts to resolve inconsistencies between the Arrow Variant extension and the Parquet shredding specification, specifically regarding unsigned integer support. [Thread 1](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Allow%20VARIANT%20value%20field%20to%20be%20omitted) | [Thread 2](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
-
-* **Community initiative for issue cleanup:** Call for volunteers to help reproduce old bug reports and clear stale issues from the project backlog. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Closing%20out%20old%20issues%20-%20extra%20help%20wanted)
+Summary generation failed. Please check the mailing list directly.
