@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Apache Arrow 25.0.0 release:** A major release consisting of over 220 resolved issues across the project's various language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.0%20-%20RC1)
+
+* **JSON representation of Arrow schemas:** Proposal to define a canonical, human-readable JSON format for schemas to improve ergonomics for REST APIs and ADBC metadata. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussFormat%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **Deprecating IPC Tensor messages:** Discussion on deprecating dedicated experimental IPC messages for Tensor and SparseTensor in favor of using canonical extension types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussIPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
+
+* **Semantics of non-nullable nested fields:** Technical investigation into how the `nullable` flag should be interpreted for child elements in complex structures like structs and unions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Discuss%20Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
+
+* **Swift minimum version bump to 6.0:** Proposal to raise the minimum Swift requirement to 6.0 to leverage native 128-bit integer support for decimal implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussSwift%20Proposal%20to%20raise%20minimum%20Swift%20version%20to%206.0)
+
+* **Apache Arrow ADBC 24 release:** Version 24 of the ADBC libraries was released, featuring an overhaul of the project documentation site and updates across multiple drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20ADBC%2024%20-%20RC1)
+
+* **Variant extension spec inconsistencies:** Identification of discrepancies between the Arrow Variant canonical extension and the Parquet shredding specification regarding unsigned integer support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussFormat%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
+
+* **C FFI field name nul bytes:** Technical discussion on the handling of nul bytes in field names within the C Data Interface, which can cause issues despite being valid in standard IPC. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
