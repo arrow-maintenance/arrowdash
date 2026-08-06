@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **JSON Schema Representation:** Discussion on a proposed JSON format for Arrow schemas, debating human-readability versus machine-readability and how to handle metadata and extension types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:JSON%20representation%20of%20Arrow%20schemas)
+
+* **Arrow 25.0.0 and 25.0.1 Releases:** The community released version 25.0.0 and quickly initiated a 25.0.1 patch release to include PyArrow performance improvements for Spark UDF serialization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Apache%20Arrow%2025.0.0%20released)
+
+* **ADBC 24 Release and Documentation Overhaul:** Major release for the Arrow Database Connectivity (ADBC) libraries, featuring an overhauled documentation site to better distinguish between ASF and vendor-provided drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Apache%20Arrow%20ADBC%2024%20Released)
+
+* **Nullability Semantics in Nested Types:** A technical debate regarding how the `nullable` flag should be interpreted for complex types like nested structs and dictionaries, including proposals for positional indices to handle uneven child arrays. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
+
+* **Windows Arm64 Support for PyArrow:** Microsoft and Linaro proposed a plan to provide win_arm64 wheels, offering engineering resources for CI maintenance and hardware for core maintainers to debug platform issues. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:win_arm64%20support%20for%20PyArrow%20proposed%20plan%20and%20commitment)
+
+* **Swift 6.0 Minimum Version Proposal:** Proposal to raise the minimum Swift requirement to 6.0 to leverage native Int128 support, which is essential for robust Decimal type implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20to%20raise%20minimum%20Swift%20version%20to%206.0)
+
+* **Variant Extension Spec Inconsistency:** Discussion on resolving discrepancies between the Arrow Canonical Extension spec and the Parquet Shredding spec regarding unsigned integer mappings for Variant types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
+
+* **C Data Interface Field Name Clarification:** Discussion on how the C FFI should handle embedded null bytes in field names, with a consensus that producers should detect these cases and error out rather than panicking. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
+
+* **New Arrow PMC Member:** The community welcomed Jeffrey Vo as a new member of the Project Management Committee. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:New%20Arrow%20PMC%20member%20Jeffrey%20Vo%20Jefffrey)
