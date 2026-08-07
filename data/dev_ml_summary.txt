@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow 25.0.0 and 25.0.1 releases:** Apache Arrow 25.0.0 was released with 222 resolved issues, followed immediately by a 25.0.1 patch to address a performance regression in PyArrow's `to_pylist` conversion for nested types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.1%20-%20RC1)
+
+* **JSON representation of Arrow schemas:** Discussion on creating a standardized, human-friendly JSON representation of Arrow schemas to improve interoperability for REST APIs and ADBC. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **Windows on ARM (win_arm64) support:** Microsoft and Linaro proposed a plan to add `win_arm64` support for PyArrow, including commitments for dedicated engineering time, hardware for maintainers, and a unified build path. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Python%20CI%20win_arm64%20support%20for%20PyArrow%20proposed%20plan%20and%20commitment)
+
+* **Semantics of non-nullable fields:** A deep dive into how the `nullable` flag should be interpreted for non-trivial types, specifically dealing with conflicts between parent struct and child array nullability bitmaps. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
+
+* **ADBC 24 release and documentation overhaul:** Release of ADBC version 24 alongside a complete overhaul of the documentation site to clarify the distinction between ASF-maintained and vendor-provided drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20ADBC%2024%20-%20RC1)
+
+* **Swift version bump to 6.0:** Proposal to raise the minimum Swift requirement to 6.0 to leverage native `Int128` support, which is essential for implementing Decimal types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Swift%20Proposal%20to%20raise%20minimum%20Swift%20version%20to%206.0)
+
+* **C Data Interface field names:** Clarification that embedded nul bytes are valid in Arrow field names but must be handled as errors in the C Data Interface to avoid compatibility issues with C-style strings. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
+
+* **NumPy 2.0 minimum requirement:** Discussion on requiring NumPy 2.0 or newer for future Arrow releases to facilitate better conversion support for NumPy variable-width string data. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Requiring%20NumPy%202.0%20or%20newer%20in%20the%20next%20Arrow%20release)
+
+* **New PMC Member:** The community welcomed Jeffrey Vo (Jefffrey) as the newest member of the Apache Arrow Project Management Committee. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20New%20Arrow%20PMC%20member%20Jeffrey%20Vo%20Jefffrey)
