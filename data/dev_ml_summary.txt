@@ -1,17 +1,1 @@
-* **Release of Apache Arrow 25.0.0 and 25.0.1 RC1:** Following the release of version 25.0.0, the community is quickly voting on a 25.0.1 patch to include critical performance improvements for `to_pylist()` and nested types needed for the Spark 4.2 timeline. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%2025.0.1%20-%20RC1)
-
-* **Windows on Arm support for PyArrow:** Microsoft and Linaro engineers proposed a roadmap for `win_arm64` wheels, committing to assist with `abi3` wheel consolidation and providing hardware for maintainers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:win_arm64%20support%20for%20PyArrow%20proposed%20plan%20and%20commitment)
-
-* **Proposal to raise minimum Swift version to 6.0:** Discussion on bumping the Swift requirement to 6.0 to leverage native `Int128` support, which is a prerequisite for implementing Arrow Decimal types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20to%20raise%20minimum%20Swift%20version%20to%206.0)
-
-* **ADBC 24 release and documentation overhaul:** The Arrow Database Connectivity (ADBC) subproject released version 24, featuring an overhauled documentation site to clarify the status of drivers maintained by external vendors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20ADBC%2024%20-%20RC2)
-
-* **Semantics of non-nullable fields in nested types:** A technical debate regarding how the `nullable` flag in IPC should be interpreted for complex types like structs and unions when parent-level nulls exist. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
-
-* **JSON representation of Arrow schemas:** Discussion on creating an unambiguous and human-friendly JSON format for schemas to improve interoperability for REST APIs and ADBC. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:JSON%20representation%20of%20Arrow%20schemas)
-
-* **C Data Interface field name clarifications:** Developers reached a consensus on validating field names at the producer level to prevent embedded null bytes from causing issues during C FFI transfers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Spec%20clarification%20on%20field%20names)
-
-* **Variant extension spec vs. Parquet shredding:** Identifying and resolving inconsistencies between the Arrow Variant extension and the Parquet shredding specification regarding unsigned integer mappings. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
-
-* **Requirement for NumPy 2.0 or newer:** A proposal to require NumPy 2.0+ in future releases to enable support for new NumPy variable-width string types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Requiring%20NumPy%202.0%20or%20newer%20in%20the%20next%20Arrow%20release)
+Summary generation failed. Please check the mailing list directly.
