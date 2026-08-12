@@ -1,15 +1,1 @@
-* **Apache Arrow 25.0.0 release:** The community announced the release of version 25.0.0, which resolves 222 issues across the project's various language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2025.0.0%20released)
-
-* **Nullability semantics for non-trivial types:** Technical discussion on clarifying the meaning of the `nullable` flag in IPC format for complex types like nested structs or dictionary-encoded arrays. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Semantics%20of%20non-nullable%20fields%20with%20non-trivial%20types)
-
-* **Windows Arm64 support for PyArrow:** Proposal to add `win_arm64` build support for PyArrow, with commitments from Microsoft for engineering resources and hardware for maintainers to debug failures. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Python%20CI%20win_arm64%20support%20for%20PyArrow%20proposed%20plan%20and%20commitment)
-
-* **ADBC 24 release and documentation overhaul:** Release of ADBC version 24 alongside a documentation refresh intended to clarify the roles of ASF-maintained versus vendor-developed drivers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20ADBC%2024%20Released)
-
-* **Concurrent PR limits for non-committers:** Discussion on implementing a limit for the number of open pull requests a non-committer can have simultaneously to manage stale contributions and low-value AI generated content. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Limit%20on%20concurrent%20open%20PRs%20for%20non-committers)
-
-* **Variant specification inconsistency:** Proposal to align the Arrow Variant extension specification with the Parquet Variant shredding specification to resolve differences in unsigned integer support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
-
-* **Swift version bump to 6.0:** Proposal to raise the minimum required Swift version to 6.0 to leverage native `Int128` support for high-precision decimal arithmetic. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Swift%20Proposal%20to%20raise%20minimum%20Swift%20version%20to%206.0)
-
-* **NumPy 2.0 dependency for future releases:** Discussion regarding requiring NumPy 2.0 or newer to enable the conversion of NumPy's new variable-width string data to Arrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Requiring%20NumPy%202.0%20or%20newer%20in%20the%20next%20Arrow%20release)
+Summary generation failed. Please check the mailing list directly.
