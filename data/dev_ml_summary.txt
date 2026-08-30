@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Windows on ARM support for PyArrow:** Microsoft and Linaro proposed a plan to support win_arm64 builds, including CI commitment, unified Windows build paths, and moving toward abi3 wheels to manage PyPI package size. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Python%20CI%20win_arm64%20support%20for%20PyArrow%20proposed%20plan%20and%20commitment)
+
+* **Limits on concurrent open pull requests:** Discussion on limiting non-committers to three concurrent open PRs to reduce stale contributions and manage an uptick in low-quality or AI-generated PRs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Limit%20on%20concurrent%20open%20PRs%20for%20non-committers)
+
+* **Canonical BigDecimal extension type:** A proposal was introduced for an `arrow.big_decimal` type to facilitate high-fidelity RDBMS data transport, though the vote was paused to further evaluate compute requirements and ecosystem alignment. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Format%20Proposal%20for%20Canonical%20BigDecimal%20Extension%20Type)
+
+* **Apache Arrow 25.0.1 release:** The community released version 25.0.1, a patch release addressing nine issues including performance improvements for `to_pylist()` on nested types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2025.0.1%20released)
+
+* **Variant and Parquet spec consistency:** Developers discussed reconciling inconsistencies between the Arrow Variant extension and Parquet shredding specifications, specifically regarding the handling of unsigned integers and null types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
+
+* **ArxLang introduction:** Presentation of Arx, an experimental programming language designed with Apache Arrow as its native foundation for data types, tensors, and DataFrames. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
+
+* **Lazy memory mapping for Parquet:** Proposal for a library that uses custom memory fault handling to lazily load Parquet columns into NumPy arrays, allowing for zero-copy vectorized operations across row groups. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Parquet%20C%20Python%20Lazy%20memory%20mapping)
+
+* **Nanoarrow 0.9.0 release:** The nanoarrow sub-project released version 0.9.0, featuring 38 resolved issues and improvements across C, R, and Python bindings. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20nanoarrow%200.9.0)
+
+* **Arrow Rust releases:** The Rust implementation saw the approval and release of version 59.2.0, with a follow-up release candidate (59.3.0) currently under vote to address regression fixes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2059.2.0%20RC1)
