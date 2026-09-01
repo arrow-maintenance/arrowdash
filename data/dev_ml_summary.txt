@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow 25.0.1 and nanoarrow 0.9.0 releases:** The community successfully released Apache Arrow 25.0.1, nanoarrow 0.9.0, and several versions of the Rust implementation (59.2.0 and 59.3.0). [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.1%20-%20RC1)
+
+* **Windows Arm64 support for PyArrow:** Gleb Khmyznikov proposed a plan for `win_arm64` support, including funding for engineering commitment from Microsoft/Linaro to handle build consolidation and ABI3 work. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSPythonCI%20win_arm64%20support%20for%20PyArrow%20proposed%20plan%20and%20commitment)
+
+* **Deprecating Tensor and SparseTensor in IPC:** A vote was initiated to informally deprecate Tensor and SparseTensor messages in the IPC protocol due to low adoption and limited cross-language implementation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+
+* **Limiting concurrent PRs for non-committers:** Discussion on limiting non-committers to 3 concurrent PRs to manage a rise in stale or low-quality AI-generated contributions that hinder active maintainers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Limit%20on%20concurrent%20open%20PRs%20for%20non-committers)
+
+* **BigDecimal extension proposal status:** Active work on the `arrow.big_decimal` canonical extension type was paused to re-evaluate ecosystem requirements, compute kernel support, and memory layout performance. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISC%20Status%20update%20on%20arrow.big_decimal%20extension%20proposal)
+
+* **ArxLang - Arrow-native programming language:** Ivan Ogasawara introduced Arx, an experimental language using Apache Arrow as the native foundation for its runtime, arrays, tensors, and DataFrames. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
+
+* **Lazy memory mapping for Parquet:** A proposal explores using custom fault handling to lazily map Parquet columns into memory, facilitating zero-copy NumPy operations over entire columns without explicit row-group handling. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSParquetCPython%20Lazy%20memory%20mapping)
+
+* **Requiring NumPy 2.0:** Discussion on moving to a NumPy 2.0 minimum requirement for future releases to enable more efficient conversion of variable-width string data. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Requiring%20NumPy%202.0%20or%20newer%20in%20the%20next%20Arrow%20release)
+
+* **Community Updates and Hackathon:** The project announced new PMC member Jeffrey Vo and new committers Tadeja Kadunc and Zehua Zou, while preparing for an in-person hackathon in Glasgow this October. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Arrow%20Hackathon%20at%20Community%20Over%20Code%20Conference%202026)
