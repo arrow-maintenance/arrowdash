@@ -1,17 +1,1 @@
-* **Windows Arm64 support for PyArrow:** Engineers from Microsoft and Linaro proposed a commitment to support win_arm64 builds, including engineering resources for CI maintenance and a transition to the abi3 wheel format. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSPythonCI%20win_arm64%20support%20for%20PyArrow%20proposed%20plan%20and%20commitment)
-
-* **Apache Arrow 25.0.1 release:** This patch release was finalized to address performance regressions in nested type conversions and resolve timezone handling issues in Gandiva. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.1%20-%20RC1)
-
-* **Limiting concurrent PRs for non-committers:** Discussion on implementing a limit of three open pull requests for contributors without write access to manage the influx of AI-generated spam and stale contributions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Limit%20on%20concurrent%20open%20PRs%20for%20non-committers)
-
-* **BigDecimal extension proposal paused:** Active work on the canonical BigDecimal extension type has been paused to re-evaluate ecosystem requirements and direct support for compute kernels. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISC%20Status%20update%20on%20arrow.big_decimal%20extension%20proposal)
-
-* **Tensor IPC message deprecation:** Developers are considering deprecating Tensor and SparseTensor messages within the IPC format due to a lack of complete implementations outside of the C++ library. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DiscussIPC%20Deprecate%20Tensor%20and%20SparseTensor%20messages%3F)
-
-* **Experimental Arx programming language:** The community was introduced to Arx, an experimental language built with Apache Arrow as its native foundation for data-oriented runtimes and data types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
-
-* **Lazy memory mapping for Parquet:** A proposal introduced a method using custom page fault handling to allow lazy, zero-copy loading of Parquet columns through an mmap-like interface. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSParquetCPython%20Lazy%20memory%20mapping)
-
-* **Variant and Parquet shredding alignment:** Discussion on aligning the Variant extension specification with Parquet to explicitly disallow types like unsigned integers and nulls in the typed_value representation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
-
-* **Apache Arrow Rust 59.3.0 release:** The Rust implementation reached version 59.3.0, following a series of release candidates to address minor bugs in the build process. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20Rust%2059.3.0%20RC2)
+Summary generation failed. Please check the mailing list directly.
