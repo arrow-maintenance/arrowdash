@@ -1,15 +1,1 @@
-* **Apache Arrow 25.0.1 release:** The community released version 25.0.1, a patch release addressing nine issues in the C++ and Python implementations, including significant performance improvements for `to_pylist()` on nested types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2025.0.1%20released)
-
-* **Deprecation of Tensor and SparseTensor in IPC:** Developers voted to informally deprecate Tensor and SparseTensor messages within the IPC protocol, encouraging implementations to move away from these sparsely supported features to reduce maintenance overhead. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
-
-* **Limiting concurrent PRs for non-committers:** Discussion on implementing a limit of three concurrent open pull requests for contributors without write access to maintain review quality and manage an influx of stale or AI-generated contributions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Limit%20on%20concurrent%20open%20PRs%20for%20non-committers)
-
-* **Windows ARM64 support for PyArrow:** Microsoft and Linaro proposed a plan to enable Windows ARM64 builds for PyArrow, offering dedicated engineering resources and CI hardware to ensure the platform's stability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSPythonCI%20win_arm64%20support%20for%20PyArrow%20proposed%20plan%20and%20commitment)
-
-* **Canonical BigDecimal extension type proposal:** A proposal for a new `arrow.big_decimal` canonical extension type was discussed to handle arbitrary-precision decimals from RDBMS sources, though the effort is currently paused to better align on compute requirements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEFormat%20Proposal%20for%20Canonical%20BigDecimal%20Extension%20Type)
-
-* **Variant extension spec refinement:** Contributors are working to resolve inconsistencies between the Variant extension specification and Parquet shredding to ensure interoperability across different implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
-
-* **ArxLang Arrow-native programming language:** Introduction of Arx, an experimental programming language that uses Apache Arrow as its native foundation for data-oriented runtimes, arrays, and DataFrames. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
-
-* **Community Over Code Hackathon:** The project is preparing for an Arrow hackathon at the upcoming Community Over Code conference in Glasgow, focusing on curated tasks for new and existing contributors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Arrow%20Hackathon%20at%20Community%20Over%20Code%20Conference%202026)
+Summary generation failed. Please check the mailing list directly.
