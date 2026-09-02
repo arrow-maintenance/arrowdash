@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Windows Arm64 support for PyArrow:** Microsoft proposed a plan to add `win_arm64` support, including a commitment to maintain CI and transition to abi3 wheels to manage PyPI project size. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Python%20CI%20win_arm64%20support%20for%20PyArrow%20proposed%20plan%20and%20commitment)
+
+* **Concurrency limits on pull requests:** Developers discussed limiting non-committers to three concurrent open pull requests to maintain project quality and mitigate the impact of low-value or AI-generated contributions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Limit%20on%20concurrent%20open%20PRs%20for%20non-committers)
+
+* **Deprecation of Tensor messages in IPC:** The community voted to informally deprecate Tensor and SparseTensor messages in the IPC protocol, encouraging implementations to move toward more robust alternatives. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+
+* **Arrow 25.0.1 release:** The community released version 25.0.1, a patch release resolving nine issues, including significant performance improvements for nested type conversions in PyArrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2025.0.1%20-%20RC1)
+
+* **Canonical BigDecimal extension type:** A proposal to standardize a BigDecimal extension type for arbitrary-precision decimals was discussed and eventually paused to better align with ecosystem compute requirements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Format%20Proposal%20for%20Canonical%20BigDecimal%20Extension%20Type)
+
+* **New FILE extension type proposal:** Discussion began on adding a canonical `arrow.file` extension type to represent file references (URI, offset, size) consistently with the new Parquet FILE logical type. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20Canonical%20Extension%20Type%20for%20FILE%20type)
+
+* **Variant and Parquet shredding alignment:** Developers are working to align the Arrow Variant extension with Parquet shredding specifications, specifically regarding the handling of unsigned integers and null values. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
+
+* **Community expansion:** The project welcomed Jeffrey Vo to the Project Management Committee (PMC) and appointed Tadeja Kadunc and Zehua Zou as new committers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20New%20Arrow%20PMC%20member%20Jeffrey%20Vo%20Jefffrey)
+
+* **ArxLang introduction:** Developers were introduced to Arx, an experimental programming language designed with Apache Arrow as its native foundation for data-oriented runtimes and types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
