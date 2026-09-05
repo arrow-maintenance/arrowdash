@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Limit on concurrent open PRs:** Proposal to limit non-committers to 3 concurrent open pull requests to mitigate an uptick in low-value, AI-generated contributions and reduce the maintenance burden of stale PRs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Limit%20on%20concurrent%20open%20PRs%20for%20non-committers)
+
+* **Deprecation of Tensor messages in IPC:** The community voted to informally deprecate Tensor and SparseTensor messages in the IPC protocol because they lack broad cross-language support and are rarely used. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+
+* **BigDecimal extension type proposal:** Discussion began on a canonical `arrow.big_decimal` type for variable-scale numeric data, though active work is currently paused to better evaluate ecosystem requirements and compute kernel support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20for%20Canonical%20BigDecimal%20Extension%20Type) | [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20update%20on%20arrow.big%5Fdecimal%20extension%20proposal)
+
+* **Introduction of ArxLang:** Introduction of Arx, an experimental programming language designed with Apache Arrow as its native foundation for data types and runtime, including support for Arrow C Data interoperability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
+
+* **FILE canonical extension type:** Proposal to add an `arrow.parquet.file` extension type to align with the Parquet specification’s new FILE logical type, enabling standardized file-level references within Arrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Canonical%20Extension%20Type%20for%20FILE%20type)
+
+* **Variant extension and Parquet alignment:** Technical discussion on aligning the Arrow Variant extension specification with Parquet shredding, specifically regarding the handling of unsigned integers and null types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
+
+* **Apache Arrow 25.0.1 release:** The community released version 25.0.1, a patch release addressing 9 issues including significant performance improvements for Python nested type conversions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Apache%20Arrow%2025.0.1%20released)
+
+* **New Project Committers:** The community welcomed three new committers this month for their sustained contributions: Tadeja Kadunc, Zehua Zou, and Kosta Tarasov. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:New%20Arrow%20committer%20Tadeja%20Kadunc) | [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:New%20committer%20Zehua%20Zou) | [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:New%20Arrow%20committer%20Kosta%20Tarasov)
