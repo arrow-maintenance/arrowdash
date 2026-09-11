@@ -1,15 +1,1 @@
-* **Tensor and SparseTensor deprecation:** The community voted to informally deprecate Tensor-related IPC messages to streamline the protocol, citing a lack of cross-language implementation support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
-
-* **BigDecimal canonical extension proposal:** A proposal for an `arrow.big_decimal` type to represent arbitrary-precision numerics was paused to allow for further investigation into ecosystem compatibility and compute kernel requirements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEFormat%20Proposal%20for%20Canonical%20BigDecimal%20Extension%20Type)
-
-* **Proposed limits on concurrent PRs:** Developers are discussing a policy to limit non-committers to three open pull requests at a time to help maintainers manage a high volume of submissions and reduce potential spam. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Limit%20on%20concurrent%20open%20PRs%20for%20non-committers)
-
-* **ArrowMetal 0.1.0 release:** A new project was announced providing Arrow compute kernels for Apple silicon GPUs via Metal, utilizing the C Device Data Interface for zero-copy memory sharing. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
-
-* **ArxLang introduction:** Presentation of Arx, an experimental programming language designed with Apache Arrow as its native foundation for arrays, tensors, and DataFrames. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
-
-* **FILE canonical extension type:** Discussion on standardizing an `arrow.parquet.file` extension type to preserve semantic metadata when representing file-level references standardized in the Parquet format. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Canonical%20Extension%20Type%20for%20FILE%20type)
-
-* **Lazy memory mapping for Parquet:** Proposal to use custom fault handling to lazily map Parquet columns to memory-like interfaces, allowing vectorized operations without explicit row-group handling. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSParquetCPython%20Lazy%20memory%20mapping)
-
-* **Variant extension and Parquet shredding alignment:** Efforts are underway to refine the Variant extension specification to ensure it accurately maps to the Parquet shredding spec, particularly regarding unsigned integer types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
+Summary generation failed. Please check the mailing list directly.
