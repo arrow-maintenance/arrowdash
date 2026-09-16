@@ -1,17 +1,1 @@
-* **Arrow Hackathon 2026:** Announcement of an in-person hackathon at the Community Over Code conference in Glasgow on October 13, 2026, aimed at both new and experienced contributors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Arrow%20Hackathon%20at%20Community%20Over%20Code%20Conference%202026)
-
-* **Variant extension spec alignment:** Discussion on a proposal to explicitly disallow shredded columns in the Arrow representation that have no equivalent type in the Variant spec, such as unsigned integers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
-
-* **BigDecimal extension status:** Work on the canonical `arrow.big_decimal` extension type has been paused to gather more information on ecosystem requirements and compute kernel support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISC%20Status%20update%20on%20arrow.big_decimal%20extension%20proposal)
-
-* **ArxLang introduction:** Developers shared details on Arx, an experimental programming language that uses Apache Arrow as the native foundation for its runtime and data types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
-
-* **Deprecation of Tensor messages in IPC:** The community voted to informally deprecate Tensor and SparseTensor messages in the IPC protocol to streamline the format. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
-
-* **Lazy memory mapping for Parquet:** Proposal for a technique using custom fault handling to map Parquet address ranges lazily, allowing entire columns to be treated as zero-copy NumPy arrays. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSParquetCPython%20Lazy%20memory%20mapping)
-
-* **ArrowMetal GPU compute:** Announcement of ArrowMetal 0.1.0, which implements Arrow compute kernels on Apple Silicon GPUs via Metal using zero-copy shared memory. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
-
-* **Canonical Extension Type for Files:** Discussion on adding `arrow.parquet.file` to the specification to provide a canonical in-memory representation of the new Parquet FILE LogicalType. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Canonical%20Extension%20Type%20for%20FILE%20type)
-
-* **Arrow Rust 60.0.0 release:** The latest major version of the Rust implementation was released, featuring new support for ALP encoding in Parquet and significant performance improvements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULTVOTERUST%20Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
+Summary generation failed. Please check the mailing list directly.
