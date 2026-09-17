@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **ArrowMetal 0.1.0 release:** Introduction of a new project providing Arrow compute kernels for Apple silicon GPUs using Metal, featuring shared-storage memory for zero-copy CPU/GPU interaction. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
+
+* **Deprecation of Tensor and SparseTensor in IPC:** The community voted to informally deprecate these messages in the IPC protocol because they lack cross-implementation support and are rarely used. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+
+* **BigDecimal extension proposal status:** Active work on the `arrow.big_decimal` proposal has been paused to gather more information on ecosystem practices and compute kernel requirements for arbitrary-precision types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20update%20on%20arrow.big_decimal%20extension%20proposal)
+
+* **Arrow Rust 60.0.0 release:** This major release includes the first implementation of Adaptive Lossless Floating-Point (ALP) encoding for Parquet and new PageIndex structures. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
+
+* **Canonical Extension Type for FILE:** Proposal to define an `arrow.parquet.file` extension type to preserve the semantics of Parquet's recently standardized FILE logical type across Arrow streams. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Canonical%20Extension%20Type%20for%20FILE%20type)
+
+* **ArxLang introduction:** Discussion of an experimental programming language designed with Apache Arrow as its native foundation for data-oriented runtimes and types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
+
+* **Lazy memory mapping for Parquet:** Exploration of a custom fault-handling library to expose Parquet columns through an mmap-like interface, allowing row groups to be loaded lazily during access. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Lazy%20memory%20mapping)
+
+* **Conbench overhaul and storage model:** Discussion on moving the Conbench benchmarking platform toward a model where data is stored in Parquet files and queried via DuckDB instead of a traditional Postgres system. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20of%20Arrow%20conbench%20data%20+%20conbench%20OSS%20project)
+
+* **New Committers:** The project welcomed Zehua Zou and Kosta Tarasov as new committers following their contributions to the community. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:New%20committer%20Zehua%20Zou) [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:New%20Arrow%20committer%20Kosta%20Tarasov)
