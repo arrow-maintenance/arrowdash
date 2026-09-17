@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **ArrowMetal announcement:** Introduction of a new library for running Arrow compute kernels on Apple silicon GPUs using shared memory and the C Device Data Interface. It supports several languages through the C ABI and provides a differential testing suite against pyarrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
+
+* **Deprecation of Tensor messages in IPC:** The community voted to informally deprecate Tensor and SparseTensor messages within the IPC protocol. This move encourages implementations to transition away from these formats as they lack broad cross-language support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+
+* **Arrow Rust 60.0.0 release:** The major v60.0.0 release of the Rust implementation includes new support for Adaptive Lossless Floating-Point (ALP) encoding in Parquet. It also features significant performance improvements for PageIndex structures and string processing. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULTVOTERUST%20Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
+
+* **BigDecimal extension proposal paused:** Work on the `arrow.big_decimal` canonical extension type has been paused to gather more information on ecosystem requirements. Developers are seeking feedback on how different tools handle arbitrary-precision numerics and the necessity of compute kernel support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISC%20Status%20update%20on%20arrow.big_decimal%20extension%20proposal)
+
+* **ArxLang introduction:** Presentation of Arx, an experimental programming language designed with Apache Arrow as its native foundation for data types and runtime. The project currently leverages Arrow C++ for arrays, tensors, and DataFrames. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
+
+* **Canonical Extension Type for FILE:** A proposal to define an `arrow.parquet.file` extension type to align Arrow in-memory representation with the new Parquet FILE LogicalType. This would preserve file-level references (URI, offset, size) across IPC and Flight streams. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Canonical%20Extension%20Type%20for%20FILE%20type)
+
+* **Arrow Go 18.8.0 release:** The Go libraries have been updated to v18.8.0, including nearly 300 commits. The release process addressed build compatibility issues with newer Go toolchains (v1.23+). [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20Go%20v18.8.0%20Released)
+
+* **New committers:** The project welcomed Zehua Zou and Kosta Tarasov as new committers following their consistent contributions to the ecosystem. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:New%20committer%20Zehua%20Zou) [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20New%20Arrow%20committer%20Kosta%20Tarasov)
+
+* **Variant extension consistency:** Discussion on refining the Arrow Variant extension specification to explicitly disallow certain shredded types that lack equivalent representation in Variant, such as unsigned integers. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
