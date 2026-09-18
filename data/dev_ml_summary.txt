@@ -1,17 +1,1 @@
-* **BigDecimal canonical extension proposal:** Discussion on standardizing a high-precision decimal type for RDBMS interoperability has been paused to re-evaluate compute kernel requirements and broader ecosystem practices. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Format%20Proposal%20for%20Canonical%20BigDecimal%20Extension%20Type)
-
-* **ArxLang introduction:** Developers introduced Arx, an experimental programming language designed with Apache Arrow as its native foundation for data-oriented runtimes and types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
-
-* **Deprecation of IPC Tensor messages:** The community voted to informally deprecate Tensor and SparseTensor messages in the IPC protocol due to limited implementation across languages and low usage. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
-
-* **ArrowMetal 0.1.0 announcement:** A new project was announced that provides Arrow compute kernels for Apple Silicon GPUs via Metal, enabling zero-copy shared memory between CPU and GPU. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
-
-* **Canonical FILE extension type:** Proposal to define an `arrow.parquet.file` extension type to align with Parquet's logical type for file-level references across IPC and serialization. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Format%20Canonical%20Extension%20Type%20for%20FILE%20type)
-
-* **Arrow Rust 60.0.0 release:** This major release includes new support for Adaptive Lossless Floating-Point (ALP) encoding in Parquet and significant performance improvements for page indexing. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
-
-* **Variant extension spec consistency:** Discussion on refining the Variant specification to explicitly disallow shredded columns in the Arrow representation that have no equivalent type in Variant. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Format%20Variant%20extension%20spec%20inconsistent%20with%20the%20Parquet%20shredding%20spec)
-
-* **Arrow Go 18.8.0 release:** The Go implementation was updated to version 18.8.0, including fixes for Go 1.27 toolchains and over 280 commits from the community. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20Go%20v18.8.0%20Released)
-
-* **Lazy memory mapping for Parquet:** Proposal for using custom fault handling to lazily map Parquet column address ranges to memory, allowing zero-copy access to large datasets without explicit row-group handling. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Parquet%20C%20Python%20Lazy%20memory%20mapping)
+Summary generation failed. Please check the mailing list directly.
