@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **BigDecimal extension type proposal:** Discussion on a canonical `arrow.big_decimal` extension for arbitrary precision decimals; work is currently paused to better align with ecosystem compute requirements and RDBMS interoperability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Proposal%20for%20Canonical%20BigDecimal%20Extension%20Type)
+
+* **ArxLang introduction:** Arx is an experimental programming language being developed with Apache Arrow as its native foundation for data-oriented runtime and data types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ArxLang%20Arrow-native%20data%20types%20in%20a%20programming%20language)
+
+* **Deprecation of Tensor and SparseTensor in IPC:** A vote passed to informally deprecate Tensor and SparseTensor messages in the IPC protocol due to limited support across language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+
+* **Lazy memory mapping for Parquet:** Proposal to use custom fault handling to map Parquet columns lazily to memory, hiding row-group boundaries and enabling vectorized operations over entire columns. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Parquet%20C%20Python%20Lazy%20memory%20mapping)
+
+* **Arrow Rust 60.0.0 release:** The major 60.0.0 release of the Rust implementation includes new support for ALP encoding in Parquet and significant performance improvements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
+
+* **ArrowMetal GPU compute:** Announcement of ArrowMetal 0.1.0, a library providing zero-copy Arrow compute kernels that run on Apple silicon GPUs through the Metal API. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
+
+* **FILE canonical extension type:** Proposal to define `arrow.parquet.file` as a canonical extension type to represent file-level references in-memory, aligning with the Parquet specification. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Canonical%20Extension%20Type%20for%20FILE%20type)
+
+* **Reviewer guidelines for AI contributions:** Discussion on establishing procedures for reviewers to handle low-quality AI-generated contributions and escalation paths for non-conforming pull requests. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AI-generated%20contributions)
+
+* **New project committers:** The community welcomed Zehua Zou and Kosta Tarasov as new committers to the Apache Arrow project for their contributions to the C++ and Rust implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:New%20committer%20Zehua%20Zou) [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:New%20Arrow%20committer%20Kosta%20Tarasov)
