@@ -1,15 +1,1 @@
-* **Deprecation of Tensor and SparseTensor in IPC:** The community voted to informally deprecate Tensor and SparseTensor messages in the IPC protocol, as they lack broad cross-language support and are currently only fully implemented in C++. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
-
-* **ArrowMetal 0.1.0 announcement:** Introduction of ArrowMetal, a new project providing Arrow compute kernels for Apple silicon GPUs via the Metal API, allowing zero-copy memory sharing between CPU and GPU. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
-
-* **Dropping macOS Intel support:** Proposal to drop CI testing and official support for Intel-based Macs following Homebrew's decision to stop providing bottles for the architecture and reduced usage stats. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Drop%20macOS%20Intel%20support)
-
-* **AI-generated contribution guidelines:** Discussion on refining reviewer guidelines to handle low-quality AI-generated pull requests, including the proposal of a new "needs-author-engagement" label. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AI-generated%20contributions)
-
-* **Arrow Rust 60.0.0 release:** A major release of the Rust implementation featuring the first Parquet implementation of the ALP (Adaptive Lossless Floating-Point) encoding and new PageIndex structures. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
-
-* **Canonical Extension Type for FILE:** Proposal for an `arrow.parquet.file` extension type to provide a standardized in-memory representation for file-level references like URIs, offsets, and checksums. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Canonical%20Extension%20Type%20for%20FILE%20type)
-
-* **Limit on concurrent open PRs:** Agreement to limit non-committers to three concurrent open pull requests to better manage reviewer bandwidth and encourage higher engagement from contributors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Limit%20on%20concurrent%20open%20PRs%20for%20non-committers)
-
-* **BigDecimal extension status:** Active work on the `arrow.big_decimal` extension has been paused to re-evaluate the scope of work required for compute kernel support and align with broader ecosystem practices. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Status%20update%20on%20arrow.big_decimal%20extension%20proposal)
+Summary generation failed. Please check the mailing list directly.
