@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **IPC protocol deprecation:** The community voted to informally deprecate Tensor and SparseTensor messages in the IPC protocol due to limited implementation across languages and a focus on core columnar formats. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+
+* **AI-generated contribution guidelines:** Discussion on establishing reviewer guidelines to handle low-quality AI-generated PRs, including a proposed "needs-author-engagement" label to flag lack of technical follow-through. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
+
+* **Dropping macOS Intel support:** Proposal to drop official support and CI testing for macOS Intel architectures following Homebrew’s deprecation and analytics showing a significant decline in usage. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Drop%20macOS%20Intel%20support)
+
+* **ArrowMetal announcement:** Introduction of ArrowMetal 0.1.0, a new library providing zero-copy Arrow compute kernels for Apple Silicon GPUs by leveraging shared memory through the Metal API. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
+
+* **Canonical extension for FILE type:** Proposal for an `arrow.parquet.file` extension type to standardize how in-memory Arrow data preserves file-level reference semantics from the Parquet format. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Canonical%20Extension%20Type%20for%20FILE%20type)
+
+* **BigDecimal proposal status:** Active development of the canonical `arrow.big_decimal` extension type is currently paused to re-evaluate community requirements for compute kernel support and arbitrary-precision patterns. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISC%20Status%20update%20on%20arrow.big_decimal%20extension%20proposal)
+
+* **Apache Arrow Rust 60.0.0 release:** The Rust implementation reached version 60.0.0, notably becoming one of the first Parquet implementations to include support for Adaptive Lossless Floating-Point (ALP) encoding. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULTVOTERUST%20Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
+
+* **Lazy memory mapping for Parquet:** Discussion on using custom fault handling to map Parquet files to memory lazily, allowing row groups to be loaded only as their values are accessed. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSParquetCPython%20Lazy%20memory%20mapping)
