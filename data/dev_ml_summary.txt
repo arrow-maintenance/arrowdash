@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Deprecation of Tensor and SparseTensor messages:** A formal vote passed to informally deprecate Tensor and SparseTensor IPC messages to streamline the protocol and focus on features with broader multi-language support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+
+* **ArrowMetal announcement:** Introduction of ArrowMetal 0.1.0, providing Arrow compute kernels optimized for Apple silicon GPUs via the Metal API and shared memory to eliminate data transfer overhead. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
+
+* **PyArrow modularity improvements:** Proposal to split PyArrow into multiple wheels (e.g., separating S3 support) to reduce the monolithic package size and allow users to install only required components. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
+
+* **Dropping macOS Intel support:** Discussion on ending official support and CI testing for Intel-based Macs due to maintenance burdens and the deprecation of Intel bottles by Homebrew. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Drop%20macOS%20Intel%20support)
+
+* **Canonical Extension Types for FILE and ranges:** Proposals are progressing to standardize `arrow.parquet.file` for mapping Parquet logical types and `arrow.range` for representing bounded intervals. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Canonical%20Extension%20Type%20for%20FILE%20type) [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+
+* **Arrow Rust 60.0.0 release:** The major v60.0.0 release for Rust was approved, featuring new support for ALP encoding in Parquet, Parquet PageIndex structures, and performance improvements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTERUST%20Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
+
+* **AI-generated contribution guidelines:** Discussion on establishing reviewer guidelines for identifying low-quality AI contributions and implementing a "needs-author-engagement" label for such PRs. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
+
+* **Arrow Go 18.8.0 release:** The community released version 18.8.0 for Go, which resolves build issues on newer Go toolchains and updates the compute registry. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEGo%20Release%20Apache%20Arrow%20Go%2018.8.0%20RC1)
