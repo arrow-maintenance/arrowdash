@@ -1,17 +1,1 @@
-* **Tensor and SparseTensor deprecation in IPC:** The community voted to informally deprecate Tensor and SparseTensor messages in the IPC protocol due to limited cross-language implementation and low usage. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
-
-* **Canonical Extension Type for FILE:** Developers proposed a new `arrow.parquet.file` extension type to provide a standardized in-memory Arrow representation for Parquet's new FILE logical type. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Canonical%20Extension%20Type%20for%20FILE%20type)
-
-* **ArrowMetal for Apple Silicon GPUs:** Announcement of ArrowMetal, a project providing compute kernels that run on Apple GPUs via Metal, utilizing shared-storage memory for zero-copy data sharing between CPU and GPU. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
-
-* **Apache Arrow Rust 60.0.0 release:** A major release of the Rust implementation was approved, featuring the first Parquet implementation of the ALP encoding and significant performance improvements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
-
-* **AI-generated contribution guidelines:** Discussion regarding strengthening reviewer guidelines to handle low-quality AI contributions, including the potential introduction of a "needs-author-engagement" GitHub label. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AI-generated%20contributions)
-
-* **Dropping macOS Intel support:** A proposal was made to drop official CI support for Intel-based Macs following Homebrew’s deprecation of Intel bottles and declining usage metrics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Drop%20macOS%20Intel%20support)
-
-* **PyArrow modularity and wheel splitting:** A proof-of-concept was presented to split PyArrow into multiple wheels (e.g., `pyarrow-s3`) to reduce the monolithic package size and allow for optional component installation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Improve%20modularity%20of%20PyArrow)
-
-* **Apache Arrow Go 18.8.0 release:** The Go library was updated to version 18.8.0, resolving build issues for newer Go toolchains and fixing package registry tags. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Apache%20Arrow%20Go%20v18.8.0%20Released)
-
-* **Standardization of arrow.range extension:** Standardization work resumed on the `arrow.range` canonical extension type, with the community converging on a design using a single type with configurable boundary parameters. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Add%20arrow.range%20canonical%20extension%20type%20for%20bounded%20ranges)
+Summary generation failed. Please check the mailing list directly.
