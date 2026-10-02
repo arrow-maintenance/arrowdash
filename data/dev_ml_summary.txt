@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow Go 18.8.0 release:** The Go implementation was updated to version 18.8.0, resolving build issues related to Go 1.27 and fixing signature verification problems in the release candidate. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEGo%20Release%20Apache%20Arrow%20Go%2018.8.0%20RC1)
+
+* **Arrow Rust 60.0.0 release:** A major update to the Rust implementation featuring the first Parquet implementation of ALP encoding, new PageIndex structures, and extensive performance improvements for kernels. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULTVOTERUST%20Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
+
+* **Dropping macOS Intel support:** Proposal to drop CI support and official binaries for macOS Intel hardware as Homebrew and GitHub Actions move toward ARM-based runners. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Drop%20macOS%20Intel%20support)
+
+* **PyArrow modularity and wheel size:** Discussion on a proof-of-concept to split PyArrow into smaller, modular wheels (e.g., `pyarrow[s3]`) to reduce the monolithic package size on PyPI. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
+
+* **Deprecation of Tensor types in IPC:** The community voted to informally deprecate Tensor and SparseTensor in the IPC format in favor of using Canonical Extension Types for better interoperability. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+
+* **ArrowMetal project announcement:** Introduction of ArrowMetal 0.1.0, which provides Arrow compute kernels for Apple Silicon GPUs via Metal using the C Device Data Interface. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
+
+* **Handling AI-generated contributions:** Discussion on establishing reviewer guidelines and a "needs-author-engagement" label to handle low-quality AI-generated pull requests. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
+
+* **New Canonical Extension Types:** Progress was made on standardizing extension types for Parquet files (`arrow.parquet.file`) and bounded ranges (`arrow.range`) to ensure consistency across implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Canonical%20Extension%20Type%20for%20FILE%20type)
