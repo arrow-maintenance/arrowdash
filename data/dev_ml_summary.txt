@@ -1,19 +1,17 @@
-* **Informal deprecation of Tensors in IPC:** The community voted to informally deprecate Tensor and SparseTensor in the IPC format to reduce specification complexity and reflect their limited usage. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
+* **PyArrow modularity and multi-wheel split:** Proposal to split PyArrow into multiple wheels (e.g., `pyarrow-s3`) to reduce the monolithic package size on PyPI and simplify installations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Improve%20modularity%20of%20PyArrow)
 
-* **Arrow Go 18.8.0 release:** The Go implementation release is finalized, including improvements to the compute registry and allocator alignment. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20Go%20v18.8.0%20Released)
+* **Dropping macOS Intel support:** Discussion on sunsetting official support and CI testing for Intel-based macOS following similar moves by Homebrew and Apple. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Drop%20macOS%20Intel%20support)
 
-* **Canonical Extension Type for FILE:** Discussion is underway to standardize an `arrow.parquet.file` extension type that maps directly to the Parquet FILE LogicalType for file-level references. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20Canonical%20Extension%20Type%20for%20FILE%20type)
+* **Handling AI-generated contributions:** Proposal to update reviewer guidelines and introduce a "needs-author-engagement" label to manage low-quality or low-effort AI-generated pull requests. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AI-generated%20contributions)
 
-* **ArrowMetal GPU compute kernels:** A new project, ArrowMetal, was announced providing 280+ Arrow compute kernels for Apple silicon GPUs using Metal with zero-copy shared memory. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
+* **Arrow Rust 60.0.0 release:** Major release of the Rust implementation featuring new Parquet ALP encoding support, improved kernel performance, and a focus on removing panics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
 
-* **Arrow Rust 60.0.0 release:** This major release introduces support for the new ALP encoding in Parquet, Parquet PageIndex structures, and numerous performance improvements across kernels. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUCNCE%20Arrow%20Rust%2060.0.0)
+* **ArrowMetal project announcement:** Introduction of a new compute library providing Arrow kernels optimized for Apple Silicon GPUs via the Metal API and C Device Interface. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
 
-* **Handling AI-generated contributions:** Developers are establishing guidelines for reviewers to manage low-quality AI PRs, including a new "needs-author-engagement" GitHub label. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
+* **Canonical Extension Type for FILE:** Proposal to standardize an `arrow.parquet.file` extension type to maintain parity with the Parquet format's FILE logical type. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Canonical%20Extension%20Type%20for%20FILE%20type)
 
-* **Proposal to drop macOS Intel support:** Due to Homebrew deprecating Intel bottles and very low usage statistics, the community is discussing removing macOS Intel from the official CI. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Drop%20macOS%20Intel%20support)
+* **Deprecation of Tensor types in IPC:** Successful vote to informally deprecate Tensor and SparseTensor in the IPC format and C++ API in favor of simpler conventions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
 
-* **PyArrow modularity and wheel splitting:** A proposal and proof-of-concept were shared to split PyArrow into multiple optional wheels (like `pyarrow-s3`) to significantly reduce the monolithic package size on PyPI. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
+* **JSON representation of Arrow schemas:** Iteration on a standardized JSON format for Arrow schemas to facilitate data contracts and configuration-based data exchange. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:JSON%20representation%20of%20Arrow%20schemas)
 
-* **Standardized JSON representation of schemas:** Ongoing discussion regarding a canonical JSON format for Arrow schemas to facilitate data contract definitions in configuration files. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **New Arrow committer:** Kosta Tarasov has been invited to become a committer on the Apache Arrow project. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20New%20Arrow%20committer%20Kosta%20Tarasov)
+* **Arrow Go 18.8.0 release:** New release of the Go implementation including 283 commits and updates across Arrow, Flight, and Parquet modules. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Go%2018.8.0%20RC0)
