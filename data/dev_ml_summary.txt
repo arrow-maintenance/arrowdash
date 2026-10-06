@@ -1,15 +1,1 @@
-* **ArrowMetal project announcement:** Introduction of ArrowMetal, providing compute kernels for Apple silicon GPUs through Metal and implementing the C Device Data Interface for zero-copy CPU/GPU sharing. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20ArrowMetal%200.1.0%20Arrow%20compute%20on%20Apple%20silicon%20GPUs%20through%20Metal)
-
-* **PyArrow modularity and wheel splitting:** Proposal to break the monolithic PyArrow package into smaller, optional wheels (e.g., pyarrow-s3) to reduce package size and simplify installations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Improve%20modularity%20of%20PyArrow)
-
-* **Deprecation of Tensor types in IPC:** The community voted to informally deprecate Tensor and SparseTensor in the IPC format, moving towards using external libraries for tensor logic. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULTVOTE%20Informal%20deprecation%20of%20Tensor%20and%20SparseTensor%20in%20IPC)
-
-* **Dropping macOS Intel support:** Discussion on removing support for macOS Intel (x86_64) due to hardware support ending in Homebrew and the difficulty of maintaining CI coverage. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Drop%20macOS%20Intel%20support)
-
-* **Reviewer guidelines for AI-generated code:** Discussion on establishing procedures for reviewers to handle low-quality AI contributions and introducing a "needs-author-engagement" label to flag PRs lacking author interaction. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AI-generated%20contributions)
-
-* **New canonical extension types for ranges:** Formal vote to add fixed and variable closedness range types to the specification, intended to improve interoperability for interval data. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEFormat%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
-
-* **Apache Arrow 26.0.0 and Rust 60.0.0 releases:** Voting began for Apache Arrow 26.0.0 (RC0), while the Rust implementation reached version 60.0.0, including new Parquet ALP encoding support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2026.0.0%20-%20RC0) | [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUCNCE%20Arrow%20Rust%2060.0.0)
-
-* **JSON representation of Arrow schemas:** Discussion on refining the standardized JSON format for Arrow schemas to better support unions and nested data types in configuration files. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Format%20JSON%20representation%20of%20Arrow%20schemas)
+Summary generation failed. Please check the mailing list directly.
