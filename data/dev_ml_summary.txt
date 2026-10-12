@@ -1,17 +1,1 @@
-* **Arrow 26.0.0 release candidate:** The community is voting on RC0 of Arrow 26.0.0, which includes 337 resolved issues across the project. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2026.0.0%20-%20RC0)
-
-* **Arrow Rust 60.0.0 release:** A major release for the Rust implementation featuring new Parquet ALP encoding, PageIndex structures, and significant performance improvements for kernels. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULT%20VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
-
-* **Dropping macOS Intel support:** Proposal to stop supporting macOS Intel on CI and for official binaries due to Homebrew's deprecation of the platform and very low usage statistics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Drop%20macOS%20Intel%20support)
-
-* **Improving PyArrow modularity:** Discussion and proof-of-concept for splitting PyArrow into multiple optional wheels to reduce core package size and handle dependencies like S3 and GCS separately. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
-
-* **Reviewer guidelines for AI contributions:** Proposal to establish clear reviewer procedures for handling low-quality AI-generated PRs, including the introduction of a "needs-author-engagement" GitHub label. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
-
-* **Canonical extension types for ranges:** Discussion and vote on adding `fixed_closedness_range` and `variable_closedness_range` as canonical extension types to represent bounded mathematical intervals. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Format%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
-
-* **Standardizing JSON representation of schemas:** Ongoing work to define a canonical JSON format for Arrow schemas to facilitate easier data contract definitions in configuration files and across processes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
-
-* **ADBC logo selection:** The Arrow Database Connectivity (ADBC) subproject is finalizing a new visual identity and logo based on community feedback. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20Logo%20Proposal)
-
-* **CSV date and time parsing improvements:** Discussion on moving forward a long-standing PR that allows the CSV reader to use custom timestamp parsers for date and time columns. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:C++%20Python%20Getting%20PR%20#50146%20CSV%20date/time%20parsing%20GH-41488%20reviewed)
+Summary generation failed. Please check the mailing list directly.
