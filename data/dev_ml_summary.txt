@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow 26.0.0 release:** The community approved the release of version 26.0.0, which resolves 337 GitHub issues and includes successful verification across Linux, macOS (ARM), and Windows. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2026.0.0%20-%20RC0)
+
+* **Arrow Rust 60.0.0 release:** A major update for the Rust implementation featuring support for the new ALP Parquet encoding, PageIndex structures, and significant performance improvements in kernels. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTERUST%20Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
+
+* **PyArrow modularity and wheel size reduction:** Proposal to split PyArrow into multiple wheels to allow users to install components like S3, GCS, or Azure support optionally, significantly reducing the base package size. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
+
+* **Deprecating macOS Intel support:** Discussion on dropping CI support and binary wheels for x86_64 macOS as Homebrew and Apple move away from the platform and usage statistics drop below 1%. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Drop%20macOS%20Intel%20support)
+
+* **Handling AI-generated contributions:** Proposal to update reviewer guidelines with a "needs-author-engagement" label to manage low-quality AI-generated PRs where authors fail to engage with technical feedback. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
+
+* **Canonical Extension Types for Ranges:** A vote is underway to add `arrow.fixed_closedness_range` and `arrow.variable_closedness_range` to represent mathematical intervals with various boundary behaviors. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEFormat%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
+
+* **JSON representation of Arrow schemas:** Discussion on standardizing a JSON format for schemas to improve data contract definitions between processes, including support for union types and nested structures. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **IBM Db2 ADBC driver contribution:** IBM developers have proposed contributing a native C++ ADBC driver for Db2 to the official Arrow ADBC ecosystem. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
+
+* **Standardizing FILE extension type name:** The community decided to name the canonical extension for Parquet files `arrow.parquet.file` to maintain consistency with existing naming conventions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20Canonical%20Extension%20Type%20for%20FILE%20type)
