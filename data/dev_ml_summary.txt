@@ -1,15 +1,19 @@
-* **Arrow Rust 60.0.0 Release:** Major release featuring the first Parquet implementation of ALP encoding, new PageIndex structures, and significant kernel performance optimizations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
+* **Arrow Rust 60.0.0 release:** The community announced the major release of Arrow Rust 60.0.0, which features new support for ALP encoding in Parquet and significant kernel performance improvements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RESULT%20VOTE%20RUST%20Release%20Apache%20Arrow%20Rust%2060.0.0%20RC1)
 
-* **PyArrow Modularity Proposal:** Discussion on splitting PyArrow into multiple optional wheels (e.g., pyarrow-s3) to significantly reduce the package size on PyPI. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Improve%20modularity%20of%20PyArrow)
+* **Proposed PyArrow modularity improvements:** Discussion on a Proof of Concept to split PyArrow into multiple wheels (e.g., pyarrow-s3) to reduce the 2.1 GB installation footprint and manage optional dependencies better. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
 
-* **Dropping macOS Intel Support:** Proposal to end official support for macOS Intel targets due to the inability to maintain testing CI as platforms like Homebrew phase out support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Drop%20macOS%20Intel%20support)
+* **Deprecating macOS Intel support:** Developers proposed dropping support for macOS Intel due to Homebrew ending its support and the increasing difficulty of maintaining hardware-specific CI environments. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Drop%20macOS%20Intel%20support)
 
-* **AI-Generated Contribution Guidelines:** Proposal to establish reviewer protocols and a "needs-author-engagement" label to handle low-quality, AI-generated pull requests. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AI-generated%20contributions)
+* **Apache Arrow 26.0.0 release:** The vote passed for the release of version 26.0.0, which includes over 300 resolved issues across the C++, Python, and core implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2026.0.0%20-%20RC0)
 
-* **Apache Arrow 26.0.0 Release:** Voting is concluding for the version 26.0.0 release candidate, which includes over 300 resolved issues across the project. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%2026.0.0%20-%20RC0)
+* **Guidelines for AI-generated contributions:** Proposal to update reviewer guidelines with protocols for handling low-quality AI PRs, including a new "needs-author-engagement" label to ensure contributors understand their submissions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
 
-* **IBM Db2 ADBC Driver:** IBM engineers have proposed contributing a new native C++ ADBC driver for IBM Db2 to the Arrow ADBC ecosystem. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
+* **New Range canonical extension types:** A vote was initiated to add two new extension types—fixed and variable closedness ranges—to formalize the representation of mathematical intervals in Arrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Format%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
 
-* **JSON Representation of Schemas:** Ongoing technical discussion regarding the standardization of a JSON format for Arrow schemas to support complex nested types and unions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:JSON%20representation%20of%20Arrow%20schemas)
+* **IBM Db2 driver for ADBC:** IBM proposed contributing a native C++ ADBC driver for Db2 (LUW) to the ecosystem, sparking discussion on repository access and the contribution process. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
 
-* **Canonical Range Extensions:** A vote is in progress to add new canonical extension types for representing bounded intervals with fixed or variable closedness. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
+* **Standardizing JSON representation of schemas:** Ongoing efforts to finalize a standardized JSON format for Arrow schemas, with recent updates focusing on better support for nested types and unions. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **ADBC project logo:** The community reached lazy consensus on a new visual identity and logo for the ADBC subproject following several rounds of design feedback. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20ADBC%20Logo%20Proposal)
+
+* **CSV date and time parsing improvements:** Discussion on a long-standing PR to allow the CSV reader to use fallback timestamp parsers for explicitly typed date and time columns. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:C++%20Python%20Getting%20PR%20%2350146%20CSV%20date%20time%20parsing%2C%20GH-41488%20reviewed)
