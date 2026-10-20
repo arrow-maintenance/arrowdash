@@ -1,1 +1,19 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow 26.0.0 release:** The community released version 26.0.0, resolving over 330 issues across the project. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%2026.0.0%20-%20RC0)
+
+* **Dropping macOS Intel support:** A proposal to end official support and CI testing for macOS on Intel hardware was discussed, citing maintenance challenges and low usage stats. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Drop%20macOS%20Intel%20support)
+
+* **PyArrow modularization:** Developers are testing a multi-wheel approach for PyArrow to reduce the core package size by moving components like S3 support into optional sub-packages. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Improve%20modularity%20of%20PyArrow)
+
+* **AI-generated contributions:** This discussion focused on the disclosure of AI tools in pull requests and a proposed "needs-author-engagement" label to flag contributions where authors are unresponsive to technical feedback. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:AI-generated%20contributions)
+
+* **Range canonical extension types:** A vote is underway to add two new canonical extension types to the Arrow format for representing fixed and variable closedness ranges. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEFormat%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
+
+* **Arrow Rust 60.0.0 release:** The Rust implementation reached version 60.0.0, featuring new Parquet encoding support, kernel performance improvements, and a push for a panic-free codebase. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUCNCE%20Arrow%20Rust%2060.0.0)
+
+* **IPC representation of dictionary extensions:** A proposal to add metadata support for dictionary-encoded extension types in the IPC format is moving toward a vote to improve cross-implementation compatibility. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
+
+* **Flight SQL Substrait dialect advertising:** A new proposal suggests allowing Flight SQL servers to advertise supported Substrait dialects via SqlInfo to prevent plan failures at execution time. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFlightSQL%20Advertise%20supported%20Substrait%20dialect%20via%20SqlInfo)
+
+* **IBM Db2 ADBC driver:** IBM announced the completion of a native C++ ADBC driver for Db2 (LUW) and requested to contribute the implementation to the Arrow ADBC ecosystem. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
+
+* **ADBC logo proposal:** The community is finalizing a new visual identity and logo for the ADBC subproject following feedback on the initial design concepts. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ADBC%20Logo%20Proposal)
