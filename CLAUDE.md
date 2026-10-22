@@ -26,6 +26,12 @@ Links to useful Arrow project resources for maintainers across all languages.
 - Various plots and metrics, showing commits, PRs opened/closed and issues opened/closed over the past 18 months
 - Also shows changes in open issues/PRs and change since a month ago
 
+### Bug Backlog page
+
+- Tracks progress on closing out old bugs (`Type: bug` issues opened before `old_bug_cutoff` in `methods.R`)
+- Table of open bugs by component and year opened, plus a monthly burndown of old bugs stacked by component
+- Everything is computed at render time from the parquet cache; bugs with several `Component:` labels count once per component
+
 ### Onboarding page
 
 - Community/new contributor tracking and metrics
