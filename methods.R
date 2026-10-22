@@ -146,7 +146,7 @@ gt_show_issues <- function(x){
 # ---- Bug Backlog page --------------------------------------------------------
 
 # Bugs opened before this date are the ones the backlog clean-up is tracking.
-old_bug_cutoff <- as.Date("2026-07-01")
+old_bug_cutoff <- as.Date("2026-07-30")
 
 is_bug <- function(labels) {
   purrr::map_lgl(labels, ~ "Type: bug" %in% .x)
