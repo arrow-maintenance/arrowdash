@@ -86,6 +86,10 @@ lang <- "C++"
 
 {{< include maintenance_stats.qmd >}}
 
+# Bug Backlog
+
+{{< include bug_backlog.qmd >}}
+
 # Onboarding
 
 {{< include community.qmd >}}
