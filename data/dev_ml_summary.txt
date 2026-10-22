@@ -1,15 +1,1 @@
-* **Apache Arrow 26.0.0 release:** The community announced the release of version 26.0.0, which includes 337 resolved issues and performance improvements across several language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2026.0.0%20released)
-
-* **PyArrow modularity and multi-wheel installation:** Proposal to split PyArrow into a core wheel and optional side-wheels (e.g., `pyarrow-s3`) to reduce the monolithic package size and maintenance burden. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
-
-* **Dropping macOS Intel support:** Discussion on deprecating support for Intel-based Macs due to low usage (approximately 0.1% of PyArrow downloads) and the burden of maintaining relevant CI. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Drop%20macOS%20Intel%20support)
-
-* **Arrow Rust 60.0.0 release:** A major update for the Rust implementation featuring new Parquet encoding support, kernel performance improvements, and significant work to remove panics. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUCNCE%20Arrow%20Rust%2060.0.0)
-
-* **Canonical extension types for ranges:** A vote is underway to add `fixed_closedness_range` and `variable_closedness_range` as canonical extension types to represent mathematical intervals. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Format%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
-
-* **IBM Db2 driver for ADBC:** IBM proposed contributing a native C++ ADBC driver for Db2 (LUW) to the Apache Arrow ecosystem. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
-
-* **Dictionary-encoded extension types in IPC:** Discussion and draft PRs to fix a gap in the IPC format, allowing it to represent metadata for extension types within dictionary-encoded fields. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
-
-* **Flight SQL Substrait dialect advertising:** Proposal to add new `SqlInfo` codes so that Flight SQL servers can advertise specific Substrait dialects and supported features to clients. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20FlightSQL%20Advertise%20supported%20Substrait%20dialect%20via%20SqlInfo)
+Summary generation failed. Please check the mailing list directly.
