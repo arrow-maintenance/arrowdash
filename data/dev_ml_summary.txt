@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Apache Arrow 26.0.0 Release:** The community has released version 26.0.0, which includes over 300 resolved issues across the C++, Python, and other language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2026.0.0%20-%20RC0)
+
+* **PyArrow Modularity and Wheel Splitting:** A proposal is under discussion to split PyArrow into multiple wheels (core plus optional components like S3 or GCS) to reduce package size and improve installation flexibility. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
+
+* **Arrow Rust 60.0.0 Release:** The Rust implementation has reached version 60.0.0, featuring new Parquet encoding support, kernel performance improvements, and a focused effort to remove panics from the codebase. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUCNCE%20Arrow%20Rust%2060.0.0)
+
+* **CI Runner Optimization:** A detailed proposal suggests optimizing GitHub Actions workflows to reduce runner usage by 30-40% through better job triggering and the use of smaller runner types. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Ideas%20to%20make%20Arrow%27s%20GitHub%20Actions%20CI%20lighter%20%28%7E30-40%25%20fewer%20runner%20minutes%29)
+
+* **Range Canonical Extension Types:** The community is voting on adding "fixed and variable closedness" range types to the canonical extension specifications to improve interoperability with systems like PostgreSQL and pandas. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Format%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
+
+* **IBM Db2 ADBC Driver:** IBM has proposed contributing a native C++ ADBC driver for Db2 (specifically for LUW platforms) to the Arrow ADBC ecosystem. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
+
+* **IPC Representation of Dictionary Metadata:** New draft PRs aim to allow custom metadata on dictionary-encoded values within the IPC format, closing a gap in the current Arrow type model. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
+
+* **Substrait Dialects in Flight SQL:** A proposal seeks to add SqlInfo codes to Flight SQL that would allow servers to advertise exactly which Substrait dialects and functions they support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20FlightSQL%20Advertise%20supported%20Substrait%20dialect%20via%20SqlInfo)
+
+* **JSON Schema Representation:** Ongoing discussion on defining a standard JSON format for Arrow schemas to facilitate data "contracts" and configuration files across different processes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Format%20JSON%20representation%20of%20Arrow%20schemas)
