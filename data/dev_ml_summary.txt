@@ -1,15 +1,1 @@
-* **Apache Arrow 26.0.0 release:** The project has released version 26.0.0, resolving 337 issues and providing updated binary artifacts across various platforms. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Release%20Apache%20Arrow%2026.0.0%20-%20RC0)
-
-* **PyArrow modularity improvements:** Discussion is underway to split PyArrow into smaller, modular wheels to reduce the package size and installation burden for users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Improve%20modularity%20of%20PyArrow)
-
-* **Range canonical extension types:** A proposal and vote are active for adding `fixed_closedness_range` and `variable_closedness_range` types to represent mathematical intervals within Arrow. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
-
-* **IBM Db2 driver for ADBC:** IBM is contributing a native C++ ADBC driver for Db2 (LUW), further expanding the database connectivity options for Arrow users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
-
-* **IPC support for dictionary extension types:** Developers have proposed adding `custom_metadata` to dictionary encodings to allow extension types to be correctly represented on dictionary values in the IPC format. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
-
-* **Substrait dialect advertising in Flight SQL:** A new proposal seeks to add `SqlInfo` codes to allow Flight SQL servers to advertise their supported Substrait dialects for improved query plan negotiation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Advertise%20supported%20Substrait%20dialect%20via%20SqlInfo)
-
-* **GitHub Actions CI optimization:** The community is evaluating ways to reduce CI runner usage by ~30-40% through more efficient job scheduling, path filtering, and utilizing the new `ubuntu-slim` runners. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Ideas%20to%20make%20Arrow's%20GitHub%20Actions%20CI%20lighter%20~30-40%25%20fewer%20runner%20minutes)
-
-* **Arrow Rust releases:** The project announced version 60.0.0 with major performance improvements and Parquet encoding updates, followed by a series of security and bug-fix patch releases. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUCNCE%20Arrow%20Rust%2060.0.0)
+Summary generation failed. Please check the mailing list directly.
