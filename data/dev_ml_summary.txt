@@ -1,1 +1,19 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow 26.0.0 release:** The community finalized the major release of version 26.0.0, resolving over 300 issues across the C++, Python, and core implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2026.0.0%20-%20RC0)
+
+* **PyArrow modularity improvements:** Discussion on splitting PyArrow into smaller, modular wheels to reduce package size and dependency overhead for Python users. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
+
+* **ADBC 25 release and visual identity:** The Arrow Database Connectivity (ADBC) subproject reached version 25 and officially adopted a new logo and visual identity. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20ADBC%2025%20-%20RC2)
+
+* **Arrow Rust 60.0.0:** A new major release for the Rust implementation includes expanded Parquet encoding support and significant performance improvements for kernels. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUCNCE%20Arrow%20Rust%2060.0.0)
+
+* **CI workflow optimization:** Ongoing efforts to reduce GitHub Actions runner usage by 30-40% through more efficient merge-to-main strategies and job filtering. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Ideas%20to%20make%20Arrow%27s%20GitHub%20Actions%20CI%20lighter%20%28%7E30-40%25%20fewer%20runner%20minutes%29)
+
+* **JSON schema standardization:** Progress was made on standardizing the JSON representation of Arrow schemas to improve cross-process data contracts and nested type support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFormat%20JSON%20representation%20of%20Arrow%20schemas)
+
+* **IPC representation of dictionary extensions:** Proposal to add metadata support for dictionary values in IPC, allowing extension types like UUIDs to be properly preserved when dictionary-encoded. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
+
+* **Flight SQL Substrait dialects:** Proposal to allow Flight SQL servers to advertise specific supported Substrait dialects via SqlInfo to improve interoperability for plan execution. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFlightSQL%20Advertise%20supported%20Substrait%20dialect%20via%20SqlInfo)
+
+* **IBM Db2 ADBC driver:** IBM engineers proposed contributing a native C++ ADBC driver for Db2 LUW to the ecosystem to facilitate high-performance Arrow-native access. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
+
+* **Range canonical extension types:** Discussion and vote on adding fixed and variable closedness range types to the Arrow specification to support mathematical intervals. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEFormat%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
