@@ -1,17 +1,1 @@
-* **Apache Arrow 26.0.0 release:** A major release of the project was finalized, resolving over 330 issues and including updates to the C++, Python, and GLib implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2026.0.0%20-%20RC0)
-
-* **PyArrow modularity improvements:** Discussion on restructuring PyArrow into multiple wheels to allow users to install a smaller core package and reduce the overall installation size. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Improve%20modularity%20of%20PyArrow)
-
-* **Arrow Rust 60.0.0 release:** The Rust implementation reached version 60, introducing new Parquet encoding support and significant performance enhancements across kernels and FFI. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUCNCE%20Arrow%20Rust%2060.0.0)
-
-* **IBM Db2 driver for ADBC:** IBM contributors proposed adding a native C++ ADBC driver for Db2 (LUW) to the ecosystem, expanding high-performance connectivity options. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
-
-* **Range canonical extension types:** A proposal and vote were initiated to add fixed and variable closedness range types to the Arrow specification to represent mathematical intervals. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEFormat%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
-
-* **IPC representation for dictionary extensions:** Work is underway to allow dictionary-encoded extension types to carry custom metadata in the IPC format, addressing a current gap in the specification. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
-
-* **Flight SQL Substrait dialect advertisement:** A proposal to let Flight SQL servers advertise their specific supported Substrait dialect via SqlInfo, allowing clients to verify query compatibility upfront. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFlightSQL%20Advertise%20supported%20Substrait%20dialect%20via%20SqlInfo)
-
-* **ADBC 25 release:** Release 25 of the ADBC subproject was completed, featuring 57 bug fixes and enhancements across language bindings including C++, Python, Go, and Rust. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%20ADBC%2025%20-%20RC2)
-
-* **GitHub Actions CI optimization:** Developers discussed strategies to reduce the project's CI resource usage by 30-40% through better scheduling and smarter triggers for expensive jobs like Linux package builds. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Ideas%20to%20make%20Arrow's%20GitHub%20Actions%20CI%20lighter%20~30-40%25%20fewer%20runner%20minutes)
+Summary generation failed. Please check the mailing list directly.
