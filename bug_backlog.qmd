@@ -3,7 +3,7 @@
 #| warning: false
 bugs <- read_bugs_by_component()
 old_bugs_now <- count_open_old_bugs(bugs)
-old_bugs_closed_90d <- count_old_bugs_closed_since(bugs, Sys.Date() - 90)
+old_bugs_closed_7d <- count_old_bugs_closed_since(bugs, Sys.Date() - 7)
 by_year <- open_bugs_by_year(bugs)
 burndown <- old_bug_burndown(bugs)
 cutoff_label <- trimws(format(old_bug_cutoff, "%e %b %Y"))
@@ -23,11 +23,11 @@ list(
 
 ```{r}
 #| content: valuebox
-#| title: !expr paste0("Bugs opened before ", cutoff_label, " closed in the last 90 days")
+#| title: !expr paste0("Bugs opened before ", cutoff_label, " closed in the past week")
 list(
   icon = "check2-circle",
   color = "success",
-  value = old_bugs_closed_90d
+  value = old_bugs_closed_7d
 )
 ```
 
