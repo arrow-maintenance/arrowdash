@@ -1,1 +1,17 @@
-Summary generation failed. Please check the mailing list directly.
+* **Apache Arrow 26.0.0 and 26.0.1 releases:** Version 26.0.0 was released with over 300 resolved issues, followed shortly by a 26.0.1 patch release to address a security vulnerability in the bundled Brotli library. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2026.0.0%20released)
+
+* **Sovereign Tech Fund investment in PyArrow:** The German government-backed Sovereign Tech Fund is contracting development for PyArrow through 2027, focusing on type annotations, extension type support, and documentation improvements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Announce%20The%20Sovereign%20Tech%20Fund%20invests%20in%20PyArrow)
+
+* **New range canonical extension types:** A proposal is under vote to add fixed-closedness and variable-closedness range types to the Arrow canonical extension types to better support mathematical intervals and databases like PostgreSQL. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTEFormat%20Fixed%20and%20variable%20closedness%20range%20canonical%20extension%20types)
+
+* **AI-generated contribution policy:** The community is discussing new strategies to manage an influx of AI-generated pull requests, including mandatory disclosure and new triage labels to help maintainers manage review capacity. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
+
+* **Rust implementation maintenance:** The Rust implementation saw high activity with patch releases across branches 57, 58, 59, and 60 to address various backport requests and bug fixes. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:RUST%20Rust%20patch%20releases%20for%2057,%2058,%2059%20and%2060%20branches)
+
+* **CI workflow optimization:** A detailed proposal suggests ways to reduce GitHub Actions runner usage by 30-40%, including optimizing nightly jobs and reducing redundant triggers for extra-large matrices. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20Ideas%20to%20make%20Arrow's%20GitHub%20Actions%20CI%20lighter%20~30-40%25%20fewer%20runner%20minutes)
+
+* **ADBC 25 release and IBM Db2 contribution:** The ADBC subproject released version 25, while IBM proposed contributing a new native C++ driver for IBM Db2 to the ecosystem. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20ADBC%2025%20Released)
+
+* **Dictionary-encoded extension types in IPC:** Developers reached consensus on a format change to allow the IPC representation of dictionary-encoded extension types by adding an optional metadata field to DictionaryEncoding. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
+
+* **Flight SQL Substrait advertising:** Proposal to allow Flight SQL servers to advertise specific supported Substrait dialects via SqlInfo, enabling clients to verify plan compatibility before execution. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSSFlightSQL%20Advertise%20supported%20Substrait%20dialect%20via%20SqlInfo)
