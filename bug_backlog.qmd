@@ -5,6 +5,13 @@ bugs <- read_bugs_by_component()
 old_bugs_now <- count_open_old_bugs(bugs)
 old_bugs_closed_7d <- count_old_bugs_closed_since(bugs, Sys.Date() - 7)
 by_year <- open_bugs_by_year(bugs)
+median_age <- median_open_bug_age(bugs)
+bugs_triaged <- filter(bugs, triaged)
+bugs_untriaged <- filter(bugs, !triaged)
+by_year_triaged <- open_bugs_by_year(bugs_triaged)
+median_age_triaged <- median_open_bug_age(bugs_triaged)
+by_year_untriaged <- open_bugs_by_year(bugs_untriaged)
+median_age_untriaged <- median_open_bug_age(bugs_untriaged)
 burndown <- old_bug_burndown(bugs)
 cutoff_label <- trimws(format(old_bug_cutoff, "%e %b %Y"))
 ```
@@ -35,13 +42,36 @@ list(
 
 ### Column {width=55%}
 
-::: {.card title="Open bugs by component and year opened"}
-Bugs with more than one component label are counted once per component, so the
-Total column adds up to more than the number of open bugs.
+#### Row {.tabset}
+
+::: {.card title="All open bugs"}
+Open bugs by component and year opened. Bugs with more than one component label
+are counted once per component, so the Total column adds up to more than the
+number of open bugs.
 
 ```{r}
 #| echo: false
-gt_open_bugs_by_year(by_year)
+gt_open_bugs_by_year(by_year, median_age)
+```
+:::
+
+::: {.card title="Not triaged"}
+Open bugs with neither "Status: needs champion" nor "Status: confirmed", by
+component and year opened. Counted once per component.
+
+```{r}
+#| echo: false
+gt_open_bugs_by_year(by_year_untriaged, median_age_untriaged, triaged = FALSE)
+```
+:::
+
+::: {.card title="Triaged"}
+Open bugs labelled "Status: needs champion" or "Status: confirmed", by component
+and year opened. Counted once per component.
+
+```{r}
+#| echo: false
+gt_open_bugs_by_year(by_year_triaged, median_age_triaged, triaged = TRUE)
 ```
 :::
 
