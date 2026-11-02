@@ -29,7 +29,9 @@ Links to useful Arrow project resources for maintainers across all languages.
 ### Bug Backlog page
 
 - Tracks progress on closing out old bugs (`Type: bug` issues opened before `old_bug_cutoff` in `methods.R`)
-- Table of open bugs by component and year opened, plus a monthly burndown of old bugs stacked by component
+- Table of open bugs by component and year opened, with All / Triaged / Not triaged tabs
+  (triaged = has `Status: needs champion` or `Status: confirmed`; see `triage_labels` in `methods.R`),
+  plus a monthly burndown of old bugs stacked by component
 - Everything is computed at render time from the parquet cache; bugs with several `Component:` labels count once per component
 
 ### Onboarding page

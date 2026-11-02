@@ -148,6 +148,13 @@ gt_show_issues <- function(x){
 # Bugs opened before this date are the ones the backlog clean-up is tracking.
 old_bug_cutoff <- as.Date("2026-07-30")
 
+# A bug counts as triaged once it carries either of these labels
+triage_labels <- c("Status: needs champion", "Status: confirmed")
+
+is_triaged <- function(labels) {
+  purrr::map_lgl(labels, ~ any(triage_labels %in% .x))
+}
+
 is_bug <- function(labels) {
   purrr::map_lgl(labels, ~ "Type: bug" %in% .x)
 }
@@ -171,6 +178,7 @@ read_bugs_by_component <- function() {
       number,
       component,
       state,
+      triaged = is_triaged(labels),
       created = as.Date(created_at),
       closed = as.Date(closed_at)
     )
@@ -191,8 +199,11 @@ count_old_bugs_closed_since <- function(bugs, since, cutoff = old_bug_cutoff) {
 }
 
 open_bugs_by_year <- function(bugs) {
-  bugs %>%
-    filter(state == "open") %>%
+  open <- bugs %>% filter(state == "open")
+  if (nrow(open) == 0) {
+    return(tibble::tibble(component = character(), Total = numeric()))
+  }
+  open %>%
     mutate(year = lubridate::year(created)) %>%
     count(component, year) %>%
     tidyr::pivot_wider(
@@ -226,11 +237,19 @@ tooltip_cells <- function(tips) {
 }
 
 # GitHub issue search for open bugs in a component, optionally limited to the
-# year they were opened. Vectorised over component.
-bug_search_url <- function(component, year = NULL) {
+# year they were opened and to triaged (TRUE) or untriaged (FALSE) bugs.
+# Vectorised over component.
+bug_search_url <- function(component, year = NULL, triaged = NULL) {
   terms <- c('is:issue', 'state:open', 'label:"Type: bug"')
   if (!is.null(year)) {
     terms <- c(terms, sprintf("created:%d-01-01..%d-12-31", year, year))
+  }
+  quoted <- sprintf('"%s"', triage_labels)
+  if (isTRUE(triaged)) {
+    # Comma-separated values in one label: qualifier are OR'd by GitHub search
+    terms <- c(terms, paste0("label:", paste(quoted, collapse = ",")))
+  } else if (isFALSE(triaged)) {
+    terms <- c(terms, paste0("-label:", quoted))
   }
   queries <- paste(
     paste(terms, collapse = " "),
@@ -257,7 +276,9 @@ link_cells <- function(urls) {
   }
 }
 
-gt_open_bugs_by_year <- function(by_year, median_age) {
+# `triaged` (NULL/TRUE/FALSE) only affects the GitHub search links, so they
+# match whichever subset of bugs `by_year` and `median_age` were built from.
+gt_open_bugs_by_year <- function(by_year, median_age, triaged = NULL) {
   year_cols <- setdiff(names(by_year), c("component", "Total"))
   max_n <- max(c(1, unlist(by_year[year_cols])))
   linkable <- by_year$component != "(No component)"
@@ -289,7 +310,9 @@ gt_open_bugs_by_year <- function(by_year, median_age) {
 
   for (col in c(year_cols, "Total")) {
     year <- if (col == "Total") NULL else as.integer(col)
-    urls <- ifelse(linkable, bug_search_url(by_year$component, year), NA)
+    urls <- ifelse(
+      linkable, bug_search_url(by_year$component, year, triaged), NA
+    )
     tbl <- tbl %>%
       text_transform(
         locations = cells_body(columns = all_of(col)),
