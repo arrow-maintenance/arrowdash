@@ -202,6 +202,29 @@ open_bugs_by_year <- function(bugs) {
     arrange(desc(Total))
 }
 
+# Median age in days of each component's open bugs, as of today
+median_open_bug_age <- function(bugs, today = Sys.Date()) {
+  bugs %>%
+    filter(state == "open") %>%
+    group_by(component) %>%
+    summarise(median_age_days = median(as.numeric(today - created)), .groups = "drop")
+}
+
+# "Median age of open bugs: 1,245 days (3.4 years)"; years shown only past a year
+format_median_age <- function(days) {
+  days <- round(days)
+  txt <- sprintf("Median age of open bugs: %s days", format(days, big.mark = ",", trim = TRUE))
+  ifelse(days >= 365, sprintf("%s (%.1f years)", txt, days / 365.25), txt)
+}
+
+# Wrap text in a span whose title attribute shows as a hover tooltip
+tooltip_cells <- function(tips) {
+  force(tips)
+  function(x) {
+    ifelse(is.na(tips), x, sprintf('<span title="%s">%s</span>', tips, x))
+  }
+}
+
 # GitHub issue search for open bugs in a component, optionally limited to the
 # year they were opened. Vectorised over component.
 bug_search_url <- function(component, year = NULL) {
@@ -234,10 +257,15 @@ link_cells <- function(urls) {
   }
 }
 
-gt_open_bugs_by_year <- function(by_year) {
+gt_open_bugs_by_year <- function(by_year, median_age) {
   year_cols <- setdiff(names(by_year), c("component", "Total"))
   max_n <- max(c(1, unlist(by_year[year_cols])))
   linkable <- by_year$component != "(No component)"
+  age_tips <- by_year %>%
+    select(component) %>%
+    left_join(median_age, by = "component") %>%
+    pull(median_age_days) %>%
+    format_median_age()
 
   tbl <- by_year %>%
     gt(rowname_col = "component") %>%
@@ -269,7 +297,11 @@ gt_open_bugs_by_year <- function(by_year) {
       )
   }
 
-  tbl
+  tbl %>%
+    text_transform(
+      locations = cells_stub(),
+      fn = tooltip_cells(age_tips)
+    )
 }
 
 # Monthly snapshots of how many bugs opened before `cutoff` were still open on
