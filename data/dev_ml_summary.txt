@@ -1,1 +1,15 @@
-Summary generation failed. Please check the mailing list directly.
+* **Arrow 26.0.0 release:** The community announced the release of version 26.0.0, which includes 337 resolved GitHub issues across the project's various language implementations. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%2026.0.0%20released)
+
+* **Sovereign Tech Fund investment in PyArrow:** The German government-backed Sovereign Tech Fund has contracted R&D work for PyArrow through 2027, focusing on type annotations, extension type support, and documentation. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Announce%20The%20Sovereign%20Tech%20Fund%20invests%20in%20PyArrow)
+
+* **Arrow ADBC 25 release:** Release 25 of the ADBC subproject is now available, featuring updates to C/C++, Go, Python, Java, Rust, and C# components, including over 50 bug fixes and improvements. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:ANNOUNCE%20Apache%20Arrow%20ADBC%2025%20Released)
+
+* **AI-generated contribution policy:** Maintainers discussed new guidelines and triage processes to manage the high volume of AI-generated pull requests, including mandatory disclosure and automated enforcement. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20AI-generated%20contributions)
+
+* **IPC support for dictionary-encoded extension types:** A proposal and draft implementation were introduced to add custom metadata to dictionary encodings, allowing the IPC format to correctly represent extension types on dictionary values. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:IPC%20representation%20of%20dictionary-encoded%20extension%20types)
+
+* **IBM Db2 driver for ADBC:** IBM proposed contributing a native C++ ADBC driver for IBM Db2 (LUW) to the Arrow ecosystem to facilitate high-performance database access. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:Request%20to%20contribute%20IBM%20Db2%20driver%20to%20arrow-adbc)
+
+* **Flight SQL Substrait dialect advertisement:** Discussion on adding new SqlInfo codes to Flight SQL so servers can advertise the specific Substrait dialects and capabilities they support. [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:DISCUSS%20FlightSQL%20Advertise%20supported%20Substrait%20dialect%20via%20SqlInfo)
+
+* **Arrow 26.0.1 patch release:** Following the 26.0.0 release, a quick patch release was issued to update the bundled Brotli version to 1.2.1, addressing a security vulnerability (CVE-2026-111497). [Thread](https://lists.apache.org/list?dev@arrow.apache.org:lte=2M:VOTE%20Release%20Apache%20Arrow%2026.0.1%20-%20RC1)
