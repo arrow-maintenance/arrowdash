@@ -70,7 +70,7 @@ jobs:
       - name: Update mailing list summary
         run: python scripts/update_ml_summary.py
         env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
 
       - name: Download parquet cache from arrow-gh-cache
         run: |
@@ -101,4 +101,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_API_TOKEN: ${{ secrets.GH_API_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}

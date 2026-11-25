@@ -191,6 +191,15 @@ count_open_old_bugs <- function(bugs, cutoff = old_bug_cutoff) {
     nrow()
 }
 
+# Distinct open bugs, whatever their age; `bugs` has one row per component
+count_open_bugs <- function(bugs) {
+  count_open_old_bugs(bugs, cutoff = as.Date(Inf))
+}
+
+format_bug_total <- function(n) {
+  sprintf("%s open %s", format(n, big.mark = ",", trim = TRUE), ifelse(n == 1, "bug", "bugs"))
+}
+
 count_old_bugs_closed_since <- function(bugs, since, cutoff = old_bug_cutoff) {
   bugs %>%
     filter(!is.na(closed), closed >= since, created < cutoff) %>%

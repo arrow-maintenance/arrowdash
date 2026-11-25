@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 import re
 from email.header import decode_header, make_header
 import os
-from chatlas import ChatGoogle
+from chatlas import ChatAnthropic
 import ml_data.data_methods as ml
 
 def decode_mime_words(s):
@@ -203,7 +203,7 @@ def summarisation_input(threads):
     
 def summarise_dev_ml():
     """
-    Summarizes the development mailing list from the past 3 months using a pre-defined prompt and Google Chat API.
+    Summarizes the development mailing list from the past 3 months using a pre-defined prompt and the Claude API (via chatlas).
 
     Returns:
         str: The summarized output.
@@ -212,7 +212,9 @@ def summarise_dev_ml():
 
     th2 = read_mbox_as_threads("dev_ml.mbox")
     thread_string = summarisation_input(th2)
-    chat = ChatGoogle(model="gemini-3-flash-preview", api_key=os.getenv("GOOGLE_API_KEY"))
+    # Reads ANTHROPIC_API_KEY from the environment. Thinking is always on for this
+    # model and counts towards max_tokens, so leave room above the summary length.
+    chat = ChatAnthropic(model="claude-haiku-5-5", max_tokens=16000)
 
     with open("./ml_data/prompt_ml_summary.md", "r", encoding="utf-8") as f:
         chat_prompt = f.read()
